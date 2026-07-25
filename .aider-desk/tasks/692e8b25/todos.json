@@ -1,0 +1,29 @@
+{
+  "initialUserPrompt": "资源分配：MacBook轻运算 + AutoDL云端重运算。重新规划流程，估计云端配置需求，然后开始研究分析。",
+  "items": [
+    {
+      "name": "资源分配方案 + AutoDL配置需求",
+      "completed": true
+    },
+    {
+      "name": "Step 1: 构建磷酸化蛋白基准数据集（本地）",
+      "completed": true
+    },
+    {
+      "name": "Step 2: AF3批量预测脚本准备（本地→提交云端）",
+      "completed": false
+    },
+    {
+      "name": "Step 3: ESMFold/ESM-2环境搭建（AutoDL云端）",
+      "completed": false
+    },
+    {
+      "name": "Step 4: MD模拟体系准备（本地→AutoDL执行）",
+      "completed": false
+    },
+    {
+      "name": "Step 5: 数据分析与综合评估（本地+云端）",
+      "completed": false
+    }
+  ]
+}

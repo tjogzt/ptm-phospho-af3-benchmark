@@ -1,0 +1,27 @@
+{
+  "id": "692e8b25",
+  "baseDir": "/Volumes/thinkplus/PTM",
+  "name": "Design PTM structural effect experiments",
+  "archived": false,
+  "aiderTotalCost": 0,
+  "agentTotalCost": 0.071907008,
+  "mainModel": "",
+  "currentMode": "agent",
+  "weakModelLocked": false,
+  "parentId": null,
+  "lastAgentProviderMetadata": {
+    "deepseek": {
+      "promptCacheHitTokens": 96000,
+      "promptCacheMissTokens": 115
+    }
+  },
+  "agentProfileId": "default",
+  "provider": "deepseek",
+  "model": "deepseek-v4-pro",
+  "workingMode": "local",
+  "createdAt": "2026-07-25T16:32:27.190Z",
+  "updatedAt": "2026-07-25T17:12:30.450Z",
+  "startedAt": "2026-07-25T17:08:27.224Z",
+  "state": "IN_PROGRESS",
+  "completedAt": "2026-07-25T16:43:07.566Z"
+}
