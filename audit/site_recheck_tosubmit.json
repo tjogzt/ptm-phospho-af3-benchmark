@@ -1,0 +1,243 @@
+{
+  "n_job_groups": 8,
+  "checks": [
+    {
+      "job_group": "prkaca_unphos",
+      "uniprot": "P17612",
+      "gene": "prkaca",
+      "state": "unphos",
+      "seq_len_declared": 351,
+      "seq_len_actual": 351,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 198,
+          "expect": "T",
+          "actual": "T",
+          "ok": true
+        }
+      ],
+      "modifications": [],
+      "mod_positions": [],
+      "mod_matches_sites": true,
+      "mapping_note": "benchmark Thr197 是成熟编号；UniProt[197]=W，真实 p-site 为 196/198，取 198（激活环主位点）",
+      "effect_type": "allosteric"
+    },
+    {
+      "job_group": "prkaca_phos",
+      "uniprot": "P17612",
+      "gene": "prkaca",
+      "state": "phos",
+      "seq_len_declared": 351,
+      "seq_len_actual": 351,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 198,
+          "expect": "T",
+          "actual": "T",
+          "ok": true
+        }
+      ],
+      "modifications": [
+        {
+          "ptmType": "CCD_TPO",
+          "ptmPosition": 198
+        }
+      ],
+      "mod_positions": [
+        198
+      ],
+      "mod_matches_sites": true,
+      "mapping_note": "benchmark Thr197 是成熟编号；UniProt[197]=W，真实 p-site 为 196/198，取 198（激活环主位点）",
+      "effect_type": "allosteric"
+    },
+    {
+      "job_group": "egfr_unphos",
+      "uniprot": "P00533",
+      "gene": "egfr",
+      "state": "unphos",
+      "seq_len_declared": 1210,
+      "seq_len_actual": 1210,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 869,
+          "expect": "Y",
+          "actual": "Y",
+          "ok": true
+        }
+      ],
+      "modifications": [],
+      "mod_positions": [],
+      "mod_matches_sites": true,
+      "mapping_note": "benchmark Tyr845 是成熟编号(+24 信号肽)；UniProt[869] 为注释 pTyr",
+      "effect_type": "local_rearrangement"
+    },
+    {
+      "job_group": "egfr_phos",
+      "uniprot": "P00533",
+      "gene": "egfr",
+      "state": "phos",
+      "seq_len_declared": 1210,
+      "seq_len_actual": 1210,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 869,
+          "expect": "Y",
+          "actual": "Y",
+          "ok": true
+        }
+      ],
+      "modifications": [
+        {
+          "ptmType": "CCD_PTR",
+          "ptmPosition": 869
+        }
+      ],
+      "mod_positions": [
+        869
+      ],
+      "mod_matches_sites": true,
+      "mapping_note": "benchmark Tyr845 是成熟编号(+24 信号肽)；UniProt[869] 为注释 pTyr",
+      "effect_type": "local_rearrangement"
+    },
+    {
+      "job_group": "lyz_unphos",
+      "uniprot": "P00698",
+      "gene": "lyz",
+      "state": "unphos",
+      "seq_len_declared": 147,
+      "seq_len_actual": 147,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 41,
+          "expect": "Y",
+          "actual": "Y",
+          "ok": true
+        }
+      ],
+      "modifications": [],
+      "mod_positions": [],
+      "mod_matches_sites": true,
+      "mapping_note": "人工引入位点；成熟 Tyr23 + 18(信号肽) = UniProt[41]=Y；UniProt 无天然磷酸化注释（阴性对照符合设计）",
+      "effect_type": "negative_control"
+    },
+    {
+      "job_group": "lyz_phos",
+      "uniprot": "P00698",
+      "gene": "lyz",
+      "state": "phos",
+      "seq_len_declared": 147,
+      "seq_len_actual": 147,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 41,
+          "expect": "Y",
+          "actual": "Y",
+          "ok": true
+        }
+      ],
+      "modifications": [
+        {
+          "ptmType": "CCD_PTR",
+          "ptmPosition": 41
+        }
+      ],
+      "mod_positions": [
+        41
+      ],
+      "mod_matches_sites": true,
+      "mapping_note": "人工引入位点；成熟 Tyr23 + 18(信号肽) = UniProt[41]=Y；UniProt 无天然磷酸化注释（阴性对照符合设计）",
+      "effect_type": "negative_control"
+    },
+    {
+      "job_group": "polr2a_unphos",
+      "uniprot": "P24928",
+      "gene": "polr2a",
+      "state": "unphos",
+      "seq_len_declared": 1970,
+      "seq_len_actual": 1970,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 1843,
+          "expect": "S",
+          "actual": "S",
+          "ok": true
+        },
+        {
+          "pos_uniprot": 1845,
+          "expect": "S",
+          "actual": "S",
+          "ok": true
+        }
+      ],
+      "modifications": [],
+      "mod_positions": [],
+      "mod_matches_sites": true,
+      "mapping_note": "benchmark Ser2/Ser5 是 CTD heptad 内相对编号；映射到 CTD 区已注释 pSer 1843/1845（YSPTSPS 第2/第5位）",
+      "effect_type": "disorder_order"
+    },
+    {
+      "job_group": "polr2a_phos",
+      "uniprot": "P24928",
+      "gene": "polr2a",
+      "state": "phos",
+      "seq_len_declared": 1970,
+      "seq_len_actual": 1970,
+      "len_ok": true,
+      "identical_to_uniprot_cache": true,
+      "seq_diff_note": "与本地 UniProt 缓存完全一致",
+      "sites": [
+        {
+          "pos_uniprot": 1843,
+          "expect": "S",
+          "actual": "S",
+          "ok": true
+        },
+        {
+          "pos_uniprot": 1845,
+          "expect": "S",
+          "actual": "S",
+          "ok": true
+        }
+      ],
+      "modifications": [
+        {
+          "ptmType": "CCD_SEP",
+          "ptmPosition": 1843
+        },
+        {
+          "ptmType": "CCD_SEP",
+          "ptmPosition": 1845
+        }
+      ],
+      "mod_positions": [
+        1843,
+        1845
+      ],
+      "mod_matches_sites": true,
+      "mapping_note": "benchmark Ser2/Ser5 是 CTD heptad 内相对编号；映射到 CTD 区已注释 pSer 1843/1845（YSPTSPS 第2/第5位）",
+      "effect_type": "disorder_order"
+    }
+  ],
+  "problems": []
+}

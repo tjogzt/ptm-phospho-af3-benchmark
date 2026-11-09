@@ -1,0 +1,56 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Johnson and Lewis(2001)]{johnson2001structural}
+Louise~N. Johnson and Richard~J. Lewis.
+\newblock Structural basis for control by phosphorylation.
+\newblock \emph{Chemical Reviews}, 101\penalty0 (8):\penalty0 2209--2242, 2001.
+\newblock \doi{10.1021/cr000225s}.
+
+\bibitem[Abramson et~al.(2024)Abramson, Adler, Dunger, Evans, Green, Pritzel, Ronneberger, Willmore, Ballard, Bambrick, et~al.]{abramson2024alphafold3}
+Josh Abramson, Jonas Adler, Jack Dunger, Richard Evans, Tim Green, Alexander Pritzel, Olaf Ronneberger, Lindsay Willmore, Andrew~J. Ballard, Joshua Bambrick, et~al.
+\newblock Accurate structure prediction of biomolecular interactions with {AlphaFold} 3.
+\newblock \emph{Nature}, 630\penalty0 (8016):\penalty0 493--500, 2024.
+\newblock \doi{10.1038/s41586-024-07487-w}.
+
+\bibitem[Nam(2026)]{nam2025alphafold3}
+Ki~Hyun Nam.
+\newblock Evaluation of {AlphaFold3} prediction for post-translational modification, oligomeric assembly, and quenchable metal binding of fluorescent proteins.
+\newblock \emph{Journal of Molecular Graphics and Modelling}, 142:\penalty0 109169, 2026.
+\newblock \doi{10.1016/j.jmgm.2025.109169}.
+
+\bibitem[Carugo(2023)]{carugo2023plddt}
+Oliviero Carugo.
+\newblock {pLDDT} values in {AlphaFold2} protein models are unrelated to globular protein local flexibility.
+\newblock \emph{Crystals}, 13\penalty0 (11):\penalty0 1560, 2023.
+\newblock \doi{10.3390/cryst13111560}.
+
+\bibitem[Akdel et~al.(2022)Akdel, Pires, Pardo, J{\"a}nes, Zalevsky, M{\'e}sz{\'a}ros, et~al.]{akdel2022structural}
+Mehmet Akdel, Douglas E.~V. Pires, Eduard~Porta Pardo, J{\"u}rgen J{\"a}nes, Arthur~O. Zalevsky, B{\'a}lint M{\'e}sz{\'a}ros, et~al.
+\newblock A structural biology community assessment of {AlphaFold2} applications.
+\newblock \emph{Nature Structural \& Molecular Biology}, 29\penalty0 (11):\penalty0 1056--1067, 2022.
+\newblock \doi{10.1038/s41594-022-00849-w}.
+
+\bibitem[Kabsch(1976)]{kabsch1976solution}
+Wolfgang Kabsch.
+\newblock A solution for the best rotation to relate two sets of vectors.
+\newblock \emph{Acta Crystallographica Section A}, 32\penalty0 (5):\penalty0 922--923, 1976.
+\newblock \doi{10.1107/S0567739476001873}.
+
+\bibitem[Hayward and Berendsen(1998)]{hayward1998systematic}
+Steven Hayward and Herman J.~C. Berendsen.
+\newblock Systematic analysis of domain motions in proteins from conformational change: New results on citrate synthase and t4 lysozyme.
+\newblock \emph{Proteins: Structure, Function, and Genetics}, 30\penalty0 (2):\penalty0 144--154, 1998.
+\newblock \doi{10.1002/(SICI)1097-0134(19980201)30:2<144::AID-PROT4>3.0.CO;2-N}.
+
+\bibitem[Lin et~al.(2023)Lin, Akin, Rao, Hie, Zhu, Lu, Smetanin, Verkuil, Kabeli, Shmueli, et~al.]{lin2023evolutionary}
+Zeming Lin, Halil Akin, Roshan Rao, Brian Hie, Zhongkai Zhu, Wenting Lu, Nikita Smetanin, Robert Verkuil, Ori Kabeli, Yaniv Shmueli, et~al.
+\newblock Evolutionary-scale prediction of atomic-level protein structure with a language model.
+\newblock \emph{Science}, 379\penalty0 (6637):\penalty0 1123--1130, 2023.
+\newblock \doi{10.1126/science.ade2574}.
+
+\end{thebibliography}

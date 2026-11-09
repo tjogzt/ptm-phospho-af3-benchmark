@@ -1,0 +1,766 @@
+{
+  "Glycogen_Phosphorylase": {
+    "uniprot": "P00489",
+    "sites": [
+      15
+    ],
+    "n_entries": 230,
+    "candidates": [
+      {
+        "pdb": "1C8K",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 1.76,
+        "title": "FLAVOPIRIDOL INHIBITS GLYCOGEN PHOSPHORYLASE BY BINDING AT THE INHIBITOR SITE",
+        "reason": ""
+      },
+      {
+        "pdb": "1H5U",
+        "usable": true,
+        "chain": "A",
+        "n_res": 811,
+        "range": [
+          13,
+          837
+        ],
+        "cov": 0.961,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 1.76,
+        "title": "THE 1.76 A RESOLUTION CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B COMPLEXED WITH GLUCOSE AND CP320626, A POT",
+        "reason": ""
+      },
+      {
+        "pdb": "1A8I",
+        "usable": true,
+        "chain": "A",
+        "n_res": 812,
+        "range": [
+          7,
+          835
+        ],
+        "cov": 0.962,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 1.78,
+        "title": "SPIROHYDANTOIN INHIBITOR OF GLYCOGEN PHOSPHORYLASE",
+        "reason": ""
+      },
+      {
+        "pdb": "1K06",
+        "usable": true,
+        "chain": "A",
+        "n_res": 807,
+        "range": [
+          13,
+          837
+        ],
+        "cov": 0.956,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 1.8,
+        "title": "CRYSTALLOGRAPHIC BINDING STUDY OF 100 MM N-BENZOYL-N'-BETA-D- GLUCOPYRANOSYL UREA TO GLYCOGEN PHOSPHORYLASE B",
+        "reason": ""
+      },
+      {
+        "pdb": "1P2D",
+        "usable": true,
+        "chain": "A",
+        "n_res": 810,
+        "range": [
+          12,
+          837
+        ],
+        "cov": 0.96,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 1.94,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH BETA CYCLODEXTRIN",
+        "reason": ""
+      },
+      {
+        "pdb": "1KTI",
+        "usable": true,
+        "chain": "A",
+        "n_res": 805,
+        "range": [
+          13,
+          836
+        ],
+        "cov": 0.954,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 1.97,
+        "title": "BINDING OF 100 MM N-ACETYL-N'-BETA-D-GLUCOPYRANOSYL UREA TO GLYCOGEN PHOSPHORYLASE B: KINETIC AND CRYSTALLOGRA",
+        "reason": ""
+      },
+      {
+        "pdb": "1B4D",
+        "usable": true,
+        "chain": "A",
+        "n_res": 804,
+        "range": [
+          13,
+          835
+        ],
+        "cov": 0.953,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.0,
+        "title": "AMIDOCARBAMATE INHIBITOR OF GLYCOGEN PHOSPHORYLASE",
+        "reason": ""
+      },
+      {
+        "pdb": "1P4J",
+        "usable": true,
+        "chain": "A",
+        "n_res": 810,
+        "range": [
+          12,
+          836
+        ],
+        "cov": 0.96,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.0,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH C-(1- HYDROXY-BETA-D-GLUCOPYRANOSYL)FORMAMIDE",
+        "reason": ""
+      },
+      {
+        "pdb": "1P4H",
+        "usable": true,
+        "chain": "A",
+        "n_res": 810,
+        "range": [
+          12,
+          836
+        ],
+        "cov": 0.96,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.06,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH C-(1- ACETAMIDO-ALPHA-D-GLUCOPYRANOSYL) FORMAMID",
+        "reason": ""
+      },
+      {
+        "pdb": "1P4G",
+        "usable": true,
+        "chain": "A",
+        "n_res": 810,
+        "range": [
+          12,
+          836
+        ],
+        "cov": 0.96,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.1,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH C-(1- AZIDO-ALPHA-D-GLUCOPYRANOSYL)FORMAMIDE",
+        "reason": ""
+      },
+      {
+        "pdb": "1P29",
+        "usable": true,
+        "chain": "A",
+        "n_res": 809,
+        "range": [
+          12,
+          836
+        ],
+        "cov": 0.958,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.2,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH MALTOPENTAOSE",
+        "reason": ""
+      },
+      {
+        "pdb": "1P2B",
+        "usable": true,
+        "chain": "A",
+        "n_res": 808,
+        "range": [
+          12,
+          836
+        ],
+        "cov": 0.957,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.2,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH MALTOHEPTAOSE",
+        "reason": ""
+      },
+      {
+        "pdb": "1E1Y",
+        "usable": true,
+        "chain": "A",
+        "n_res": 813,
+        "range": [
+          5,
+          838
+        ],
+        "cov": 0.964,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.23,
+        "title": "FLAVOPIRIDOL INHIBITS GLYCOGEN PHOSPHORYLASE BY BINDING AT THE INHIBITOR SITE",
+        "reason": ""
+      },
+      {
+        "pdb": "1HLF",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.26,
+        "title": "BINDING OF GLUCOPYRANOSYLIDENE-SPIRO-THIOHYDANTOIN TO GLYCOGEN PHOSPHORYLASE B: KINETIC AND CRYSTALLOGRAPHIC S",
+        "reason": ""
+      },
+      {
+        "pdb": "1K08",
+        "usable": true,
+        "chain": "A",
+        "n_res": 817,
+        "range": [
+          13,
+          837
+        ],
+        "cov": 0.968,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.26,
+        "title": "CRYSTALLOGRAPHIC BINDING STUDY OF 10 MM N-BENZOYL-N'-BETA-D- GLUCOPYRANOSYL UREA TO GLYCOGEN PHOSPHORYLASE B",
+        "reason": ""
+      },
+      {
+        "pdb": "1AXR",
+        "usable": true,
+        "chain": "A",
+        "n_res": 829,
+        "range": [
+          14,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.3,
+        "title": "COOPERATIVITY BETWEEN HYDROGEN-BONDING AND CHARGE-DIPOLE INTERACTIONS IN THE INHIBITION OF BETA-GLYCOSIDASES B",
+        "reason": ""
+      },
+      {
+        "pdb": "1BX3",
+        "usable": true,
+        "chain": "A",
+        "n_res": 801,
+        "range": [
+          13,
+          835
+        ],
+        "cov": 0.949,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.3,
+        "title": "EFFECTS OF COMMONLY USED CRYOPROTECTANTS ON GLYCOGEN PHOSPHORYLASE ACTIVITY AND STRUCTURE",
+        "reason": ""
+      },
+      {
+        "pdb": "1C50",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.3,
+        "title": "IDENTIFICATION AND STRUCTURAL CHARACTERIZATION OF A NOVEL ALLOSTERIC BINDING SITE OF GLYCOGEN PHOSPHORYLASE B",
+        "reason": ""
+      },
+      {
+        "pdb": "1GFZ",
+        "usable": true,
+        "chain": "A",
+        "n_res": 814,
+        "range": [
+          13,
+          837
+        ],
+        "cov": 0.964,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.3,
+        "title": "FLAVOPIRIDOL INHIBITS GLYCOGEN PHOSPHORYLASE BY BINDING AT THE INHIBITOR SITE",
+        "reason": ""
+      },
+      {
+        "pdb": "1P2G",
+        "usable": true,
+        "chain": "A",
+        "n_res": 808,
+        "range": [
+          12,
+          836
+        ],
+        "cov": 0.957,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.3,
+        "title": "CRYSTAL STRUCTURE OF GLYCOGEN PHOSPHORYLASE B IN COMPLEX WITH GAMMA CYCLODEXTRIN",
+        "reason": ""
+      },
+      {
+        "pdb": "1GG8",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.31,
+        "title": "DESIGN OF INHIBITORS OF GLYCOGEN PHOSPHORYLASE: A STUDY OF ALPHA-AND BETA-C-GLUCOSIDES AND 1-THIO-BETA-D-GLUCO",
+        "reason": ""
+      },
+      {
+        "pdb": "1FTQ",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.35,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1FU8",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.35,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1FTW",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.36,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1FU4",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.36,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1FU7",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.36,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1GGN",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.36,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1FS4",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.38,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1FTY",
+        "usable": true,
+        "chain": "A",
+        "n_res": 830,
+        "range": [
+          13,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.38,
+        "title": "STRUCTURES OF GLYCOGEN PHOSPHORYLASE-INHIBITOR COMPLEXES AND THE IMPLICATIONS FOR STRUCTURE-BASED DRUG DESIGN",
+        "reason": ""
+      },
+      {
+        "pdb": "1GPY",
+        "usable": true,
+        "chain": "A",
+        "n_res": 828,
+        "range": [
+          14,
+          841
+        ],
+        "cov": 0.982,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.4,
+        "title": "CRYSTALLOGRAPHIC BINDING STUDIES ON THE ALLOSTERIC INHIBITOR GLUCOSE- 6-PHOSPHATE TO T STATE GLYCOGEN PHOSPHOR",
+        "reason": ""
+      },
+      {
+        "pdb": "1NOJ",
+        "usable": true,
+        "chain": "A",
+        "n_res": 831,
+        "range": [
+          12,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.4,
+        "title": "COMPLEX OF GLYCOGEN PHOSPHORYLASE WITH A TRANSITION STATE ANALOGUE NOJIRIMYCIN TETRAZOLE AND PHOSPHATE IN THE ",
+        "reason": ""
+      },
+      {
+        "pdb": "1NOK",
+        "usable": true,
+        "chain": "A",
+        "n_res": 831,
+        "range": [
+          12,
+          842
+        ],
+        "cov": 0.983,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.4,
+        "title": "COMPLEX OF GLYCOGEN PHOSPHORYLASE WITH A TRANSITION STATE ANALOGUE NOJIRIMYCIN TETRAZOLE AND PHOSPHATE IN THE ",
+        "reason": ""
+      },
+      {
+        "pdb": "1NOI",
+        "usable": true,
+        "chain": "D",
+        "n_res": 823,
+        "range": [
+          10,
+          837
+        ],
+        "cov": 0.974,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.5,
+        "title": "COMPLEX OF GLYCOGEN PHOSPHORYLASE WITH A TRANSITION STATE ANALOGUE NOJIRIMYCIN TETRAZOLE AND PHOSPHATE IN THE ",
+        "reason": ""
+      },
+      {
+        "pdb": "1ABB",
+        "usable": true,
+        "chain": "D",
+        "n_res": 823,
+        "range": [
+          10,
+          837
+        ],
+        "cov": 0.975,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.8,
+        "title": "CONTROL OF PHOSPHORYLASE B CONFORMATION BY A MODIFIED COFACTOR: CRYSTALLOGRAPHIC STUDIES ON R-STATE GLYCOGEN P",
+        "reason": ""
+      },
+      {
+        "pdb": "1PYG",
+        "usable": true,
+        "chain": "D",
+        "n_res": 801,
+        "range": [
+          10,
+          836
+        ],
+        "cov": 0.95,
+        "sites_covered": [
+          15
+        ],
+        "sites_missing": [],
+        "resolution": 2.87,
+        "title": "STRUCTURAL BASIS FOR THE ACTIVATION OF GLYCOGEN PHOSPHORYLASE B BY ADENOSINE MONOPHOSPHATE",
+        "reason": ""
+      }
+    ]
+  },
+  "c-Src_kinase": {
+    "uniprot": "P12931",
+    "sites": [
+      419
+    ],
+    "n_entries": 78,
+    "candidates": [
+      {
+        "pdb": "1Y57",
+        "usable": true,
+        "chain": "A",
+        "n_res": 452,
+        "range": [
+          82,
+          533
+        ],
+        "cov": 0.843,
+        "sites_covered": [
+          419
+        ],
+        "sites_missing": [],
+        "resolution": 1.91,
+        "title": "STRUCTURE OF UNPHOSPHORYLATED C-SRC IN COMPLEX WITH AN INHIBITOR",
+        "reason": ""
+      }
+    ]
+  },
+  "AMPK_alpha2": {
+    "uniprot": "P54646",
+    "sites": [
+      172
+    ],
+    "n_entries": 15,
+    "candidates": [
+      {
+        "pdb": "2H6D",
+        "usable": true,
+        "chain": "A",
+        "n_res": 256,
+        "range": [
+          10,
+          278
+        ],
+        "cov": 0.464,
+        "sites_covered": [
+          172
+        ],
+        "sites_missing": [],
+        "resolution": 1.85,
+        "title": "PROTEIN KINASE DOMAIN OF THE HUMAN 5'-AMP-ACTIVATED PROTEIN KINASE CATALYTIC SUBUNIT ALPHA-2 (AMPK ALPHA-2 CHA",
+        "reason": ""
+      },
+      {
+        "pdb": "3AQV",
+        "usable": true,
+        "chain": "A",
+        "n_res": 267,
+        "range": [
+          7,
+          279
+        ],
+        "cov": 0.484,
+        "sites_covered": [
+          172
+        ],
+        "sites_missing": [],
+        "resolution": 2.08,
+        "title": "HUMAN AMP-ACTIVATED PROTEIN KINASE ALPHA 2 SUBUNIT KINASE DOMAIN (T172D) COMPLEXED WITH COMPOUND C",
+        "reason": ""
+      },
+      {
+        "pdb": "6BX6",
+        "usable": true,
+        "chain": "A",
+        "n_res": 243,
+        "range": [
+          13,
+          277
+        ],
+        "cov": 0.44,
+        "sites_covered": [
+          172
+        ],
+        "sites_missing": [],
+        "resolution": 2.9,
+        "title": "AMP-ACTIVATED PROTEIN KINASE (AMPK) INHIBITION BY SBI-0206965: ALPHA 2 KINASE DOMAIN BOUND TO SBI-0206965",
+        "reason": ""
+      },
+      {
+        "pdb": "2YZA",
+        "usable": true,
+        "chain": "A",
+        "n_res": 258,
+        "range": [
+          10,
+          278
+        ],
+        "cov": 0.467,
+        "sites_covered": [
+          172
+        ],
+        "sites_missing": [],
+        "resolution": 3.02,
+        "title": "CRYSTAL STRUCTURE OF KINASE DOMAIN OF HUMAN 5'-AMP-ACTIVATED PROTEIN KINASE ALPHA-2 SUBUNIT MUTANT (T172D)",
+        "reason": ""
+      }
+    ]
+  },
+  "PKA_Calpha": {
+    "uniprot": "P17612",
+    "sites": [
+      198
+    ],
+    "n_entries": 54,
+    "candidates": []
+  },
+  "CTD_kinase": {
+    "uniprot": "P24928",
+    "sites": [
+      1614,
+      1621
+    ],
+    "n_entries": 58,
+    "candidates": []
+  }
+}

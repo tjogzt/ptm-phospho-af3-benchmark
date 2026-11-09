@@ -1,0 +1,246 @@
+{
+  "MAPK3": {
+    "acc": "P27361",
+    "sites": [
+      202,
+      204
+    ],
+    "composition": [
+      "P27361"
+    ],
+    "n": 1,
+    "phos": [
+      {
+        "pdb": "2ZOQ",
+        "res": 2.39,
+        "sites": [
+          204
+        ]
+      }
+    ],
+    "unphos": [
+      {
+        "pdb": "4QTB",
+        "res": 1.4
+      },
+      {
+        "pdb": "6GES",
+        "res": 2.07
+      }
+    ]
+  },
+  "GSK3B": {
+    "acc": "P49841",
+    "sites": [
+      216
+    ],
+    "composition": [
+      "P49841"
+    ],
+    "n": 1,
+    "phos": [
+      {
+        "pdb": "6Y9S",
+        "res": 2.03,
+        "sites": [
+          216
+        ]
+      },
+      {
+        "pdb": "7B6F",
+        "res": 2.05,
+        "sites": [
+          216
+        ]
+      },
+      {
+        "pdb": "6Y9R",
+        "res": 2.08,
+        "sites": [
+          216
+        ]
+      }
+    ],
+    "unphos": [
+      {
+        "pdb": "1J1B",
+        "res": 1.8
+      },
+      {
+        "pdb": "1Q5K",
+        "res": 1.94
+      },
+      {
+        "pdb": "4PTE",
+        "res": 2.033
+      }
+    ]
+  },
+  "PAK1": {
+    "acc": "Q13153",
+    "sites": [
+      423
+    ],
+    "composition": [
+      "Q13153"
+    ],
+    "n": 1,
+    "phos": [
+      {
+        "pdb": "3FXZ",
+        "res": 1.64,
+        "sites": [
+          423
+        ]
+      },
+      {
+        "pdb": "8X5Z",
+        "res": 1.8,
+        "sites": [
+          423
+        ]
+      },
+      {
+        "pdb": "3Q52",
+        "res": 1.801,
+        "sites": [
+          423
+        ]
+      }
+    ],
+    "unphos": [
+      {
+        "pdb": "1YHW",
+        "res": 1.8
+      },
+      {
+        "pdb": "1YHV",
+        "res": 1.8
+      },
+      {
+        "pdb": "3Q4Z",
+        "res": 1.887
+      }
+    ]
+  },
+  "AKT1": {
+    "acc": "P31749",
+    "sites": [
+      308,
+      473
+    ],
+    "composition": [
+      "P31749"
+    ],
+    "n": 1,
+    "phos": [
+      {
+        "pdb": "4GV1",
+        "res": 1.49,
+        "sites": [
+          308
+        ]
+      },
+      {
+        "pdb": "4EKL",
+        "res": 2.0,
+        "sites": [
+          308
+        ]
+      },
+      {
+        "pdb": "3MVH",
+        "res": 2.01,
+        "sites": [
+          308
+        ]
+      }
+    ],
+    "unphos": [
+      {
+        "pdb": "1UNQ",
+        "res": 0.98
+      },
+      {
+        "pdb": "1UNR",
+        "res": 1.25
+      },
+      {
+        "pdb": "7MYX",
+        "res": 1.39
+      }
+    ]
+  },
+  "TBK1": {
+    "acc": "Q9UHD2",
+    "sites": [
+      172
+    ],
+    "composition": [
+      "Q9UHD2"
+    ],
+    "n": 1,
+    "phos": [
+      {
+        "pdb": "4EUU",
+        "res": 1.8,
+        "sites": [
+          172
+        ]
+      },
+      {
+        "pdb": "4IW0",
+        "res": 4.0,
+        "sites": [
+          172
+        ]
+      }
+    ],
+    "unphos": [
+      {
+        "pdb": "4EFO",
+        "res": 1.769
+      },
+      {
+        "pdb": "4IM0",
+        "res": 2.4001
+      },
+      {
+        "pdb": "4IM2",
+        "res": 2.5001
+      }
+    ]
+  },
+  "IKBKB": {
+    "acc": "O14920",
+    "sites": [
+      177,
+      181
+    ],
+    "composition": [
+      "O14920"
+    ],
+    "n": 1,
+    "phos": [
+      {
+        "pdb": "4KIK",
+        "res": 2.83,
+        "sites": [
+          177,
+          181,
+          257
+        ]
+      }
+    ],
+    "unphos": [
+      {
+        "pdb": "4E3C",
+        "res": 3.98
+      },
+      {
+        "pdb": "8OMV",
+        "res": 4.16
+      }
+    ]
+  }
+}

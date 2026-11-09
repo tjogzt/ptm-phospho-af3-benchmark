@@ -1,0 +1,1375 @@
+{
+  "frozen_at": "2026-11-08T23:07:50+08:00",
+  "source": {
+    "dataset": "data/benchmark_dataset.py",
+    "dataset_sha256": "947f20a070d0ecd7",
+    "audit": "audit/pair_audit.json",
+    "audit_sha256": "ab3b64cbbddd73a0",
+    "af3_models": "results/af3/models/v2"
+  },
+  "criteria": {
+    "min_coverage": 0.5,
+    "min_overlap": 20,
+    "P1": "identity HIT",
+    "P2": "phos has SEP/TPO/PTR",
+    "P3": "coverage >= 0.5 both states",
+    "P4": "overlap >= 20 residues and covers target site",
+    "P5": "identical chain composition"
+  },
+  "cohorts": {
+    "primary": [
+      "AKT1",
+      "AMPK_alpha2",
+      "Aurora_A",
+      "CDK1",
+      "CDK2",
+      "CDK7",
+      "ERK2",
+      "GSK3B",
+      "Glycogen_Phosphorylase",
+      "IKBKB",
+      "IRF3",
+      "P38alpha",
+      "PAK1",
+      "TBK1",
+      "c-Src_kinase"
+    ],
+    "pure": [
+      "AKT1",
+      "Aurora_A",
+      "CDK2",
+      "ERK2",
+      "GSK3B",
+      "Glycogen_Phosphorylase",
+      "P38alpha",
+      "PAK1",
+      "c-Src_kinase"
+    ],
+    "single": [
+      "CTD_kinase",
+      "PKA_Calpha"
+    ],
+    "fail": [
+      "AMPK_alpha2",
+      "TBK1"
+    ],
+    "removed": [
+      "CFTR_R_domain",
+      "CheY",
+      "Hsp27",
+      "Lysozyme",
+      "PhK_gamma",
+      "Ubiquitin"
+    ]
+  },
+  "counts": {
+    "benchmark_total": 18,
+    "paired": 16,
+    "single": 2,
+    "af3_paired_available": 15,
+    "primary_cohort": 15,
+    "pure_pass": 12,
+    "pure_cohort": 9,
+    "warn": 4,
+    "fail": 2,
+    "removed": 6
+  },
+  "proteins": [
+    {
+      "key": "CDK2",
+      "gene": "CDK2",
+      "uniprot": "P24941",
+      "description": "Cyclin-dependent kinase 2",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr160"
+      ],
+      "sites_uniprot": [
+        160
+      ],
+      "paired": true,
+      "unphos_pdb": "2C5N",
+      "phos_pdb": "1H1R",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "2C5N",
+        "chain": "A",
+        "title": "DIFFERENTIAL BINDING OF INHIBITORS TO ACTIVE AND INACTIVE CDK2 PROVIDES INSIGHTS FOR DRUG DESIGN",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.993,
+        "c3_range": "1..296"
+      },
+      "phos_detail": {
+        "pdb": "1H1R",
+        "chain": "A",
+        "title": "STRUCTURE OF HUMAN THR160-PHOSPHO CDK2/CYCLIN A COMPLEXED WITH THE INHIBITOR NU6086",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "160": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.993,
+        "c3_range": "0..296"
+      },
+      "c4_overlap_residues": 296,
+      "c4_sites_in_phos": [
+        160
+      ],
+      "c4_sites_in_unphos": [
+        160
+      ],
+      "c5_chains_unphos": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "ERK2",
+      "gene": "MAPK1",
+      "uniprot": "P28482",
+      "description": "Mitogen-activated protein kinase 1",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO_PTR",
+      "sites_label": [
+        "Thr185",
+        "Tyr187"
+      ],
+      "sites_uniprot": [
+        185,
+        187
+      ],
+      "paired": true,
+      "unphos_pdb": "1ERK",
+      "phos_pdb": "2ERK",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "1ERK",
+        "chain": "A",
+        "title": "STRUCTURE OF SIGNAL-REGULATED KINASE",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.989,
+        "c3_range": "2..358"
+      },
+      "phos_detail": {
+        "pdb": "2ERK",
+        "chain": "A",
+        "title": "PHOSPHORYLATED MAP KINASE ERK2",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "183": "TPO",
+          "185": "PTR"
+        },
+        "c3_cov_vs_uniprot": 0.978,
+        "c3_range": "6..358"
+      },
+      "c4_overlap_residues": 353,
+      "c4_sites_in_phos": [
+        185,
+        187
+      ],
+      "c4_sites_in_unphos": [
+        185,
+        187
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "Aurora_A",
+      "gene": "AURKA",
+      "uniprot": "O14965",
+      "description": "Aurora kinase A",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr288"
+      ],
+      "sites_uniprot": [
+        288
+      ],
+      "paired": true,
+      "unphos_pdb": "4J8M",
+      "phos_pdb": "5DNR",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "4J8M",
+        "chain": "A",
+        "title": "AURORA A IN COMPLEX WITH CD532",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.655,
+        "c3_range": "125..390"
+      },
+      "phos_detail": {
+        "pdb": "5DNR",
+        "chain": "A",
+        "title": "AURORA A KINASE IN COMPLEX WITH ATP IN SPACE GROUP P41212",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "288": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.658,
+        "c3_range": "126..390"
+      },
+      "c4_overlap_residues": 265,
+      "c4_sites_in_phos": [
+        288
+      ],
+      "c4_sites_in_unphos": [
+        288
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "IRF3",
+      "gene": "IRF3",
+      "uniprot": "Q14653",
+      "description": "Interferon regulatory factor 3",
+      "effect_type": "allosteric",
+      "phos_type": "SEP",
+      "sites_label": [
+        "Ser386",
+        "Ser402"
+      ],
+      "sites_uniprot": [
+        386,
+        402
+      ],
+      "paired": true,
+      "unphos_pdb": "1QWT",
+      "phos_pdb": "3A77",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "1QWT",
+        "chain": "A",
+        "title": "AUTO-INHIBITORY INTERFERON REGULATION FACTOR-3 (IRF3) TRANSACTIVATION DOMAIN",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.56,
+        "c3_range": "189..427"
+      },
+      "phos_detail": {
+        "pdb": "3A77",
+        "chain": "A",
+        "title": "THE CRYSTAL STRUCTURE OF PHOSPHORYLATED IRF-3",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "386": "SEP",
+          "402": "SEP"
+        },
+        "c3_cov_vs_uniprot": 0.543,
+        "c3_range": "189..427"
+      },
+      "c4_overlap_residues": 239,
+      "c4_sites_in_phos": [
+        386,
+        402
+      ],
+      "c4_sites_in_unphos": [
+        386,
+        402
+      ],
+      "c5_chains_unphos": [
+        "A",
+        "B"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": false
+      },
+      "verdict": "WARN",
+      "in_primary_cohort": true,
+      "pure_pair": false,
+      "exclusion_reason": null
+    },
+    {
+      "key": "P38alpha",
+      "gene": "MAPK14",
+      "uniprot": "Q16539",
+      "description": "p38 MAP kinase alpha",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO_PTR",
+      "sites_label": [
+        "Thr180",
+        "Tyr182"
+      ],
+      "sites_uniprot": [
+        180,
+        182
+      ],
+      "paired": true,
+      "unphos_pdb": "1WFC",
+      "phos_pdb": "3PY3",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "1WFC",
+        "chain": "A",
+        "title": "STRUCTURE OF APO, UNPHOSPHORYLATED, P38 MITOGEN ACTIVATED PROTEIN KINASE P38 (P38 MAP KINASE) THE MAMMALIAN HO",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.944,
+        "c3_range": "5..351"
+      },
+      "phos_detail": {
+        "pdb": "3PY3",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF PHOSPHORYLATED P38ALPHA MAP KINASE",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "180": "TPO",
+          "182": "PTR"
+        },
+        "c3_cov_vs_uniprot": 0.978,
+        "c3_range": "-2..354"
+      },
+      "c4_overlap_residues": 347,
+      "c4_sites_in_phos": [
+        180,
+        182
+      ],
+      "c4_sites_in_unphos": [
+        180,
+        182
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "CDK7",
+      "gene": "CDK7",
+      "uniprot": "P50613",
+      "description": "Cyclin-dependent kinase 7",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr170"
+      ],
+      "sites_uniprot": [
+        170
+      ],
+      "paired": true,
+      "unphos_pdb": "8P79",
+      "phos_pdb": "8PYR",
+      "unphos_chain": "J",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "8P79",
+        "chain": "J",
+        "title": "CRYO-EM STRUCTURE OF CAK WITH AVERAGED INHIBITOR DENSITY",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.827,
+        "c3_range": "10..310"
+      },
+      "phos_detail": {
+        "pdb": "8PYR",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF THE DUAL T-LOOP PHOSPHORYLATED CDK7/CYCH/MAT1 COMPLEX",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "164": "SEP",
+          "170": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.769,
+        "c3_range": "46..311"
+      },
+      "c4_overlap_residues": 265,
+      "c4_sites_in_phos": [
+        170
+      ],
+      "c4_sites_in_unphos": [
+        170
+      ],
+      "c5_chains_unphos": [
+        "H",
+        "I",
+        "J"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": false
+      },
+      "verdict": "WARN",
+      "in_primary_cohort": true,
+      "pure_pair": false,
+      "exclusion_reason": null
+    },
+    {
+      "key": "c-Src_kinase",
+      "gene": "SRC",
+      "uniprot": "P12931",
+      "description": "Proto-oncogene tyrosine-protein kinase Src",
+      "effect_type": "allosteric",
+      "phos_type": "PTR",
+      "sites_label": [
+        "Tyr419"
+      ],
+      "sites_uniprot": [
+        419
+      ],
+      "paired": true,
+      "unphos_pdb": "7NG7",
+      "phos_pdb": "9NS0",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "7NG7",
+        "chain": "A",
+        "title": "SRC KINASE BOUND TO ECF506 TRAPPED IN INACTIVE CONFORMATION",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.511,
+        "c3_range": "260..536"
+      },
+      "phos_detail": {
+        "pdb": "9NS0",
+        "chain": "A",
+        "title": "GROUND STATE OF SRC KINASE DOMAIN",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "419": "PTR"
+        },
+        "c3_cov_vs_uniprot": 0.534,
+        "c3_range": "251..536"
+      },
+      "c4_overlap_residues": 277,
+      "c4_sites_in_phos": [
+        419
+      ],
+      "c4_sites_in_unphos": [
+        419
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "AMPK_alpha2",
+      "gene": "PRKAA2",
+      "uniprot": "P54646",
+      "description": "AMP-activated protein kinase alpha-2",
+      "effect_type": "allosteric",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr172"
+      ],
+      "sites_uniprot": [
+        172
+      ],
+      "paired": true,
+      "unphos_pdb": "2H6D",
+      "phos_pdb": "6B1U",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "2H6D",
+        "chain": "A",
+        "title": "PROTEIN KINASE DOMAIN OF THE HUMAN 5'-AMP-ACTIVATED PROTEIN KINASE CATALYTIC SUBUNIT ALPHA-2 (AMPK ALPHA-2 CHA",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.464,
+        "c3_range": "10..278"
+      },
+      "phos_detail": {
+        "pdb": "6B1U",
+        "chain": "A",
+        "title": "STRUCTURE OF FULL-LENGTH HUMAN AMPK (A2B1G1) IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR SC4",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "172": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.799,
+        "c3_range": "8..544"
+      },
+      "c4_overlap_residues": 269,
+      "c4_sites_in_phos": [
+        172
+      ],
+      "c4_sites_in_unphos": [
+        172
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": false,
+        "P4_overlap": true,
+        "P5_composition": false
+      },
+      "verdict": "FAIL",
+      "in_primary_cohort": true,
+      "pure_pair": false,
+      "exclusion_reason": null
+    },
+    {
+      "key": "PKA_Calpha",
+      "gene": "PRKACA",
+      "uniprot": "P17612",
+      "description": "cAMP-dependent protein kinase catalytic subunit alpha",
+      "effect_type": "allosteric",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr198"
+      ],
+      "sites_uniprot": [
+        198
+      ],
+      "paired": false,
+      "unphos_pdb": null,
+      "phos_pdb": "6QJ7",
+      "unphos_chain": null,
+      "phos_chain": "A",
+      "unphos_detail": null,
+      "phos_detail": {
+        "pdb": "6QJ7",
+        "chain": "A",
+        "title": "DIFLUOROPHENYL DIACYLHYDRAZIDES: POTENT INHIBITORS OF SERUM- AND GLUCOCORTICOID-INDUCIBLE KINASE 1 (SGK1)",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "197": "TPO",
+          "338": "SEP"
+        },
+        "c3_cov_vs_uniprot": 0.963,
+        "c3_range": "13..350"
+      },
+      "c4_overlap_residues": null,
+      "c4_sites_in_phos": [],
+      "c4_sites_in_unphos": [],
+      "c5_chains_unphos": null,
+      "c5_chains_phos": null,
+      "af3_models": {
+        "phos": 5,
+        "unphos": 0
+      },
+      "af3_available": false,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": false,
+        "P5_composition": false
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": false,
+      "pure_pair": false,
+      "exclusion_reason": "single_state: 仅有 phos 实验结构"
+    },
+    {
+      "key": "CTD_kinase",
+      "gene": "POLR2A",
+      "uniprot": "P24928",
+      "description": "RNA polymerase II CTD (phosphorylated peptide)",
+      "effect_type": "disorder_order",
+      "phos_type": "SEP",
+      "sites_label": [
+        "Ser1614",
+        "Ser1621"
+      ],
+      "sites_uniprot": [
+        1614,
+        1621
+      ],
+      "paired": false,
+      "unphos_pdb": null,
+      "phos_pdb": "4JXT",
+      "unphos_chain": null,
+      "phos_chain": "B",
+      "unphos_detail": null,
+      "phos_detail": {
+        "pdb": "4JXT",
+        "chain": "B",
+        "title": "CID OF HUMAN RPRD1A IN COMPLEX WITH A PHOSPHORYLATED PEPTIDE FROM RPB1-CTD",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "1621": "SEP",
+          "1628": "SEP"
+        },
+        "c3_cov_vs_uniprot": 0.006,
+        "c3_range": "1620..1630"
+      },
+      "c4_overlap_residues": null,
+      "c4_sites_in_phos": [],
+      "c4_sites_in_unphos": [],
+      "c5_chains_unphos": null,
+      "c5_chains_phos": null,
+      "af3_models": {
+        "phos": 5,
+        "unphos": 0
+      },
+      "af3_available": false,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": false,
+        "P4_overlap": false,
+        "P5_composition": false
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": false,
+      "pure_pair": false,
+      "exclusion_reason": "single_state: 仅有 phos 实验结构"
+    },
+    {
+      "key": "Glycogen_Phosphorylase",
+      "gene": "PYGM",
+      "uniprot": "P00489",
+      "description": "Glycogen phosphorylase, muscle form",
+      "effect_type": "disorder_order",
+      "phos_type": "SEP",
+      "sites_label": [
+        "Ser15"
+      ],
+      "sites_uniprot": [
+        15
+      ],
+      "paired": true,
+      "unphos_pdb": "2GJ4",
+      "phos_pdb": "1LWO",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "2GJ4",
+        "chain": "A",
+        "title": "STRUCTURE OF RABBIT MUSCLE GLYCOGEN PHOSPHORYLASE IN COMPLEX WITH LIGAND",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.953,
+        "c3_range": "12..835"
+      },
+      "phos_detail": {
+        "pdb": "1LWO",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF RABBIT MUSCLE GLYCOGEN PHOSPHORYLASE A IN COMPLEX WITH A POTENTIAL HYPOGLYCAEMIC DRUG AT ",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "14": "SEP"
+        },
+        "c3_cov_vs_uniprot": 0.967,
+        "c3_range": "5..838"
+      },
+      "c4_overlap_residues": 824,
+      "c4_sites_in_phos": [
+        15
+      ],
+      "c4_sites_in_unphos": [
+        15
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "CDK1",
+      "gene": "CDK1",
+      "uniprot": "P06493",
+      "description": "Cyclin-dependent kinase 1",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr161"
+      ],
+      "sites_uniprot": [
+        161
+      ],
+      "paired": true,
+      "unphos_pdb": "4YC3",
+      "phos_pdb": "9SKQ",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "4YC3",
+        "chain": "A",
+        "title": "CDK1/CYCLINB1/CKS2 APO",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.99,
+        "c3_range": "0..297"
+      },
+      "phos_detail": {
+        "pdb": "9SKQ",
+        "chain": "A",
+        "title": "CRYO-EM STRUCTURE OF CAK-CDK1-CYCLIN B1",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "161": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.963,
+        "c3_range": "3..288"
+      },
+      "c4_overlap_residues": 286,
+      "c4_sites_in_phos": [
+        161
+      ],
+      "c4_sites_in_unphos": [
+        161
+      ],
+      "c5_chains_unphos": [
+        "A",
+        "B",
+        "C"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B",
+        "H",
+        "I",
+        "J"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": false
+      },
+      "verdict": "WARN",
+      "in_primary_cohort": true,
+      "pure_pair": false,
+      "exclusion_reason": null
+    },
+    {
+      "key": "ERK1",
+      "gene": "MAPK3",
+      "uniprot": "P27361",
+      "description": "Mitogen-activated protein kinase 3 (ERK1)",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO_PTR",
+      "sites_label": [
+        "Thr202",
+        "Tyr204"
+      ],
+      "sites_uniprot": [
+        202,
+        204
+      ],
+      "paired": true,
+      "unphos_pdb": "4QTB",
+      "phos_pdb": "2ZOQ",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "4QTB",
+        "chain": "A",
+        "title": "STRUCTURE OF HUMAN ERK1 IN COMPLEX WITH SCH772984 REVEALING A NOVEL INHIBITOR-INDUCED BINDING POCKET",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.926,
+        "c3_range": "24..374"
+      },
+      "phos_detail": {
+        "pdb": "2ZOQ",
+        "chain": "A",
+        "title": "STRUCTURAL DISSECTION OF HUMAN MITOGEN-ACTIVATED KINASE ERK1",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "204": "PTR"
+        },
+        "c3_cov_vs_uniprot": 0.929,
+        "c3_range": "24..375"
+      },
+      "c4_overlap_residues": 351,
+      "c4_sites_in_phos": [
+        202,
+        204
+      ],
+      "c4_sites_in_unphos": [
+        202,
+        204
+      ],
+      "c5_chains_unphos": [
+        "A",
+        "B"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B"
+      ],
+      "af3_models": {
+        "phos": 0,
+        "unphos": 0
+      },
+      "af3_available": false,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": false,
+      "pure_pair": false,
+      "exclusion_reason": "af3_missing: AF3 模型缺失（phos=0, unphos=0）"
+    },
+    {
+      "key": "GSK3B",
+      "gene": "GSK3B",
+      "uniprot": "P49841",
+      "description": "Glycogen synthase kinase-3 beta",
+      "effect_type": "local_rearrangement",
+      "phos_type": "PTR",
+      "sites_label": [
+        "Tyr216"
+      ],
+      "sites_uniprot": [
+        216
+      ],
+      "paired": true,
+      "unphos_pdb": "1J1B",
+      "phos_pdb": "6Y9S",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "1J1B",
+        "chain": "A",
+        "title": "BINARY COMPLEX STRUCTURE OF HUMAN TAU PROTEIN KINASE I WITH AMPPNP",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.843,
+        "c3_range": "35..388"
+      },
+      "phos_detail": {
+        "pdb": "6Y9S",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF GSK-3B IN COMPLEX WITH THE IMIDAZO[1,5- A]PYRIDINE-3-CARBOXAMIDE INHIBITOR 16",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "216": "PTR"
+        },
+        "c3_cov_vs_uniprot": 0.819,
+        "c3_range": "35..383"
+      },
+      "c4_overlap_residues": 349,
+      "c4_sites_in_phos": [
+        216
+      ],
+      "c4_sites_in_unphos": [
+        216
+      ],
+      "c5_chains_unphos": [
+        "A",
+        "B"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "PAK1",
+      "gene": "PAK1",
+      "uniprot": "Q13153",
+      "description": "Serine/threonine-protein kinase PAK 1",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr423"
+      ],
+      "sites_uniprot": [
+        423
+      ],
+      "paired": true,
+      "unphos_pdb": "1YHW",
+      "phos_pdb": "3FXZ",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "1YHW",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF PAK1 KINASE DOMAIN WITH ONE POINT MUTATIONS (K299R)",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.534,
+        "c3_range": "249..541"
+      },
+      "phos_detail": {
+        "pdb": "3FXZ",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF PAK1 KINASE DOMAIN WITH RUTHENIUM COMPLEX LAMBDA- FL172",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "423": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.536,
+        "c3_range": "249..541"
+      },
+      "c4_overlap_residues": 293,
+      "c4_sites_in_phos": [
+        423
+      ],
+      "c4_sites_in_unphos": [
+        423
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "AKT1",
+      "gene": "AKT1",
+      "uniprot": "P31749",
+      "description": "RAC-alpha serine/threonine-protein kinase",
+      "effect_type": "local_rearrangement",
+      "phos_type": "TPO",
+      "sites_label": [
+        "Thr308"
+      ],
+      "sites_uniprot": [
+        308
+      ],
+      "paired": true,
+      "unphos_pdb": "3O96",
+      "phos_pdb": "4GV1",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "3O96",
+        "chain": "A",
+        "title": "CRYSTAL STRUCTURE OF HUMAN AKT1 WITH AN ALLOSTERIC INHIBITOR",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.765,
+        "c3_range": "2..429"
+      },
+      "phos_detail": {
+        "pdb": "4GV1",
+        "chain": "A",
+        "title": "PKB ALPHA IN COMPLEX WITH AZD5363",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "308": "TPO"
+        },
+        "c3_cov_vs_uniprot": 0.685,
+        "c3_range": "143..477"
+      },
+      "c4_overlap_residues": 287,
+      "c4_sites_in_phos": [
+        308
+      ],
+      "c4_sites_in_unphos": [
+        308
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": true
+      },
+      "verdict": "PASS",
+      "in_primary_cohort": true,
+      "pure_pair": true,
+      "exclusion_reason": null
+    },
+    {
+      "key": "TBK1",
+      "gene": "TBK1",
+      "uniprot": "Q9UHD2",
+      "description": "TANK-binding kinase 1",
+      "effect_type": "local_rearrangement",
+      "phos_type": "SEP",
+      "sites_label": [
+        "Ser172"
+      ],
+      "sites_uniprot": [
+        172
+      ],
+      "paired": true,
+      "unphos_pdb": "4IM0",
+      "phos_pdb": "4EUU",
+      "unphos_chain": "A",
+      "phos_chain": "A",
+      "unphos_detail": {
+        "pdb": "4IM0",
+        "chain": "A",
+        "title": "STRUCTURE OF TANK-BINDING KINASE 1",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.845,
+        "c3_range": "-1..657"
+      },
+      "phos_detail": {
+        "pdb": "4EUU",
+        "chain": "A",
+        "title": "STRUCTURE OF BX-795 COMPLEXED WITH HUMAN TBK1 KINASE DOMAIN PHOSPHORYLATED ON SER172",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "172": "SEP"
+        },
+        "c3_cov_vs_uniprot": 0.418,
+        "c3_range": "0..307"
+      },
+      "c4_overlap_residues": 308,
+      "c4_sites_in_phos": [
+        172
+      ],
+      "c4_sites_in_unphos": [
+        172
+      ],
+      "c5_chains_unphos": [
+        "A"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": false,
+        "P4_overlap": true,
+        "P5_composition": false
+      },
+      "verdict": "FAIL",
+      "in_primary_cohort": true,
+      "pure_pair": false,
+      "exclusion_reason": null
+    },
+    {
+      "key": "IKBKB",
+      "gene": "IKBKB",
+      "uniprot": "O14920",
+      "description": "Inhibitor of nuclear factor kappa-B kinase subunit beta",
+      "effect_type": "local_rearrangement",
+      "phos_type": "SEP",
+      "sites_label": [
+        "Ser177",
+        "Ser181"
+      ],
+      "sites_uniprot": [
+        177,
+        181
+      ],
+      "paired": true,
+      "unphos_pdb": "4E3C",
+      "phos_pdb": "4KIK",
+      "unphos_chain": "B",
+      "phos_chain": "B",
+      "unphos_detail": {
+        "pdb": "4E3C",
+        "chain": "B",
+        "title": "X-RAY CRYSTAL STRUCTURE OF HUMAN IKK2 IN AN ACTIVE CONFORMATION",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": false,
+        "c2_modres_chain": {},
+        "c3_cov_vs_uniprot": 0.833,
+        "c3_range": "16..665"
+      },
+      "phos_detail": {
+        "pdb": "4KIK",
+        "chain": "B",
+        "title": "HUMAN IKB KINASE BETA",
+        "c1_identity": "HIT",
+        "c2_has_real_phos": true,
+        "c2_modres_chain": {
+          "177": "SEP",
+          "181": "SEP"
+        },
+        "c3_cov_vs_uniprot": 0.858,
+        "c3_range": "1..663"
+      },
+      "c4_overlap_residues": 648,
+      "c4_sites_in_phos": [
+        177,
+        181
+      ],
+      "c4_sites_in_unphos": [
+        177,
+        181
+      ],
+      "c5_chains_unphos": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "c5_chains_phos": [
+        "A",
+        "B"
+      ],
+      "af3_models": {
+        "phos": 15,
+        "unphos": 15
+      },
+      "af3_available": true,
+      "criteria": {
+        "P1_identity": true,
+        "P2_real_phos": true,
+        "P3_coverage": true,
+        "P4_overlap": true,
+        "P5_composition": false
+      },
+      "verdict": "WARN",
+      "in_primary_cohort": true,
+      "pure_pair": false,
+      "exclusion_reason": null
+    }
+  ]
+}

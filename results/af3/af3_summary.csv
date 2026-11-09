@@ -1,0 +1,127 @@
+job_name,protein,gene,state,seed,effect_type,models_found,models_extracted,plddt_mean,plddt_best,ptm_mean,ptm_best,ranking_mean,seq_len,ptm_requested,site_verified,source_zip,dup_of,data_version
+akt1_phos_seed1,AKT1,akt1,phos,1,local_rearrangement,5,9,75.48,75.77,0.714,0.77,0.762,480,"[{""type"": ""TPO"", ""pos"": 308, ""build_aa"": ""T""}]",,folds_2026_10_27_01_45.zip,,v2
+akt1_phos_seed2,AKT1,akt1,phos,2,local_rearrangement,5,9,75.48,75.79,0.73,0.77,0.778,480,"[{""type"": ""TPO"", ""pos"": 308, ""build_aa"": ""T""}]",,folds_2026_10_27_01_45.zip,,v2
+akt1_phos_seed3,AKT1,akt1,phos,3,local_rearrangement,5,9,75.33,76.02,0.728,0.75,0.77,480,"[{""type"": ""TPO"", ""pos"": 308, ""build_aa"": ""T""}]",,folds_2026_10_27_01_45.zip,,v2
+akt1_unphos_seed1,AKT1,akt1,unphos,1,local_rearrangement,5,9,76.77,77.27,0.728,0.76,0.786,480,,,folds_2026_10_27_01_45.zip,,v2
+akt1_unphos_seed2,AKT1,akt1,unphos,2,local_rearrangement,5,9,76.53,76.85,0.718,0.76,0.776,480,,,folds_2026_10_27_01_45.zip,,v2
+akt1_unphos_seed3,AKT1,akt1,unphos,3,local_rearrangement,5,9,76.79,77.31,0.746,0.78,0.806,480,,,folds_2026_10_27_01_45.zip,,v2
+aurka_phos_seed1,Aurora_A,aurka,phos,1,local_rearrangement,5,0,70.08,70.55,0.68,0.68,0.844,403,"[{""type"": ""TPO"", ""pos"": 288, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+aurka_phos_seed2,Aurora_A,aurka,phos,2,local_rearrangement,5,0,70.65,71.09,0.68,0.68,0.844,403,"[{""type"": ""TPO"", ""pos"": 288, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+aurka_phos_seed3,Aurora_A,aurka,phos,3,local_rearrangement,5,0,70.01,70.7,0.678,0.68,0.85,403,"[{""type"": ""TPO"", ""pos"": 288, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+aurka_unphos_seed1,Aurora_A,aurka,unphos,1,local_rearrangement,5,0,67.15,67.5,0.658,0.66,0.83,403,,,folds_2026_10_23_18_06.zip,,v2
+aurka_unphos_seed2,Aurora_A,aurka,unphos,2,local_rearrangement,5,0,67.36,67.48,0.66,0.66,0.832,403,,,folds_2026_10_24_07_41.zip,,v2
+aurka_unphos_seed3,Aurora_A,aurka,unphos,3,local_rearrangement,5,0,67.08,67.27,0.66,0.66,0.83,403,,,folds_2026_10_24_07_41.zip,,v2
+cdk1_phos_seed1,CDK1,cdk1,phos,1,local_rearrangement,5,0,89.66,89.83,0.92,0.92,0.92,297,"[{""type"": ""TPO"", ""pos"": 161, ""build_aa"": ""T""}]",,folds_2026_10_25_12_49.zip,,v2
+cdk1_phos_seed2,CDK1,cdk1,phos,2,local_rearrangement,5,0,89.85,89.95,0.92,0.92,0.92,297,"[{""type"": ""TPO"", ""pos"": 161, ""build_aa"": ""T""}]",,folds_2026_10_25_12_49.zip,,v2
+cdk1_phos_seed3,CDK1,cdk1,phos,3,local_rearrangement,5,0,89.45,89.58,0.92,0.92,0.92,297,"[{""type"": ""TPO"", ""pos"": 161, ""build_aa"": ""T""}]",,folds_2026_10_25_12_49.zip,,v2
+cdk1_unphos_seed1,CDK1,cdk1,unphos,1,local_rearrangement,5,0,86.78,86.91,0.916,0.92,0.916,297,,,folds_2026_10_25_12_49.zip,,v2
+cdk1_unphos_seed2,CDK1,cdk1,unphos,2,local_rearrangement,5,0,86.17,86.83,0.91,0.92,0.91,297,,,folds_2026_10_25_12_49.zip,,v2
+cdk1_unphos_seed3,CDK1,cdk1,unphos,3,local_rearrangement,5,0,86.27,86.78,0.908,0.92,0.908,297,,,folds_2026_10_25_12_49.zip,,v2
+cdk2_phos_seed1,CDK2,cdk2,phos,1,local_rearrangement,5,0,90.96,91.06,0.916,0.92,0.916,298,"[{""type"": ""TPO"", ""pos"": 160, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+cdk2_phos_seed2,CDK2,cdk2,phos,2,local_rearrangement,5,0,91.18,91.36,0.916,0.92,0.916,298,"[{""type"": ""TPO"", ""pos"": 160, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+cdk2_phos_seed3,CDK2,cdk2,phos,3,local_rearrangement,5,0,90.7,90.78,0.91,0.91,0.91,298,"[{""type"": ""TPO"", ""pos"": 160, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+cdk2_unphos_seed1,CDK2,cdk2,unphos,1,local_rearrangement,5,0,86.18,86.87,0.904,0.91,0.904,298,,,folds_2026_10_23_18_06.zip,,v2
+cdk2_unphos_seed2,CDK2,cdk2,unphos,2,local_rearrangement,5,0,86.57,86.73,0.91,0.91,0.91,298,,,folds_2026_10_24_07_41.zip,,v2
+cdk2_unphos_seed3,CDK2,cdk2,unphos,3,local_rearrangement,5,0,86.73,87.26,0.91,0.91,0.91,298,,,folds_2026_10_24_07_41.zip,,v2
+cdk7_phos_seed1,CDK7,cdk7,phos,1,local_rearrangement,5,0,85.76,85.9,0.878,0.88,0.886,346,"[{""type"": ""TPO"", ""pos"": 170, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+cdk7_phos_seed2,CDK7,cdk7,phos,2,local_rearrangement,5,0,85.78,85.96,0.872,0.88,0.898,346,"[{""type"": ""TPO"", ""pos"": 170, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+cdk7_phos_seed3,CDK7,cdk7,phos,3,local_rearrangement,5,0,86.38,86.5,0.88,0.88,0.908,346,"[{""type"": ""TPO"", ""pos"": 170, ""build_aa"": ""T""}]",,folds_2026_10_23_18_06.zip,,v2
+cdk7_unphos_seed1,CDK7,cdk7,unphos,1,local_rearrangement,5,0,84.25,84.49,0.872,0.88,0.892,346,,,folds_2026_10_24_07_41.zip,,v2
+cdk7_unphos_seed2,CDK7,cdk7,unphos,2,local_rearrangement,5,0,83.91,84.14,0.87,0.87,0.896,346,,,folds_2026_10_24_07_41.zip,,v2
+cdk7_unphos_seed3,CDK7,cdk7,unphos,3,local_rearrangement,5,0,84.49,84.73,0.878,0.88,0.896,346,,,folds_2026_10_24_07_41.zip,,v2
+cftr_phos_seed1,REMOVED:CFTR_R_domain,cftr,phos,1,unknown,5,0,71.73,73.91,0.722,0.75,0.762,1480,"[{""type"": ""SEP"", ""pos"": 660, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 700, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 737, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 813, ""build_aa"": ""S""}]",,folds_2026_07_26_05_11.zip,,v1
+cftr_phos_seed2,REMOVED:CFTR_R_domain,cftr,phos,2,unknown,5,0,72.46,74.01,0.712,0.73,0.73,1480,"[{""type"": ""SEP"", ""pos"": 660, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 700, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 737, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 813, ""build_aa"": ""S""}]",,folds_2026_07_26_05_11.zip,,v1
+cftr_phos_seed3,REMOVED:CFTR_R_domain,cftr,phos,3,unknown,5,0,72.48,74.27,0.716,0.73,0.756,1480,"[{""type"": ""SEP"", ""pos"": 660, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 700, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 737, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 813, ""build_aa"": ""S""}]",,folds_2026_07_26_05_11.zip,,v1
+cftr_unphos_seed1,REMOVED:CFTR_R_domain,cftr,unphos,1,unknown,5,0,74.4,74.46,0.74,0.74,0.81,1480,,,folds_2026_07_26_05_11.zip,,v1
+cftr_unphos_seed2,REMOVED:CFTR_R_domain,cftr,unphos,2,unknown,5,0,73.66,74.25,0.742,0.75,0.816,1480,,,folds_2026_07_26_05_11.zip,,v1
+cftr_unphos_seed3,REMOVED:CFTR_R_domain,cftr,unphos,3,unknown,5,0,74.13,74.34,0.742,0.75,0.816,1480,,,folds_2026_07_26_05_11.zip,,v1
+gsk3b_phos_seed1,GSK3B,gsk3b,phos,1,local_rearrangement,5,9,85.85,86.01,0.858,0.86,0.928,420,"[{""type"": ""PTR"", ""pos"": 216, ""build_aa"": ""Y""}]",,folds_2026_10_27_01_45.zip,,v2
+gsk3b_phos_seed2,GSK3B,gsk3b,phos,2,local_rearrangement,5,9,86.05,86.12,0.86,0.86,0.93,420,"[{""type"": ""PTR"", ""pos"": 216, ""build_aa"": ""Y""}]",,folds_2026_10_27_01_45.zip,,v2
+gsk3b_phos_seed3,GSK3B,gsk3b,phos,3,local_rearrangement,5,9,86.15,86.2,0.86,0.86,0.936,420,"[{""type"": ""PTR"", ""pos"": 216, ""build_aa"": ""Y""}]",,folds_2026_10_27_01_45.zip,,v2
+gsk3b_unphos_seed1,GSK3B,gsk3b,unphos,1,local_rearrangement,5,9,86.88,86.98,0.87,0.87,0.94,420,,,folds_2026_10_27_01_45.zip,,v2
+gsk3b_unphos_seed2,GSK3B,gsk3b,unphos,2,local_rearrangement,5,9,86.89,86.97,0.87,0.87,0.94,420,,,folds_2026_10_27_01_45.zip,,v2
+gsk3b_unphos_seed3,GSK3B,gsk3b,unphos,3,local_rearrangement,5,9,86.96,87.01,0.87,0.87,0.946,420,,,folds_2026_10_27_01_45.zip,,v2
+hspb1_phos_seed1,REMOVED:Hsp27,hspb1,phos,1,unknown,5,0,58.5,59.63,0.424,0.44,0.702,205,"[{""type"": ""SEP"", ""pos"": 15, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 78, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 82, ""build_aa"": ""S""}]",,folds_2026_07_26_05_28.zip,,v1
+hspb1_phos_seed2,REMOVED:Hsp27,hspb1,phos,2,unknown,5,0,58.04,58.4,0.412,0.42,0.696,205,"[{""type"": ""SEP"", ""pos"": 15, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 78, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 82, ""build_aa"": ""S""}]",,folds_2026_07_26_05_28.zip,,v1
+hspb1_phos_seed3,REMOVED:Hsp27,hspb1,phos,3,unknown,5,0,58.33,58.78,0.418,0.42,0.698,205,"[{""type"": ""SEP"", ""pos"": 15, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 78, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 82, ""build_aa"": ""S""}]",,folds_2026_07_26_05_28.zip,,v1
+hspb1_unphos_seed1,REMOVED:Hsp27,hspb1,unphos,1,unknown,5,0,59.9,60.24,0.452,0.46,0.726,205,,,folds_2026_07_26_05_26.zip,,v1
+hspb1_unphos_seed2,REMOVED:Hsp27,hspb1,unphos,2,unknown,5,0,59.41,60.19,0.446,0.45,0.714,205,,,folds_2026_07_26_05_26.zip,,v1
+hspb1_unphos_seed3,REMOVED:Hsp27,hspb1,unphos,3,unknown,5,0,60.3,60.86,0.45,0.45,0.724,205,,,folds_2026_07_26_05_28.zip,,v1
+ikbkb_phos_seed1,IKBKB,ikbkb,phos,1,local_rearrangement,5,9,83.1,83.3,0.788,0.79,0.84,756,"[{""type"": ""SEP"", ""pos"": 177, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 181, ""build_aa"": ""S""}]",,folds_2026_10_27_01_45.zip,,v2
+ikbkb_phos_seed2,IKBKB,ikbkb,phos,2,local_rearrangement,5,9,82.41,82.68,0.78,0.78,0.842,756,"[{""type"": ""SEP"", ""pos"": 177, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 181, ""build_aa"": ""S""}]",,folds_2026_10_27_01_45.zip,,v2
+ikbkb_phos_seed3,IKBKB,ikbkb,phos,3,local_rearrangement,5,9,82.67,82.86,0.782,0.79,0.842,756,"[{""type"": ""SEP"", ""pos"": 177, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 181, ""build_aa"": ""S""}]",,folds_2026_10_27_01_45.zip,,v2
+ikbkb_unphos_seed1,IKBKB,ikbkb,unphos,1,local_rearrangement,5,9,84.68,84.87,0.832,0.84,0.888,756,,,folds_2026_10_27_01_45.zip,,v2
+ikbkb_unphos_seed2,IKBKB,ikbkb,unphos,2,local_rearrangement,5,9,84.25,84.55,0.826,0.83,0.89,756,,,folds_2026_10_27_01_45.zip,,v2
+ikbkb_unphos_seed3,IKBKB,ikbkb,unphos,3,local_rearrangement,5,9,84.13,84.51,0.824,0.83,0.888,756,,,folds_2026_10_27_01_45.zip,,v2
+irf3_phos_seed1,IRF3,irf3,phos,1,allosteric,5,0,75.88,77.32,0.586,0.59,0.66,427,"[{""type"": ""SEP"", ""pos"": 386, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 402, ""build_aa"": ""S""}]",,folds_2026_10_23_18_06.zip,,v2
+irf3_phos_seed2,IRF3,irf3,phos,2,allosteric,5,0,76.45,77.18,0.59,0.6,0.68,427,"[{""type"": ""SEP"", ""pos"": 386, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 402, ""build_aa"": ""S""}]",,folds_2026_10_23_18_06.zip,,v2
+irf3_phos_seed3,IRF3,irf3,phos,3,allosteric,5,0,75.94,76.96,0.59,0.6,0.644,427,"[{""type"": ""SEP"", ""pos"": 386, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 402, ""build_aa"": ""S""}]",,folds_2026_10_23_18_06.zip,,v2
+irf3_phos_seed4,IRF3,irf3,phos,4,allosteric,5,0,73.69,74.19,0.518,0.52,0.596,427,"[{""type"": ""SEP"", ""pos"": 386, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 396, ""build_aa"": ""S""}]",,folds_2026_07_27_15_38.zip,,v1
+irf3_phos_seed5,IRF3,irf3,phos,5,allosteric,5,0,73.32,75.27,0.546,0.56,0.61,427,"[{""type"": ""SEP"", ""pos"": 386, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 396, ""build_aa"": ""S""}]",,folds_2026_07_27_15_38.zip,,v1
+irf3_unphos_seed1,IRF3,irf3,unphos,1,allosteric,5,0,78.81,79.67,0.612,0.62,0.69,427,,,folds_2026_10_24_07_41.zip,,v2
+irf3_unphos_seed2,IRF3,irf3,unphos,2,allosteric,5,0,79.11,79.5,0.612,0.62,0.682,427,,,folds_2026_10_24_07_41.zip,,v2
+irf3_unphos_seed3,IRF3,irf3,unphos,3,allosteric,5,0,79.0,79.5,0.61,0.62,0.688,427,,,folds_2026_10_24_07_41.zip,,v2
+mapk14_phos_seed1,P38alpha,mapk14,phos,1,local_rearrangement,5,0,87.79,87.94,0.872,0.88,0.872,360,"[{""type"": ""TPO"", ""pos"": 180, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 182, ""build_aa"": ""Y""}]",,folds_2026_10_23_18_06.zip,,v2
+mapk14_phos_seed2,P38alpha,mapk14,phos,2,local_rearrangement,5,0,87.44,87.74,0.866,0.87,0.868,360,"[{""type"": ""TPO"", ""pos"": 180, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 182, ""build_aa"": ""Y""}]",,folds_2026_10_23_18_06.zip,,v2
+mapk14_phos_seed3,P38alpha,mapk14,phos,3,local_rearrangement,5,0,88.67,88.93,0.886,0.89,0.888,360,"[{""type"": ""TPO"", ""pos"": 180, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 182, ""build_aa"": ""Y""}]",,folds_2026_10_23_18_06.zip,,v2
+mapk14_phos_seed4,P38alpha,mapk14,phos,4,local_rearrangement,5,0,87.73,88.36,0.866,0.87,0.868,360,"[{""type"": ""TPO"", ""pos"": 180, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 182, ""build_aa"": ""Y""}]",,folds_2026_07_27_15_41.zip,,v1
+mapk14_phos_seed5,P38alpha,mapk14,phos,5,local_rearrangement,5,0,88.11,88.29,0.88,0.88,0.884,360,"[{""type"": ""TPO"", ""pos"": 180, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 182, ""build_aa"": ""Y""}]",,folds_2026_07_27_15_41.zip,,v1
+mapk14_unphos_seed1,P38alpha,mapk14,unphos,1,local_rearrangement,5,0,90.42,90.65,0.94,0.94,0.95,360,,,folds_2026_10_24_07_41.zip,,v2
+mapk14_unphos_seed2,P38alpha,mapk14,unphos,2,local_rearrangement,5,0,90.59,90.97,0.94,0.94,0.95,360,,,folds_2026_10_24_07_41.zip,,v2
+mapk14_unphos_seed3,P38alpha,mapk14,unphos,3,local_rearrangement,5,0,90.11,90.63,0.936,0.94,0.948,360,,,folds_2026_10_24_07_41.zip,,v2
+mapk1_phos_seed1,ERK2,mapk1,phos,1,local_rearrangement,5,0,90.64,90.75,0.91,0.91,0.928,360,"[{""type"": ""TPO"", ""pos"": 185, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 187, ""build_aa"": ""Y""}]",,folds_2026_10_23_18_06.zip,,v2
+mapk1_phos_seed2,ERK2,mapk1,phos,2,local_rearrangement,5,0,90.67,90.87,0.91,0.91,0.926,360,"[{""type"": ""TPO"", ""pos"": 185, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 187, ""build_aa"": ""Y""}]",,folds_2026_10_23_18_06.zip,,v2
+mapk1_phos_seed3,ERK2,mapk1,phos,3,local_rearrangement,5,0,90.64,90.89,0.91,0.91,0.928,360,"[{""type"": ""TPO"", ""pos"": 185, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 187, ""build_aa"": ""Y""}]",,folds_2026_10_23_18_06.zip,,v2
+mapk1_phos_seed4,ERK2,mapk1,phos,4,local_rearrangement,5,0,90.0,90.84,0.906,0.91,0.92,360,"[{""type"": ""TPO"", ""pos"": 185, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 187, ""build_aa"": ""Y""}]",,folds_2026_07_28_14_16.zip,,v1
+mapk1_phos_seed5,ERK2,mapk1,phos,5,local_rearrangement,5,0,90.88,90.99,0.91,0.91,0.928,360,"[{""type"": ""TPO"", ""pos"": 185, ""build_aa"": ""T""}, {""type"": ""PTR"", ""pos"": 187, ""build_aa"": ""Y""}]",,folds_2026_07_28_14_16.zip,,v1
+mapk1_unphos_seed1,ERK2,mapk1,unphos,1,local_rearrangement,5,0,88.0,88.25,0.916,0.92,0.938,360,,,folds_2026_10_24_07_41.zip,,v2
+mapk1_unphos_seed2,ERK2,mapk1,unphos,2,local_rearrangement,5,0,88.07,88.41,0.916,0.92,0.936,360,,,folds_2026_10_24_07_41.zip,,v2
+mapk1_unphos_seed3,ERK2,mapk1,unphos,3,local_rearrangement,5,0,87.95,88.06,0.918,0.92,0.936,360,,,folds_2026_10_24_07_41.zip,,v2
+pak1_phos_seed1,PAK1,pak1,phos,1,local_rearrangement,5,9,70.29,70.54,0.68,0.68,0.842,545,"[{""type"": ""TPO"", ""pos"": 423, ""build_aa"": ""T""}]",,folds_2026_10_27_01_45.zip,,v2
+pak1_phos_seed2,PAK1,pak1,phos,2,local_rearrangement,5,9,70.42,70.65,0.68,0.68,0.84,545,"[{""type"": ""TPO"", ""pos"": 423, ""build_aa"": ""T""}]",,folds_2026_10_27_01_45.zip,,v2
+pak1_phos_seed3,PAK1,pak1,phos,3,local_rearrangement,5,9,69.57,69.71,0.672,0.68,0.842,545,"[{""type"": ""TPO"", ""pos"": 423, ""build_aa"": ""T""}]",,folds_2026_10_27_01_45.zip,,v2
+pak1_unphos_seed1,PAK1,pak1,unphos,1,local_rearrangement,5,9,68.18,68.38,0.67,0.67,0.846,545,,,folds_2026_10_27_01_45.zip,,v2
+pak1_unphos_seed2,PAK1,pak1,unphos,2,local_rearrangement,5,9,68.34,68.51,0.67,0.67,0.836,545,,,folds_2026_10_27_01_45.zip,,v2
+pak1_unphos_seed3,PAK1,pak1,unphos,3,local_rearrangement,5,9,67.62,67.82,0.664,0.67,0.842,545,,,folds_2026_10_27_01_45.zip,,v2
+phkg1_phos_seed1,REMOVED:PhK_gamma,phkg1,phos,1,unknown,5,0,79.0,79.28,0.722,0.73,0.832,406,"[{""type"": ""TPO"", ""pos"": 2, ""build_aa"": ""T""}]",,folds_2026_07_26_05_26.zip,,v1
+phkg1_phos_seed2,REMOVED:PhK_gamma,phkg1,phos,2,unknown,5,0,79.94,80.2,0.756,0.76,0.854,406,"[{""type"": ""TPO"", ""pos"": 2, ""build_aa"": ""T""}]",,folds_2026_07_26_05_26.zip,,v1
+phkg1_phos_seed3,REMOVED:PhK_gamma,phkg1,phos,3,unknown,5,0,79.83,80.3,0.742,0.75,0.838,406,"[{""type"": ""TPO"", ""pos"": 2, ""build_aa"": ""T""}]",,folds_2026_07_26_05_26.zip,,v1
+phkg1_unphos_seed1,REMOVED:PhK_gamma,phkg1,unphos,1,unknown,5,0,79.11,79.34,0.736,0.74,0.842,406,,,folds_2026_07_26_05_26.zip,,v1
+phkg1_unphos_seed2,REMOVED:PhK_gamma,phkg1,unphos,2,unknown,5,0,79.93,80.16,0.766,0.77,0.862,406,,,folds_2026_07_26_05_26.zip,,v1
+phkg1_unphos_seed3,REMOVED:PhK_gamma,phkg1,unphos,3,unknown,5,0,78.14,78.88,0.738,0.75,0.836,406,,,folds_2026_07_26_05_26.zip,,v1
+polr2a_phos_seed1,CTD_kinase,polr2a,phos,1,disorder_order,5,0,75.25,75.73,0.734,0.74,0.752,1970,"[{""type"": ""SEP"", ""pos"": 1614, ""build_aa"": ""S""}, {""type"": ""SEP"", ""pos"": 1621, ""build_aa"": ""S""}]",,folds_2026_10_24_07_41.zip,,v2
+prkaa2_phos_seed1,AMPK_alpha2,prkaa2,phos,1,allosteric,5,0,78.5,79.15,0.68,0.71,0.79,552,"[{""type"": ""TPO"", ""pos"": 172, ""build_aa"": ""T""}]",,folds_2026_10_24_07_41.zip,,v2
+prkaa2_phos_seed2,AMPK_alpha2,prkaa2,phos,2,allosteric,5,0,78.67,79.2,0.68,0.7,0.794,552,"[{""type"": ""TPO"", ""pos"": 172, ""build_aa"": ""T""}]",,folds_2026_10_25_12_49.zip,,v2
+prkaa2_phos_seed3,AMPK_alpha2,prkaa2,phos,3,allosteric,5,0,79.12,79.49,0.7,0.72,0.82,552,"[{""type"": ""TPO"", ""pos"": 172, ""build_aa"": ""T""}]",,folds_2026_10_25_12_49.zip,,v2
+prkaa2_phos_seed4,AMPK_alpha2,prkaa2,phos,4,allosteric,5,0,79.08,79.61,0.672,0.71,0.786,552,"[{""type"": ""TPO"", ""pos"": 172, ""build_aa"": ""T""}]",,folds_2026_07_26_05_11.zip,,v1
+prkaa2_phos_seed5,AMPK_alpha2,prkaa2,phos,5,allosteric,5,0,78.66,78.94,0.688,0.7,0.804,552,"[{""type"": ""TPO"", ""pos"": 172, ""build_aa"": ""T""}]",,folds_2026_07_26_05_11.zip,,v1
+prkaa2_unphos_seed1,AMPK_alpha2,prkaa2,unphos,1,allosteric,5,0,76.33,77.05,0.694,0.71,0.816,552,,,folds_2026_10_25_12_49.zip,,v2
+prkaa2_unphos_seed2,AMPK_alpha2,prkaa2,unphos,2,allosteric,5,0,77.23,77.59,0.726,0.74,0.85,552,,,folds_2026_10_25_12_49.zip,,v2
+prkaa2_unphos_seed3,AMPK_alpha2,prkaa2,unphos,3,allosteric,5,0,77.27,77.81,0.73,0.74,0.854,552,,,folds_2026_10_25_12_49.zip,,v2
+prkaca_phos_seed1,PKA_Calpha,prkaca,phos,1,allosteric,5,0,93.78,94.19,0.94,0.94,0.94,351,"[{""type"": ""TPO"", ""pos"": 198, ""build_aa"": ""T""}]",,folds_2026_10_24_07_41.zip,,v2
+pygm_phos_seed1,Glycogen_Phosphorylase,pygm,phos,1,disorder_order,5,0,94.92,95.03,0.95,0.95,0.95,843,"[{""type"": ""SEP"", ""pos"": 15, ""build_aa"": ""S""}]",,folds_2026_10_25_12_49.zip,,v2
+pygm_phos_seed2,Glycogen_Phosphorylase,pygm,phos,2,disorder_order,5,0,94.9,94.96,0.956,0.96,0.956,843,"[{""type"": ""SEP"", ""pos"": 15, ""build_aa"": ""S""}]",,folds_2026_10_25_12_49.zip,,v2
+pygm_phos_seed3,Glycogen_Phosphorylase,pygm,phos,3,disorder_order,5,0,94.95,95.15,0.95,0.95,0.95,843,"[{""type"": ""SEP"", ""pos"": 15, ""build_aa"": ""S""}]",,folds_2026_10_25_12_49.zip,,v2
+pygm_unphos_seed1,Glycogen_Phosphorylase,pygm,unphos,1,disorder_order,5,0,94.01,94.45,0.964,0.97,0.966,843,,,folds_2026_10_25_12_49.zip,,v2
+pygm_unphos_seed2,Glycogen_Phosphorylase,pygm,unphos,2,disorder_order,5,0,93.89,94.44,0.966,0.97,0.968,843,,,folds_2026_10_25_12_49.zip,,v2
+pygm_unphos_seed3,Glycogen_Phosphorylase,pygm,unphos,3,disorder_order,5,0,93.72,94.32,0.964,0.97,0.966,843,,,folds_2026_10_25_12_49.zip,,v2
+src_phos_seed1,c-Src_kinase,src,phos,1,allosteric,5,0,78.62,78.82,0.76,0.76,0.838,536,"[{""type"": ""PTR"", ""pos"": 419, ""build_aa"": ""Y""}]",,folds_2026_10_24_07_41.zip,,v2
+src_phos_seed2,c-Src_kinase,src,phos,2,allosteric,5,0,78.59,78.7,0.76,0.76,0.836,536,"[{""type"": ""PTR"", ""pos"": 419, ""build_aa"": ""Y""}]",,folds_2026_10_25_12_49.zip,,v2
+src_phos_seed3,c-Src_kinase,src,phos,3,allosteric,5,0,78.36,78.56,0.758,0.76,0.836,536,"[{""type"": ""PTR"", ""pos"": 419, ""build_aa"": ""Y""}]",,folds_2026_10_25_12_49.zip,,v2
+src_phos_seed4,c-Src_kinase,src,phos,4,allosteric,5,0,87.87,88.85,0.86,0.87,0.86,452,"[{""type"": ""PTR"", ""pos"": 335, ""build_aa"": ""Y""}]",,folds_2026_07_27_15_41.zip,,v1
+src_phos_seed5,c-Src_kinase,src,phos,5,allosteric,5,0,88.51,88.78,0.868,0.87,0.87,452,"[{""type"": ""PTR"", ""pos"": 335, ""build_aa"": ""Y""}]",,folds_2026_07_27_15_41.zip,,v1
+src_unphos_seed1,c-Src_kinase,src,unphos,1,allosteric,5,0,77.82,78.07,0.788,0.79,0.864,536,,,folds_2026_10_25_12_49.zip,,v2
+src_unphos_seed2,c-Src_kinase,src,unphos,2,allosteric,5,0,77.92,77.98,0.788,0.79,0.868,536,,,folds_2026_10_25_12_49.zip,,v2
+src_unphos_seed3,c-Src_kinase,src,unphos,3,allosteric,5,0,77.59,77.73,0.788,0.79,0.866,536,,,folds_2026_10_25_12_49.zip,,v2
+tbk1_phos_seed1,TBK1,tbk1,phos,1,local_rearrangement,5,9,85.65,85.82,0.85,0.85,0.884,729,"[{""type"": ""SEP"", ""pos"": 172, ""build_aa"": ""S""}]",,folds_2026_10_27_01_45.zip,,v2
+tbk1_phos_seed2,TBK1,tbk1,phos,2,local_rearrangement,5,9,85.46,85.76,0.846,0.85,0.88,729,"[{""type"": ""SEP"", ""pos"": 172, ""build_aa"": ""S""}]",,folds_2026_10_27_01_45.zip,,v2
+tbk1_phos_seed3,TBK1,tbk1,phos,3,local_rearrangement,5,9,85.09,85.36,0.84,0.84,0.872,729,"[{""type"": ""SEP"", ""pos"": 172, ""build_aa"": ""S""}]",,folds_2026_10_27_01_45.zip,,v2
+tbk1_unphos_seed1,TBK1,tbk1,unphos,1,local_rearrangement,5,9,83.96,84.03,0.856,0.86,0.9,729,,,folds_2026_10_27_01_45.zip,,v2
+tbk1_unphos_seed2,TBK1,tbk1,unphos,2,local_rearrangement,5,9,83.74,83.96,0.85,0.85,0.896,729,,,folds_2026_10_27_01_45.zip,,v2
+tbk1_unphos_seed3,TBK1,tbk1,unphos,3,local_rearrangement,5,9,84.05,84.17,0.85,0.85,0.9,729,,,folds_2026_10_27_01_45.zip,,v2
+ubb_phos_seed1,REMOVED:Ubiquitin,ubb,phos,1,unknown,5,0,78.33,79.2,0.212,0.22,0.212,685,"[{""type"": ""SEP"", ""pos"": 65, ""build_aa"": ""S""}]",,folds_2026_07_26_05_28.zip,,v1
+ubb_phos_seed2,REMOVED:Ubiquitin,ubb,phos,2,unknown,5,0,78.67,79.08,0.214,0.22,0.214,685,"[{""type"": ""SEP"", ""pos"": 65, ""build_aa"": ""S""}]",,folds_2026_07_26_05_28.zip,,v1
+ubb_phos_seed3,REMOVED:Ubiquitin,ubb,phos,3,unknown,5,0,78.21,78.87,0.214,0.22,0.214,685,"[{""type"": ""SEP"", ""pos"": 65, ""build_aa"": ""S""}]",,folds_2026_07_26_05_28.zip,,v1
+ubb_unphos_seed1,REMOVED:Ubiquitin,ubb,unphos,1,unknown,5,0,82.74,82.88,0.22,0.22,0.224,685,,,folds_2026_07_26_05_28.zip,,v1
+ubb_unphos_seed2,REMOVED:Ubiquitin,ubb,unphos,2,unknown,5,0,82.91,83.14,0.224,0.23,0.224,685,,,folds_2026_07_26_05_28.zip,,v1
+ubb_unphos_seed3,REMOVED:Ubiquitin,ubb,unphos,3,unknown,5,0,82.85,83.1,0.22,0.22,0.224,685,,,folds_2026_07_26_05_28.zip,,v1

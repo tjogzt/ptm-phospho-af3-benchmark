@@ -1,0 +1,314 @@
+[
+  {
+    "gene": "aurka",
+    "acc": "O14965",
+    "build_len": 403,
+    "uniprot_len": 403,
+    "offset": 0,
+    "build_pos": [
+      288
+    ],
+    "uniprot_pos": [
+      288
+    ],
+    "uniprot_annotated": [
+      41,
+      51,
+      287,
+      288,
+      342
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "cdk2",
+    "acc": "P24941",
+    "build_len": 298,
+    "uniprot_len": 298,
+    "offset": 0,
+    "build_pos": [
+      160
+    ],
+    "uniprot_pos": [
+      160
+    ],
+    "uniprot_annotated": [
+      14,
+      15,
+      19,
+      160
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "cdk7",
+    "acc": "P50613",
+    "build_len": 346,
+    "uniprot_len": 346,
+    "offset": 0,
+    "build_pos": [
+      170
+    ],
+    "uniprot_pos": [
+      170
+    ],
+    "uniprot_annotated": [
+      7,
+      164,
+      170,
+      321
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "cftr",
+    "acc": "P13569",
+    "build_len": 1480,
+    "uniprot_len": 1480,
+    "offset": 0,
+    "build_pos": [
+      660,
+      700,
+      737,
+      813
+    ],
+    "uniprot_pos": [
+      660,
+      700,
+      737,
+      813
+    ],
+    "uniprot_annotated": [
+      549,
+      660,
+      670,
+      686,
+      700,
+      712,
+      717,
+      737,
+      753,
+      768,
+      790,
+      795,
+      813,
+      1444,
+      1456
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "hspb1",
+    "acc": "P04792",
+    "build_len": 205,
+    "uniprot_len": 205,
+    "offset": 0,
+    "build_pos": [
+      15,
+      78,
+      82
+    ],
+    "uniprot_pos": [
+      15,
+      78,
+      82
+    ],
+    "uniprot_annotated": [
+      15,
+      26,
+      65,
+      78,
+      82,
+      83,
+      86,
+      98,
+      174,
+      176,
+      199
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "irf3",
+    "acc": "Q14653",
+    "build_len": 427,
+    "uniprot_len": 427,
+    "offset": 0,
+    "build_pos": [
+      386,
+      396
+    ],
+    "uniprot_pos": [
+      386,
+      396
+    ],
+    "uniprot_annotated": [
+      3,
+      14,
+      75,
+      97,
+      123,
+      175,
+      180,
+      188,
+      237,
+      244,
+      253,
+      385,
+      386,
+      396,
+      398,
+      404,
+      427
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "mapk1",
+    "acc": "P28482",
+    "build_len": 360,
+    "uniprot_len": 360,
+    "offset": 0,
+    "build_pos": [
+      185,
+      187
+    ],
+    "uniprot_pos": [
+      185,
+      187
+    ],
+    "uniprot_annotated": [
+      29,
+      185,
+      187,
+      190,
+      246,
+      248,
+      284
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "mapk14",
+    "acc": "Q16539",
+    "build_len": 360,
+    "uniprot_len": 360,
+    "offset": 0,
+    "build_pos": [
+      180,
+      182
+    ],
+    "uniprot_pos": [
+      180,
+      182
+    ],
+    "uniprot_annotated": [
+      2,
+      16,
+      180,
+      182,
+      263,
+      323
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "phkg1",
+    "acc": "P15735",
+    "build_len": 406,
+    "uniprot_len": 406,
+    "offset": 0,
+    "build_pos": [
+      2
+    ],
+    "uniprot_pos": [
+      2
+    ],
+    "uniprot_annotated": [
+      345
+    ],
+    "verdict": "ERROR"
+  },
+  {
+    "gene": "prkaa2",
+    "acc": "P54646",
+    "build_len": 552,
+    "uniprot_len": 552,
+    "offset": 0,
+    "build_pos": [
+      172
+    ],
+    "uniprot_pos": [
+      172
+    ],
+    "uniprot_annotated": [
+      172,
+      258,
+      377,
+      491
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "pygm",
+    "acc": "P00489",
+    "build_len": 843,
+    "uniprot_len": 843,
+    "offset": 0,
+    "build_pos": [
+      15
+    ],
+    "uniprot_pos": [
+      15
+    ],
+    "uniprot_annotated": [
+      15,
+      204,
+      227,
+      430,
+      473,
+      514,
+      747,
+      748
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "src",
+    "acc": "P12931",
+    "build_len": 452,
+    "uniprot_len": 536,
+    "offset": 84,
+    "build_pos": [
+      335
+    ],
+    "uniprot_pos": [
+      419
+    ],
+    "uniprot_annotated": [
+      17,
+      75,
+      187,
+      419,
+      530
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "ubb",
+    "acc": "P0CG48",
+    "build_len": 685,
+    "uniprot_len": 685,
+    "offset": 0,
+    "build_pos": [
+      65
+    ],
+    "uniprot_pos": [
+      65
+    ],
+    "uniprot_annotated": [
+      65
+    ],
+    "verdict": "OK"
+  }
+]

@@ -1,258 +1,140 @@
 #!/usr/bin/env python3
 """
-generate_af3_jobs.py — Generate AlphaFold3 batch JSON for submission
-====================================================================
-Creates AF3-compatible JSON files for batch upload to alphafoldserver.com.
+generate_af3_jobs.py — AF3 批量作业生成（v2，适配审计修复后的基准）
+=====================================================================
+v1 的问题（见 audit/FINDINGS_P0.md）：
+  - 序列取自 PDB 观测坐标（长度偏短、phos/unphos 不可比）
+  - 位点编号混用三套体系，导致 PKA/EGFR/ERK2/c-Src 等挂错残基
+  - 输出格式与实际提交格式不一致（无 CCD_ 前缀、种子合并方式不同）
 
-For each benchmark protein, generates:
-  - P-group: Phosphorylated structure prediction (5 seeds)
-  - U-group: Unphosphorylated baseline (5 seeds)  
-  - T-group: Phosphorylated with custom template (5 seeds, optional)
-  - A-group: Phosphorylated WITHOUT template (ablation, for blind test)
+v2 变更：
+  - 序列一律取自 data/curated/uniprot_sequences.json（UniProt canonical 全长）
+  - 位点取自 benchmark_dataset.py 的 phos_sites（已核准为 UniProt 坐标）
+  - 输出：每作业单种子、ptmType 带 CCD_ 前缀（与 alphafoldserver.com 实际格式一致）
+  - 支持 paired=False 的蛋白（只生成 phos 作业）
+  - 生成前做残基类型自检，任何 S/T/Y 不匹配即中止
 
-AF3 JSON format (v3):
-  - sequences[].proteinChain.sequence: standard AA codes
-  - sequences[].proteinChain.modifications: [{ptmType, ptmPosition}]
-  - sequences[].proteinChain.count: copy number
-  - name: job name
-  - modelSeeds: array of seed integers
-
-Phosphorylation CCD codes:
-  SEP = phosphoserine, TPO = phosphothreonine, PTR = phosphotyrosine, NEP = phosphohistidine
-
-Usage:
-  python generate_af3_jobs.py [--output af3_jobs.json] [--limit N]
+用法：
+  python3 scripts/af3/generate_af3_jobs.py                    # 全部
+  python3 scripts/af3/generate_af3_jobs.py --seeds 3 --split  # 分文件
 """
-
-import sys
-import json
-import argparse
+import sys, json, argparse
 from pathlib import Path
 
-_ROOT = Path(__file__).resolve().parent.parent.parent  # scripts/af3/ -> project root
+_ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(_ROOT / "data"))
-from benchmark_dataset import BENCHMARK_PROTEINS
+from benchmark_dataset import BENCHMARK_PROTEINS, REMOVED_PROTEINS
 
-# ================================================================
+CURATED = _ROOT / "data" / "curated"
+OUT_DIR = _ROOT / "af3_jobs"
+CCD = {"S": "CCD_SEP", "T": "CCD_TPO", "Y": "CCD_PTR"}
 
-PROJECT_ROOT = _ROOT
-DATA_DIR = PROJECT_ROOT / "data"
-FASTA_DIR = DATA_DIR / "fasta"
 
-# AF3 PTM CCD codes
-PTM_CCD_CODES = {
-    "SEP": "SEP",   # Phosphoserine
-    "TPO": "TPO",   # Phosphothreonine
-    "PTR": "PTR",   # Phosphotyrosine
-    "NEP": "NEP",   # Phosphohistidine
-}
+def load_uniprot():
+    p = CURATED / "uniprot_sequences.json"
+    if not p.exists():
+        sys.exit(f"ERROR: {p} 不存在，请先运行 scripts/rebuild_sequences.py")
+    return json.loads(p.read_text())
 
-def get_sequence_from_fasta(gene, uniprot, state, pdb_id):
-    """Read protein sequence from previously saved FASTA file."""
-    fasta_file = FASTA_DIR / f"{gene}_{state}_{pdb_id}_{uniprot}.fasta"
-    if not fasta_file.exists():
-        print(f"  [WARN] FASTA not found: {fasta_file}")
-        return None
-    
-    with open(fasta_file) as f:
-        lines = f.readlines()
-        if len(lines) >= 2:
-            seq = ''.join(line.strip() for line in lines[1:])
-            return seq
-    return None
 
-def build_modified_sequence(sequence, phos_sites, phos_type):
-    """
-    Build sequence string with modification annotations.
-    
-    AF3 format: standard sequence + modifications array.
-    Each modification: {"ptmType": "SEP", "ptmPosition": 160}
-    """
-    modifications = []
-    
-    for i, site_str in enumerate(phos_sites):
-        # Parse site: "Thr160" -> AA="T", pos=160
-        aa = site_str[0]  # First letter of residue type
-        pos = int(''.join(c for c in site_str if c.isdigit()))
-        
-        # Determine CCD code based on phos_type or residue
-        if phos_type == "SEP":
-            code = "SEP"
-        elif phos_type == "TPO":
-            code = "TPO"
-        elif phos_type == "PTR":
-            code = "PTR"
-        elif phos_type == "TPO_PTR":
-            # Dual phosphorylation: Thr183->TPO, Tyr185->PTR
-            if aa in ['T']:
-                code = "TPO"
-            elif aa in ['Y']:
-                code = "PTR"
-            else:
-                code = "SEP"
-        else:
-            # Infer from site name
-            if aa == 'S':
-                code = "SEP"
-            elif aa == 'T':
-                code = "TPO"
-            elif aa == 'Y':
-                code = "PTR"
-            else:
-                code = "SEP"
-        
-        modifications.append({
-            "ptmType": code,
-            "ptmPosition": pos
-        })
-    
-    return sequence, modifications
+def build_job(name, seq, sites, seed):
+    """构造单个 AF3 server 作业。sites 为 UniProt 坐标列表。"""
+    pc = {"sequence": seq, "count": 1, "useStructureTemplate": True}
+    if sites:
+        mods = []
+        for pos in sites:
+            aa = seq[pos - 1]
+            if aa not in CCD:
+                raise ValueError(f"{name}: 位点 {pos} 的残基是 {aa}，不是 S/T/Y")
+            mods.append({"ptmType": CCD[aa], "ptmPosition": pos})
+        pc["modifications"] = mods
+    return {"name": f"{name}_seed{seed}",
+            "modelSeeds": [str(seed)],
+            "sequences": [{"proteinChain": pc}],
+            "dialect": "alphafoldserver", "version": 3}
 
-def create_af3_job(name, sequence, modifications=None, seeds=None):
-    """Create a single AF3 job JSON object."""
-    if seeds is None:
-        seeds = [1, 2, 3, 4, 5]
-    
-    protein_chain = {
-        "sequence": sequence,
-        "count": 1
-    }
-    
-    if modifications:
-        protein_chain["modifications"] = modifications
-    
-    job = {
-        "name": name,
-        "modelSeeds": seeds,
-        "sequences": [
-            {"proteinChain": protein_chain}
-        ]
-    }
-    
-    return job
-
-def generate_jobs(limit=0):
-    """Generate all AF3 jobs for the benchmark."""
-    jobs = []
-    stats = {"p_group": 0, "u_group": 0, "t_group": 0}
-    
-    proteins = list(BENCHMARK_PROTEINS.items())
-    if limit > 0:
-        proteins = proteins[:limit]
-    
-    for name, info in proteins:
-        gene = info["gene"]
-        uniprot = info["uniprot"]
-        phos_sites = info["phos_sites"]
-        phos_type = info["phos_type"]
-        pdbs = info["pdbs"]
-        chain = info.get("chain", "A")
-        blind_test = info.get("blind_test", False)
-        
-        # Skip CheY (Asp phosphorylation not directly supported)
-        if phos_type is None:
-            print(f"  [SKIP] {name}: Asp phosphorylation, not supported by AF3")
-            continue
-        
-        # Get unphosphorylated sequence
-        unphos_seq = None
-        if pdbs.get("unphos"):
-            for pdb_id in pdbs["unphos"]:
-                unphos_seq = get_sequence_from_fasta(gene, uniprot, "unphos", pdb_id)
-                if unphos_seq:
-                    break
-        
-        # Get phosphorylated sequence
-        phos_seq = None
-        if pdbs.get("phos"):
-            for pdb_id in pdbs["phos"]:
-                phos_seq = get_sequence_from_fasta(gene, uniprot, "phos", pdb_id)
-                if phos_seq:
-                    break
-        
-        # If no phos FASTA, use unphos sequence
-        if not phos_seq and unphos_seq:
-            phos_seq = unphos_seq
-        if not unphos_seq and phos_seq:
-            unphos_seq = phos_seq
-        if not phos_seq:
-            print(f"  [WARN] {name}: no sequence available")
-            continue
-        
-        # Build modified sequence with PTM annotations
-        mod_seq, modifications = build_modified_sequence(phos_seq, phos_sites, phos_type)
-        
-        # U-group: Unphosphorylated baseline
-        job_name_u = f"{gene}_unphos"
-        jobs.append(create_af3_job(job_name_u, unphos_seq))
-        stats["u_group"] += 1
-        
-        # P-group: Phosphorylated
-        job_name_p = f"{gene}_phos"
-        jobs.append(create_af3_job(job_name_p, mod_seq, modifications))
-        stats["p_group"] += 1
-        
-        # Additional seeds for key proteins (dual phos, allosteric)
-        if phos_type == "TPO_PTR" or info.get("effect_type") == "allosteric":
-            job_name_p10 = f"{gene}_phos_seeds6-10"
-            jobs.append(create_af3_job(job_name_p10, mod_seq, modifications, 
-                                       seeds=[6, 7, 8, 9, 10]))
-            stats["p_group"] += 1
-        
-        print(f"  [OK] {gene}: U+P jobs generated (sites: {phos_sites})")
-    
-    print(f"\n=== Job Summary ===")
-    print(f"Total jobs: {len(jobs)}")
-    print(f"  P-group: {stats['p_group']}")
-    print(f"  U-group: {stats['u_group']}")
-    print(f"Estimated runtime: {len(jobs) * 5 / 30:.1f} days (at 30 jobs/day quota)")
-    
-    return jobs
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate AF3 batch JSON jobs")
-    parser.add_argument("--output", type=str, default="af3_batch_jobs.json",
-                       help="Output JSON file path")
-    parser.add_argument("--limit", type=int, default=0, help="Limit to N proteins")
-    parser.add_argument("--split", type=int, default=0, 
-                       help="Split into N files (for large batches)")
-    args = parser.parse_args()
-    
-    print("=== AF3 Batch Job Generator ===\n")
-    print("Analyzing benchmark dataset...")
-    
-    jobs = generate_jobs(limit=args.limit)
-    
-    if args.split > 0:
-        # Split into chunks (AF3 accepts up to 100 jobs per upload)
-        chunk_size = min(100, max(1, len(jobs) // args.split))
-        for i in range(0, len(jobs), chunk_size):
-            chunk = jobs[i:i+chunk_size]
-            out_path = PROJECT_ROOT / f"af3_jobs_part{i//chunk_size + 1}.json"
-            with open(out_path, 'w') as f:
-                json.dump(chunk, f, indent=2)
-            print(f"\n[OK] Written {len(chunk)} jobs to {out_path}")
-    else:
-        out_path = PROJECT_ROOT / args.output
-        with open(out_path, 'w') as f:
-            json.dump(jobs, f, indent=2)
-        print(f"\n[OK] Written {len(jobs)} jobs to {out_path}")
-    
-    # Print submission reminder
-    print(f"""
-=== SUBMISSION INSTRUCTIONS ===
-1. Go to https://alphafoldserver.com
-2. Sign in with Google account
-3. Click 'Upload JSON' 
-4. Select the generated JSON file
-5. Wait for all jobs to complete (check quota: 30 jobs/day)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", type=int, default=3, help="每状态种子数")
+    ap.add_argument("--split", action="store_true", help="按 100 作业切分文件")
+    ap.add_argument("--outdir", default=str(OUT_DIR))
+    args = ap.parse_args()
 
-Tips:
-- AF3 Server quota: 30 jobs/day
-- Each job produces 5 predictions (unless custom seeds)
-- Download results as ZIP for each completed job
-- Save ZIP files to: results/af3/
-""")
+    uni = load_uniprot()
+    gene2acc = {v["gene"].lower(): k for k, v in uni.items()}
+
+    jobs, manifest, errors = [], [], []
+    print("=" * 96)
+    print("  AF3 作业生成 v2（UniProt 序列 + 核准位点）")
+    print("=" * 96)
+
+    for key, info in BENCHMARK_PROTEINS.items():
+        acc = info["uniprot"]
+        if acc not in uni:
+            errors.append(f"{key}: UniProt {acc} 未在 curated 中")
+            continue
+        seq = uni[acc]["sequence"]
+        sites = []
+        for s in info.get("phos_sites", []):
+            pos = int("".join(c for c in s if c.isdigit()))
+            sites.append(pos)
+
+        # 自检：位点残基类型
+        bad = [(p, seq[p-1]) for p in sites if seq[p-1] not in CCD]
+        if bad:
+            errors.append(f"{key}: 位点残基异常 {bad}")
+            continue
+
+        n_jobs = 0
+        # phos 作业（所有蛋白都有）
+        for sd in range(1, args.seeds + 1):
+            jobs.append(build_job(f"{info['gene'].lower()}_phos", seq, sites, sd))
+            n_jobs += 1
+        # unphos 作业（仅 paired 蛋白；单结构组无实验 unphos 参照但仍需计算基准）
+        for sd in range(1, args.seeds + 1):
+            jobs.append(build_job(f"{info['gene'].lower()}_unphos", seq, [], sd))
+            n_jobs += 1
+
+        manifest.append({
+            "protein": key, "gene": info["gene"], "uniprot": acc,
+            "seq_len": len(seq), "paired": info.get("paired"),
+            "effect_type": info.get("effect_type"),
+            "phos_sites_uniprot": sites,
+            "pdb_chains": info.get("pdb_chains"),
+            "jobs": n_jobs,
+        })
+        flag = "PAIRED" if info.get("paired") else "single"
+        print(f"  {key:<15} {info['gene']:<9} len={len(seq):>5} "
+              f"sites={sites} {flag:<7} → {n_jobs} jobs")
+
+    if errors:
+        print("\n[ERRORS]")
+        for e in errors:
+            print("  ", e)
+        sys.exit(1)
+
+    out = Path(args.outdir); out.mkdir(parents=True, exist_ok=True)
+    if args.split and len(jobs) > 100:
+        for i in range(0, len(jobs), 100):
+            chunk = jobs[i:i+100]
+            p = out / f"af3_jobs_v2_part{i//100 + 1}.json"
+            p.write_text(json.dumps(chunk, indent=2, ensure_ascii=False))
+            print(f"\n[OK] {p.name}: {len(chunk)} 作业")
+    else:
+        p = out / "af3_jobs_v2.json"
+        p.write_text(json.dumps(jobs, indent=2, ensure_ascii=False))
+        print(f"\n[OK] {p}  ({len(jobs)} 作业)")
+
+    (out / "manifest_v2.json").write_text(json.dumps(manifest, indent=2, ensure_ascii=False))
+    print(f"[OK] {out/'manifest_v2.json'}")
+
+    n_phos = sum(1 for j in jobs if "_phos_" in j["name"])
+    print(f"\n  合计 {len(jobs)} 作业（phos {n_phos} / unphos {len(jobs)-n_phos}）")
+    print(f"  覆盖 {len(manifest)} 蛋白，其中 paired {sum(1 for m in manifest if m['paired'])} 个")
+    print(f"  已移除 {len(REMOVED_PROTEINS)} 个无合适实验结构的蛋白")
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main() or 0)

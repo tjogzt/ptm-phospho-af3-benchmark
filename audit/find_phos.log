@@ -1,0 +1,118 @@
+====================================================================================================
+  按真实磷酸化修饰检索候选结构
+====================================================================================================
+
+### IRF3 (IRF3 / Q14653) 目标位点: ['Ser386', 'Ser396']
+    UniProt 关联 entry: 18（取前 18 个验证）
+    ✓ 3A77  res=1.8  n_phos=8  chains=['A', 'B', 'C', 'D']  seqs=[386, 402]
+    ✓ 5JEJ  res=2.0  n_phos=2  chains=['C', 'D']  seqs=[366]
+    ✓ 7JFL  res=1.68  n_phos=2  chains=['A', 'B']  seqs=[386]
+
+### P38alpha (MAPK14 / Q16539) 目标位点: ['Thr180', 'Tyr182']
+    UniProt 关联 entry: 267（取前 200 个验证）
+    ✓ 3NNX  res=2.28  n_phos=1  chains=['A']  seqs=[182]
+    ✓ 4EWQ  res=2.1  n_phos=1  chains=['A']  seqs=[180]
+
+### Hsp27 (HSPB1 / P04792) 目标位点: ['Ser15', 'Ser78', 'Ser82']
+    UniProt 关联 entry: 7（取前 7 个验证）
+    ✗ 未找到含 SEP/TPO/PTR 的实验结构
+
+### c-Src_kinase (SRC / P12931) 目标位点: ['Tyr416']
+    UniProt 关联 entry: 78（取前 78 个验证）
+    ✓ 1A07  res=2.2  n_phos=2  chains=['C', 'D']  seqs=[101]
+    ✓ 1A1B  res=2.2  n_phos=2  chains=['C', 'D']  seqs=[101]
+    ✓ 1A1C  res=2.4  n_phos=2  chains=['C', 'D']  seqs=[101]
+    ✓ 1A1E  res=2.2  n_phos=2  chains=['C', 'D']  seqs=[101]
+    ✓ 1FMK  res=1.5  n_phos=1  chains=['A']  seqs=[527]
+    ✓ 1HCS  res=None  n_phos=1  chains=['A']  seqs=[101]
+    ✓ 1HCT  res=None  n_phos=1  chains=['A']  seqs=[101]
+    ✓ 1KSW  res=2.8  n_phos=1  chains=['A']  seqs=[527]
+    ✓ 1SHD  res=2.0  n_phos=1  chains=['B']  seqs=[101]
+    ✓ 1YI6  res=2.0  n_phos=4  chains=['A', 'B']  seqs=[335, 416]
+    ✓ 2H8H  res=2.2  n_phos=1  chains=['A']  seqs=[527]
+    ✓ 2SRC  res=1.5  n_phos=1  chains=['A']  seqs=[527]
+    ✓ 3VRO  res=1.8  n_phos=1  chains=['B']  seqs=[419]
+    ✓ 4K11  res=2.3  n_phos=1  chains=['A']  seqs=[527]
+    ✓ 8JN8  res=1.9  n_phos=1  chains=['A']  seqs=[530]
+    ✓ 8JN9  res=2.72  n_phos=1  chains=['A']  seqs=[530]
+    ✓ 9NS0  res=None  n_phos=1  chains=['A']  seqs=[419]
+
+### AMPK_alpha2 (PRKAA2 / P54646) 目标位点: ['Thr172']
+    UniProt 关联 entry: 15（取前 15 个验证）
+    ✓ 4CFE  res=3.02  n_phos=4  chains=['A', 'B', 'C', 'D']  seqs=[108, 172]
+    ✓ 4CFF  res=3.92  n_phos=4  chains=['A', 'B', 'C', 'D']  seqs=[108, 172]
+    ✓ 4ZHX  res=2.99  n_phos=4  chains=['A', 'B', 'C', 'D']  seqs=[108, 172]
+    ✓ 5EZV  res=2.99  n_phos=4  chains=['A', 'B', 'C', 'D']  seqs=[108, 172]
+    ✓ 5ISO  res=2.63  n_phos=2  chains=['B', 'D']  seqs=[108]
+    ✓ 6B1U  res=2.77  n_phos=4  chains=['A', 'B', 'C', 'D']  seqs=[108, 172]
+    ✓ 6B2E  res=3.8  n_phos=2  chains=['A', 'B']  seqs=[108, 172]
+    ✓ 7MYJ  res=2.95  n_phos=4  chains=['A', 'B', 'C', 'D']  seqs=[108, 172]
+    ✓ 8BIK  res=2.5  n_phos=2  chains=['B', 'E']  seqs=[108]
+
+### PhK_gamma (PHKG1 / P15735) 目标位点: ['Thr10']
+    UniProt 关联 entry: 1（取前 1 个验证）
+    ✗ 未找到含 SEP/TPO/PTR 的实验结构
+
+### PKA_Calpha (PRKACA / P17612) 目标位点: ['Thr197']
+    UniProt 关联 entry: 54（取前 54 个验证）
+    ✓ 2GU8  res=2.2  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3AGL  res=2.1  n_phos=5  chains=['A', 'B']  seqs=[10, 197, 338]
+    ✓ 3AGM  res=2.0  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3AMA  res=1.75  n_phos=3  chains=['A']  seqs=[10, 197, 338]
+    ✓ 3AMB  res=2.25  n_phos=3  chains=['A']  seqs=[10, 197, 338]
+    ✓ 3L9L  res=2.0  n_phos=4  chains=['A', 'B']  seqs=[197, 338]
+    ✓ 3L9M  res=1.9  n_phos=4  chains=['A', 'B']  seqs=[197, 338]
+    ✓ 3L9N  res=2.0  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3MVJ  res=2.49  n_phos=6  chains=['A', 'B', 'E']  seqs=[197, 338]
+    ✓ 3NX8  res=2.0  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3OOG  res=2.0  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3OVV  res=1.58  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3OWP  res=1.88  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3OXT  res=2.2  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3P0M  res=2.03  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3POO  res=1.6  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 3VQH  res=1.95  n_phos=3  chains=['A']  seqs=[10, 197, 338]
+    ✓ 4AE6  res=2.1  n_phos=4  chains=['A', 'B']  seqs=[197, 338]
+    ✓ 4AE9  res=2.3  n_phos=6  chains=['A', 'B']  seqs=[139, 197, 338]
+    ✓ 4UJ1  res=1.77  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 4UJ2  res=2.02  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 4UJ9  res=1.87  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 4UJA  res=1.93  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 4UJB  res=1.95  n_phos=3  chains=['A']  seqs=[10, 197, 338]
+    ✓ 4WB5  res=1.64  n_phos=3  chains=['A']  seqs=[139, 197, 338]
+    ✓ 4WB6  res=2.1  n_phos=5  chains=['A', 'B']  seqs=[10, 139, 197, 338]
+    ✓ 4WB7  res=1.9  n_phos=6  chains=['A', 'B']  seqs=[194, 252, 393]
+    ✓ 4WB8  res=1.55  n_phos=3  chains=['A']  seqs=[139, 197, 338]
+    ✓ 5BX6  res=1.89  n_phos=3  chains=['A']  seqs=[10, 197, 338]
+    ✓ 5BX7  res=1.89  n_phos=3  chains=['A']  seqs=[10, 197, 338]
+    ✓ 5IZF  res=2.1  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 5IZJ  res=1.85  n_phos=4  chains=['A', 'B']  seqs=[197, 338]
+    ✓ 5J5X  res=2.6  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 5N23  res=2.09  n_phos=4  chains=['A']  seqs=[10, 139, 197, 338]
+    ✓ 5UZK  res=2.3  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 6BYR  res=3.66  n_phos=6  chains=['A', 'C']  seqs=[194, 252, 393]
+    ✓ 6BYS  res=4.75  n_phos=12  chains=['A', 'C', 'E', 'G']  seqs=[139, 197, 338]
+    ✓ 6C0U  res=2.65  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 6FRX  res=1.88  n_phos=3  chains=['A']  seqs=[139, 197, 338]
+    ✓ 6NO7  res=3.55  n_phos=12  chains=['A', 'C', 'E', 'G']  seqs=[139, 197, 338]
+    ✓ 6QJ7  res=1.69  n_phos=2  chains=['A']  seqs=[197, 338]
+    ✓ 7Y1G  res=2.3  n_phos=4  chains=['A', 'B']  seqs=[197, 338]
+    ✓ 8FE2  res=2.34  n_phos=6  chains=['A', 'B']  seqs=[194, 252, 393]
+    ✓ 8FE5  res=2.51  n_phos=6  chains=['A', 'B']  seqs=[194, 252, 393]
+    ✓ 8FEC  res=2.7  n_phos=5  chains=['A', 'B']  seqs=[194, 252, 393]
+    ✓ 8X5L  res=2.75  n_phos=1  chains=['A']  seqs=[339]
+    ✓ 9EDC  res=4.18  n_phos=3  chains=['A']  seqs=[139, 197, 338]
+    ✓ 9EDE  res=5.9  n_phos=2  chains=['A']  seqs=[197, 338]
+
+====================================================================================================
+  汇总：各蛋白真实磷酸化候选结构数
+====================================================================================================
+  IRF3                   候选   3 个   最佳: 3A77
+  P38alpha               候选   2 个   最佳: 4EWQ
+  Hsp27                  候选   0 个   最佳: —
+  c-Src_kinase           候选  17 个   最佳: 1YI6
+  AMPK_alpha2            候选   9 个   最佳: 6B1U
+  PhK_gamma              候选   0 个   最佳: —
+  PKA_Calpha             候选  48 个   最佳: 6NO7
+
+[OK] /Volumes/thinkplus/PTM/audit/phos_structure_candidates.json

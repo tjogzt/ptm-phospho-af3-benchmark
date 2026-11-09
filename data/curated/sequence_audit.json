@@ -1,0 +1,590 @@
+{
+  "CDK2": {
+    "status": "OK",
+    "gene": "CDK2",
+    "uniprot": "P24941",
+    "uniprot_length": 298,
+    "declared_length_in_benchmark": 298,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr160",
+        "pos": 160,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "2C5N": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'CDK2_HU'"
+      },
+      "1H1R": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'CDK2_HU'"
+      }
+    }
+  },
+  "ERK2": {
+    "status": "OK",
+    "gene": "MAPK1",
+    "uniprot": "P28482",
+    "uniprot_length": 360,
+    "declared_length_in_benchmark": 360,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr185",
+        "pos": 185,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      },
+      {
+        "site": "Tyr187",
+        "pos": 187,
+        "expected": "T",
+        "actual": "Y",
+        "status": "MISMATCH"
+      }
+    ],
+    "pdb_mappings": {
+      "1ERK": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      },
+      "2ERK": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "Aurora_A": {
+    "status": "OK",
+    "gene": "AURKA",
+    "uniprot": "O14965",
+    "uniprot_length": 403,
+    "declared_length_in_benchmark": 403,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr288",
+        "pos": 288,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "4J8M": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      },
+      "5DNR": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "IRF3": {
+    "status": "OK",
+    "gene": "IRF3",
+    "uniprot": "Q14653",
+    "uniprot_length": 427,
+    "declared_length_in_benchmark": 427,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Ser386",
+        "pos": 386,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      },
+      {
+        "site": "Ser402",
+        "pos": 402,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "1QWT": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      },
+      "3A77": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "P38alpha": {
+    "status": "OK",
+    "gene": "MAPK14",
+    "uniprot": "Q16539",
+    "uniprot_length": 360,
+    "declared_length_in_benchmark": 360,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr180",
+        "pos": 180,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      },
+      {
+        "site": "Tyr182",
+        "pos": 182,
+        "expected": "T",
+        "actual": "Y",
+        "status": "MISMATCH"
+      }
+    ],
+    "pdb_mappings": {
+      "1WFC": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'MK14_HU'"
+      },
+      "3PY3": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "CDK7": {
+    "status": "OK",
+    "gene": "CDK7",
+    "uniprot": "P50613",
+    "uniprot_length": 346,
+    "declared_length_in_benchmark": 346,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr170",
+        "pos": 170,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "8P79": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      },
+      "8PYR": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'CDK7_HU'"
+      }
+    }
+  },
+  "c-Src_kinase": {
+    "status": "OK",
+    "gene": "SRC",
+    "uniprot": "P12931",
+    "uniprot_length": 536,
+    "declared_length_in_benchmark": 536,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Tyr419",
+        "pos": 419,
+        "expected": "T",
+        "actual": "Y",
+        "status": "MISMATCH"
+      }
+    ],
+    "pdb_mappings": {
+      "7NG7": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      },
+      "9NS0": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "AMPK_alpha2": {
+    "status": "OK",
+    "gene": "PRKAA2",
+    "uniprot": "P54646",
+    "uniprot_length": 552,
+    "declared_length_in_benchmark": 552,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr172",
+        "pos": 172,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "2H6D": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'AAPK2_H'"
+      },
+      "6B1U": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'AAPK2_H'"
+      }
+    }
+  },
+  "PKA_Calpha": {
+    "status": "OK",
+    "gene": "PRKACA",
+    "uniprot": "P17612",
+    "uniprot_length": 351,
+    "declared_length_in_benchmark": 351,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr198",
+        "pos": 198,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "6QJ7": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'KAPCA_H'"
+      }
+    }
+  },
+  "CTD_kinase": {
+    "status": "OK",
+    "gene": "POLR2A",
+    "uniprot": "P24928",
+    "uniprot_length": 1970,
+    "declared_length_in_benchmark": 1970,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Ser1614",
+        "pos": 1614,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      },
+      {
+        "site": "Ser1621",
+        "pos": 1621,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "4JXT": {
+        "state": "phos",
+        "chain": "B",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "Glycogen_Phosphorylase": {
+    "status": "OK",
+    "gene": "PYGM",
+    "uniprot": "P00489",
+    "uniprot_length": 843,
+    "declared_length_in_benchmark": 843,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Ser15",
+        "pos": 15,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "2GJ4": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'PYGM_RA'"
+      },
+      "1LWO": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'PHS2_RA'"
+      }
+    }
+  },
+  "CDK1": {
+    "status": "OK",
+    "gene": "CDK1",
+    "uniprot": "P06493",
+    "uniprot_length": 297,
+    "declared_length_in_benchmark": 297,
+    "length_match": true,
+    "sites": [
+      {
+        "site": "Thr161",
+        "pos": 161,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "4YC3": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'CDK1_HU'"
+      },
+      "9SKQ": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'CDK1_HU'"
+      }
+    }
+  },
+  "ERK1": {
+    "status": "OK",
+    "gene": "MAPK3",
+    "uniprot": "P27361",
+    "uniprot_length": 379,
+    "declared_length_in_benchmark": null,
+    "length_match": false,
+    "sites": [
+      {
+        "site": "Thr202",
+        "pos": 202,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      },
+      {
+        "site": "Tyr204",
+        "pos": 204,
+        "expected": "T",
+        "actual": "Y",
+        "status": "MISMATCH"
+      }
+    ],
+    "pdb_mappings": {
+      "4QTB": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'MK03_HU'"
+      },
+      "2ZOQ": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'MK03_HU'"
+      }
+    }
+  },
+  "GSK3B": {
+    "status": "OK",
+    "gene": "GSK3B",
+    "uniprot": "P49841",
+    "uniprot_length": 420,
+    "declared_length_in_benchmark": null,
+    "length_match": false,
+    "sites": [
+      {
+        "site": "Tyr216",
+        "pos": 216,
+        "expected": "T",
+        "actual": "Y",
+        "status": "MISMATCH"
+      }
+    ],
+    "pdb_mappings": {
+      "1J1B": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'GSK3B_H'"
+      },
+      "6Y9S": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'GSK3B_H'"
+      }
+    }
+  },
+  "PAK1": {
+    "status": "OK",
+    "gene": "PAK1",
+    "uniprot": "Q13153",
+    "uniprot_length": 545,
+    "declared_length_in_benchmark": null,
+    "length_match": false,
+    "sites": [
+      {
+        "site": "Thr423",
+        "pos": 423,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "1YHW": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      },
+      "3FXZ": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "AKT1": {
+    "status": "OK",
+    "gene": "AKT1",
+    "uniprot": "P31749",
+    "uniprot_length": 480,
+    "declared_length_in_benchmark": null,
+    "length_match": false,
+    "sites": [
+      {
+        "site": "Thr308",
+        "pos": 308,
+        "expected": "T",
+        "actual": "T",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "3O96": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'AKT1_HU'"
+      },
+      "4GV1": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "no DBREF/SEQADV for this chain"
+      }
+    }
+  },
+  "TBK1": {
+    "status": "OK",
+    "gene": "TBK1",
+    "uniprot": "Q9UHD2",
+    "uniprot_length": 729,
+    "declared_length_in_benchmark": null,
+    "length_match": false,
+    "sites": [
+      {
+        "site": "Ser172",
+        "pos": 172,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "4IM0": {
+        "state": "unphos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'TBK1_HU'"
+      },
+      "4EUU": {
+        "state": "phos",
+        "chain": "A",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'TBK1_HU'"
+      }
+    }
+  },
+  "IKBKB": {
+    "status": "OK",
+    "gene": "IKBKB",
+    "uniprot": "O14920",
+    "uniprot_length": 756,
+    "declared_length_in_benchmark": null,
+    "length_match": false,
+    "sites": [
+      {
+        "site": "Ser177",
+        "pos": 177,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      },
+      {
+        "site": "Ser181",
+        "pos": 181,
+        "expected": "S",
+        "actual": "S",
+        "status": "OK"
+      }
+    ],
+    "pdb_mappings": {
+      "4E3C": {
+        "state": "unphos",
+        "chain": "B",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'IKKB_HU'"
+      },
+      "4KIK": {
+        "state": "phos",
+        "chain": "B",
+        "offset_uniprot_minus_pdb": null,
+        "evidence": "parse error: invalid literal for int() with base 10: 'IKKB_HU'"
+      }
+    }
+  }
+}

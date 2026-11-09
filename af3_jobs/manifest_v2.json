@@ -1,0 +1,294 @@
+[
+  {
+    "protein": "CDK2",
+    "gene": "CDK2",
+    "uniprot": "P24941",
+    "seq_len": 298,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      160
+    ],
+    "pdb_chains": {
+      "2C5N": "A",
+      "1H1R": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "ERK2",
+    "gene": "MAPK1",
+    "uniprot": "P28482",
+    "seq_len": 360,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      185,
+      187
+    ],
+    "pdb_chains": {
+      "1ERK": "A",
+      "2ERK": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "Aurora_A",
+    "gene": "AURKA",
+    "uniprot": "O14965",
+    "seq_len": 403,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      288
+    ],
+    "pdb_chains": {
+      "4J8M": "A",
+      "5DNR": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "IRF3",
+    "gene": "IRF3",
+    "uniprot": "Q14653",
+    "seq_len": 427,
+    "paired": true,
+    "effect_type": "allosteric",
+    "phos_sites_uniprot": [
+      386,
+      402
+    ],
+    "pdb_chains": {
+      "1QWT": "A",
+      "3A77": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "P38alpha",
+    "gene": "MAPK14",
+    "uniprot": "Q16539",
+    "seq_len": 360,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      180,
+      182
+    ],
+    "pdb_chains": {
+      "1WFC": "A",
+      "3PY3": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "CDK7",
+    "gene": "CDK7",
+    "uniprot": "P50613",
+    "seq_len": 346,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      170
+    ],
+    "pdb_chains": {
+      "8P79": "J",
+      "8PYR": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "c-Src_kinase",
+    "gene": "SRC",
+    "uniprot": "P12931",
+    "seq_len": 536,
+    "paired": true,
+    "effect_type": "allosteric",
+    "phos_sites_uniprot": [
+      419
+    ],
+    "pdb_chains": {
+      "7NG7": "A",
+      "9NS0": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "AMPK_alpha2",
+    "gene": "PRKAA2",
+    "uniprot": "P54646",
+    "seq_len": 552,
+    "paired": true,
+    "effect_type": "allosteric",
+    "phos_sites_uniprot": [
+      172
+    ],
+    "pdb_chains": {
+      "2H6D": "A",
+      "6B1U": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "PKA_Calpha",
+    "gene": "PRKACA",
+    "uniprot": "P17612",
+    "seq_len": 351,
+    "paired": false,
+    "effect_type": "allosteric",
+    "phos_sites_uniprot": [
+      198
+    ],
+    "pdb_chains": {
+      "6QJ7": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "CTD_kinase",
+    "gene": "POLR2A",
+    "uniprot": "P24928",
+    "seq_len": 1970,
+    "paired": false,
+    "effect_type": "disorder_order",
+    "phos_sites_uniprot": [
+      1614,
+      1621
+    ],
+    "pdb_chains": {
+      "4JXT": "B"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "Glycogen_Phosphorylase",
+    "gene": "PYGM",
+    "uniprot": "P00489",
+    "seq_len": 843,
+    "paired": true,
+    "effect_type": "disorder_order",
+    "phos_sites_uniprot": [
+      15
+    ],
+    "pdb_chains": {
+      "2GJ4": "A",
+      "1LWO": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "CDK1",
+    "gene": "CDK1",
+    "uniprot": "P06493",
+    "seq_len": 297,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      161
+    ],
+    "pdb_chains": {
+      "4YC3": "A",
+      "9SKQ": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "ERK1",
+    "gene": "MAPK3",
+    "uniprot": "P27361",
+    "seq_len": 379,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      202,
+      204
+    ],
+    "pdb_chains": {
+      "4QTB": "A",
+      "2ZOQ": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "GSK3B",
+    "gene": "GSK3B",
+    "uniprot": "P49841",
+    "seq_len": 420,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      216
+    ],
+    "pdb_chains": {
+      "1J1B": "A",
+      "6Y9S": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "PAK1",
+    "gene": "PAK1",
+    "uniprot": "Q13153",
+    "seq_len": 545,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      423
+    ],
+    "pdb_chains": {
+      "1YHW": "A",
+      "3FXZ": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "AKT1",
+    "gene": "AKT1",
+    "uniprot": "P31749",
+    "seq_len": 480,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      308
+    ],
+    "pdb_chains": {
+      "3O96": "A",
+      "4GV1": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "TBK1",
+    "gene": "TBK1",
+    "uniprot": "Q9UHD2",
+    "seq_len": 729,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      172
+    ],
+    "pdb_chains": {
+      "4IM0": "A",
+      "4EUU": "A"
+    },
+    "jobs": 6
+  },
+  {
+    "protein": "IKBKB",
+    "gene": "IKBKB",
+    "uniprot": "O14920",
+    "seq_len": 756,
+    "paired": true,
+    "effect_type": "local_rearrangement",
+    "phos_sites_uniprot": [
+      177,
+      181
+    ],
+    "pdb_chains": {
+      "4E3C": "B",
+      "4KIK": "B"
+    },
+    "jobs": 6
+  }
+]

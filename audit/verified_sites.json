@@ -1,0 +1,224 @@
+{
+  "CDK2": {
+    "pdb": "1JST",
+    "chain": "A",
+    "uniprot": "P24941",
+    "sites_uniprot": [
+      160
+    ],
+    "details": [
+      {
+        "pdb": 160,
+        "uniprot": 160,
+        "aa": "T",
+        "valid": true
+      }
+    ]
+  },
+  "ERK2": {
+    "pdb": "2ERK",
+    "chain": "A",
+    "uniprot": "P28482",
+    "sites_uniprot": [
+      185,
+      187
+    ],
+    "details": [
+      {
+        "pdb": 183,
+        "uniprot": 185,
+        "aa": "T",
+        "valid": true
+      },
+      {
+        "pdb": 185,
+        "uniprot": 187,
+        "aa": "Y",
+        "valid": true
+      }
+    ]
+  },
+  "Aurora_A": {
+    "pdb": "1OL5",
+    "chain": "A",
+    "uniprot": "O14965",
+    "sites_uniprot": [
+      287,
+      288
+    ],
+    "details": [
+      {
+        "pdb": 287,
+        "uniprot": 287,
+        "aa": "T",
+        "valid": true
+      },
+      {
+        "pdb": 288,
+        "uniprot": 288,
+        "aa": "T",
+        "valid": true
+      }
+    ]
+  },
+  "IRF3": {
+    "pdb": "3A77",
+    "chain": "A",
+    "uniprot": "Q14653",
+    "sites_uniprot": [
+      386,
+      402
+    ],
+    "details": [
+      {
+        "pdb": 386,
+        "uniprot": 386,
+        "aa": "S",
+        "valid": true
+      },
+      {
+        "pdb": 402,
+        "uniprot": 402,
+        "aa": "S",
+        "valid": true
+      }
+    ]
+  },
+  "P38alpha": {
+    "pdb": "3PY3",
+    "chain": "A",
+    "uniprot": "Q16539",
+    "sites_uniprot": [
+      180,
+      182
+    ],
+    "details": [
+      {
+        "pdb": 180,
+        "uniprot": 180,
+        "aa": "T",
+        "valid": true
+      },
+      {
+        "pdb": 182,
+        "uniprot": 182,
+        "aa": "Y",
+        "valid": true
+      }
+    ]
+  },
+  "CDK7": {
+    "pdb": "8PYR",
+    "chain": "A",
+    "uniprot": "P50613",
+    "sites_uniprot": [
+      164,
+      170
+    ],
+    "details": [
+      {
+        "pdb": 164,
+        "uniprot": 164,
+        "aa": "S",
+        "valid": true
+      },
+      {
+        "pdb": 170,
+        "uniprot": 170,
+        "aa": "T",
+        "valid": true
+      }
+    ]
+  },
+  "c-Src_kinase": {
+    "pdb": "1YI6",
+    "chain": "A",
+    "uniprot": "P12931",
+    "sites_uniprot": [
+      338,
+      419
+    ],
+    "details": [
+      {
+        "pdb": 335,
+        "uniprot": 338,
+        "aa": "Y",
+        "valid": true
+      },
+      {
+        "pdb": 416,
+        "uniprot": 419,
+        "aa": "Y",
+        "valid": true
+      }
+    ]
+  },
+  "AMPK_alpha2": {
+    "pdb": "6B1U",
+    "chain": "A",
+    "uniprot": "P54646",
+    "sites_uniprot": [
+      172
+    ],
+    "details": [
+      {
+        "pdb": 108,
+        "uniprot": 108,
+        "aa": "H",
+        "valid": false
+      },
+      {
+        "pdb": 172,
+        "uniprot": 172,
+        "aa": "T",
+        "valid": true
+      }
+    ]
+  },
+  "PKA_Calpha": {
+    "pdb": "6QJ7",
+    "chain": "A",
+    "uniprot": "P17612",
+    "sites_uniprot": [
+      198,
+      339
+    ],
+    "details": [
+      {
+        "pdb": 197,
+        "uniprot": 198,
+        "aa": "T",
+        "valid": true
+      },
+      {
+        "pdb": 338,
+        "uniprot": 339,
+        "aa": "S",
+        "valid": true
+      }
+    ]
+  },
+  "CTD_kinase": {
+    "pdb": "4JXT",
+    "chain": "B",
+    "uniprot": "P24928",
+    "sites_uniprot": [
+      1614,
+      1621
+    ],
+    "details": [
+      {
+        "pdb": 1621,
+        "uniprot": 1614,
+        "aa": "S",
+        "valid": true
+      },
+      {
+        "pdb": 1628,
+        "uniprot": 1621,
+        "aa": "S",
+        "valid": true
+      }
+    ]
+  }
+}

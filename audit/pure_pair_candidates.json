@@ -1,0 +1,1880 @@
+{
+  "CDK2": {
+    "uniprot": "P24941",
+    "sites": [
+      160
+    ],
+    "n_entries": 120,
+    "pairs": [
+      {
+        "composition": [
+          "P20248",
+          "P24941"
+        ],
+        "n_components": 2,
+        "phos": [
+          {
+            "pdb": "1H1R",
+            "sites": [
+              160
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "1OIU",
+            "sites": [
+              160
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "1H1S",
+            "sites": [
+              160
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "1OI9",
+            "sites": [
+              160
+            ],
+            "res": 2.1
+          },
+          {
+            "pdb": "1H1P",
+            "sites": [
+              160
+            ],
+            "res": 2.1
+          },
+          {
+            "pdb": "1QMZ",
+            "sites": [
+              160
+            ],
+            "res": 2.2
+          },
+          {
+            "pdb": "1P5E",
+            "sites": [
+              160
+            ],
+            "res": 2.22
+          },
+          {
+            "pdb": "2CJM",
+            "sites": [
+              15,
+              160
+            ],
+            "res": 2.3
+          },
+          {
+            "pdb": "1PKD",
+            "sites": [
+              160
+            ],
+            "res": 2.3
+          },
+          {
+            "pdb": "1OIY",
+            "sites": [
+              160
+            ],
+            "res": 2.4
+          },
+          {
+            "pdb": "1E9H",
+            "sites": [
+              160
+            ],
+            "res": 2.5
+          },
+          {
+            "pdb": "1H1Q",
+            "sites": [
+              160
+            ],
+            "res": 2.5
+          },
+          {
+            "pdb": "1JST",
+            "sites": [
+              160
+            ],
+            "res": 2.6
+          },
+          {
+            "pdb": "1OGU",
+            "sites": [
+              160
+            ],
+            "res": 2.6
+          },
+          {
+            "pdb": "2C6T",
+            "sites": [
+              160
+            ],
+            "res": 2.61
+          },
+          {
+            "pdb": "1GY3",
+            "sites": [
+              160
+            ],
+            "res": 2.7
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "2C5N",
+            "res": 2.1
+          },
+          {
+            "pdb": "1FIN",
+            "res": 2.3
+          },
+          {
+            "pdb": "1VYW",
+            "res": 2.3
+          },
+          {
+            "pdb": "1OKV",
+            "res": 2.4
+          },
+          {
+            "pdb": "2BPM",
+            "res": 2.4
+          },
+          {
+            "pdb": "1OKW",
+            "res": 2.5
+          },
+          {
+            "pdb": "1OL2",
+            "res": 2.6
+          },
+          {
+            "pdb": "2BKZ",
+            "res": 2.6
+          },
+          {
+            "pdb": "1URC",
+            "res": 2.6
+          },
+          {
+            "pdb": "2C4G",
+            "res": 2.7
+          },
+          {
+            "pdb": "1FVV",
+            "res": 2.8
+          },
+          {
+            "pdb": "1OL1",
+            "res": 2.9
+          },
+          {
+            "pdb": "2C5V",
+            "res": 2.9
+          },
+          {
+            "pdb": "2C5X",
+            "res": 2.9
+          }
+        ],
+        "target_site_hit": true
+      }
+    ]
+  },
+  "Aurora_A": {
+    "uniprot": "O14965",
+    "sites": [
+      288
+    ],
+    "n_entries": 120,
+    "pairs": [
+      {
+        "composition": [
+          "O14965"
+        ],
+        "n_components": 1,
+        "phos": [
+          {
+            "pdb": "5ORL",
+            "sites": [
+              288
+            ],
+            "res": 1.69
+          },
+          {
+            "pdb": "5DNR",
+            "sites": [
+              288
+            ],
+            "res": 1.95
+          },
+          {
+            "pdb": "5DN3",
+            "sites": [
+              288
+            ],
+            "res": 2.05
+          },
+          {
+            "pdb": "4CEG",
+            "sites": [
+              288
+            ],
+            "res": 2.1
+          },
+          {
+            "pdb": "5ORO",
+            "sites": [
+              288
+            ],
+            "res": 2.12
+          },
+          {
+            "pdb": "5EW9",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 2.181
+          },
+          {
+            "pdb": "5ORN",
+            "sites": [
+              288
+            ],
+            "res": 2.19
+          },
+          {
+            "pdb": "5DT3",
+            "sites": [
+              287
+            ],
+            "res": 2.33
+          },
+          {
+            "pdb": "2WTV",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 2.4
+          },
+          {
+            "pdb": "4BN1",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 2.499
+          },
+          {
+            "pdb": "1OL7",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 2.75
+          },
+          {
+            "pdb": "2W1C",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 3.24
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "4J8M",
+            "res": 1.853
+          },
+          {
+            "pdb": "1MQ4",
+            "res": 1.9
+          },
+          {
+            "pdb": "3FDN",
+            "res": 1.9
+          },
+          {
+            "pdb": "4UYN",
+            "res": 1.9
+          },
+          {
+            "pdb": "2J4Z",
+            "res": 2.0
+          },
+          {
+            "pdb": "3O50",
+            "res": 2.0
+          },
+          {
+            "pdb": "4UZH",
+            "res": 2.0
+          },
+          {
+            "pdb": "5G15",
+            "res": 2.06
+          },
+          {
+            "pdb": "2C6E",
+            "res": 2.1
+          },
+          {
+            "pdb": "3LAU",
+            "res": 2.1
+          },
+          {
+            "pdb": "5DRD",
+            "res": 2.13
+          },
+          {
+            "pdb": "5DT0",
+            "res": 2.15
+          },
+          {
+            "pdb": "2C6D",
+            "res": 2.2
+          },
+          {
+            "pdb": "3H10",
+            "res": 2.2
+          },
+          {
+            "pdb": "2NP8",
+            "res": 2.25
+          },
+          {
+            "pdb": "3EFW",
+            "res": 2.29
+          },
+          {
+            "pdb": "4DEE",
+            "res": 2.3
+          },
+          {
+            "pdb": "4JBQ",
+            "res": 2.3
+          },
+          {
+            "pdb": "3UP2",
+            "res": 2.3001
+          },
+          {
+            "pdb": "3K5U",
+            "res": 2.35
+          },
+          {
+            "pdb": "3UOL",
+            "res": 2.4
+          },
+          {
+            "pdb": "3MYG",
+            "res": 2.4
+          },
+          {
+            "pdb": "3UO4",
+            "res": 2.45
+          },
+          {
+            "pdb": "3W2C",
+            "res": 2.45
+          },
+          {
+            "pdb": "4JBP",
+            "res": 2.45
+          },
+          {
+            "pdb": "4DEA",
+            "res": 2.45
+          },
+          {
+            "pdb": "5DR2",
+            "res": 2.46
+          },
+          {
+            "pdb": "5DR9",
+            "res": 2.47
+          },
+          {
+            "pdb": "4JBO",
+            "res": 2.493
+          },
+          {
+            "pdb": "2DWB",
+            "res": 2.5
+          },
+          {
+            "pdb": "2WQE",
+            "res": 2.5
+          },
+          {
+            "pdb": "3H0Y",
+            "res": 2.5
+          },
+          {
+            "pdb": "3W18",
+            "res": 2.5
+          },
+          {
+            "pdb": "4B0G",
+            "res": 2.5
+          },
+          {
+            "pdb": "4O0S",
+            "res": 2.5
+          },
+          {
+            "pdb": "3UOD",
+            "res": 2.5002
+          },
+          {
+            "pdb": "5DR6",
+            "res": 2.534
+          },
+          {
+            "pdb": "2BMC",
+            "res": 2.6
+          },
+          {
+            "pdb": "4BYI",
+            "res": 2.6
+          },
+          {
+            "pdb": "4O0U",
+            "res": 2.6
+          },
+          {
+            "pdb": "4O0W",
+            "res": 2.6
+          },
+          {
+            "pdb": "5ONE",
+            "res": 2.6
+          },
+          {
+            "pdb": "2XNG",
+            "res": 2.605
+          },
+          {
+            "pdb": "5OBR",
+            "res": 2.62
+          },
+          {
+            "pdb": "3VAP",
+            "res": 2.66
+          },
+          {
+            "pdb": "3COH",
+            "res": 2.7
+          },
+          {
+            "pdb": "3W10",
+            "res": 2.7
+          },
+          {
+            "pdb": "4JAJ",
+            "res": 2.7
+          },
+          {
+            "pdb": "3UO5",
+            "res": 2.7012
+          },
+          {
+            "pdb": "2W1G",
+            "res": 2.71
+          },
+          {
+            "pdb": "3M11",
+            "res": 2.75
+          },
+          {
+            "pdb": "4BYJ",
+            "res": 2.75
+          },
+          {
+            "pdb": "5AAF",
+            "res": 2.78
+          },
+          {
+            "pdb": "4C3R",
+            "res": 2.79
+          },
+          {
+            "pdb": "2X6D",
+            "res": 2.796
+          },
+          {
+            "pdb": "3P9J",
+            "res": 2.8
+          },
+          {
+            "pdb": "3W16",
+            "res": 2.8
+          },
+          {
+            "pdb": "3UNZ",
+            "res": 2.8
+          },
+          {
+            "pdb": "2XNE",
+            "res": 2.8
+          },
+          {
+            "pdb": "4ZTQ",
+            "res": 2.8
+          },
+          {
+            "pdb": "4PRJ",
+            "res": 2.8
+          },
+          {
+            "pdb": "4DHF",
+            "res": 2.8
+          },
+          {
+            "pdb": "3UOH",
+            "res": 2.8002
+          },
+          {
+            "pdb": "3UO6",
+            "res": 2.8002
+          },
+          {
+            "pdb": "2W1F",
+            "res": 2.85
+          },
+          {
+            "pdb": "4ZTR",
+            "res": 2.85
+          },
+          {
+            "pdb": "5AAG",
+            "res": 2.85
+          },
+          {
+            "pdb": "5DT4",
+            "res": 2.86
+          },
+          {
+            "pdb": "2XRU",
+            "res": 2.9
+          },
+          {
+            "pdb": "3R21",
+            "res": 2.9
+          },
+          {
+            "pdb": "3R22",
+            "res": 2.9
+          },
+          {
+            "pdb": "1MUO",
+            "res": 2.9
+          },
+          {
+            "pdb": "4ZTS",
+            "res": 2.9
+          },
+          {
+            "pdb": "3UOJ",
+            "res": 2.9003
+          },
+          {
+            "pdb": "5OBJ",
+            "res": 2.901
+          },
+          {
+            "pdb": "2X81",
+            "res": 2.91
+          },
+          {
+            "pdb": "3H0Z",
+            "res": 2.92
+          },
+          {
+            "pdb": "2W1E",
+            "res": 2.93
+          },
+          {
+            "pdb": "3UOK",
+            "res": 2.9506
+          },
+          {
+            "pdb": "2W1D",
+            "res": 2.97
+          },
+          {
+            "pdb": "5DOS",
+            "res": 2.98
+          },
+          {
+            "pdb": "2J50",
+            "res": 3.0
+          },
+          {
+            "pdb": "1OL6",
+            "res": 3.0
+          },
+          {
+            "pdb": "4ZS0",
+            "res": 3.0
+          },
+          {
+            "pdb": "3UP7",
+            "res": 3.05
+          },
+          {
+            "pdb": "3NRM",
+            "res": 3.05
+          },
+          {
+            "pdb": "4DED",
+            "res": 3.05
+          },
+          {
+            "pdb": "4DEB",
+            "res": 3.05
+          },
+          {
+            "pdb": "5AAD",
+            "res": 3.1
+          },
+          {
+            "pdb": "5AAE",
+            "res": 3.11
+          },
+          {
+            "pdb": "4J8N",
+            "res": 3.135
+          },
+          {
+            "pdb": "3O51",
+            "res": 3.2
+          },
+          {
+            "pdb": "4UZD",
+            "res": 3.2
+          },
+          {
+            "pdb": "4JAI",
+            "res": 3.2
+          },
+          {
+            "pdb": "2WTW",
+            "res": 3.302
+          },
+          {
+            "pdb": "2X6E",
+            "res": 3.35
+          },
+          {
+            "pdb": "3QBN",
+            "res": 3.5
+          }
+        ],
+        "target_site_hit": true
+      },
+      {
+        "composition": [
+          "O14965",
+          "Q9ULW0"
+        ],
+        "n_components": 2,
+        "phos": [
+          {
+            "pdb": "5LXM",
+            "sites": [
+              288
+            ],
+            "res": 2.08
+          },
+          {
+            "pdb": "3E5A",
+            "sites": [
+              288
+            ],
+            "res": 2.3
+          },
+          {
+            "pdb": "3HA6",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 2.36
+          },
+          {
+            "pdb": "1OL5",
+            "sites": [
+              287,
+              288
+            ],
+            "res": 2.5
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "4C3P",
+            "res": 2.69
+          }
+        ],
+        "target_site_hit": true
+      },
+      {
+        "composition": [
+          "O14965",
+          "Q8JJ25"
+        ],
+        "n_components": 2,
+        "phos": [
+          {
+            "pdb": "5L8L",
+            "sites": [
+              288
+            ],
+            "res": 1.67
+          },
+          {
+            "pdb": "5L8K",
+            "sites": [
+              288
+            ],
+            "res": 1.79
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "5L8J",
+            "res": 1.68
+          }
+        ],
+        "target_site_hit": true
+      }
+    ]
+  },
+  "CDK1": {
+    "uniprot": "P06493",
+    "sites": [
+      161
+    ],
+    "n_entries": 14,
+    "pairs": []
+  },
+  "IRF3": {
+    "uniprot": "Q14653",
+    "sites": [
+      386,
+      402
+    ],
+    "n_entries": 18,
+    "pairs": [
+      {
+        "composition": [
+          "Q14653"
+        ],
+        "n_components": 1,
+        "phos": [
+          {
+            "pdb": "3A77",
+            "sites": [
+              386,
+              402
+            ],
+            "res": 1.8
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "1QWT",
+            "res": 2.1
+          },
+          {
+            "pdb": "1J2F",
+            "res": 2.3
+          },
+          {
+            "pdb": "3QU6",
+            "res": 2.3
+          },
+          {
+            "pdb": "2PI0",
+            "res": 2.31
+          },
+          {
+            "pdb": "2O6G",
+            "res": 3.1
+          }
+        ],
+        "target_site_hit": true
+      },
+      {
+        "composition": [
+          "Q14653",
+          "Q92793"
+        ],
+        "n_components": 2,
+        "phos": [
+          {
+            "pdb": "7JFL",
+            "sites": [
+              386
+            ],
+            "res": 1.68
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "1ZOQ",
+            "res": 2.37
+          },
+          {
+            "pdb": "5JEM",
+            "res": 2.5
+          }
+        ],
+        "target_site_hit": true
+      }
+    ]
+  },
+  "P38alpha": {
+    "uniprot": "Q16539",
+    "sites": [
+      180,
+      182
+    ],
+    "n_entries": 120,
+    "pairs": []
+  },
+  "CDK7": {
+    "uniprot": "P50613",
+    "sites": [
+      170
+    ],
+    "n_entries": 56,
+    "pairs": [
+      {
+        "composition": [
+          "P50613"
+        ],
+        "n_components": 1,
+        "phos": [
+          {
+            "pdb": "1UA2",
+            "sites": [
+              170
+            ],
+            "res": 3.02
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "8R9A",
+            "res": 1.71
+          },
+          {
+            "pdb": "8R99",
+            "res": 1.81
+          },
+          {
+            "pdb": "8R9U",
+            "res": 1.937
+          },
+          {
+            "pdb": "8R9B",
+            "res": 2.21
+          },
+          {
+            "pdb": "8R9O",
+            "res": 2.22
+          },
+          {
+            "pdb": "8P4Z",
+            "res": 2.75
+          },
+          {
+            "pdb": "8R9S",
+            "res": 2.78
+          }
+        ],
+        "target_site_hit": true
+      },
+      {
+        "composition": [
+          "P50613",
+          "P51946",
+          "P51948"
+        ],
+        "n_components": 3,
+        "phos": [
+          {
+            "pdb": "8PYR",
+            "sites": [
+              164,
+              170
+            ],
+            "res": 2.15
+          },
+          {
+            "pdb": "6XBZ",
+            "sites": [
+              164
+            ],
+            "res": 2.8
+          },
+          {
+            "pdb": "6XD3",
+            "sites": [
+              164
+            ],
+            "res": 3.3
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "8P79",
+            "res": 1.7
+          },
+          {
+            "pdb": "8P77",
+            "res": 1.8
+          },
+          {
+            "pdb": "8ORM",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P6V",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P6W",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P6X",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P6Y",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P78",
+            "res": 1.9
+          },
+          {
+            "pdb": "8PLZ",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P72",
+            "res": 1.9
+          },
+          {
+            "pdb": "8P71",
+            "res": 2.0
+          },
+          {
+            "pdb": "8P73",
+            "res": 2.0
+          },
+          {
+            "pdb": "8P75",
+            "res": 2.0
+          },
+          {
+            "pdb": "8P76",
+            "res": 2.0
+          },
+          {
+            "pdb": "8P70",
+            "res": 2.0
+          },
+          {
+            "pdb": "8P6Z",
+            "res": 2.1
+          },
+          {
+            "pdb": "8P74",
+            "res": 2.2
+          },
+          {
+            "pdb": "9HIY",
+            "res": 2.3
+          },
+          {
+            "pdb": "8S0T",
+            "res": 2.3
+          },
+          {
+            "pdb": "9QJN",
+            "res": 2.4
+          },
+          {
+            "pdb": "7B5O",
+            "res": 2.5
+          },
+          {
+            "pdb": "7B5Q",
+            "res": 2.5
+          },
+          {
+            "pdb": "9HJ0",
+            "res": 2.6
+          },
+          {
+            "pdb": "9HIX",
+            "res": 2.6
+          }
+        ],
+        "target_site_hit": true
+      }
+    ]
+  },
+  "c-Src_kinase": {
+    "uniprot": "P12931",
+    "sites": [
+      419
+    ],
+    "n_entries": 78,
+    "pairs": [
+      {
+        "composition": [
+          "P12931"
+        ],
+        "n_components": 1,
+        "phos": [
+          {
+            "pdb": "1FMK",
+            "sites": [
+              527
+            ],
+            "res": 1.5
+          },
+          {
+            "pdb": "2SRC",
+            "sites": [
+              527
+            ],
+            "res": 1.5
+          },
+          {
+            "pdb": "8JN8",
+            "sites": [
+              530
+            ],
+            "res": 1.902
+          },
+          {
+            "pdb": "1SHD",
+            "sites": [
+              101
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "1YI6",
+            "sites": [
+              335,
+              416
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "1A07",
+            "sites": [
+              101
+            ],
+            "res": 2.2
+          },
+          {
+            "pdb": "1A1B",
+            "sites": [
+              101
+            ],
+            "res": 2.2
+          },
+          {
+            "pdb": "1A1E",
+            "sites": [
+              101
+            ],
+            "res": 2.2
+          },
+          {
+            "pdb": "2H8H",
+            "sites": [
+              527
+            ],
+            "res": 2.2
+          },
+          {
+            "pdb": "4K11",
+            "sites": [
+              527
+            ],
+            "res": 2.3
+          },
+          {
+            "pdb": "1A1C",
+            "sites": [
+              101
+            ],
+            "res": 2.4
+          },
+          {
+            "pdb": "8JN9",
+            "sites": [
+              530
+            ],
+            "res": 2.724
+          },
+          {
+            "pdb": "1KSW",
+            "sites": [
+              527
+            ],
+            "res": 2.8
+          },
+          {
+            "pdb": "1HCS",
+            "sites": [
+              101
+            ],
+            "res": null
+          },
+          {
+            "pdb": "1HCT",
+            "sites": [
+              101
+            ],
+            "res": null
+          },
+          {
+            "pdb": "9NS0",
+            "sites": [
+              419
+            ],
+            "res": null
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "9OFX",
+            "res": 1.45
+          },
+          {
+            "pdb": "1O43",
+            "res": 1.5
+          },
+          {
+            "pdb": "1O4R",
+            "res": 1.5
+          },
+          {
+            "pdb": "1O4A",
+            "res": 1.5
+          },
+          {
+            "pdb": "6C4S",
+            "res": 1.5
+          },
+          {
+            "pdb": "7NG7",
+            "res": 1.5
+          },
+          {
+            "pdb": "8VCF",
+            "res": 1.5
+          },
+          {
+            "pdb": "1O4G",
+            "res": 1.55
+          },
+          {
+            "pdb": "1O48",
+            "res": 1.55
+          },
+          {
+            "pdb": "1O4K",
+            "res": 1.57
+          },
+          {
+            "pdb": "4F5B",
+            "res": 1.57
+          },
+          {
+            "pdb": "1O4N",
+            "res": 1.6
+          },
+          {
+            "pdb": "1O4M",
+            "res": 1.6
+          },
+          {
+            "pdb": "8VCG",
+            "res": 1.61
+          },
+          {
+            "pdb": "1O4L",
+            "res": 1.65
+          },
+          {
+            "pdb": "1O41",
+            "res": 1.7
+          },
+          {
+            "pdb": "1O42",
+            "res": 1.7
+          },
+          {
+            "pdb": "1O49",
+            "res": 1.7
+          },
+          {
+            "pdb": "1O4O",
+            "res": 1.7
+          },
+          {
+            "pdb": "1O4J",
+            "res": 1.7
+          },
+          {
+            "pdb": "1O44",
+            "res": 1.7
+          },
+          {
+            "pdb": "4F59",
+            "res": 1.71
+          },
+          {
+            "pdb": "1O4C",
+            "res": 1.8
+          },
+          {
+            "pdb": "4F5A",
+            "res": 1.8
+          },
+          {
+            "pdb": "1O47",
+            "res": 1.8
+          },
+          {
+            "pdb": "1O45",
+            "res": 1.8
+          },
+          {
+            "pdb": "1O4B",
+            "res": 1.85
+          },
+          {
+            "pdb": "1O4D",
+            "res": 1.85
+          },
+          {
+            "pdb": "1O4P",
+            "res": 1.9
+          },
+          {
+            "pdb": "1Y57",
+            "res": 1.91
+          },
+          {
+            "pdb": "1YOJ",
+            "res": 1.95
+          },
+          {
+            "pdb": "1A09",
+            "res": 2.0
+          },
+          {
+            "pdb": "1A1A",
+            "res": 2.0
+          },
+          {
+            "pdb": "1O46",
+            "res": 2.0
+          },
+          {
+            "pdb": "1O4E",
+            "res": 2.0
+          },
+          {
+            "pdb": "1O4F",
+            "res": 2.0
+          },
+          {
+            "pdb": "2BDF",
+            "res": 2.1
+          },
+          {
+            "pdb": "4MXO",
+            "res": 2.105
+          },
+          {
+            "pdb": "6E6E",
+            "res": 2.15
+          },
+          {
+            "pdb": "1O4H",
+            "res": 2.25
+          },
+          {
+            "pdb": "1YOL",
+            "res": 2.3
+          },
+          {
+            "pdb": "6ATE",
+            "res": 2.402
+          },
+          {
+            "pdb": "7OTE",
+            "res": 2.49
+          },
+          {
+            "pdb": "2BDJ",
+            "res": 2.5
+          },
+          {
+            "pdb": "4MXY",
+            "res": 2.582
+          },
+          {
+            "pdb": "4MXZ",
+            "res": 2.582
+          },
+          {
+            "pdb": "4MXX",
+            "res": 2.6
+          },
+          {
+            "pdb": "7T1U",
+            "res": 2.65
+          },
+          {
+            "pdb": "1YOM",
+            "res": 2.9
+          },
+          {
+            "pdb": "9NS1",
+            "res": null
+          }
+        ],
+        "target_site_hit": true
+      }
+    ]
+  },
+  "AMPK_alpha2": {
+    "uniprot": "P54646",
+    "sites": [
+      172
+    ],
+    "n_entries": 15,
+    "pairs": []
+  },
+  "Glycogen_Phosphorylase": {
+    "uniprot": "P00489",
+    "sites": [
+      15
+    ],
+    "n_entries": 120,
+    "pairs": [
+      {
+        "composition": [
+          "P00489"
+        ],
+        "n_components": 1,
+        "phos": [
+          {
+            "pdb": "1LWO",
+            "sites": [
+              14
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "2GPA",
+            "sites": [
+              14
+            ],
+            "res": 2.0
+          },
+          {
+            "pdb": "3AMV",
+            "sites": [
+              14
+            ],
+            "res": 2.1
+          },
+          {
+            "pdb": "1C8L",
+            "sites": [
+              14
+            ],
+            "res": 2.3
+          },
+          {
+            "pdb": "1GPA",
+            "sites": [
+              14
+            ],
+            "res": 2.9
+          }
+        ],
+        "unphos": [
+          {
+            "pdb": "2GJ4",
+            "res": 1.6
+          },
+          {
+            "pdb": "1H5U",
+            "res": 1.76
+          },
+          {
+            "pdb": "1C8K",
+            "res": 1.76
+          },
+          {
+            "pdb": "1A8I",
+            "res": 1.78
+          },
+          {
+            "pdb": "1WW3",
+            "res": 1.8
+          },
+          {
+            "pdb": "1K06",
+            "res": 1.8
+          },
+          {
+            "pdb": "2QNB",
+            "res": 1.8
+          },
+          {
+            "pdb": "2QRQ",
+            "res": 1.8
+          },
+          {
+            "pdb": "1XC7",
+            "res": 1.83
+          },
+          {
+            "pdb": "2QN7",
+            "res": 1.83
+          },
+          {
+            "pdb": "2QRH",
+            "res": 1.83
+          },
+          {
+            "pdb": "2QRG",
+            "res": 1.85
+          },
+          {
+            "pdb": "3L79",
+            "res": 1.86
+          },
+          {
+            "pdb": "2QRP",
+            "res": 1.86
+          },
+          {
+            "pdb": "2PYI",
+            "res": 1.88
+          },
+          {
+            "pdb": "1Z62",
+            "res": 1.9
+          },
+          {
+            "pdb": "1WW2",
+            "res": 1.9
+          },
+          {
+            "pdb": "1GPB",
+            "res": 1.9
+          },
+          {
+            "pdb": "2IEG",
+            "res": 1.9
+          },
+          {
+            "pdb": "2QRM",
+            "res": 1.9
+          },
+          {
+            "pdb": "3BD7",
+            "res": 1.9
+          },
+          {
+            "pdb": "3EBO",
+            "res": 1.9
+          },
+          {
+            "pdb": "2QN8",
+            "res": 1.9
+          },
+          {
+            "pdb": "2IEI",
+            "res": 1.91
+          },
+          {
+            "pdb": "1XL0",
+            "res": 1.92
+          },
+          {
+            "pdb": "2F3U",
+            "res": 1.93
+          },
+          {
+            "pdb": "1XKX",
+            "res": 1.93
+          },
+          {
+            "pdb": "2PYD",
+            "res": 1.93
+          },
+          {
+            "pdb": "3CUV",
+            "res": 1.93
+          },
+          {
+            "pdb": "2F3P",
+            "res": 1.94
+          },
+          {
+            "pdb": "2F3S",
+            "res": 1.96
+          },
+          {
+            "pdb": "2F3Q",
+            "res": 1.96
+          },
+          {
+            "pdb": "2QN3",
+            "res": 1.96
+          },
+          {
+            "pdb": "1KTI",
+            "res": 1.97
+          },
+          {
+            "pdb": "2GPN",
+            "res": 1.99
+          },
+          {
+            "pdb": "1B4D",
+            "res": 2.0
+          },
+          {
+            "pdb": "1P4J",
+            "res": 2.0
+          },
+          {
+            "pdb": "2QN9",
+            "res": 2.0
+          },
+          {
+            "pdb": "3BCS",
+            "res": 2.0
+          },
+          {
+            "pdb": "3BD6",
+            "res": 2.0
+          },
+          {
+            "pdb": "3EBP",
+            "res": 2.0
+          },
+          {
+            "pdb": "3G2I",
+            "res": 2.0
+          },
+          {
+            "pdb": "3G2K",
+            "res": 2.0
+          },
+          {
+            "pdb": "3CUW",
+            "res": 2.0
+          },
+          {
+            "pdb": "3BDA",
+            "res": 2.0
+          },
+          {
+            "pdb": "2FET",
+            "res": 2.03
+          },
+          {
+            "pdb": "1Z6Q",
+            "res": 2.03
+          },
+          {
+            "pdb": "2FF5",
+            "res": 2.03
+          },
+          {
+            "pdb": "3BCU",
+            "res": 2.03
+          },
+          {
+            "pdb": "3G2H",
+            "res": 2.03
+          },
+          {
+            "pdb": "2FFR",
+            "res": 2.03
+          },
+          {
+            "pdb": "1P4H",
+            "res": 2.06
+          },
+          {
+            "pdb": "2G9R",
+            "res": 2.07
+          },
+          {
+            "pdb": "1P4G",
+            "res": 2.1
+          },
+          {
+            "pdb": "1XL1",
+            "res": 2.1
+          },
+          {
+            "pdb": "2QLM",
+            "res": 2.1
+          },
+          {
+            "pdb": "3BD8",
+            "res": 2.1
+          },
+          {
+            "pdb": "3G2N",
+            "res": 2.1
+          },
+          {
+            "pdb": "3G2J",
+            "res": 2.14
+          },
+          {
+            "pdb": "2G9U",
+            "res": 2.15
+          },
+          {
+            "pdb": "2G9V",
+            "res": 2.15
+          },
+          {
+            "pdb": "2QLN",
+            "res": 2.15
+          },
+          {
+            "pdb": "1P29",
+            "res": 2.2
+          },
+          {
+            "pdb": "1P2B",
+            "res": 2.2
+          },
+          {
+            "pdb": "2OFF",
+            "res": 2.2
+          },
+          {
+            "pdb": "1E1Y",
+            "res": 2.23
+          },
+          {
+            "pdb": "1WV0",
+            "res": 2.26
+          },
+          {
+            "pdb": "1WV1",
+            "res": 2.26
+          },
+          {
+            "pdb": "1WUY",
+            "res": 2.26
+          },
+          {
+            "pdb": "1WUT",
+            "res": 2.26
+          },
+          {
+            "pdb": "1K08",
+            "res": 2.26
+          },
+          {
+            "pdb": "1HLF",
+            "res": 2.26
+          },
+          {
+            "pdb": "1GFZ",
+            "res": 2.3
+          },
+          {
+            "pdb": "1UZU",
+            "res": 2.3
+          },
+          {
+            "pdb": "2AMV",
+            "res": 2.3
+          },
+          {
+            "pdb": "1C50",
+            "res": 2.3
+          },
+          {
+            "pdb": "1BX3",
+            "res": 2.3
+          },
+          {
+            "pdb": "1AXR",
+            "res": 2.3
+          },
+          {
+            "pdb": "2GM9",
+            "res": 2.3
+          },
+          {
+            "pdb": "2GPB",
+            "res": 2.3
+          },
+          {
+            "pdb": "2PRI",
+            "res": 2.3
+          },
+          {
+            "pdb": "3G2L",
+            "res": 2.3
+          },
+          {
+            "pdb": "3GPB",
+            "res": 2.3
+          },
+          {
+            "pdb": "3CUU",
+            "res": 2.3
+          },
+          {
+            "pdb": "3CUT",
+            "res": 2.3
+          },
+          {
+            "pdb": "2PRJ",
+            "res": 2.3
+          },
+          {
+            "pdb": "1GG8",
+            "res": 2.31
+          },
+          {
+            "pdb": "1FU8",
+            "res": 2.35
+          },
+          {
+            "pdb": "1FTQ",
+            "res": 2.35
+          },
+          {
+            "pdb": "1FTW",
+            "res": 2.36
+          },
+          {
+            "pdb": "1FU4",
+            "res": 2.36
+          },
+          {
+            "pdb": "1GGN",
+            "res": 2.36
+          },
+          {
+            "pdb": "1FU7",
+            "res": 2.36
+          },
+          {
+            "pdb": "1FTY",
+            "res": 2.38
+          },
+          {
+            "pdb": "1FS4",
+            "res": 2.38
+          },
+          {
+            "pdb": "1GPY",
+            "res": 2.4
+          },
+          {
+            "pdb": "1NOJ",
+            "res": 2.4
+          },
+          {
+            "pdb": "1NOK",
+            "res": 2.4
+          },
+          {
+            "pdb": "1Z6P",
+            "res": 2.4
+          },
+          {
+            "pdb": "2SKC",
+            "res": 2.4
+          },
+          {
+            "pdb": "2SKD",
+            "res": 2.4
+          },
+          {
+            "pdb": "2QN1",
+            "res": 2.401
+          },
+          {
+            "pdb": "2SKE",
+            "res": 2.46
+          },
+          {
+            "pdb": "2G9Q",
+            "res": 2.5
+          },
+          {
+            "pdb": "3E3L",
+            "res": 2.59
+          },
+          {
+            "pdb": "3E3O",
+            "res": 2.6
+          },
+          {
+            "pdb": "2QN2",
+            "res": 2.698
+          },
+          {
+            "pdb": "3E3N",
+            "res": 2.7
+          },
+          {
+            "pdb": "1ABB",
+            "res": 2.8
+          },
+          {
+            "pdb": "1PYG",
+            "res": 2.87
+          }
+        ],
+        "target_site_hit": true
+      }
+    ]
+  }
+}

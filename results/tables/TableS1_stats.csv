@@ -1,0 +1,17 @@
+Quantity,Value
+$n$ proteins,15
+Pearson $r$ (pred vs exp),+0.1132
+Pearson 95\% CI,"[-0.3433, +0.5744]"
+"slope (pred per exp, \AA/\AA)",+0.0530
+Spearman $\rho$,+0.1536
+Spearman $p$,0.5848
+mean predicted disp (\AA),0.521
+SD predicted disp (\AA),0.359
+experimental disp range (\AA),"[0.25, 2.51]"
+max leverage (removed),Src
+$r$ without max-leverage point,+0.2202
+ESMFold Pearson $r$,-0.3622
+ESMFold Pearson 95\% CI,"[-0.7175, +0.3079]"
+ESMFold mean predicted disp (\AA),0.253
+ESMFold max leverage (removed),PAK1
+ESMFold $r$ without max-leverage point,-0.4705

@@ -1,0 +1,242 @@
+[
+  {
+    "file": "3O96.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 367,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4GV1.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 330,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "2H6D.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 256,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "6B1U.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 442,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4J8M.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 265,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "5DNR.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 265,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4YC3.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 295,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "9SKQ.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 286,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "2C5N.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 296,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1H1R.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 297,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "8P79.pdb",
+    "requested": "J",
+    "chain_used": "J",
+    "fallback": false,
+    "n_res": 286,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "8PYR.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 266,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1ERK.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 357,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "2ERK.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 353,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1J1B.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 354,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "6Y9S.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 344,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "2GJ4.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 803,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1LWO.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 815,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4E3C.pdb",
+    "requested": "B",
+    "chain_used": "B",
+    "fallback": false,
+    "n_res": 632,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4KIK.pdb",
+    "requested": "B",
+    "chain_used": "B",
+    "fallback": false,
+    "n_res": 650,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1QWT.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 239,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "3A77.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 232,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1WFC.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 340,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "3PY3.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 357,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "1YHW.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 293,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "3FXZ.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 293,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4IM0.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 619,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "4EUU.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 308,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "7NG7.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 274,
+    "fmt": ".pdb"
+  },
+  {
+    "file": "9NS0.pdb",
+    "requested": "A",
+    "chain_used": "A",
+    "fallback": false,
+    "n_res": 286,
+    "fmt": ".pdb"
+  }
+]

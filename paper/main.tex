@@ -1,0 +1,624 @@
+% =====================================================================
+%  PTM benchmark manuscript — Bioinformatics (OUP) Original Paper draft
+%  组稿草案 / Manuscript draft
+%
+%  说明 / Note:
+%   本文件为可独立编译的草稿（article 类）。正式投稿时需替换为 OUP
+%   `bioinfo.cls`（单栏正文 + 结构化摘要 + 双栏排版）。
+%   This is a self-contained draft (article class). At submission, swap to
+%   the OUP `bioinfo.cls` template.
+%
+%  所有数值均取自 results/ 下的**冻结产物**（manifest_frozen.json、
+%  af3_vs_pdb_summary.json、geometry_metrics.json、performance_explained.json、
+%  pae_metrics.json、noise_floor.json、residue_spectrum.json、tables/*）。
+%  All numbers are sourced from frozen artifacts under results/.
+% =====================================================================
+\documentclass[11pt]{article}
+
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=blue}
+
+\graphicspath{{../results/figures/}}
+
+% [VERIFY] 标记：所有需人工核对/补全之处
+\newcommand{\verify}[1]{\textcolor{red}{[VERIFY: #1]}}
+
+\title{\textbf{Data purity, not model capability, dominates apparent
+AlphaFold3 performance on phosphorylation benchmarks}}
+
+% ---------------------------------------------------------------------
+% Author contact details / ORCIDs (for the submission system):
+%   Qingqing Mo   qingqingmo520@tjh.tjmu.edu.cn    ORCID 0009-0000-2946-2362  (first author)
+%   Pingbo Chen   supercpb520@163.com              ORCID 0009-0009-2520-1697
+%   Cheng Xu      watt15629030676@tjh.tjmu.edu.cn  ORCID 0009-0009-8304-5290
+%   Ya Wang       misswangya@hotmail.com           ORCID 0000-0002-8295-0784
+%   Ting Hu       huting_tj@163.com                ORCID 0000-0002-9693-4697
+%   Qian Sun      sunqian@tjh.tjmu.edu.cn          ORCID 0000-0002-9313-8986
+%   Tao Zhu       zhutao@tjh.tjmu.edu.cn           ORCID 0009-0001-0779-2245  (corresponding)
+% ---------------------------------------------------------------------
+\author{%
+\parbox{0.92\textwidth}{\centering
+Qingqing Mo\textsuperscript{1,2},
+Pingbo Chen\textsuperscript{1,2},
+Cheng Xu\textsuperscript{1,2},
+Ya Wang\textsuperscript{1,2},
+Ting Hu\textsuperscript{1,2},
+Qian Sun\textsuperscript{1,2},
+Tao Zhu\textsuperscript{1,2,*}\\[4pt]
+\small \textsuperscript{1}Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China\\
+\small \textsuperscript{2}Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China\\[4pt]
+\small \textsuperscript{*}Corresponding author. E-mail: zhutao@tjh.tjmu.edu.cn. ORCID: 0009-0001-0779-2245}%
+}
+
+\date{\today}
+
+\begin{document}
+\maketitle
+
+% ---------------------------------------------------------------------
+\begin{abstract}
+\noindent
+\textbf{Motivation:} AlphaFold3 (AF3) accepts explicit post-translational
+modifications, which is widely taken to imply that it can model the
+conformational consequences of phosphorylation. Existing benchmarks,
+however, rarely audit whether the ``phosphorylated'' and
+``unphosphorylated'' experimental structures that they pair are genuinely
+comparable, so complex-composition effects can be mistaken for
+phosphorylation effects.
+
+\noindent
+\textbf{Results:} We assembled a phosphorylation structure benchmark and
+subjected every pair to a five-criterion biological purity gate
+(P1--P5). Of 18 curated entries, 16 are two-state pairs and 15 have AF3
+models for both states; only 9 pass the full gate. On this cohort the
+correlation between AF3-predicted and experimentally observed per-residue
+C$\alpha$ displacements is not significant ($r=+0.11$, 95\% CI
+$[-0.34,+0.57]$, $n=15$), while the predicted displacement is nearly
+constant ($0.52\pm0.36$\,\AA) against an experimental span of
+$0.25$--$2.51$\,\AA. Both AF3 internal confidence signals fare no better:
+the association between site pLDDT and predictive agreement
+($r=+0.48$) and that between $\Delta$PAE and predictive agreement
+($r=+0.60$) are each carried by a single leverage point and collapse when
+it is removed ($r=+0.21$ and $r=+0.14$). Restricting to purely paired
+structures changes the headline statistic, demonstrating that pairing
+purity, not model capability, governs the apparent result. A second,
+sequence-only ESMFold line, run with a phosphomimetic substitution, is
+equally uninformative ($r=-0.36$).
+
+\noindent
+\textbf{Availability and Implementation:} Benchmark data, analysis code
+and frozen intermediate results are available at
+\verify{stable repository URL + Zenodo DOI}; implemented in Python~3.12.
+
+\noindent
+\textbf{Contact:} zhutao@tjh.tjmu.edu.cn
+
+\noindent
+\textbf{Supplementary information:} Supplementary figures and tables are
+available at \textit{Bioinformatics} online.
+\end{abstract}
+
+\noindent\textbf{Keywords:} AlphaFold3, phosphorylation,
+conformational change, benchmark, data purity, prediction confidence
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+
+Phosphorylation is the most prevalent regulatory post-translational
+modification (PTM). By altering local electrostatics, hydrogen bonding and
+backbone flexibility, a single phosphate group can propagate structural
+rearrangements far from the modified residue, switching a protein between
+functional states \citep{johnson2001structural}. Reconstructing the structural
+consequences of phosphorylation is therefore central to mechanistic
+interpretation of signalling, and it is precisely the kind of
+``instance-specific'' question that structure-prediction models are now
+expected to answer.
+
+AlphaFold3 (AF3) marked a qualitative change in this expectation: unlike
+earlier protein-only predictors, it accepts explicit chemical components
+and modified residues as input, including phosphoserine (SEP),
+phosphothreonine (TPO) and phosphotyrosine (PTR)
+\citep{abramson2024alphafold3}. Because the modification is part of the input, it seems
+natural to read a difference between an unmodified and a modified AF3
+prediction as the model's view of the phosphorylation-induced structural
+change. Several studies have begun to use AF3 in exactly this
+``mechanistic'' mode \citep{nam2025alphafold3}, and AF3's per-residue
+confidence (pLDDT) and predicted aligned error (PAE) are frequently quoted
+as reassurance that the predicted change is trustworthy
+\citep{carugo2023plddt,akdel2022structural}.
+
+Three gaps complicate this practice. First, benchmarking structural
+responses to phosphorylation requires a pair of experimental structures
+that differ \emph{only} in the modification. In the Protein Data Bank
+(PDB), however, a phospho form and a non-phospho form of the same protein
+are usually crystallised as different constructs: different oligomeric
+states, different bound ligands, different domain boundaries, sometimes
+different partners. Any of these covariates induces large
+conformational differences that have nothing to do with the phosphate,
+yet such pairs are routinely treated as ``phosphorylation pairs''. Second,
+the metrics used to summarise agreement---typically a mean displacement
+magnitude or an amplitude ratio---are dominated by a handful of
+disordered, highly mobile residues, so that a large apparent
+``under-prediction'' can be a measurement artefact. Third, pLDDT and PAE
+measure \emph{self-consistency} of a single prediction, not agreement with
+a reference; using them as proxies for correctness of a PTM-induced change
+is a category error unless it is tested.
+
+This work reports a deliberately conservative benchmark that addresses
+these gaps and, in doing so, arrives at a cautionary negative result. Our
+contributions are threefold.
+
+\begin{enumerate}
+\item \textbf{A purity audit with biological criteria.} We formalise a
+five-criterion gate (P1--P5) covering identity, presence of a genuine
+modified residue, two-state coverage, overlap about the target site, and
+chain-composition consistency, and we show that a substantial fraction of
+apparently usable phosphorylation pairs fail at least one criterion.
+\item \textbf{A negative result on a cleaned cohort.} On the pairs that
+survive the gate we find no evidence that AF3's predicted
+phosphorylation-induced displacements track the experimentally observed
+ones, we show that AF3's predicted displacement is close to a constant,
+and we find that a second, sequence-only predictor (ESMFold) behaves the
+same way.
+\item \textbf{Two falsified confidence hypotheses.} We test whether site
+pLDDT or $\Delta$PAE predicts agreement, and show that both apparent
+associations are produced by a single leverage point and disappear when it
+is removed.
+\end{enumerate}
+
+We do not claim that AF3 is incapable of modelling phosphorylation
+effects; we claim that the widely used benchmark protocol cannot
+currently demonstrate that it does, and we give concrete,
+low-cost practices that avoid the two failure modes we identify.
+
+% =====================================================================
+\section{Background and related work}
+\label{sec:background}
+
+\noindent\textbf{AF3 and explicit modified residues.} AF3 takes an
+explicit list of residues and ligands, so a phospho form can be specified
+directly \citep{abramson2024alphafold3}. This capability is orthogonal to accuracy on
+modification-induced change, yet the two are often conflated. Prior
+evaluations of AF3 on modified or non-protein components
+\citep{nam2025alphafold3} focus on local geometry around the modified
+residue rather than on global conformational responses.
+
+\noindent\textbf{Structural-change benchmarks.} Comparing two states of a
+protein is a mature problem: one superposes a common core (e.g.\ Kabsch
+\citep{kabsch1976solution}) and measures per-residue displacement, or decomposes
+the motion into rigid-block (hinge) components \citep{hayward1998systematic}. The
+choice of core and the treatment of disordered regions strongly affect the
+reported magnitude, which is why amplitude summaries must be interpreted
+against a noise model.
+
+\noindent\textbf{Confidence as a proxy for correctness.} pLDDT and PAE are
+estimates of local and pairwise geometric confidence within a single
+prediction \citep{abramson2024alphafold3}. Their use as proxies for agreement with an
+independent reference is common but rarely validated on a paired
+structural-change benchmark; when it has been examined, the relationship
+is weak or confounded \citep{carugo2023plddt,akdel2022structural}.
+
+% =====================================================================
+\section{Materials and methods}
+\label{sec:methods}
+
+\subsection{Benchmark construction}
+\label{sec:bench-construction}
+
+Candidate pairs were collected from the PDB as pairs of structures of the
+same UniProt entry in which exactly one state carries a phosphorylated
+residue, and were labelled with an effect type (\emph{local
+rearrangement}, \emph{allosteric}, or \emph{disorder-to-order}). After
+curation the benchmark contains 18 entries, of which 16 are two-state
+pairs; AF3 models for both states were obtained for 15 of them, and these
+15 form the \emph{primary cohort} (Table~\ref{tab:benchmark}).
+All downstream analysis uses a single frozen manifest
+(\texttt{manifest\_frozen.json}) that binds each protein to its UniProt
+accession, phosphorylated site(s) in UniProt coordinates, and its
+phospho/unphospho PDB identifiers and chains, so that every number in this
+paper is traceable to one immutable table.
+
+\subsection{Pairing-purity gate (P1--P5)}
+\label{sec:purity}
+
+Each candidate pair is adjudicated by five biological criteria, evaluated
+independently for the phospho and non-phospho structures.
+
+\noindent\textbf{P1 (identity).} Both structures map to the same UniProt
+entry at high sequence identity.
+
+\noindent\textbf{P2 (genuine modification).} The phospho structure contains
+at least one modified residue (SEP, TPO or PTR) recorded in the PDB MODRES
+records; a structure that merely lacks the phosphate but is otherwise wild
+type qualifies as the non-phospho state.
+
+\noindent\textbf{P3 (two-state coverage).} Each state covers at least 50\%
+of the UniProt sequence.
+
+\noindent\textbf{P4 (overlap about the site).} The two states share at
+least 20 common residues and the shared region includes the target site.
+
+\noindent\textbf{P5 (composition consistency).} The two states have the
+same chain composition, so that differences in oligomeric state or in
+bound partners cannot be mistaken for a phosphorylation effect.
+A pair that fails any of P1--P4 is excluded; a pair that fails only P5 is
+retained but flagged (\emph{impure}), because P5 violations are the most
+common and most insidious source of confounding. In the primary cohort, 9
+pairs pass all five criteria (the \emph{pure} cohort) and 6 do not
+(4 flagged on P5, 2 excluded on P3/P5).
+
+\subsection{Prediction protocols}
+\label{sec:predict}
+
+\noindent\textbf{AlphaFold3.} For each protein we submitted the full-length
+UniProt sequence with the approved site(s) specified as modified residues
+using the corresponding CCD codes, and collected 15 models per state (five
+diffusion samples across three random seeds). Analysis aggregates all
+models unless otherwise stated; the seed axis is treated as sampling
+repetition, not biological replication.
+
+\noindent\textbf{ESMFold (comparison line).} As an independent,
+sequence-only predictor we folded the same full-length sequences with
+ESMFold \citep{lin2023evolutionary}. ESMFold does not parse CCD modified residues,
+so the phospho state was represented by a phosphomimetic substitution
+(pSer/pThr$\rightarrow$Asp, pTyr$\rightarrow$Glu); this limitation is
+stated explicitly and the comparison is therefore qualitative.
+
+\subsection{Displacement metrics}
+\label{sec:metrics}
+
+All comparisons share one coordinate protocol. The non-phospho
+experimental structure defines the reference frame; the phospho
+experimental structure is superposed onto it over common C$\alpha$ atoms
+by the Kabsch algorithm \citep{kabsch1976solution}, giving the experimental
+displacement field $\Delta_{\mathrm{exp}}$. Predicted fields are obtained
+by superposing each predictor's non-phospho model onto the same reference
+and applying that transform to its phospho model, giving
+$\Delta_{\mathrm{pred}}$ without ever superposing predicted onto
+experimental coordinates. From these fields we compute:
+(i) the per-residue displacement magnitude;
+(ii) the amplitude ratio, $|\Delta_{\mathrm{pred}}|/|\Delta_{\mathrm{exp}}|$;
+(iii) the direction cosine between $\Delta_{\mathrm{pred}}$ and
+$\Delta_{\mathrm{exp}}$;
+(iv) the Pearson correlation $r$ of the per-residue magnitude profiles;
+(v) a hinge index from a rigid-block superposition; and
+(vi) a site window of $\pm10$ residues around each modified site.
+Modified residues (SEP/TPO/PTR) are retained throughout; omitting them, as
+a naive HETATM filter does, silently removes the residue of interest from
+both sides of the comparison.
+
+\subsection{Statistics}
+\label{sec:stats}
+
+The independent unit is the \emph{protein}, not the model: the 15 AF3
+models of one protein share a single experimental reference and are not
+independent observations. Cohort correlations are therefore computed over
+proteins, and bootstrap confidence intervals resample proteins, not
+models. Sensitivity to single points is assessed by leave-one-out and
+leverage diagnostics. Correlations are reported as Pearson $r$ with
+Spearman $\rho$ where a monotone alternative is relevant; no correction
+for multiplicity is applied to the exploratory correlations, which are
+labelled as such.
+
+\subsection{Same-state noise floor}
+\label{sec:noise}
+
+To decide whether experimentally observed displacements are distinguishable
+from noise, we computed two \emph{same-state} controls: (i) an
+experimental floor, the C$\alpha$ dispersion after superposing
+crystallographically independent copies (NCS) of the same chain in the same
+state; and (ii) a predictor floor, the dispersion among the 15 AF3 models
+of the same state. Because AF3 predicts full-length sequences whereas
+experimental structures cover only the ordered core, the predictor floor
+is evaluated on the residues actually resolved in the experiment, so that
+unmodelled termini do not inflate it.
+
+% =====================================================================
+\section{Results}
+\label{sec:results}
+
+\subsection{The benchmark shrinks under a purity gate}
+\label{sec:res-purity}
+
+\input{../results/tables/Table1_benchmark.tex}
+
+Of 18 curated entries, 16 are two-state pairs and 15 have AF3 models for
+both states (Fig.~\ref{fig:funnel}a). Applying P1--P5 leaves 9 pure pairs;
+the remaining 6 are either compositionally inconsistent (P5; IKBKB, IRF3,
+CDK7, CDK1) or fail coverage/overlap (P3/P5; AMPK$\alpha$2, TBK1). The
+dominant failure mode is P5: the phospho and non-phospho entries differ in
+chain count or partners, exactly the covariate that a naive amplitude
+comparison would attribute to phosphorylation.
+
+This is not a cosmetic filter. Stratifying the same frozen per-protein
+results by purity changes the apparent behaviour of the model
+(Fig.~\ref{fig:funnel}b): the median amplitude ratio is $0.46$ for pure
+pairs but $0.30$ for impure pairs, and the magnitude correlation is
+$r=+0.22$ ($n=9$) for pure pairs but $r=-0.24$ ($n=6$) for impure ones.
+Any headline computed on the uncleaned cohort is therefore a mixture of
+model behaviour and pairing confounding. We report all subsequent
+statistics on the full 15-pair cohort \emph{and} flag the pure subset, and
+we avoid any claim whose sign depends on the mixture.
+
+\subsection{No evidence that AF3 tracks the phosphorylation-induced
+displacement}
+\label{sec:res-main}
+
+\input{../results/tables/Table2_metrics.tex}
+
+Over the 15-pair cohort the per-protein mean predicted displacement is
+essentially uncorrelated with the experimental displacement: Pearson
+$r=+0.11$ (95\% CI $[-0.34,+0.57]$), slope $+0.053$\,\AA/\AA, Spearman
+$\rho=+0.15$ ($p=0.59$) (Fig.~\ref{fig:fig2}a). The confidence interval is
+wide---$n=15$ is small---but it excludes the strong positive association
+that ``AF3 models phosphorylation'' would require. The predicted
+displacement is also close to constant: $0.52\pm0.36$\,\AA\ across all
+proteins, against an experimental span of $0.25$--$2.51$\,\AA\
+(median $1.50$\,\AA). Put differently, the model's output moves by roughly
+the same small amount regardless of whether the true response is
+negligible (PAK1, $0.25$\,\AA) or large (Src, $2.51$\,\AA).
+
+Leave-one-out analysis shows the coefficient is not driven by a single
+outlier in the sense of an extreme $r$; the largest change is the removal
+of Src, which raises $r$ to $+0.22$, still far from significant. The
+per-protein picture is heterogeneous rather than uniformly null: a few
+proteins show high magnitude correlation (p38, $r=+0.96$; AURKA,
+$r=+0.85$), but several show none (Src, $r=+0.03$) even though their
+experimental displacements are among the largest. Aggregated over the
+cohort, this heterogeneity averages out to noise.
+
+\subsection{A second, sequence-only predictor is equally uninformative}
+\label{sec:res-esm}
+
+The non-response could in principle be specific to AF3's structure module,
+which consumes an MSA. We therefore repeated the identical coordinate
+protocol with ESMFold, a single-sequence language-model predictor, using a
+phosphomimetic substitution to represent the phospho state
+(Sec.~\ref{sec:predict}). The outcome is the same and, quantitatively,
+even flatter: the cohort-mean predicted displacement is
+$0.25\pm0.41$\,\AA\ (against $0.52\pm0.36$\,\AA\ for AF3) and shows no
+association with the experimental displacement ($r=-0.36$, 95\% CI
+$[-0.72,+0.31]$; Spearman $\rho=-0.24$, $p=0.40$) (Table~\ref{tab:metrics},
+Fig.~\ref{fig:fig2}a). For most proteins the phosphomimetic substitution
+moves the predicted structure by less than $0.1$\,\AA, i.e.\ essentially
+not at all, so the near-constant prediction is not unique to AF3.
+Leave-one-out again exposes the small cohort: removing the lowest-
+displacement protein (PAK1) moves the correlation to $r=-0.47$, while no
+single removal produces a significant positive association. ESMFold's
+per-protein direction cosines are also centred near zero and its
+per-residue magnitude correlations are uninformative (Table~\ref{tab:metrics},
+Fig.~\ref{fig:fig2}b). The failure to track the phosphorylation response
+is thus shared across two predictors, two input modalities (MSA-based and
+sequence-only) and two ways of representing the phosphate, which argues
+that it is a property of the benchmark question rather than of one model.
+
+\subsection{The predicted signal sits at the same-state noise floor}
+\label{sec:res-noise}
+
+The negative result is only meaningful if the experimental signal exceeds
+noise. It does. The same-state experimental floor has a median of
+$0.335$\,\AA\ and a maximum of $1.309$\,\AA\ across the seven proteins
+with crystallographically independent copies, whereas the
+phosphorylation-induced experimental displacement has a median of
+$1.50$\,\AA\ and a span of $0.25$--$2.51$\,\AA\ (Fig.~\ref{fig:noise}).
+The experimentally observed change therefore exceeds the upper bound of
+same-state noise, so the absence of predicted tracking is not an artefact
+of noisy references. The predictor's own same-state floor (median
+$0.389$\,\AA) is of the same order as its putative phospho signal
+($0.52$\,\AA), reinforcing that AF3's between-state displacement is close
+to its own sampling variability.
+
+\subsection{Two confidence-based hypotheses are refuted}
+\label{sec:res-confidence}
+
+If the model's internal confidence flagged where it was right, a user
+could at least triage predictions. We tested two natural hypotheses on the
+15-pair cohort.
+
+\noindent\textbf{Site pLDDT.} The correlation between the
+unphosphorylated site pLDDT and the amplitude ratio is $r=+0.48$
+(Fig.~\ref{fig:plddt}). The relation is carried almost entirely by IRF3,
+whose amplitude ratio ($2.22$) and site pLDDT (89.9) are both extreme:
+removing this single protein drops the correlation to $r=+0.21$
+($n=14$). A companion analysis using the site-minus-global pLDDT contrast
+($r=+0.43$) behaves the same way.
+
+\noindent\textbf{$\Delta$PAE.} PAE is the more natural signal for a
+\emph{pairwise} question such as ``does the domain carrying the site move
+relative to the rest?''. The correlation between $\Delta$PAE
+(site$\rightarrow$rest) and the amplitude ratio is $r=+0.60$
+(Fig.~\ref{fig:pae}), the strongest association we observe. It is again an
+IRF3 effect: removing IRF3 drops it to $r=+0.14$ ($n=14$), and the
+analogous statistic for global $\Delta$PAE falls from $r=+0.49$ to
+$r=+0.06$.
+
+Both confidence signals are thus indistinguishable from single-point
+artefacts on this benchmark. Their apparent strength is an artefact of a
+small cohort containing one protein whose prediction and reference happen
+to disagree in both magnitude and confidence in the same direction.
+
+\subsection{Exploratory: what does the model respond to?}
+\label{sec:res-explore}
+
+Seeking a physical explanation, we asked whether AF3 under-responds most
+where the true motion is largest. Across the 15 pairs the amplitude ratio
+is inversely related to the overall deformation magnitude
+($r=-0.60$, $p=0.017$ against the full-structure RMSD; $r=-0.62$,
+$p=0.014$ against mean displacement) and to the block-wise deformation
+($r=-0.60$, $p=0.018$); the relation with the hinge index is weaker and
+not significant ($r=-0.40$, $p=0.14$). A residue-level view agrees: binning
+all 3{,}355 common residues by experimental displacement, the median
+predicted/experimental ratio falls monotonically from $0.54$ in the
+smallest-displacement bin to $0.05$ in the largest, i.e.\ AF3's response
+saturates while the true response grows (Fig.~\ref{fig:spectrum}).
+Consistent with a hinge explanation, large-motion residues cluster about
+the modified site; residues far from the site ($>80$ residues away)
+show the weakest and least correlated response. Because these
+stratifications are exploratory and uncorrected for multiplicity, we
+present them as hypotheses, not conclusions; in particular, the hinge
+comparison is not significant and we do not claim that hinge motion is
+harder to predict.
+
+% =====================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+\noindent\textbf{What the benchmark does and does not show.} Our central
+empirical claim is narrow: on a 15-pair phosphorylation structure
+benchmark, AF3's predicted conformational response is not related to the
+observed one, and the two most commonly cited internal confidence signals
+do not identify where it succeeds. We deliberately do \emph{not} claim
+that AF3 cannot model phosphorylation. The cohort is small; the metric is
+a single, rigid-body-based displacement field; and ``no detectable
+correlation at $n=15$'' is weaker than ``no correlation''. The honest
+statement is that the current, commonly used protocol cannot demonstrate
+the capability it is assumed to have.
+
+\noindent\textbf{Why the result is easy to miss.} Two artefacts work in
+the same direction. First, pairing impurity inflates apparent agreement:
+phospho and non-phospho entries that differ in oligomeric state or partner
+differ in structure for reasons unrelated to the phosphate, and pooling
+such pairs changes the sign of the cohort correlation
+(Sec.~\ref{sec:res-purity}, Fig.~\ref{fig:funnel}b). Second, amplitude
+summaries are dominated by a few highly mobile residues, so a large
+apparent ``under-prediction'' can reflect disorder rather than a mechanical
+failure. Both artefacts are avoidable at essentially no cost: apply a
+composition check before pairing, and report displacement statistics
+against a same-state noise floor.
+
+\noindent\textbf{Confidence is not correctness.} Our two refutations share
+a mechanism: a single protein (IRF3) is extreme in both the predictor's
+confidence and in its disagreement, and on a 15-point cohort one such
+point can manufacture a correlation of $0.5$--$0.6$. This is a warning
+about study design as much as about AF3: on small structural benchmarks,
+leverage diagnostics are not optional.
+
+\noindent\textbf{Practical guidance.} (i) Audit pair purity before
+computing any agreement statistic; a composition check (P5) removes the
+largest confounder. (ii) Never drop modified residues from the comparison;
+they are the object of study. (iii) Calibrate measured displacements
+against same-state replicates; an effect smaller than the same-state floor
+is not interpretable. (iv) Do not use pLDDT or PAE as evidence that a
+PTM-induced change is correct; test that association explicitly and check
+its leverage.
+
+\noindent\textbf{Limitations.} The cohort is modest ($n=15$, 9 pure) and
+kinase-dominated, so the effect-type strata are under-powered and we
+report them only descriptively. ESMFold is included as a second,
+sequence-only line; because it cannot represent CCD modified residues its
+phospho state is phosphomimetic, so that line is qualitative, yet it
+agrees with AF3 in showing no tracking ($r=-0.36$).
+No molecular-dynamics reference is used. These limitations bound the
+generality of the negative result; they do not affect the two
+methodological findings, which are properties of the protocol.
+
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+On a phosphorylation structure benchmark cleaned by biological purity
+criteria, AF3's predicted conformational response does not track the
+experimental one, its predicted displacement is near-constant, and its
+internal confidence signals fail to identify where it is right once
+single-point leverage is removed. The more transferable lesson is
+methodological: on paired structural-change benchmarks, pairing purity and
+same-state noise calibration---not model capability---determine the
+apparent result, and both are cheap to enforce.
+
+% =====================================================================
+\section*{Availability and implementation}
+\addcontentsline{toc}{section}{Availability and implementation}
+
+The frozen benchmark manifest, analysis scripts (Python~3.12), and all
+intermediate results are archived at \verify{stable URL + DOI}. The
+analysis is deterministic given the frozen manifest; random seeds are
+fixed. AF3 predictions were generated with the AlphaFold Server
+(alphafoldserver.com); ESMFold inference was run locally with
+\texttt{transformers} on macOS (Apple Silicon, MPS backend). Codes are
+released under \verify{licence (e.g.\ MIT)}.
+
+\section*{Funding}
+This work was supported by the National Natural Science Foundation of
+China (Grant Nos.\ 82403759 to C.X.\ and 82403616 to Y.W.).
+
+\section*{Conflict of interest}
+None declared.
+
+% =====================================================================
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+
+% =====================================================================
+% Figures — 图注自洽；图内元素英文标注；单栏宽 86 mm（投稿前调整）
+% ---------------------------------------------------------------------
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig1_purity_funnel.pdf}
+\caption{\textbf{Pairing purity shapes the benchmark and the conclusion.}
+(a) Funnel from the curated candidate pool through the two-state and
+AF3-availability filters to the pairs passing the P1--P5 purity gate.
+(b) The same frozen per-protein results stratified by pairing purity,
+showing the median amplitude ratio, median direction cosine and magnitude
+correlation for pure ($n=9$), impure ($n=6$) and all ($n=15$) pairs.}
+\label{fig:funnel}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig2_af3_vs_pdb.pdf}
+\caption{\textbf{Predicted versus experimental phosphorylation-induced
+displacement.} (a) Per-protein mean experimental displacement against the
+predicted displacement for AF3 (circles) and ESMFold with a phosphomimetic
+phospho state (triangles); the dashed line is $1{:}1$. Open markers denote
+purely paired structures. (b) Per-protein direction cosine and magnitude
+correlation for AF3 (bars) and ESMFold (diamonds). Neither predictor's
+displacement tracks the experimental one.}
+\label{fig:fig2}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{FigS1_noise_floor.pdf}
+\caption{\textbf{Same-state noise floor.} Experimental same-state
+dispersion (crystallographically independent copies) and predictor
+same-state dispersion (across AF3 models) compared with the
+phosphorylation-induced experimental displacement.}
+\label{fig:noise}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig4_plddt_vs_amplitude.pdf}
+\caption{\textbf{Site pLDDT does not predict agreement.} Site pLDDT against
+amplitude ratio; the association is carried by IRF3 and weakens sharply
+when it is removed.}
+\label{fig:plddt}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig5_pae_leverage.pdf}
+\caption{\textbf{$\Delta$PAE association is a single-point effect.}
+$\Delta$PAE (site$\rightarrow$rest) against amplitude ratio, all pairs
+(left) and after removing IRF3 (right).}
+\label{fig:pae}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig3_residue_spectrum.pdf}
+\caption{\textbf{Residue-level response saturates.} Median
+predicted/experimental displacement ratio as a function of experimental
+displacement magnitude, showing monotone decline as the true response
+grows.}
+\label{fig:spectrum}
+\end{figure*}
+
+\end{document}

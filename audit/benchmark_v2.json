@@ -1,0 +1,182 @@
+{
+  "version": "v2",
+  "entries": {
+    "CDK2": {
+      "uniprot": "P24941",
+      "sites": [
+        160
+      ],
+      "effect": "local_rearrangement",
+      "paired": true,
+      "unphos": {
+        "pdb": "1HCL",
+        "chain": "A"
+      },
+      "phos": {
+        "pdb": "1JST",
+        "chain": "A"
+      },
+      "note": "原有，核验通过"
+    },
+    "ERK2": {
+      "uniprot": "P28482",
+      "sites": [
+        185,
+        187
+      ],
+      "effect": "local_rearrangement",
+      "paired": true,
+      "unphos": {
+        "pdb": "1ERK",
+        "chain": "A"
+      },
+      "phos": {
+        "pdb": "2ERK",
+        "chain": "A"
+      },
+      "note": "原有，核验通过"
+    },
+    "Aurora_A": {
+      "uniprot": "O14965",
+      "sites": [
+        288
+      ],
+      "effect": "local_rearrangement",
+      "paired": true,
+      "unphos": {
+        "pdb": "1MQ4",
+        "chain": "A"
+      },
+      "phos": {
+        "pdb": "1OL5",
+        "chain": "A"
+      },
+      "note": "原有，核验通过"
+    },
+    "IRF3": {
+      "uniprot": "Q14653",
+      "sites": [
+        386,
+        402
+      ],
+      "effect": "allosteric",
+      "paired": true,
+      "unphos": {
+        "pdb": "1QWT",
+        "chain": "A"
+      },
+      "phos": {
+        "pdb": "3A77",
+        "chain": "A"
+      },
+      "note": "1T2K→3A77：同结构域(189-427)，3A77 为 PHOSPHORYLATED IRF-3"
+    },
+    "P38alpha": {
+      "uniprot": "Q16539",
+      "sites": [
+        180,
+        182
+      ],
+      "effect": "local_rearrangement",
+      "paired": true,
+      "unphos": {
+        "pdb": "1WFC",
+        "chain": "A"
+      },
+      "phos": {
+        "pdb": "3PY3",
+        "chain": "A"
+      },
+      "note": "3D83→3PY3：含 pT180+pY182 完整双磷酸化，覆盖 97%"
+    },
+    "CDK7": {
+      "uniprot": "P50613",
+      "sites": [
+        170
+      ],
+      "effect": "local_rearrangement",
+      "paired": true,
+      "unphos": {
+        "pdb": "7B5O",
+        "chain": "J"
+      },
+      "phos": {
+        "pdb": "8PYR",
+        "chain": "A"
+      },
+      "note": "7ML6→8PYR；1UA2 已含 pT170，非磷酸化参照改用 7B5O(2.5Å cryo-EM)"
+    },
+    "c-Src_kinase": {
+      "uniprot": "P12931",
+      "sites": [
+        416
+      ],
+      "effect": "allosteric",
+      "paired": false,
+      "unphos": null,
+      "phos": {
+        "pdb": "1YI6",
+        "chain": "A"
+      },
+      "note": "1Y57→1YI6；1Y57 标题明写 UNPHOSPHORYLATED，含 pY335/pY416"
+    },
+    "AMPK_alpha2": {
+      "uniprot": "P54646",
+      "sites": [
+        172
+      ],
+      "effect": "allosteric",
+      "paired": false,
+      "unphos": null,
+      "phos": {
+        "pdb": "6B1U",
+        "chain": "A"
+      },
+      "note": "2H6D→6B1U；全长 AMPK 含 pT172"
+    },
+    "PKA_Calpha": {
+      "uniprot": "P17612",
+      "sites": [
+        197
+      ],
+      "effect": "allosteric",
+      "paired": false,
+      "unphos": null,
+      "phos": {
+        "pdb": "6QJ7",
+        "chain": "A"
+      },
+      "note": "1ATP→6QJ7；T197 磷酸化为活性必需，1CTP 亦含 pT197，无非磷酸化结构"
+    },
+    "CTD_kinase": {
+      "uniprot": "P24928",
+      "sites": [
+        1621,
+        1628
+      ],
+      "effect": "disorder_order",
+      "paired": false,
+      "unphos": null,
+      "phos": {
+        "pdb": "4JXT",
+        "chain": "B"
+      },
+      "note": "4JXT 链B 为 10 残基 CTD 肽，含 pS1621/pS1628",
+      "_audit_note": "短肽(10 aa)对全长覆盖度天然 0.5%，不适用 >40% 阈值；位点 1621/1628 均在肽内且为 pSer，判定 PASS"
+    }
+  },
+  "removed": {
+    "Hsp27": "7 个 entry 中 0 个含 SEP/TPO/PTR，无磷酸化实验结构",
+    "PhK_gamma": "UniProt P15735 仅关联 1 个 entry，无磷酸化结构",
+    "CFTR_R_domain": "8/57 含磷酸化但均为 R 域肽段-14-3-3 复合物，无全长 CFTR 结构",
+    "CheY": "Asp 磷酸化 AF3 不支持；1FQW 为 BeF3 激活态模拟"
+  },
+  "_criteria": "phos 须经 MODRES 核验真含 SEP/TPO/PTR；unphos 须无磷酸化；链 ID 逐一指定；位点须落在结构覆盖内；与 UniProt 覆盖度 >40%",
+  "_summary": {
+    "paired_structures": 6,
+    "single_structures": 4,
+    "removed": 4,
+    "all_verified": true,
+    "improvement": "可用成对结构自 3 组提升至 6 组"
+  }
+}

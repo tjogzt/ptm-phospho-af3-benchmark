@@ -1,0 +1,7 @@
+protein,short,effect,seq_len,n_phos,n_unphos,plddt_phos,plddt_unphos,delta_plddt,ptm_phos,ptm_unphos,delta_ptm,t,p_approx
+Aurora_A,AURKA,local_rearrangement,403,3,3,70.25,67.2,3.05,0.679,0.659,0.02,13.9,0.0
+CDK2,CDK2,local_rearrangement,298,3,3,90.95,86.49,4.45,0.914,0.908,0.006,20.78,0.0
+CDK7,CDK7,local_rearrangement,346,3,3,85.97,84.22,1.76,0.877,0.873,0.003,6.65,0.0
+ERK2,ERK2,local_rearrangement,360,3,3,90.65,88.01,2.64,0.91,0.917,-0.007,73.0,0.0
+IRF3,IRF3,allosteric,427,3,3,76.09,78.97,-2.88,0.589,0.611,-0.023,-14.35,0.0
+P38alpha,p38,local_rearrangement,360,3,3,87.97,90.37,-2.41,0.875,0.939,-0.064,-6.14,0.0

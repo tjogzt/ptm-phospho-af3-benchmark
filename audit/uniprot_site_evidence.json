@@ -1,0 +1,66 @@
+{
+  "P17612": {
+    "gene": "PRKACA",
+    "checked_sites": [
+      198
+    ],
+    "annotated_at_checked_sites": [
+      {
+        "pos": 198,
+        "type": "Modified residue",
+        "description": "Phosphothreonine; by PDPK1"
+      }
+    ],
+    "n_modified_residues_total": 8,
+    "note": "198=Phosphothreonine; by PDPK1（PDK1，激活环主位点）；196 亦注释为 Phosphothreonine（次级）",
+    "source": "UniProt REST /uniprotkb/{acc}.json?fields=ft_mod_res (2026-10-23)"
+  },
+  "P00533": {
+    "gene": "EGFR",
+    "checked_sites": [
+      869
+    ],
+    "annotated_at_checked_sites": [
+      {
+        "pos": 869,
+        "type": "Modified residue",
+        "description": "Phosphotyrosine"
+      }
+    ],
+    "n_modified_residues_total": 25,
+    "note": "869=Phosphotyrosine",
+    "source": "UniProt REST /uniprotkb/{acc}.json?fields=ft_mod_res (2026-10-23)"
+  },
+  "P00698": {
+    "gene": "LYZ",
+    "checked_sites": [
+      41
+    ],
+    "annotated_at_checked_sites": [],
+    "n_modified_residues_total": 0,
+    "note": "该蛋白无任何 modified residue 注释 → 41 为人工引入位点，符合阴性对照设计",
+    "source": "UniProt REST /uniprotkb/{acc}.json?fields=ft_mod_res (2026-10-23)"
+  },
+  "P24928": {
+    "gene": "POLR2A",
+    "checked_sites": [
+      1843,
+      1845
+    ],
+    "annotated_at_checked_sites": [
+      {
+        "pos": 1843,
+        "type": "Modified residue",
+        "description": "Phosphoserine"
+      },
+      {
+        "pos": 1845,
+        "type": "Modified residue",
+        "description": "Phosphoserine"
+      }
+    ],
+    "n_modified_residues_total": 69,
+    "note": "1843、1845 均为 Phosphoserine；CTD heptad 区（1840/1847/1849/1850 等亦有注释）",
+    "source": "UniProt REST /uniprotkb/{acc}.json?fields=ft_mod_res (2026-10-23)"
+  }
+}

@@ -1,0 +1,2661 @@
+{
+  "IRF3": {
+    "gene": "IRF3",
+    "uniprot": "Q14653",
+    "declared_sites": [
+      "Ser386",
+      "Ser396"
+    ],
+    "n_entries": 18,
+    "candidates": [
+      {
+        "pdb": "3A77",
+        "title": "THE CRYSTAL STRUCTURE OF PHOSPHORYLATED IRF-3",
+        "resolution": 1.8,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 386,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 402,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 386,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 402,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 386,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 402,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 386,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 402,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 8,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "7JFL",
+        "title": "CRYSTAL STRUCTURE OF HUMAN PHOSPHORYLATED IRF-3 BOUND TO CBP",
+        "resolution": 1.68,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 386,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 386,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "5JEJ",
+        "title": "PHOSPHORYLATED STING IN COMPLEX WITH IRF-3 CTD",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 366,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 366,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C",
+          "D"
+        ]
+      }
+    ]
+  },
+  "P38alpha": {
+    "gene": "MAPK14",
+    "uniprot": "Q16539",
+    "declared_sites": [
+      "Thr180",
+      "Tyr182"
+    ],
+    "n_entries": 267,
+    "candidates": [
+      {
+        "pdb": "4EWQ",
+        "title": "HUMAN P38 ALPHA MAPK IN COMPLEX WITH A PYRIDAZINE BASED INHIBITOR",
+        "resolution": 2.1,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 180,
+            "std": "THR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3NNX",
+        "title": "CRYSTAL STRUCTURE OF PHOSPHORYLATED P38 ALPHA IN COMPLEX WITH DP802",
+        "resolution": 2.28,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 182,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "Hsp27": {
+    "gene": "HSPB1",
+    "uniprot": "P04792",
+    "declared_sites": [
+      "Ser15",
+      "Ser78",
+      "Ser82"
+    ],
+    "n_entries": 7,
+    "candidates": []
+  },
+  "c-Src_kinase": {
+    "gene": "SRC",
+    "uniprot": "P12931",
+    "declared_sites": [
+      "Tyr416"
+    ],
+    "n_entries": 78,
+    "candidates": [
+      {
+        "pdb": "1YI6",
+        "title": "C-TERM TAIL SEGMENT OF HUMAN TYROSINE KINASE (258-533)",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 335,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 416,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "B",
+            "seq": 335,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "B",
+            "seq": 416,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "1A07",
+        "title": "C-SRC (SH2 DOMAIN) COMPLEXED WITH ACE-MALONYL TYR-GLU-(N,N-DIPENTYL AMINE)",
+        "resolution": 2.2,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "C",
+            "seq": 101,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "D",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "1A1B",
+        "title": "C-SRC (SH2 DOMAIN) COMPLEXED WITH ACE-PHOSPHOTYR-GLU-(N,N-DIPENTYL AMINE)",
+        "resolution": 2.2,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "C",
+            "seq": 101,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "D",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "1A1E",
+        "title": "C-SRC (SH2 DOMAIN) COMPLEXED WITH ACE-PHOSPHOTYR-GLU-(3- BUTYLPIPERIDINE)",
+        "resolution": 2.2,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "C",
+            "seq": 101,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "D",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "1A1C",
+        "title": "C-SRC (SH2 DOMAIN) COMPLEXED WITH ACE-PHOSPHOTYR-GLU-(N-ME(-(CH2)3- CYCLOPENTYL))",
+        "resolution": 2.4,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "C",
+            "seq": 101,
+            "std": "TYR"
+          },
+          {
+            "resname": "PTR",
+            "chain": "D",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "1FMK",
+        "title": "CRYSTAL STRUCTURE OF HUMAN TYROSINE-PROTEIN KINASE C-SRC",
+        "resolution": 1.5,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 527,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "2SRC",
+        "title": "CRYSTAL STRUCTURE OF HUMAN TYROSINE-PROTEIN KINASE C-SRC, IN COMPLEX WITH AMP-PNP",
+        "resolution": 1.5,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 527,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3VRO",
+        "title": "CRYSTAL STRUCTURE OF THE TYROSINE KINASE BINDING DOMAIN OF CBL-C IN COMPLEX WITH PHOSPHO-SRC PEPTIDE",
+        "resolution": 1.8,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "B",
+            "seq": 419,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "B"
+        ]
+      },
+      {
+        "pdb": "8JN8",
+        "title": "CRYSTAL STRUCTURE OF C-SRC IN COMPLEX WITH COVALENT INHIBITOR DC-SRCI- 6668",
+        "resolution": 1.9,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 530,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "1SHD",
+        "title": "PEPTIDE INHIBITORS OF SRC SH3-SH2-PHOSPHOPROTEIN INTERACTIONS",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "B",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "B"
+        ]
+      },
+      {
+        "pdb": "2H8H",
+        "title": "SRC KINASE IN COMPLEX WITH A QUINAZOLINE INHIBITOR",
+        "resolution": 2.2,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 527,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4K11",
+        "title": "THE STRUCTURE OF 1NA IN COMPLEX WITH SRC T338G",
+        "resolution": 2.3,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 527,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "8JN9",
+        "title": "CRYSTAL STRUCTURE OF C-SRC IN COMPLEX WITH COVALENT INHIBITOR LW-SRCI- 8",
+        "resolution": 2.72,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 530,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "1KSW",
+        "title": "STRUCTURE OF HUMAN C-SRC TYROSINE KINASE (THR338GLY MUTANT) IN COMPLEX WITH N6-BENZYL ADP",
+        "resolution": 2.8,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 527,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "1HCS",
+        "title": "NMR STRUCTURE OF THE HUMAN SRC SH2 DOMAIN COMPLEX",
+        "resolution": null,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "1HCT",
+        "title": "NMR STRUCTURE OF THE HUMAN SRC SH2 DOMAIN COMPLEX",
+        "resolution": null,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 101,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "9NS0",
+        "title": "GROUND STATE OF SRC KINASE DOMAIN",
+        "resolution": null,
+        "modifications": [
+          {
+            "resname": "PTR",
+            "chain": "A",
+            "seq": 419,
+            "std": "TYR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "AMPK_alpha2": {
+    "gene": "PRKAA2",
+    "uniprot": "P54646",
+    "declared_sites": [
+      "Thr172"
+    ],
+    "n_entries": 15,
+    "candidates": [
+      {
+        "pdb": "6B1U",
+        "title": "STRUCTURE OF FULL-LENGTH HUMAN AMPK (A2B1G1) IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR SC4",
+        "resolution": 2.77,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "7MYJ",
+        "title": "STRUCTURE OF FULL LENGTH HUMAN AMPK (A2B1G1) IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR MSG011",
+        "resolution": 2.95,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "4ZHX",
+        "title": "NOVEL BINDING SITE FOR ALLOSTERIC ACTIVATION OF AMPK",
+        "resolution": 2.99,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "5EZV",
+        "title": "X-RAY CRYSTAL STRUCTURE OF AMP-ACTIVATED PROTEIN KINASE ALPHA-2/ALPHA- 1 RIM CHIMAERA (ALPHA-2(1-347)/ALPHA-1(349-401)/ALPHA-2(397",
+        "resolution": 2.99,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "4CFE",
+        "title": "STRUCTURE OF FULL LENGTH HUMAN AMPK IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR, A BENZIMIDAZOLE DERIVATIVE (991)",
+        "resolution": 3.02,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "4CFF",
+        "title": "STRUCTURE OF FULL LENGTH HUMAN AMPK IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR, A THIENOPYRIDONE DERIVATIVE (A-769662)",
+        "resolution": 3.92,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      {
+        "pdb": "8BIK",
+        "title": "CRYSTAL STRUCTURE OF HUMAN AMPK HETEROTRIMER IN COMPLEX WITH ALLOSTERIC ACTIVATOR C455",
+        "resolution": 2.5,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "B",
+          "E"
+        ]
+      },
+      {
+        "pdb": "5ISO",
+        "title": "STRUCTURE OF FULL LENGTH HUMAN AMPK (NON-PHOSPHORYLATED AT T-LOOP) IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR, A BENZIMIDAZOLE DER",
+        "resolution": 2.63,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "D",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "B",
+          "D"
+        ]
+      },
+      {
+        "pdb": "6B2E",
+        "title": "STRUCTURE OF FULL LENGTH HUMAN AMPK (A2B2G1) IN COMPLEX WITH A SMALL MOLECULE ACTIVATOR SC4.",
+        "resolution": 3.8,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 172,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 108,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A",
+          "B"
+        ]
+      }
+    ]
+  },
+  "PhK_gamma": {
+    "gene": "PHKG1",
+    "uniprot": "P15735",
+    "declared_sites": [
+      "Thr10"
+    ],
+    "n_entries": 1,
+    "candidates": []
+  },
+  "PKA_Calpha": {
+    "gene": "PRKACA",
+    "uniprot": "P17612",
+    "declared_sites": [
+      "Thr197"
+    ],
+    "n_entries": 54,
+    "candidates": [
+      {
+        "pdb": "6NO7",
+        "title": "CRYSTAL STRUCTURE OF THE FULL-LENGTH WILD-TYPE PKA RIA HOLOENZYME",
+        "resolution": 3.55,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "E",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "G",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "G",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "G",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 12,
+        "chains": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ]
+      },
+      {
+        "pdb": "6BYS",
+        "title": "STRUCTURES OF THE PKA RI ALPHA HOLOENZYME WITH THE FLHCC DRIVER J-PKAC ALPHA OR NATIVE PRKAC ALPHA",
+        "resolution": 4.75,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "E",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "G",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "G",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "G",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 12,
+        "chains": [
+          "A",
+          "C",
+          "E",
+          "G"
+        ]
+      },
+      {
+        "pdb": "4WB7",
+        "title": "CRYSTAL STRUCTURE OF A CHIMERIC FUSION OF HUMAN DNAJ (HSP40) AND CAMP- DEPENDENT PROTEIN KINASE A (CATALYTIC ALPHA SUBUNIT)",
+        "resolution": 1.9,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 393,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 393,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "4AE9",
+        "title": "STRUCTURE AND FUNCTION OF THE HUMAN SPERM-SPECIFIC ISOFORM OF PROTEIN KINASE A (PKA) CATALYTIC SUBUNIT C ALPHA 2",
+        "resolution": 2.3,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "8FE2",
+        "title": "STRUCTURE OF J-PKAC CHIMERA COMPLEXED WITH APLITHIANINE A",
+        "resolution": 2.34,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 393,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 393,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "3MVJ",
+        "title": "HUMAN CYCLIC AMP-DEPENDENT PROTEIN KINASE PKA INHIBITOR COMPLEX",
+        "resolution": 2.49,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "E",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "A",
+          "B",
+          "E"
+        ]
+      },
+      {
+        "pdb": "8FE5",
+        "title": "STRUCTURE OF J-PKAC CHIMERA COMPLEXED WITH APLITHIANINE B",
+        "resolution": 2.51,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 393,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 393,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "6BYR",
+        "title": "STRUCTURES OF THE PKA RI ALPHA HOLOENZYME WITH THE FLHCC DRIVER J-PKAC ALPHA OR NATIVE PKAC ALPHA",
+        "resolution": 3.66,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 393,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "C",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 393,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "A",
+          "C"
+        ]
+      },
+      {
+        "pdb": "3AGL",
+        "title": "COMPLEX OF PKA WITH THE BISUBSTRATE PROTEIN KINASE INHIBITOR ARC-1039",
+        "resolution": 2.1,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 5,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "4WB6",
+        "title": "CRYSTAL STRUCTURE OF A L205R MUTANT OF HUMAN CAMP-DEPENDENT PROTEIN KINASE A (CATALYTIC ALPHA SUBUNIT)",
+        "resolution": 2.1,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 5,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "8FEC",
+        "title": "STRUCTURE OF J-PKAC CHIMERA COMPLEXED WITH APLITHIANINE DERIVATIVE",
+        "resolution": 2.7,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 194,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 393,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 252,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 393,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 5,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "5IZJ",
+        "title": "COMPLEX OF PKA WITH THE BISUBSTRATE PROTEIN KINASE INHIBITOR ARC-1411",
+        "resolution": 1.85,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "3L9M",
+        "title": "CRYSTAL STRUCTURE OF PKAB3 (PKA TRIPLE MUTANT V123A, L173M, Q181K) WITH COMPOUND 18",
+        "resolution": 1.9,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "3L9L",
+        "title": "CRYSTAL STRUCTURE OF PKA WITH COMPOUND 36",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "5N23",
+        "title": "PROTEIN KINASE A MUTANTS AS SURROGATE MODEL FOR AURORA B WITH AT9283 INHIBITOR",
+        "resolution": 2.09,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4AE6",
+        "title": "STRUCTURE AND FUNCTION OF THE HUMAN SPERM-SPECIFIC ISOFORM OF PROTEIN KINASE A (PKA) CATALYTIC SUBUNIT CALPHA 2",
+        "resolution": 2.1,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "7Y1G",
+        "title": "CRYSTAL STRUCTURE OF HUMAN PRKACA COMPLEXED WITH DS01080522",
+        "resolution": 2.3,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "B",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "B",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "A",
+          "B"
+        ]
+      },
+      {
+        "pdb": "4WB8",
+        "title": "CRYSTAL STRUCTURE OF HUMAN CAMP-DEPENDENT PROTEIN KINASE A (CATALYTIC ALPHA SUBUNIT), EXON 1 DELETION",
+        "resolution": 1.55,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4WB5",
+        "title": "CRYSTAL STRUCTURE OF HUMAN CAMP-DEPENDENT PROTEIN KINASE A (CATALYTIC ALPHA SUBUNIT)",
+        "resolution": 1.64,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3AMA",
+        "title": "PROTEIN KINASE A SIXFOLD MUTANT MODEL OF AURORA B WITH INHIBITOR JNJ- 7706621",
+        "resolution": 1.75,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "6FRX",
+        "title": "PKA VARIANT AS AURORA B MIMIC IN COMPLEX WITH A DIANILINOPYRIMIDINE INHIBITOR",
+        "resolution": 1.88,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "5BX6",
+        "title": "PKA IN COMPLEX WITH A HALOGENATED PHTHALAZINONE FRAGMENT COMPOUND.",
+        "resolution": 1.89,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "5BX7",
+        "title": "PKA IN COMPLEX WITH A BENZOTHIOPHENE FRAGMENT COMPOUND.",
+        "resolution": 1.89,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3VQH",
+        "title": "BROMINE SAD PARTIALLY RESOLVES MULTIPLE BINDING MODES FOR PKA INHIBITOR H-89",
+        "resolution": 1.95,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4UJB",
+        "title": "PROTEIN KINASE A IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.95,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3AMB",
+        "title": "PROTEIN KINASE A SIXFOLD MUTANT MODEL OF AURORA B WITH INHIBITOR VX- 680",
+        "resolution": 2.25,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 10,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "9EDC",
+        "title": "RESET TYPE-I PROTEIN KINASE A HOLOENZYME",
+        "resolution": 4.18,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 139,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 3,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3OVV",
+        "title": "HUMAN CAMP-DEPENDENT PROTEIN KINASE IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.58,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3POO",
+        "title": "HUMAN CAMP-DEPENDENT PROTEIN KINASE IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.6,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "6QJ7",
+        "title": "DIFLUOROPHENYL DIACYLHYDRAZIDES: POTENT INHIBITORS OF SERUM- AND GLUCOCORTICOID-INDUCIBLE KINASE 1 (SGK1)",
+        "resolution": 1.69,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4UJ1",
+        "title": "PROTEIN KINASE A IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.77,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4UJ9",
+        "title": "PROTEIN KINASE A IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.87,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3OWP",
+        "title": "HUMAN CAMP-DEPENDENT PROTEIN KINASE IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.88,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4UJA",
+        "title": "PROTEIN KINASE A IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 1.93,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3AGM",
+        "title": "COMPLEX OF PKA WITH THE BISUBSTRATE PROTEIN KINASE INHIBITOR ARC-670",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3L9N",
+        "title": "CRYSTAL STRUCTURE OF PKAB3 (PKA TRIPLE MUTANT V123A, L173M, Q181K) WITH COMPOUND 27",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3NX8",
+        "title": "HUMAN CAMP DEPENDENT PROTEIN KINASE IN COMPLEX WITH PHENOL",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3OOG",
+        "title": "HUMAN CAMP-DEPENDENT PROTEIN KINASE IN COMPLEX WITH A SMALL FRAGMENT",
+        "resolution": 2.0,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "4UJ2",
+        "title": "PROTEIN KINASE A IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 2.02,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3P0M",
+        "title": "HUMAN CAMP-DEPENDENT PROTEIN KINASE IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 2.03,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "5IZF",
+        "title": "COMPLEX OF PKA WITH THE BISUBSTRATE PROTEIN KINASE INHIBITOR ARC-1408",
+        "resolution": 2.1,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "2GU8",
+        "title": "DISCOVERY OF 2-PYRIMIDYL-5-AMIDOTHIOPHENES AS NOVEL AND POTENT INHIBITORS FOR AKT: SYNTHESIS AND SAR STUDIES",
+        "resolution": 2.2,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "3OXT",
+        "title": "HUMAN CAMP-DEPENDENT PROTEIN KINASE IN COMPLEX WITH AN INHIBITOR",
+        "resolution": 2.2,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "5UZK",
+        "title": "CRYSTAL STRUCTURE OF PKA BOUND TO AN PYRROLO PYRIDINE INHIBITOR",
+        "resolution": 2.3,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "5J5X",
+        "title": "COMPLEX OF PKA WITH THE BISUBSTRATE PROTEIN KINASE INHIBITOR ARC-1416",
+        "resolution": 2.6,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "6C0U",
+        "title": "CRYSTAL STRUCTURE OF CAMP-DEPENDENT PROTEIN KINASE CALPHA SUBUNIT BOUND WITH N46",
+        "resolution": 2.65,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "9EDE",
+        "title": "RESET TYPE-I PROTEIN KINASE A HOLOENZYME",
+        "resolution": 5.9,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "A",
+            "seq": 197,
+            "std": "THR"
+          },
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 338,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A"
+        ]
+      },
+      {
+        "pdb": "8X5L",
+        "title": "THE CRYSTAL STRUCTURE OF PRKACA FROM BIORTUS.",
+        "resolution": 2.75,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 339,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "CFTR_R_domain": {
+    "gene": "CFTR",
+    "uniprot": "P13569",
+    "declared_sites": [
+      "Ser660",
+      "Ser700",
+      "Ser737",
+      "Ser813"
+    ],
+    "n_entries": 57,
+    "candidates": [
+      {
+        "pdb": "5D3E",
+        "title": "CRYSTAL STRUCTURE OF HUMAN 14-3-3 GAMMA IN COMPLEX WITH CFTR R-DOMAIN PEPTIDE PS768-PS795",
+        "resolution": 2.75,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 768,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 795,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "G",
+            "seq": 768,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "G",
+            "seq": 795,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "K",
+            "seq": 768,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "K",
+            "seq": 795,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 6,
+        "chains": [
+          "C",
+          "G",
+          "K"
+        ]
+      },
+      {
+        "pdb": "7QI1",
+        "title": "CRYSTAL STRUCTURE OF HUMAN 14-3-3 PROTEIN BETA IN COMPLEX WITH CFTR PEPTIDE PS753PS768 AND PPI STABILIZER CY007424",
+        "resolution": 1.76,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "F",
+            "seq": 753,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "F",
+            "seq": 768,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 753,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 768,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "E",
+          "F"
+        ]
+      },
+      {
+        "pdb": "6HEP",
+        "title": "CRYSTAL STRUCTURE OF HUMAN 14-3-3 BETA IN COMPLEX WITH CFTR R-DOMAIN PEPTIDE PS753-PS768",
+        "resolution": 1.86,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 753,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "E",
+            "seq": 768,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "F",
+            "seq": 753,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "F",
+            "seq": 768,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 4,
+        "chains": [
+          "E",
+          "F"
+        ]
+      },
+      {
+        "pdb": "5D2D",
+        "title": "CRYSTAL STRUCTURE OF HUMAN 14-3-3 ZETA IN COMPLEX WITH CFTR R-DOMAIN PEPTIDE PS753-PS768",
+        "resolution": 2.1,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 753,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 768,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C"
+        ]
+      },
+      {
+        "pdb": "5D3F",
+        "title": "CRYSTAL STRUCTURE OF HUMAN 14-3-3 ZETA IN COMPLEX WITH CFTR R-DOMAIN PEPTIDE PS753-PS768 AND STABILIZER FUSICOCCIN-A",
+        "resolution": 2.74,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 778,
+            "std": "SER"
+          },
+          {
+            "resname": "SEP",
+            "chain": "C",
+            "seq": 793,
+            "std": "SER"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "C"
+        ]
+      },
+      {
+        "pdb": "9DW9",
+        "title": "PHOSPHORYLATED (E1371Q)CFTR IN COMPLEX WITH PKA-C",
+        "resolution": 2.8,
+        "modifications": [
+          {
+            "resname": "SEP",
+            "chain": "A",
+            "seq": 813,
+            "std": "SER"
+          },
+          {
+            "resname": "TPO",
+            "chain": "G",
+            "seq": 198,
+            "std": "THR"
+          }
+        ],
+        "n_phos": 2,
+        "chains": [
+          "A",
+          "G"
+        ]
+      },
+      {
+        "pdb": "9DW8",
+        "title": "DEPHOSPHORYLATED (E1371Q)CFTR IN COMPLEX WITH PKA-C",
+        "resolution": 3.5,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "G",
+            "seq": 198,
+            "std": "THR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "G"
+        ]
+      },
+      {
+        "pdb": "9DW5",
+        "title": "DEPHOSPHORYLATED CFTR IN 1:1 COMPLEX WITH PKA-C (SITE I)",
+        "resolution": 3.8,
+        "modifications": [
+          {
+            "resname": "TPO",
+            "chain": "G",
+            "seq": 198,
+            "std": "THR"
+          }
+        ],
+        "n_phos": 1,
+        "chains": [
+          "G"
+        ]
+      }
+    ]
+  }
+}

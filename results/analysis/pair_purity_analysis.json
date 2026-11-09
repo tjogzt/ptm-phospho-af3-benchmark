@@ -1,0 +1,60 @@
+{
+  "pure": {
+    "n": 6,
+    "cos_med": 0.282,
+    "r_med": 0.52,
+    "ratio_med": 0.513,
+    "names": [
+      "AURKA",
+      "CDK2",
+      "ERK2",
+      "PYGM",
+      "Src",
+      "p38"
+    ]
+  },
+  "mixed": {
+    "n": 4,
+    "cos_med": 0.061,
+    "r_med": 0.4,
+    "ratio_med": 0.299,
+    "names": [
+      "AMPK",
+      "CDK1",
+      "CDK7",
+      "IRF3"
+    ]
+  },
+  "all": {
+    "n": 10,
+    "cos_med": 0.181,
+    "r_med": 0.439,
+    "ratio_med": 0.359,
+    "names": [
+      "AMPK",
+      "AURKA",
+      "CDK1",
+      "CDK2",
+      "CDK7",
+      "ERK2",
+      "IRF3",
+      "PYGM",
+      "Src",
+      "p38"
+    ]
+  },
+  "pure_members": [
+    "AURKA",
+    "CDK2",
+    "ERK2",
+    "PYGM",
+    "Src",
+    "p38"
+  ],
+  "mixed_members": [
+    "AMPK",
+    "CDK1",
+    "CDK7",
+    "IRF3"
+  ]
+}

@@ -1,0 +1,107 @@
+[
+  {
+    "protein": "CDK2",
+    "pred_min": 0.27,
+    "pred_max": 1.95,
+    "cv": 0.981,
+    "stable": false
+  },
+  {
+    "protein": "ERK2",
+    "pred_min": 0.88,
+    "pred_max": 1.07,
+    "cv": 0.067,
+    "stable": true
+  },
+  {
+    "protein": "Aurora_A",
+    "pred_min": 0.23,
+    "pred_max": 0.33,
+    "cv": 0.119,
+    "stable": true
+  },
+  {
+    "protein": "IRF3",
+    "pred_min": 0.34,
+    "pred_max": 1.4,
+    "cv": 0.513,
+    "stable": false
+  },
+  {
+    "protein": "P38alpha",
+    "pred_min": 1.14,
+    "pred_max": 1.42,
+    "cv": 0.082,
+    "stable": true
+  },
+  {
+    "protein": "CDK7",
+    "pred_min": 0.14,
+    "pred_max": 0.2,
+    "cv": 0.142,
+    "stable": true
+  },
+  {
+    "protein": "c-Src_kinase",
+    "pred_min": 0.21,
+    "pred_max": 0.3,
+    "cv": 0.128,
+    "stable": true
+  },
+  {
+    "protein": "AMPK_alpha2",
+    "pred_min": 0.11,
+    "pred_max": 0.24,
+    "cv": 0.301,
+    "stable": false
+  },
+  {
+    "protein": "Glycogen_Phosphorylase",
+    "pred_min": 0.18,
+    "pred_max": 0.74,
+    "cv": 0.58,
+    "stable": false
+  },
+  {
+    "protein": "CDK1",
+    "pred_min": 0.21,
+    "pred_max": 0.97,
+    "cv": 0.697,
+    "stable": false
+  },
+  {
+    "protein": "GSK3B",
+    "pred_min": 0.12,
+    "pred_max": 0.2,
+    "cv": 0.17,
+    "stable": true
+  },
+  {
+    "protein": "PAK1",
+    "pred_min": 0.12,
+    "pred_max": 0.22,
+    "cv": 0.195,
+    "stable": true
+  },
+  {
+    "protein": "AKT1",
+    "pred_min": 0.12,
+    "pred_max": 1.56,
+    "cv": 0.953,
+    "stable": false
+  },
+  {
+    "protein": "TBK1",
+    "pred_min": 0.31,
+    "pred_max": 0.53,
+    "cv": 0.204,
+    "stable": true
+  },
+  {
+    "protein": "IKBKB",
+    "pred_min": 0.34,
+    "pred_max": 0.93,
+    "cv": 0.353,
+    "stable": false
+  }
+]

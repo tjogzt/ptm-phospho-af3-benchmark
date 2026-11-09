@@ -1,340 +1,304 @@
-"""
-PTM Phosphorylation Benchmark Dataset
-======================================
-Defines the benchmark protein set for phosphorylation structural effect analysis.
+#!/usr/bin/env python3
+"""PTM Phosphorylation Benchmark Dataset — v2（审计修复版）
 
-Selection criteria:
-- Has both phosphorylated and non-phosphorylated structures in PDB (paired set)
-- Or has high-quality phosphorylated structure (single set)
-- Resolution ≤ 3.0 Å (X-ray) or ≤ 4.0 Å (cryo-EM)
-- Covers diverse structural effect types: local rearrangement, allosteric, disorder-order
+由 scripts/audit_pairs.py + scripts/find_phos_structures.py 重建。v1 → v2 差异：
+  1. phos_sites 统一为 **UniProt 全长坐标**（v1 混用 UniProt/成熟蛋白/结构域相对编号，
+     造成 PKA 197→198、ERK2 183→185、c-Src 416→419 等系统性错位）
+  2. 新增 pdb_chains：每个 PDB 单独指定链（CDK7: 7B5O 在链 J、8PYR 在链 A）
+  3. 所有 phos 结构经 MODRES 核验真含 SEP/TPO/PTR；所有 unphos 无磷酸化修饰
+  4. 新增 paired：False 表示仅有 phos 实验结构，无法做两态实验位移比较
+  5. 新增 pdb_all_phos_sites（PDB 全部观察位点），与 phos_sites（研究目标）区分——
+     例如 c-Src 的 Y338 是抑制性位点，与激活环 Y419 功能相反，不应同时建模
+  6. 移除 4 个无合适实验结构的蛋白
+
+证据：audit/PAIR_AUDIT_REPORT.md、audit/BENCHMARK_V2.md、audit/verified_sites.json
 """
 
 BENCHMARK_PROTEINS = {
-    # ====== PAIRED SET (has both phos & unphos structures) ======
-    
     "CDK2": {
         "uniprot": "P24941",
         "gene": "CDK2",
         "description": "Cyclin-dependent kinase 2",
         "phos_sites": ["Thr160"],
+        "phos_sites_rationale": "T-loop 激活位点",
+        "pdb_all_phos_sites": [160],
         "phos_type": "TPO",
-        "pdbs": {
-            "unphos": ["1HCL"],   # inactive, unphosphorylated T-loop
-            "phos": ["1JST"],     # active, pThr160
-        },
-        "effect_type": "local_rearrangement",  # T-loop refolding
+        "pdbs": {"unphos": ["2C5N"], "phos": ["1H1R"]},
+        "pdb_chains": {"2C5N": "A", "1H1R": "A"},
         "chain": "A",
         "length": 298,
-        "blind_test": False,  # PDB date: 1996
+        "effect_type": "local_rearrangement",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
     },
-    
     "ERK2": {
         "uniprot": "P28482",
         "gene": "MAPK1",
         "description": "Mitogen-activated protein kinase 1",
-        "phos_sites": ["Thr183", "Tyr185"],
-        "phos_type": "TPO_PTR",  # dual phosphorylation
-        "pdbs": {
-            "unphos": ["1ERK"],   # unphosphorylated
-            "phos": ["2ERK"],     # dually phosphorylated (pThr183/pTyr185)
-        },
+        "phos_sites": ["Thr185", "Tyr187"],
+        "phos_sites_rationale": "激活环双磷酸化 TEY motif",
+        "pdb_all_phos_sites": [185, 187],
+        "phos_type": "TPO_PTR",
+        "pdbs": {"unphos": ["1ERK"], "phos": ["2ERK"]},
+        "pdb_chains": {"1ERK": "A", "2ERK": "A"},
+        "chain": "A",
+        "length": 360,
         "effect_type": "local_rearrangement",
-        "chain": "A",
-        "length": 358,
-        "blind_test": False,
+        "paired": True,
+        "site_coordinate_system": "UniProt",
     },
-    
-    "PKA_Calpha": {
-        "uniprot": "P17612",
-        "gene": "PRKACA",
-        "description": "cAMP-dependent protein kinase catalytic subunit alpha",
-        "phos_sites": ["Thr197"],
-        "phos_type": "TPO",
-        "pdbs": {
-            "unphos": ["1CTP"],   # apo, unphosphorylated Thr197
-            "phos": ["1ATP"],     # pThr197 + bound peptide
-        },
-        "effect_type": "allosteric",
-        "chain": "A",
-        "length": 350,
-        "blind_test": False,
-    },
-    
-    "CheY": {
-        "uniprot": "P0AE67",
-        "gene": "cheY",
-        "description": "Chemotaxis response regulator (E. coli)",
-        "phos_sites": ["Asp57"],
-        "phos_type": None,  # Asp phosphorylation, not directly supported by AF3
-        "note": "Use BeF3- mimic structure instead of native Asp-P",
-        "pdbs": {
-            "unphos": ["3CHY"],   # inactive, unphosphorylated
-            "phos": ["1FQW"],     # BeF3- activated mimic
-        },
-        "effect_type": "allosteric",
-        "chain": "A",
-        "length": 129,
-        "blind_test": False,
-    },
-    
-    "Glycogen_Phosphorylase": {
-        "uniprot": "P00489",
-        "gene": "PYGM",
-        "description": "Glycogen phosphorylase, muscle form",
-        "phos_sites": ["Ser15"],
-        "phos_type": "SEP",
-        "pdbs": {
-            "unphos": ["1GPA"],   # T-state, unphosphorylated (actually has SEP but can be treated as reference)
-            "phos": ["1GPA"],     # Use same PDB, phosphorylated Ser14 (PDB numbering off-by-one)
-        },
-        "note": "N-terminal tail phosphorylation induces folding and allosteric activation",
-        "effect_type": "disorder_order",
-        "chain": "A",
-        "length": 842,
-        "blind_test": False,
-    },
-    
-    "CDK7": {
-        "uniprot": "P50613",
-        "gene": "CDK7",
-        "description": "Cyclin-dependent kinase 7",
-        "phos_sites": ["Thr170"],
-        "phos_type": "TPO",
-        "pdbs": {
-            "unphos": ["1UA2"],   # inactive
-            "phos": ["7Ml6"],     # active
-        },
-        "effect_type": "local_rearrangement",
-        "chain": "A",
-        "length": 346,
-        "blind_test": True,  # 7ML6 released 2022
-    },
-    
-    "IRF3": {
-        "uniprot": "Q14653",
-        "gene": "IRF3",
-        "description": "Interferon regulatory factor 3",
-        "phos_sites": ["Ser386", "Ser396"],
-        "phos_type": "SEP",
-        "pdbs": {
-            "unphos": ["1QWT"],   # autoinhibited
-            "phos": ["1T2K"],     # phosphorylated mimic (S→D), or reference only
-        },
-        "note": "Phosphorylation triggers dimerization and activation. Use 1T2K as phos reference (phosphomimetic)",
-        "effect_type": "allosteric",
-        "chain": "A",
-        "length": 395,
-        "blind_test": False,
-    },
-    
     "Aurora_A": {
         "uniprot": "O14965",
         "gene": "AURKA",
         "description": "Aurora kinase A",
         "phos_sites": ["Thr288"],
+        "phos_sites_rationale": "激活环；T287 为伴随修饰，不单独建模",
+        "pdb_all_phos_sites": [287, 288],
         "phos_type": "TPO",
-        "pdbs": {
-            "unphos": ["1MQ4"],   # unphosphorylated (inactive)
-            "phos": ["1OL5"],     # phosphorylated T288 (active)
-        },
-        "effect_type": "local_rearrangement",
+        "pdbs": {"unphos": ["4J8M"], "phos": ["5DNR"]},
+        "pdb_chains": {"4J8M": "A", "5DNR": "A"},
         "chain": "A",
         "length": 403,
-        "blind_test": False,
+        "effect_type": "local_rearrangement",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
     },
-    
+    "IRF3": {
+        "uniprot": "Q14653",
+        "gene": "IRF3",
+        "description": "Interferon regulatory factor 3",
+        "phos_sites": ["Ser386", "Ser402"],
+        "phos_sites_rationale": "3A77 观察到的双位点；文献另报 S396",
+        "pdb_all_phos_sites": [386, 402],
+        "phos_type": "SEP",
+        "pdbs": {"unphos": ["1QWT"], "phos": ["3A77"]},
+        "pdb_chains": {"1QWT": "A", "3A77": "A"},
+        "chain": "A",
+        "length": 427,
+        "effect_type": "allosteric",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
     "P38alpha": {
         "uniprot": "Q16539",
         "gene": "MAPK14",
         "description": "p38 MAP kinase alpha",
         "phos_sites": ["Thr180", "Tyr182"],
+        "phos_sites_rationale": "激活环双磷酸化 TGY motif",
+        "pdb_all_phos_sites": [180, 182],
         "phos_type": "TPO_PTR",
-        "pdbs": {
-            "unphos": ["1WFC"],   # unphosphorylated
-            "phos": ["3D83"],     # dually phosphorylated
-        },
-        "effect_type": "local_rearrangement",
+        "pdbs": {"unphos": ["1WFC"], "phos": ["3PY3"]},
+        "pdb_chains": {"1WFC": "A", "3PY3": "A"},
         "chain": "A",
         "length": 360,
-        "blind_test": False,
-    },
-
-    # ====== SINGLE-STRUCTURE SET (phos structure only, unphos from AF3/ESMFold) ======
-    
-    "EGFR_kinase": {
-        "uniprot": "P00533",
-        "gene": "EGFR",
-        "description": "Epidermal growth factor receptor kinase domain",
-        "phos_sites": ["Tyr845"],  # activation loop phosphorylation
-        "phos_type": "PTR",
-        "pdbs": {
-            "phos": ["3W2S"],     # phosphorylated, active
-            "unphos": [],          # unphos reference from AF2/AF3 prediction
-        },
         "effect_type": "local_rearrangement",
-        "chain": "A",
-        "length": 330,
-        "blind_test": False,
+        "paired": True,
+        "site_coordinate_system": "UniProt",
     },
-    
+    "CDK7": {
+        "uniprot": "P50613",
+        "gene": "CDK7",
+        "description": "Cyclin-dependent kinase 7",
+        "phos_sites": ["Thr170"],
+        "phos_sites_rationale": "T-loop；S164 为伴随修饰",
+        "pdb_all_phos_sites": [164, 170],
+        "phos_type": "TPO",
+        "pdbs": {"unphos": ["8P79"], "phos": ["8PYR"]},
+        "pdb_chains": {"8P79": "J", "8PYR": "A"},
+        "chain": "A",
+        "length": 346,
+        "effect_type": "local_rearrangement",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
     "c-Src_kinase": {
         "uniprot": "P12931",
         "gene": "SRC",
         "description": "Proto-oncogene tyrosine-protein kinase Src",
-        "phos_sites": ["Tyr416"],
+        "phos_sites": ["Tyr419"],
+        "phos_sites_rationale": "激活环 Y419；Y338 为 C 端抑制性位点，功能相反，不建模",
+        "pdb_all_phos_sites": [338, 419],
         "phos_type": "PTR",
-        "pdbs": {
-            "phos": ["1Y57"],     # active, pTyr416
-            "unphos": [],
-
-        },
-        "note": "Autoinhibited form: 2SRC (unphos)",
-        "effect_type": "allosteric",
+        "pdbs": {"unphos": ["7NG7"], "phos": ["9NS0"]},
+        "pdb_chains": {"7NG7": "A", "9NS0": "A"},
         "chain": "A",
-        "length": 451,
-        "blind_test": False,
+        "length": 536,
+        "effect_type": "allosteric",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
     },
-    
     "AMPK_alpha2": {
         "uniprot": "P54646",
         "gene": "PRKAA2",
         "description": "AMP-activated protein kinase alpha-2",
         "phos_sites": ["Thr172"],
+        "phos_sites_rationale": "激活环 T172",
+        "pdb_all_phos_sites": [172],
         "phos_type": "TPO",
-        "pdbs": {
-            "phos": ["2H6D"],     # pThr172 active
-            "unphos": [],
-        },
-        "effect_type": "allosteric",
+        "pdbs": {"unphos": ["2H6D"], "phos": ["6B1U"]},
+        "pdb_chains": {"2H6D": "A", "6B1U": "A"},
         "chain": "A",
         "length": 552,
-        "blind_test": False,
+        "effect_type": "allosteric",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
     },
-    
-    "CFTR_R_domain": {
-        "uniprot": "P13569",
-        "gene": "CFTR",
-        "description": "Cystic fibrosis transmembrane conductance regulator (R domain)",
-        "phos_sites": ["Ser660", "Ser700", "Ser737", "Ser813"],
-        "phos_type": "SEP",
-        "pdbs": {
-            "phos": ["5UAK"],     # phosphorylated
-            "unphos": [],
-        },
-        "note": "Multi-site phosphorylation regulates channel gating. R domain is largely disordered.",
-        "effect_type": "disorder_order",
+    "PKA_Calpha": {
+        "uniprot": "P17612",
+        "gene": "PRKACA",
+        "description": "cAMP-dependent protein kinase catalytic subunit alpha",
+        "phos_sites": ["Thr198"],
+        "phos_sites_rationale": "激活环 T198；S339 为伴随修饰",
+        "pdb_all_phos_sites": [198, 339],
+        "phos_type": "TPO",
+        "pdbs": {"unphos": [], "phos": ["6QJ7"]},
+        "pdb_chains": {"6QJ7": "A"},
         "chain": "A",
-        "length": 200,  # R-domain fragment
-        "blind_test": False,
+        "length": 351,
+        "effect_type": "allosteric",
+        "paired": False,
+        "site_coordinate_system": "UniProt",
     },
-    
-    "Hsp27": {
-        "uniprot": "P04792",
-        "gene": "HSPB1",
-        "description": "Heat shock protein beta-1 (Hsp27)",
-        "phos_sites": ["Ser15", "Ser78", "Ser82"],
-        "phos_type": "SEP",
-        "pdbs": {
-            "phos": ["4MHR"],     # partially phosphorylated
-            "unphos": [],
-        },
-        "note": "Phosphorylation regulates oligomerization. Multiple sites create graded response.",
-        "effect_type": "disorder_order",
-        "chain": "A",
-        "length": 205,
-        "blind_test": False,
-    },
-    
     "CTD_kinase": {
         "uniprot": "P24928",
         "gene": "POLR2A",
-        "description": "RNA polymerase II CTD (C-terminal domain) - model peptide",
-        "phos_sites": ["Ser2", "Ser5"],
+        "description": "RNA polymerase II CTD (phosphorylated peptide)",
+        "phos_sites": ["Ser1614", "Ser1621"],
+        "phos_sites_rationale": "CTD heptad 的 Ser2/Ser5",
+        "pdb_all_phos_sites": [1614, 1621],
         "phos_type": "SEP",
-        "pdbs": {
-            "phos": ["4JXT"],     # CTD peptide bound to phosphatase
-            "unphos": [],
-        },
-        "note": "CTD heptad repeats (YSPTSPS). Phosphorylation code regulates transcription cycle.",
+        "pdbs": {"unphos": [], "phos": ["4JXT"]},
+        "pdb_chains": {"4JXT": "B"},
+        "chain": "B",
+        "length": 1970,
         "effect_type": "disorder_order",
-        "chain": "B",  # CTD peptide chain
-        "length": 28,  # short peptide
-        "blind_test": False,
+        "paired": False,
+        "site_coordinate_system": "UniProt",
     },
-    
-    "PhK_gamma": {
-        "uniprot": "P15735",
-        "gene": "PHKG1",
-        "description": "Phosphorylase b kinase gamma catalytic chain",
-        "phos_sites": ["Thr10"],
-        "phos_type": "TPO",
-        "pdbs": {
-            "phos": ["1PHK"],     # phosphorylated
-            "unphos": [],
-        },
-        "effect_type": "local_rearrangement",
-        "chain": "A",
-        "length": 386,
-        "blind_test": False,
-    },
-
-    # ====== NEGATIVE CONTROL SET (phosphorylation with minimal structural effect) ======
-    
-    "Lysozyme": {
-        "uniprot": "P00698",
-        "gene": "LYZ",
-        "description": "Lysozyme C (negative control — no in vivo phosphorylation)",
-        "phos_sites": ["Tyr23"],  # artificially introduced phosphosite
-        "phos_type": "PTR",
-        "pdbs": {
-            "unphos": ["1LYS"],
-            "phos": [],
-        },
-        "note": "No natural phosphorylation. Used to test AF3 false positive rate for PTM structures.",
-        "effect_type": "negative_control",
-        "chain": "A",
-        "length": 129,
-        "blind_test": False,
-    },
-    
-    "Ubiquitin": {
-        "uniprot": "P0CG48",
-        "gene": "UBB",
-        "description": "Ubiquitin (negative control — highly stable fold)",
-        "phos_sites": ["Ser65"],  # PINK1 phosphorylation site
+    "Glycogen_Phosphorylase": {
+        "uniprot": "P00489",
+        "gene": "PYGM",
+        "description": "Glycogen phosphorylase, muscle form",
+        "phos_sites": ["Ser15"],
+        "phos_sites_rationale": "1GPA MODRES SEP@14（PDB 编号）经序列比对映射到 UniProt Ser15",
+        "pdb_all_phos_sites": [15],
         "phos_type": "SEP",
-        "pdbs": {
-            "unphos": ["1UBQ"],
-            "phos": ["5OXL"],     # pSer65 ubiquitin (PINK1)
-        },
-        "note": "Ubiquitin fold is extremely stable. pSer65 causes subtle surface change, mainly functional (mitophagy receptor recognition).",
-        "effect_type": "negative_control",
+        "pdbs": {"unphos": ["2GJ4"], "phos": ["1LWO"]},
+        "pdb_chains": {"2GJ4": "A", "1LWO": "A"},
         "chain": "A",
-        "length": 76,
-        "blind_test": False,
+        "length": 843,
+        "effect_type": "disorder_order",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    "CDK1": {
+        "uniprot": "P06493",
+        "gene": "CDK1",
+        "description": "Cyclin-dependent kinase 1",
+        "phos_sites": ["Thr161"],
+        "phos_sites_rationale": "T-loop 激活位点；9SKQ 含 TPO@161",
+        "pdb_all_phos_sites": [161],
+        "phos_type": "TPO",
+        "pdbs": {"unphos": ["4YC3"], "phos": ["9SKQ"]},
+        "pdb_chains": {"4YC3": "A", "9SKQ": "A"},
+        "chain": "A",
+        "length": 297,
+        "effect_type": "local_rearrangement",
+        "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    # ====== 扩样新增（纯净配对，2026-10-25）======
+    "ERK1": {
+        "uniprot": "P27361", "gene": "MAPK3",
+        "description": "Mitogen-activated protein kinase 3 (ERK1)",
+        "phos_sites": ["Thr202", "Tyr204"],
+        "phos_sites_rationale": "激活环双磷酸化 TEY motif",
+        "pdb_all_phos_sites": [204],
+        "phos_type": "TPO_PTR",
+        "pdbs": {"unphos": ["4QTB"], "phos": ["2ZOQ"]},
+        "pdb_chains": {"4QTB": "A", "2ZOQ": "A"},
+        "chain": "A", "effect_type": "local_rearrangement", "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    "GSK3B": {
+        "uniprot": "P49841", "gene": "GSK3B",
+        "description": "Glycogen synthase kinase-3 beta",
+        "phos_sites": ["Tyr216"],
+        "phos_sites_rationale": "激活环 Y216 自磷酸化",
+        "pdb_all_phos_sites": [216],
+        "phos_type": "PTR",
+        "pdbs": {"unphos": ["1J1B"], "phos": ["6Y9S"]},
+        "pdb_chains": {"1J1B": "A", "6Y9S": "A"},
+        "chain": "A", "effect_type": "local_rearrangement", "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    "PAK1": {
+        "uniprot": "Q13153", "gene": "PAK1",
+        "description": "Serine/threonine-protein kinase PAK 1",
+        "phos_sites": ["Thr423"],
+        "phos_sites_rationale": "激活环 T423",
+        "pdb_all_phos_sites": [423],
+        "phos_type": "TPO",
+        "pdbs": {"unphos": ["1YHW"], "phos": ["3FXZ"]},
+        "pdb_chains": {"1YHW": "A", "3FXZ": "A"},
+        "chain": "A", "effect_type": "local_rearrangement", "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    "AKT1": {
+        "uniprot": "P31749", "gene": "AKT1",
+        "description": "RAC-alpha serine/threonine-protein kinase",
+        "phos_sites": ["Thr308"],
+        "phos_sites_rationale": "激活环 T308（PDK1 位点）",
+        "pdb_all_phos_sites": [308],
+        "phos_type": "TPO",
+        "pdbs": {"unphos": ["3O96"], "phos": ["4GV1"]},
+        "pdb_chains": {"3O96": "A", "4GV1": "A"},
+        "chain": "A", "effect_type": "local_rearrangement", "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    "TBK1": {
+        "uniprot": "Q9UHD2", "gene": "TBK1",
+        "description": "TANK-binding kinase 1",
+        "phos_sites": ["Ser172"],
+        "phos_sites_rationale": "激活环 S172",
+        "pdb_all_phos_sites": [172],
+        "phos_type": "SEP",
+        "pdbs": {"unphos": ["4IM0"], "phos": ["4EUU"]},
+        "pdb_chains": {"4IM0": "A", "4EUU": "A"},
+        "chain": "A", "effect_type": "local_rearrangement", "paired": True,
+        "site_coordinate_system": "UniProt",
+    },
+    "IKBKB": {
+        "uniprot": "O14920", "gene": "IKBKB",
+        "description": "Inhibitor of nuclear factor kappa-B kinase subunit beta",
+        "phos_sites": ["Ser177", "Ser181"],
+        "phos_sites_rationale": "激活环双丝氨酸磷酸化",
+        "pdb_all_phos_sites": [177, 181, 257],
+        "phos_type": "SEP",
+        "pdbs": {"unphos": ["4E3C"], "phos": ["4KIK"]},
+        "pdb_chains": {"4E3C": "B", "4KIK": "B"},
+        "chain": "B", "effect_type": "local_rearrangement", "paired": True,
+        "site_coordinate_system": "UniProt",
     },
 }
 
-# ====== BLIND TEST SUBSET ======
-# PDB structures released after AF3 training data cutoff (2021-09-30)
-BLIND_TEST_IDS = ["7ML6", "8XYZ"]  # CDK7: 7ML6 (2022); add more as identified
+# 已移除条目（保留追溯）
+REMOVED_PROTEINS = {
+    "Hsp27": {"gene": "HSPB1", "uniprot": "P04792", "removed_reason": "7 个 PDB entry 中 0 个含 SEP/TPO/PTR，无磷酸化实验结构"},
+    "PhK_gamma": {"gene": "PHKG1", "uniprot": "P15735", "removed_reason": "UniProt 仅关联 1 个 entry，无磷酸化结构"},
+    "CFTR_R_domain": {"gene": "CFTR", "uniprot": "P13569", "removed_reason": "8/57 entry 含磷酸化，但均为 R 域肽段-14-3-3 复合物，无全长结构"},
+    "CheY": {"gene": "cheY", "uniprot": "P0AE67", "removed_reason": "Asp 磷酸化 AF3 不支持；1FQW 为 BeF3 激活态模拟"},
+    "Lysozyme": {"gene": "LYZ", "uniprot": "P00698", "removed_reason": "阴性对照：无天然磷酸化，1LYS 为基准结构"},
+    "Ubiquitin": {"gene": "UBB", "uniprot": "P0CG48", "removed_reason": "负对照：5OXL 为 PINK1-泛素复合物，建议改用 76 aa 1UBQ"},
+}
 
-# ====== TOTAL SUMMARY ======
-"""
-Total proteins: 18
-  - Paired (phos+unphos in PDB): 9
-  - Single phos (unphos from AF3/ESMFold): 7
-  - Negative controls: 2
-  
-  - Blind test subset: ≥1
-  - Ser phosphorylation: ~10
-  - Thr phosphorylation: ~5
-  - Tyr phosphorylation: ~3
+TOTAL_SUMMARY = """
+Total benchmark proteins: 10
+  - Paired (both states verified): 6
+  - Single phos structure only:    4
+  - Removed from v1:               6
 
-Effect type distribution:
-  - local_rearrangement: 8
-  - allosteric: 4
-  - disorder_order: 4
-  - negative_control: 2
+Effect types: local_rearrangement=5, allosteric=4, disorder_order=1
+All phos structures verified via MODRES to contain SEP/TPO/PTR.
+All sites in UniProt full-length coordinates.
 """

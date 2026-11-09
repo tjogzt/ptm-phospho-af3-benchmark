@@ -1,0 +1,44 @@
+# =====================================================================
+#  .gitignore — PTM phosphorylation benchmark
+#  仅纳入可复现所需的最小集；原始大数据（可从公开源重建）排除。
+#  Track only the minimal reproducible set; raw large data are excluded.
+# =====================================================================
+
+# macOS AppleDouble / resource forks
+._*
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# --- Large raw inputs (rebuildable) --------------------------------
+# PDB 结构：由 scripts/download_pdbs.py 从 RCSB 重新下载
+data/pdb/
+
+# --- Large model outputs (regenerate / archive separately) ---------
+# AF3 原始下载（zip）与解出的模型 CIF
+results/af3/downloads/
+results/af3/models/
+# 非主队列蛋白的 AF3 原始作业目录
+results/af3/cftr/
+results/af3/ubb/
+results/af3/prkaa2/
+results/af3/phkg1/
+results/af3/hspb1/
+# MD 轨迹与 ESMFold 单模型 PDB
+results/md/
+results/esm/pdb/
+
+# --- Tool state -----------------------------------------------------
+.aider-desk/
+.aider.input.history
+.reasonix/
+.codegraph/
+
+# --- Internal / non-public artefacts --------------------------------
+# 内部六合团队审查报告（非论文组成部分）
+PTM_BioHex_Review_Report.html
+PTM_BioHex_Review_Report.pdf
+PTM项目审查报告.pdf

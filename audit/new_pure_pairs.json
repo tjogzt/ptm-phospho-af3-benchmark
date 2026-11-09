@@ -1,0 +1,40 @@
+[
+  {
+    "name": "ERK1",
+    "acc": "P27361",
+    "phos": "2ZOQ",
+    "unphos": "4QTB",
+    "sites": [
+      202,
+      204
+    ]
+  },
+  {
+    "name": "PAK1",
+    "acc": "Q13153",
+    "phos": "3FXZ",
+    "unphos": "1YHW",
+    "sites": [
+      423
+    ]
+  },
+  {
+    "name": "TBK1",
+    "acc": "Q9UHD2",
+    "phos": "4EUU",
+    "unphos": "4IM0",
+    "sites": [
+      172
+    ]
+  },
+  {
+    "name": "IKBKB",
+    "acc": "O14920",
+    "phos": "4KIK",
+    "unphos": "4E3C",
+    "sites": [
+      177,
+      181
+    ]
+  }
+]

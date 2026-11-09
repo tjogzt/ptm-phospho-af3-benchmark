@@ -1,0 +1,314 @@
+[
+  {
+    "gene": "aurka",
+    "acc": "O14965",
+    "submitted": [
+      288
+    ],
+    "uniprot_annotated": [
+      41,
+      51,
+      287,
+      288,
+      342
+    ],
+    "exact_match": [
+      288
+    ],
+    "near_match": [
+      288
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "cdk2",
+    "acc": "P24941",
+    "submitted": [
+      160
+    ],
+    "uniprot_annotated": [
+      14,
+      15,
+      19,
+      160
+    ],
+    "exact_match": [
+      160
+    ],
+    "near_match": [
+      160
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "cdk7",
+    "acc": "P50613",
+    "submitted": [
+      170
+    ],
+    "uniprot_annotated": [
+      7,
+      164,
+      170,
+      321
+    ],
+    "exact_match": [
+      170
+    ],
+    "near_match": [
+      170
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "cftr",
+    "acc": "P13569",
+    "submitted": [
+      660,
+      700,
+      737,
+      813
+    ],
+    "uniprot_annotated": [
+      549,
+      660,
+      670,
+      686,
+      700,
+      712,
+      717,
+      737,
+      753,
+      768,
+      790,
+      795,
+      813,
+      1444,
+      1456
+    ],
+    "exact_match": [
+      660,
+      700,
+      737,
+      813
+    ],
+    "near_match": [
+      660,
+      700,
+      737,
+      813
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "hspb1",
+    "acc": "P04792",
+    "submitted": [
+      15,
+      78,
+      82
+    ],
+    "uniprot_annotated": [
+      15,
+      26,
+      65,
+      78,
+      82,
+      83,
+      86,
+      98,
+      174,
+      176,
+      199
+    ],
+    "exact_match": [
+      15,
+      78,
+      82
+    ],
+    "near_match": [
+      15,
+      78,
+      82
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "irf3",
+    "acc": "Q14653",
+    "submitted": [
+      386,
+      396
+    ],
+    "uniprot_annotated": [
+      3,
+      14,
+      75,
+      97,
+      123,
+      175,
+      180,
+      188,
+      237,
+      244,
+      253,
+      385,
+      386,
+      396,
+      398,
+      404,
+      427
+    ],
+    "exact_match": [
+      386,
+      396
+    ],
+    "near_match": [
+      386,
+      396
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "mapk1",
+    "acc": "P28482",
+    "submitted": [
+      185,
+      187
+    ],
+    "uniprot_annotated": [
+      29,
+      185,
+      187,
+      190,
+      246,
+      248,
+      284
+    ],
+    "exact_match": [
+      185,
+      187
+    ],
+    "near_match": [
+      185,
+      187
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "mapk14",
+    "acc": "Q16539",
+    "submitted": [
+      180,
+      182
+    ],
+    "uniprot_annotated": [
+      2,
+      16,
+      180,
+      182,
+      263,
+      323
+    ],
+    "exact_match": [
+      180,
+      182
+    ],
+    "near_match": [
+      180,
+      182
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "phkg1",
+    "acc": "P15735",
+    "submitted": [
+      2
+    ],
+    "uniprot_annotated": [
+      345
+    ],
+    "exact_match": [],
+    "near_match": [],
+    "verdict": "CHECK"
+  },
+  {
+    "gene": "prkaa2",
+    "acc": "P54646",
+    "submitted": [
+      172
+    ],
+    "uniprot_annotated": [
+      172,
+      258,
+      377,
+      491
+    ],
+    "exact_match": [
+      172
+    ],
+    "near_match": [
+      172
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "pygm",
+    "acc": "P00489",
+    "submitted": [
+      15
+    ],
+    "uniprot_annotated": [
+      15,
+      204,
+      227,
+      430,
+      473,
+      514,
+      747,
+      748
+    ],
+    "exact_match": [
+      15
+    ],
+    "near_match": [
+      15
+    ],
+    "verdict": "OK"
+  },
+  {
+    "gene": "src",
+    "acc": "P12931",
+    "submitted": [
+      335
+    ],
+    "uniprot_annotated": [
+      17,
+      75,
+      187,
+      419,
+      530
+    ],
+    "exact_match": [],
+    "near_match": [],
+    "verdict": "CHECK"
+  },
+  {
+    "gene": "ubb",
+    "acc": "P0CG48",
+    "submitted": [
+      65
+    ],
+    "uniprot_annotated": [
+      65
+    ],
+    "exact_match": [
+      65
+    ],
+    "near_match": [
+      65
+    ],
+    "verdict": "OK"
+  }
+]

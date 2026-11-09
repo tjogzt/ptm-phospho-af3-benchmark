@@ -1,0 +1,242 @@
+{
+  "CDK2": {
+    "2C5N": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'CDK2_HU'"
+    },
+    "1H1R": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'CDK2_HU'"
+    }
+  },
+  "ERK2": {
+    "1ERK": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    },
+    "2ERK": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "Aurora_A": {
+    "4J8M": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    },
+    "5DNR": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "IRF3": {
+    "1QWT": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    },
+    "3A77": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "P38alpha": {
+    "1WFC": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'MK14_HU'"
+    },
+    "3PY3": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "CDK7": {
+    "8P79": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    },
+    "8PYR": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'CDK7_HU'"
+    }
+  },
+  "c-Src_kinase": {
+    "7NG7": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    },
+    "9NS0": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "AMPK_alpha2": {
+    "2H6D": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'AAPK2_H'"
+    },
+    "6B1U": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'AAPK2_H'"
+    }
+  },
+  "PKA_Calpha": {
+    "6QJ7": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'KAPCA_H'"
+    }
+  },
+  "CTD_kinase": {
+    "4JXT": {
+      "state": "phos",
+      "chain": "B",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "Glycogen_Phosphorylase": {
+    "2GJ4": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'PYGM_RA'"
+    },
+    "1LWO": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'PHS2_RA'"
+    }
+  },
+  "CDK1": {
+    "4YC3": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'CDK1_HU'"
+    },
+    "9SKQ": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'CDK1_HU'"
+    }
+  },
+  "ERK1": {
+    "4QTB": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'MK03_HU'"
+    },
+    "2ZOQ": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'MK03_HU'"
+    }
+  },
+  "GSK3B": {
+    "1J1B": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'GSK3B_H'"
+    },
+    "6Y9S": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'GSK3B_H'"
+    }
+  },
+  "PAK1": {
+    "1YHW": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    },
+    "3FXZ": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "AKT1": {
+    "3O96": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'AKT1_HU'"
+    },
+    "4GV1": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "no DBREF/SEQADV for this chain"
+    }
+  },
+  "TBK1": {
+    "4IM0": {
+      "state": "unphos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'TBK1_HU'"
+    },
+    "4EUU": {
+      "state": "phos",
+      "chain": "A",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'TBK1_HU'"
+    }
+  },
+  "IKBKB": {
+    "4E3C": {
+      "state": "unphos",
+      "chain": "B",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'IKKB_HU'"
+    },
+    "4KIK": {
+      "state": "phos",
+      "chain": "B",
+      "offset_uniprot_minus_pdb": null,
+      "evidence": "parse error: invalid literal for int() with base 10: 'IKKB_HU'"
+    }
+  }
+}

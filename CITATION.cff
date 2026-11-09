@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this benchmark or its code, please cite the paper and this archived release."
+title: "Data purity, not model capability, dominates apparent AlphaFold3 performance on phosphorylation benchmarks (benchmark code and data)"
+type: software
+authors:
+  - family-names: Mo
+    given-names: Qingqing
+    orcid: "https://orcid.org/0009-0000-2946-2362"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+  - family-names: Chen
+    given-names: Pingbo
+    orcid: "https://orcid.org/0009-0009-2520-1697"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+  - family-names: Xu
+    given-names: Cheng
+    orcid: "https://orcid.org/0009-0009-8304-5290"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+  - family-names: Wang
+    given-names: Ya
+    orcid: "https://orcid.org/0000-0002-8295-0784"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+  - family-names: Hu
+    given-names: Ting
+    orcid: "https://orcid.org/0000-0002-9693-4697"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+  - family-names: Sun
+    given-names: Qian
+    orcid: "https://orcid.org/0000-0002-9313-8986"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+  - family-names: Zhu
+    given-names: Tao
+    orcid: "https://orcid.org/0009-0001-0779-2245"
+    affiliation: "Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China; Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China"
+version: 1.0.0
+date-released: "2026-11-09"
+license: MIT
+repository-code: "https://github.com/tjogzt/ptm-phospho-af3-benchmark"
+keywords:
+  - AlphaFold3
+  - ESMFold
+  - phosphorylation
+  - post-translational modification
+  - protein structure prediction
+  - benchmark

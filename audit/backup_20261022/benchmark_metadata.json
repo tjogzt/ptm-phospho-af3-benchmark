@@ -1,0 +1,327 @@
+{
+  "CDK2": {
+    "gene": "CDK2",
+    "uniprot": "P24941",
+    "description": "Cyclin-dependent kinase 2",
+    "phos_sites": [
+      "Thr160"
+    ],
+    "phos_type": "TPO",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "1HCL",
+      "1JST"
+    ],
+    "chain": "A",
+    "length": 298,
+    "blind_test": false,
+    "note": ""
+  },
+  "ERK2": {
+    "gene": "MAPK1",
+    "uniprot": "P28482",
+    "description": "Mitogen-activated protein kinase 1",
+    "phos_sites": [
+      "Thr183",
+      "Tyr185"
+    ],
+    "phos_type": "TPO_PTR",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "1ERK",
+      "2ERK"
+    ],
+    "chain": "A",
+    "length": 358,
+    "blind_test": false,
+    "note": ""
+  },
+  "PKA_Calpha": {
+    "gene": "PRKACA",
+    "uniprot": "P17612",
+    "description": "cAMP-dependent protein kinase catalytic subunit alpha",
+    "phos_sites": [
+      "Thr197"
+    ],
+    "phos_type": "TPO",
+    "effect_type": "allosteric",
+    "all_pdbs": [
+      "1CTP",
+      "1ATP"
+    ],
+    "chain": "A",
+    "length": 350,
+    "blind_test": false,
+    "note": ""
+  },
+  "CheY": {
+    "gene": "cheY",
+    "uniprot": "P0AE67",
+    "description": "Chemotaxis response regulator (E. coli)",
+    "phos_sites": [
+      "Asp57"
+    ],
+    "phos_type": null,
+    "effect_type": "allosteric",
+    "all_pdbs": [
+      "3CHY",
+      "1FQW"
+    ],
+    "chain": "A",
+    "length": 129,
+    "blind_test": false,
+    "note": "Use BeF3- mimic structure instead of native Asp-P"
+  },
+  "Glycogen_Phosphorylase": {
+    "gene": "PYGM",
+    "uniprot": "P00489",
+    "description": "Glycogen phosphorylase, muscle form",
+    "phos_sites": [
+      "Ser15"
+    ],
+    "phos_type": "SEP",
+    "effect_type": "disorder_order",
+    "all_pdbs": [
+      "1GPA",
+      "1GPA"
+    ],
+    "chain": "A",
+    "length": 842,
+    "blind_test": false,
+    "note": "N-terminal tail phosphorylation induces folding and allosteric activation"
+  },
+  "CDK7": {
+    "gene": "CDK7",
+    "uniprot": "P50613",
+    "description": "Cyclin-dependent kinase 7",
+    "phos_sites": [
+      "Thr170"
+    ],
+    "phos_type": "TPO",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "1UA2",
+      "7Ml6"
+    ],
+    "chain": "A",
+    "length": 346,
+    "blind_test": true,
+    "note": ""
+  },
+  "IRF3": {
+    "gene": "IRF3",
+    "uniprot": "Q14653",
+    "description": "Interferon regulatory factor 3",
+    "phos_sites": [
+      "Ser386",
+      "Ser396"
+    ],
+    "phos_type": "SEP",
+    "effect_type": "allosteric",
+    "all_pdbs": [
+      "1QWT",
+      "1T2K"
+    ],
+    "chain": "A",
+    "length": 395,
+    "blind_test": false,
+    "note": "Phosphorylation triggers dimerization and activation. Use 1T2K as phos reference (phosphomimetic)"
+  },
+  "Aurora_A": {
+    "gene": "AURKA",
+    "uniprot": "O14965",
+    "description": "Aurora kinase A",
+    "phos_sites": [
+      "Thr288"
+    ],
+    "phos_type": "TPO",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "1MQ4",
+      "1OL5"
+    ],
+    "chain": "A",
+    "length": 403,
+    "blind_test": false,
+    "note": ""
+  },
+  "P38alpha": {
+    "gene": "MAPK14",
+    "uniprot": "Q16539",
+    "description": "p38 MAP kinase alpha",
+    "phos_sites": [
+      "Thr180",
+      "Tyr182"
+    ],
+    "phos_type": "TPO_PTR",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "1WFC",
+      "3D83"
+    ],
+    "chain": "A",
+    "length": 360,
+    "blind_test": false,
+    "note": ""
+  },
+  "EGFR_kinase": {
+    "gene": "EGFR",
+    "uniprot": "P00533",
+    "description": "Epidermal growth factor receptor kinase domain",
+    "phos_sites": [
+      "Tyr845"
+    ],
+    "phos_type": "PTR",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "3W2S"
+    ],
+    "chain": "A",
+    "length": 330,
+    "blind_test": false,
+    "note": ""
+  },
+  "c-Src_kinase": {
+    "gene": "SRC",
+    "uniprot": "P12931",
+    "description": "Proto-oncogene tyrosine-protein kinase Src",
+    "phos_sites": [
+      "Tyr416"
+    ],
+    "phos_type": "PTR",
+    "effect_type": "allosteric",
+    "all_pdbs": [
+      "1Y57"
+    ],
+    "chain": "A",
+    "length": 451,
+    "blind_test": false,
+    "note": "Autoinhibited form: 2SRC (unphos)"
+  },
+  "AMPK_alpha2": {
+    "gene": "PRKAA2",
+    "uniprot": "P54646",
+    "description": "AMP-activated protein kinase alpha-2",
+    "phos_sites": [
+      "Thr172"
+    ],
+    "phos_type": "TPO",
+    "effect_type": "allosteric",
+    "all_pdbs": [
+      "2H6D"
+    ],
+    "chain": "A",
+    "length": 552,
+    "blind_test": false,
+    "note": ""
+  },
+  "CFTR_R_domain": {
+    "gene": "CFTR",
+    "uniprot": "P13569",
+    "description": "Cystic fibrosis transmembrane conductance regulator (R domain)",
+    "phos_sites": [
+      "Ser660",
+      "Ser700",
+      "Ser737",
+      "Ser813"
+    ],
+    "phos_type": "SEP",
+    "effect_type": "disorder_order",
+    "all_pdbs": [
+      "5UAK"
+    ],
+    "chain": "A",
+    "length": 200,
+    "blind_test": false,
+    "note": "Multi-site phosphorylation regulates channel gating. R domain is largely disordered."
+  },
+  "Hsp27": {
+    "gene": "HSPB1",
+    "uniprot": "P04792",
+    "description": "Heat shock protein beta-1 (Hsp27)",
+    "phos_sites": [
+      "Ser15",
+      "Ser78",
+      "Ser82"
+    ],
+    "phos_type": "SEP",
+    "effect_type": "disorder_order",
+    "all_pdbs": [
+      "4MHR"
+    ],
+    "chain": "A",
+    "length": 205,
+    "blind_test": false,
+    "note": "Phosphorylation regulates oligomerization. Multiple sites create graded response."
+  },
+  "CTD_kinase": {
+    "gene": "POLR2A",
+    "uniprot": "P24928",
+    "description": "RNA polymerase II CTD (C-terminal domain) - model peptide",
+    "phos_sites": [
+      "Ser2",
+      "Ser5"
+    ],
+    "phos_type": "SEP",
+    "effect_type": "disorder_order",
+    "all_pdbs": [
+      "4JXT"
+    ],
+    "chain": "B",
+    "length": 28,
+    "blind_test": false,
+    "note": "CTD heptad repeats (YSPTSPS). Phosphorylation code regulates transcription cycle."
+  },
+  "PhK_gamma": {
+    "gene": "PHKG1",
+    "uniprot": "P15735",
+    "description": "Phosphorylase b kinase gamma catalytic chain",
+    "phos_sites": [
+      "Thr10"
+    ],
+    "phos_type": "TPO",
+    "effect_type": "local_rearrangement",
+    "all_pdbs": [
+      "1PHK"
+    ],
+    "chain": "A",
+    "length": 386,
+    "blind_test": false,
+    "note": ""
+  },
+  "Lysozyme": {
+    "gene": "LYZ",
+    "uniprot": "P00698",
+    "description": "Lysozyme C (negative control — no in vivo phosphorylation)",
+    "phos_sites": [
+      "Tyr23"
+    ],
+    "phos_type": "PTR",
+    "effect_type": "negative_control",
+    "all_pdbs": [
+      "1LYS"
+    ],
+    "chain": "A",
+    "length": 129,
+    "blind_test": false,
+    "note": "No natural phosphorylation. Used to test AF3 false positive rate for PTM structures."
+  },
+  "Ubiquitin": {
+    "gene": "UBB",
+    "uniprot": "P0CG48",
+    "description": "Ubiquitin (negative control — highly stable fold)",
+    "phos_sites": [
+      "Ser65"
+    ],
+    "phos_type": "SEP",
+    "effect_type": "negative_control",
+    "all_pdbs": [
+      "1UBQ",
+      "5OXL"
+    ],
+    "chain": "A",
+    "length": 76,
+    "blind_test": false,
+    "note": "Ubiquitin fold is extremely stable. pSer65 causes subtle surface change, mainly functional (mitophagy receptor recognition)."
+  }
+}

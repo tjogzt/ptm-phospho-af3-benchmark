@@ -1,0 +1,34 @@
+[
+  {
+    "file": "required_paired.json",
+    "priority": "必需",
+    "n_jobs": 36,
+    "targets": [
+      "akt1_phos",
+      "akt1_unphos",
+      "gsk3b_phos",
+      "gsk3b_unphos",
+      "ikbkb_phos",
+      "ikbkb_unphos",
+      "mapk3_phos",
+      "mapk3_unphos",
+      "pak1_phos",
+      "pak1_unphos",
+      "tbk1_phos",
+      "tbk1_unphos"
+    ],
+    "note": "配对蛋白，直接产出位移验证"
+  },
+  {
+    "file": "optional_single.json",
+    "priority": "可选",
+    "n_jobs": 10,
+    "targets": [
+      "polr2a_phos",
+      "polr2a_unphos",
+      "prkaca_phos",
+      "prkaca_unphos"
+    ],
+    "note": "单结构组，无实验对照"
+  }
+]

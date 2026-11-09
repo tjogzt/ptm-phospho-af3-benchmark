@@ -1,0 +1,36 @@
+{
+  "n_proteins": 6,
+  "n_jobs": 90,
+  "by_effect": {
+    "local_rearrangement": {
+      "n": 5,
+      "mean_delta_plddt": 1.9,
+      "sd": 2.6,
+      "proteins": [
+        "AURKA",
+        "CDK2",
+        "CDK7",
+        "ERK2",
+        "p38"
+      ]
+    },
+    "allosteric": {
+      "n": 1,
+      "mean_delta_plddt": -2.88,
+      "sd": null,
+      "proteins": [
+        "IRF3"
+      ]
+    }
+  },
+  "correlation_delta_plddt_vs_ptm": {
+    "pearson_r": 0.814,
+    "n": 6
+  },
+  "caveats": [
+    "seeds 为 AF3 采样随机种子，非独立生物学重复；p 值仅反映采样噪声",
+    "UBB 构建体为 685 aa 多聚泛素前体（非 76 aa 成熟泛素），负对照表述待修正",
+    "CFTR 为全长 1480 aa（非 R 域片段），disorder_order 标签需重述",
+    "IRF3 phospho 参考结构为 S→D  phosphomimetic（非真实磷酸化）"
+  ]
+}

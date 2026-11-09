@@ -1,0 +1,15 @@
+# 核心依赖（Python >= 3.9）
+biopython>=1.81
+numpy>=1.24
+pandas>=2.0
+matplotlib>=3.7
+requests>=2.28
+
+# AF3 结果解析为标准库（zipfile/json/csv），无需额外依赖
+
+# ESMFold 线（AutoDL GPU 环境，未在本机验证）
+# fair-esm>=2.0
+# torch>=2.0
+
+# MD 线（AutoDL，需 GROMACS 2024 + 磷酸化参数）
+# gromacs==2024

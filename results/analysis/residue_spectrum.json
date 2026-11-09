@@ -1,0 +1,102 @@
+{
+  "n_residues": 3355,
+  "by_distance": [
+    {
+      "bin": "0–5",
+      "n": 88,
+      "median_exp": 5.595,
+      "median_pred": 0.675,
+      "ratio": 0.121,
+      "corr": 0.275
+    },
+    {
+      "bin": "5–10",
+      "n": 91,
+      "median_exp": 0.802,
+      "median_pred": 0.261,
+      "ratio": 0.325,
+      "corr": 0.232
+    },
+    {
+      "bin": "10–20",
+      "n": 189,
+      "median_exp": 0.766,
+      "median_pred": 0.214,
+      "ratio": 0.279,
+      "corr": 0.151
+    },
+    {
+      "bin": "20–40",
+      "n": 366,
+      "median_exp": 0.669,
+      "median_pred": 0.169,
+      "ratio": 0.252,
+      "corr": -0.079
+    },
+    {
+      "bin": "40–80",
+      "n": 719,
+      "median_exp": 0.754,
+      "median_pred": 0.19,
+      "ratio": 0.252,
+      "corr": 0.351
+    },
+    {
+      "bin": ">80",
+      "n": 1902,
+      "median_exp": 0.688,
+      "median_pred": 0.217,
+      "ratio": 0.315,
+      "corr": 0.166
+    }
+  ],
+  "by_amplitude": [
+    {
+      "bin": "<0.5",
+      "n": 1084,
+      "median_exp": 0.347,
+      "median_pred": 0.186,
+      "ratio": 0.535
+    },
+    {
+      "bin": "0.5–1",
+      "n": 1123,
+      "median_exp": 0.696,
+      "median_pred": 0.196,
+      "ratio": 0.282
+    },
+    {
+      "bin": "1–2",
+      "n": 743,
+      "median_exp": 1.321,
+      "median_pred": 0.264,
+      "ratio": 0.2
+    },
+    {
+      "bin": "2–3",
+      "n": 189,
+      "median_exp": 2.426,
+      "median_pred": 0.313,
+      "ratio": 0.129
+    },
+    {
+      "bin": "3–5",
+      "n": 97,
+      "median_exp": 3.802,
+      "median_pred": 0.557,
+      "ratio": 0.147
+    },
+    {
+      "bin": ">5",
+      "n": 119,
+      "median_exp": 9.707,
+      "median_pred": 0.473,
+      "ratio": 0.049
+    }
+  ],
+  "overall": {
+    "median_exp": 0.71,
+    "median_pred": 0.216,
+    "ratio": 0.304
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "description": "同一状态(same-state)下可观测位移量级；实验侧取同晶体同源复本(NCS)，预测侧取同态 15 个 AF3 模型间的离散。用于判断实验磷酸化位移是否超出噪声。",
+  "n_proteins": 15,
+  "experimental_same_state_floor": {
+    "median_mean": 0.335,
+    "max_mean": 1.309,
+    "n_proteins_with_replicates": 7
+  },
+  "predictor_same_state_floor": {
+    "median_mean": 0.389,
+    "max_mean": 3.033
+  },
+  "phos_induced_experimental_displacement": {
+    "median": 1.5,
+    "range": [
+      0.25,
+      2.51
+    ]
+  },
+  "per_protein": [
+    {
+      "protein": "AKT1",
+      "short": "AKT1",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 3.033,
+      "pred_p95": 9.274,
+      "n_models": 14,
+      "phos_disp_exp": 2.05
+    },
+    {
+      "protein": "AMPK_alpha2",
+      "short": "AMPK",
+      "exp_mean": 0.66,
+      "exp_p95": 1.594,
+      "n_replicates": 1,
+      "pred_mean": 0.397,
+      "pred_p95": 1.039,
+      "n_models": 14,
+      "phos_disp_exp": 2.22
+    },
+    {
+      "protein": "Aurora_A",
+      "short": "AURKA",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.203,
+      "pred_p95": 0.494,
+      "n_models": 14,
+      "phos_disp_exp": 2.44
+    },
+    {
+      "protein": "CDK1",
+      "short": "CDK1",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.484,
+      "pred_p95": 1.333,
+      "n_models": 14,
+      "phos_disp_exp": 1.44
+    },
+    {
+      "protein": "CDK2",
+      "short": "CDK2",
+      "exp_mean": 0.335,
+      "exp_p95": 0.779,
+      "n_replicates": 2,
+      "pred_mean": 0.323,
+      "pred_p95": 0.93,
+      "n_models": 14,
+      "phos_disp_exp": 0.78
+    },
+    {
+      "protein": "CDK7",
+      "short": "CDK7",
+      "exp_mean": 0.242,
+      "exp_p95": 0.71,
+      "n_replicates": 1,
+      "pred_mean": 0.344,
+      "pred_p95": 1.046,
+      "n_models": 14,
+      "phos_disp_exp": 0.53
+    },
+    {
+      "protein": "ERK2",
+      "short": "ERK2",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.578,
+      "pred_p95": 1.289,
+      "n_models": 14,
+      "phos_disp_exp": 1.64
+    },
+    {
+      "protein": "GSK3B",
+      "short": "GSK3B",
+      "exp_mean": 0.495,
+      "exp_p95": 1.196,
+      "n_replicates": 2,
+      "pred_mean": 0.158,
+      "pred_p95": 0.444,
+      "n_models": 14,
+      "phos_disp_exp": 0.63
+    },
+    {
+      "protein": "Glycogen_Phosphorylase",
+      "short": "PYGM",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.43,
+      "pred_p95": 1.51,
+      "n_models": 14,
+      "phos_disp_exp": 0.94
+    },
+    {
+      "protein": "IKBKB",
+      "short": "IKBb",
+      "exp_mean": 1.309,
+      "exp_p95": 3.237,
+      "n_replicates": 6,
+      "pred_mean": 0.64,
+      "pred_p95": 1.51,
+      "n_models": 14,
+      "phos_disp_exp": 1.96
+    },
+    {
+      "protein": "IRF3",
+      "short": "IRF3",
+      "exp_mean": 0.288,
+      "exp_p95": 0.799,
+      "n_replicates": 4,
+      "pred_mean": 0.466,
+      "pred_p95": 1.166,
+      "n_models": 14,
+      "phos_disp_exp": 0.33
+    },
+    {
+      "protein": "P38alpha",
+      "short": "p38",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.389,
+      "pred_p95": 1.039,
+      "n_models": 14,
+      "phos_disp_exp": 1.57
+    },
+    {
+      "protein": "PAK1",
+      "short": "PAK1",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.194,
+      "pred_p95": 0.551,
+      "n_models": 14,
+      "phos_disp_exp": 0.25
+    },
+    {
+      "protein": "TBK1",
+      "short": "TBK1",
+      "exp_mean": 0.191,
+      "exp_p95": 0.506,
+      "n_replicates": 1,
+      "pred_mean": 0.268,
+      "pred_p95": 0.654,
+      "n_models": 14,
+      "phos_disp_exp": 1.5
+    },
+    {
+      "protein": "c-Src_kinase",
+      "short": "Src",
+      "exp_mean": null,
+      "exp_p95": null,
+      "n_replicates": 0,
+      "pred_mean": 0.232,
+      "pred_p95": 0.581,
+      "n_models": 14,
+      "phos_disp_exp": 2.51
+    }
+  ],
+  "caveat": "NCS 复本可能含真实构象异质性，故实验地板为噪声的**上界**（保守估计）；预测地板反映采样不可重复度，非生物学变异。"
+}
