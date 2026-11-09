@@ -3,7 +3,7 @@
 > **论文 / Paper**: *Data purity, not model capability, dominates apparent AlphaFold3
 > performance on phosphorylation benchmarks*（投稿 Bioinformatics）
 > **代码 / Code**: <https://github.com/tjogzt/ptm-phospho-af3-benchmark>
-> **归档 / Archive**: Zenodo DOI（待发布） · **许可 / Licence**: MIT
+> **归档 / Archive**: Zenodo DOI [10.5281/zenodo.24087962](https://doi.org/10.5281/zenodo.24087962) · **许可 / Licence**: MIT
 
 评估 AlphaFold3 / ESMFold / 分子动力学对**磷酸化修饰诱导结构变化**的建模拟合能力。
 基准含 18 个蛋白：9 组成对结构（phos/unphos 均有 PDB）+ 7 组单结构 + 2 组阴性对照，

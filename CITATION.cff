@@ -34,6 +34,7 @@ authors:
 version: 1.0.0
 date-released: "2026-11-09"
 license: MIT
+doi: "10.5281/zenodo.24087962"
 repository-code: "https://github.com/tjogzt/ptm-phospho-af3-benchmark"
 keywords:
   - AlphaFold3
