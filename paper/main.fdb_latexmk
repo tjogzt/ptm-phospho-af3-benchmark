@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1794235485.26426 "main.aux" "main.bbl" "main" 1794235486.10987 0
+["bibtex main"] 1794237654.8829 "main.aux" "main.bbl" "main" 1794237655.47786 0
   "./refs.bib" 1794156039.16 4260 34194bb68facb31652775cbc93876f8e ""
   "/Users/taozhu/Library/TinyTeX/texmf-dist/bibtex/bst/natbib/unsrtnat.bst" 1233624470 24550 a41a6405f4de768c43e871d9fbce2bc8 ""
-  "main.aux" 1794235485.98 10892 77b12839a515cca97e97daba9084e396 "pdflatex"
+  "main.aux" 1794237655.39 10892 77b12839a515cca97e97daba9084e396 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1794235485.29891 "main.tex" "main.pdf" "main" 1794235486.11002 0
+["pdflatex"] 1794237654.90542 "main.tex" "main.pdf" "main" 1794237655.47801 0
   "../results/figures/Fig1_purity_funnel.pdf" 1794155524.19 32489 6fdbbd0ed2a57844fc52a76ea1e8517e ""
   "../results/figures/Fig2_af3_vs_pdb.pdf" 1794163433.31 33776 edd5345b00e3d24cc0ab424d746b7e8c ""
   "../results/figures/Fig3_residue_spectrum.pdf" 1794154805.21 22111 346ed82d4b6b73808681fa4e9e5d86bc ""
@@ -109,10 +109,10 @@
   "/Users/taozhu/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1784308302 466950 ac205035b1e641a9a348f735c1912c02 ""
   "/Users/taozhu/Library/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1790265358 2286228 9d412e44f3f40ba12260f64c087c9a2e ""
   "/Users/taozhu/Library/TinyTeX/texmf.cnf" 1772566387.37281 703 53802aac4b580edab54a0433f2fbe533 ""
-  "main.aux" 1794235485.98 10892 77b12839a515cca97e97daba9084e396 "pdflatex"
-  "main.bbl" 1794235485.29 3337 26afa07bb937b89ebd4c7f2095ca2a96 "bibtex main"
-  "main.out" 1794235485.99 3898 35190469830d52397abe6873a98dace7 "pdflatex"
-  "main.tex" 1794235472.54 31968 21ae69f569c3ae3596e269de02fc76e1 ""
+  "main.aux" 1794237655.39 10892 77b12839a515cca97e97daba9084e396 "pdflatex"
+  "main.bbl" 1794237654.9 3337 26afa07bb937b89ebd4c7f2095ca2a96 "bibtex main"
+  "main.out" 1794237655.39 3898 35190469830d52397abe6873a98dace7 "pdflatex"
+  "main.tex" 1794237644.14 32077 50c467bcd2cd5193b247d901bd4c4050 ""
   (generated)
   "main.aux"
   "main.log"
