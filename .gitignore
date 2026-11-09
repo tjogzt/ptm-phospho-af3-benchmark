@@ -13,6 +13,15 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
+# LaTeX build artifacts（保留 paper/main.pdf 成品）
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/*.fls
+paper/*.fdb_latexmk
+
 # --- Large raw inputs (rebuildable) --------------------------------
 # PDB 结构：由 scripts/download_pdbs.py 从 RCSB 重新下载
 data/pdb/
