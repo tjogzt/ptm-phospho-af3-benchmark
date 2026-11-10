@@ -77,7 +77,7 @@ phosphorylation effects.
 \textbf{Results:} We assembled a phosphorylation structure benchmark and
 subjected every pair to a five-criterion biological purity gate
 (P1--P5). Of 18 curated entries, 16 are two-state pairs and 15 have AF3
-models for both states; only 9 pass the full gate. On this cohort the
+models for both states; only 9 pass the full gate. On these 15 pairs the
 correlation between AF3-predicted and experimentally observed per-residue
 C$\alpha$ displacements is not significant ($r=+0.11$, 95\% CI
 $[-0.34,+0.57]$, $n=15$), while the predicted displacement is nearly
@@ -346,7 +346,7 @@ pairs but $0.30$ for impure pairs, and the magnitude correlation is
 $r=+0.22$ ($n=9$) for pure pairs but $r=-0.24$ ($n=6$) for impure ones.
 Any headline computed on the uncleaned cohort is therefore a mixture of
 model behaviour and pairing confounding. We report all subsequent
-statistics on the full 15-pair cohort \emph{and} flag the pure subset, and
+statistics on the full 15-pair cohort while flagging the pure subset, and
 we avoid any claim whose sign depends on the mixture.
 
 \subsection{No evidence that AF3 tracks the phosphorylation-induced
@@ -442,8 +442,8 @@ analogous statistic for global $\Delta$PAE falls from $r=+0.49$ to
 $r=+0.06$.
 
 Both confidence signals are thus indistinguishable from single-point
-artefacts on this benchmark. Their apparent strength is an artefact of a
-small cohort containing one protein whose prediction and reference happen
+artefacts on this benchmark. Their apparent strength comes from a small
+cohort containing one protein whose prediction and reference happen
 to disagree in both magnitude and confidence in the same direction.
 
 \subsection{Exploratory: what does the model respond to?}
@@ -496,9 +496,9 @@ composition check before pairing, and report displacement statistics
 against a same-state noise floor.
 
 \noindent\textbf{Confidence effects reduce to a single point.} Our two refutations share
-a mechanism: a single protein (IRF3) is extreme in both the predictor's
-confidence and in its disagreement, and on a 15-point cohort one such
-point can manufacture a correlation of $0.5$--$0.6$. This is a warning
+a mechanism: IRF3 is extreme in both the predictor's confidence and in
+its disagreement, and in a cohort of 15 one such protein can manufacture
+a correlation of $0.5$--$0.6$. This is a warning
 about study design as much as about AF3: on small structural benchmarks,
 leverage diagnostics are not optional.
 
