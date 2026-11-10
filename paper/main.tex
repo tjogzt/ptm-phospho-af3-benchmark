@@ -87,8 +87,8 @@ the association between site pLDDT and predictive agreement
 ($r=+0.48$) and that between $\Delta$PAE and predictive agreement
 ($r=+0.60$) are each carried by a single leverage point and collapse when
 it is removed ($r=+0.21$ and $r=+0.14$). Restricting to purely paired
-structures changes the headline statistic, demonstrating that pairing
-purity, not model capability, governs the apparent result. A second,
+structures changes the headline statistic: pairing purity, not model
+capability, governs the apparent result. A second,
 sequence-only ESMFold line, run with a phosphomimetic substitution, is
 equally uninformative ($r=-0.36$).
 
@@ -146,17 +146,16 @@ states, different bound ligands, different domain boundaries, sometimes
 different partners. Any of these covariates induces large
 conformational differences that have nothing to do with the phosphate,
 yet such pairs are routinely treated as ``phosphorylation pairs''. Second,
-the metrics used to summarise agreement---typically a mean displacement
-magnitude or an amplitude ratio---are dominated by a handful of
+the metrics used to summarise agreement (typically a mean displacement
+magnitude or an amplitude ratio) are dominated by a handful of
 disordered, highly mobile residues, so that a large apparent
 ``under-prediction'' can be a measurement artefact. Third, pLDDT and PAE
 measure \emph{self-consistency} of a single prediction, not agreement with
 a reference; using them as proxies for correctness of a PTM-induced change
 is a category error unless it is tested.
 
-This work reports a deliberately conservative benchmark that addresses
-these gaps and, in doing so, arrives at a cautionary negative result. Our
-contributions are threefold.
+This work reports a conservative benchmark that addresses these gaps and,
+in doing so, returns a negative result. Our contributions are threefold.
 
 \begin{enumerate}
 \item \textbf{A purity audit with biological criteria.} We formalise a
@@ -253,7 +252,7 @@ same chain composition, so that differences in oligomeric state or in
 bound partners cannot be mistaken for a phosphorylation effect.
 A pair that fails any of P1--P4 is excluded; a pair that fails only P5 is
 retained but flagged (\emph{impure}), because P5 violations are the most
-common and most insidious source of confounding. In the primary cohort, 9
+common and easily overlooked source of confounding. In the primary cohort, 9
 pairs pass all five criteria (the \emph{pure} cohort) and 6 do not
 (4 flagged on P5, 2 excluded on P3/P5).
 
@@ -360,13 +359,13 @@ Over the 15-pair cohort the per-protein mean predicted displacement is
 essentially uncorrelated with the experimental displacement: Pearson
 $r=+0.11$ (95\% CI $[-0.34,+0.57]$), slope $+0.053$\,\AA/\AA, Spearman
 $\rho=+0.15$ ($p=0.59$) (Fig.~\ref{fig:fig2}a). The confidence interval is
-wide---$n=15$ is small---but it excludes the strong positive association
+wide, as $n=15$ is small, but it excludes the strong positive association
 that ``AF3 models phosphorylation'' would require. The predicted
 displacement is also close to constant: $0.52\pm0.36$\,\AA\ across all
 proteins, against an experimental span of $0.25$--$2.51$\,\AA\
-(median $1.50$\,\AA). Put differently, the model's output moves by roughly
-the same small amount regardless of whether the true response is
-negligible (PAK1, $0.25$\,\AA) or large (Src, $2.51$\,\AA).
+(median $1.50$\,\AA). The model's output moves by roughly the same small
+amount regardless of whether the true response is negligible (PAK1,
+$0.25$\,\AA) or large (Src, $2.51$\,\AA).
 
 Leave-one-out analysis shows the coefficient is not driven by a single
 outlier in the sense of an extreme $r$; the largest change is the removal
@@ -415,8 +414,8 @@ The experimentally observed change therefore exceeds the upper bound of
 same-state noise, so the absence of predicted tracking is not an artefact
 of noisy references. The predictor's own same-state floor (median
 $0.389$\,\AA) is of the same order as its putative phospho signal
-($0.52$\,\AA), reinforcing that AF3's between-state displacement is close
-to its own sampling variability.
+($0.52$\,\AA); AF3's between-state displacement is therefore close to its
+own sampling variability.
 
 \subsection{Two confidence-based hypotheses are refuted}
 \label{sec:res-confidence}
@@ -450,8 +449,8 @@ to disagree in both magnitude and confidence in the same direction.
 \subsection{Exploratory: what does the model respond to?}
 \label{sec:res-explore}
 
-Seeking a physical explanation, we asked whether AF3 under-responds most
-where the true motion is largest. Across the 15 pairs the amplitude ratio
+We therefore asked whether AF3 under-responds most where the true motion
+is largest. Across the 15 pairs the amplitude ratio
 is inversely related to the overall deformation magnitude
 ($r=-0.60$, $p=0.017$ against the full-structure RMSD; $r=-0.62$,
 $p=0.014$ against mean displacement) and to the block-wise deformation
@@ -480,9 +479,9 @@ observed one, and the two most commonly cited internal confidence signals
 do not identify where it succeeds. We deliberately do \emph{not} claim
 that AF3 cannot model phosphorylation. The cohort is small; the metric is
 a single, rigid-body-based displacement field; and ``no detectable
-correlation at $n=15$'' is weaker than ``no correlation''. The honest
-statement is that the current, commonly used protocol cannot demonstrate
-the capability it is assumed to have.
+correlation at $n=15$'' is weaker than ``no correlation''. The current,
+commonly used protocol cannot demonstrate the capability it is assumed to
+have.
 
 \noindent\textbf{Why the result is easy to miss.} Two artefacts work in
 the same direction. First, pairing impurity inflates apparent agreement:
@@ -496,7 +495,7 @@ failure. Both artefacts are avoidable at essentially no cost: apply a
 composition check before pairing, and report displacement statistics
 against a same-state noise floor.
 
-\noindent\textbf{Confidence is not correctness.} Our two refutations share
+\noindent\textbf{Confidence effects reduce to a single point.} Our two refutations share
 a mechanism: a single protein (IRF3) is extreme in both the predictor's
 confidence and in its disagreement, and on a 15-point cohort one such
 point can manufacture a correlation of $0.5$--$0.6$. This is a warning
@@ -530,10 +529,10 @@ On a phosphorylation structure benchmark cleaned by biological purity
 criteria, AF3's predicted conformational response does not track the
 experimental one, its predicted displacement is near-constant, and its
 internal confidence signals fail to identify where it is right once
-single-point leverage is removed. The more transferable lesson is
-methodological: on paired structural-change benchmarks, pairing purity and
-same-state noise calibration---not model capability---determine the
-apparent result, and both are cheap to enforce.
+single-point leverage is removed. The broader lesson is methodological: on
+paired structural-change benchmarks, pairing purity and same-state noise
+calibration, not model capability, determine the apparent result, and both
+are cheap to enforce.
 
 % =====================================================================
 \section*{Availability and implementation}
