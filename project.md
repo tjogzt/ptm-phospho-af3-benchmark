@@ -51,7 +51,8 @@ AlphaFold3（AF3）接受显式的翻译后修饰（PTM）输入，这常被理�
 - 一个可复现的磷酸化结构效应基准（冻结 manifest + 分析脚本 + 中间产物）；
 - 一个**负面结果（negative result）**及其方法学含义：在配对结构变化基准上，
   **配对纯度与同态噪声标定**（而非模型能力）可以主导表观性能；
-- 面向 Bioinformatics 的可投稿稿件 `paper/main.tex`（+ 归档仓库与 Zenodo DOI）。
+- 面向 Bioinformatics 的可投稿稿件 `paper/main.tex`（review 版草稿）+ `paper/main_oup.tex`
+  （OUP 官方模板投稿版，两版共享正文 `paper/sections.tex`）（+ 归档仓库与 Zenodo DOI）。
 
 ---
 
@@ -104,7 +105,10 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
 ### 步骤 7 — 出图 / 制表 / 编译
 - `plot_purity_funnel.py`、`plot_af3_vs_pdb.py` → `results/figures/`；
   `make_tables.py` → `results/tables/`；
-  `latexmk -pdf -halt-on-error main.tex`（TinyTeX）。
+- review 版草稿：`latexmk -pdf -halt-on-error main.tex`（TinyTeX，14 页）；
+- OUP 投稿版（cls/bst 在 `paper/oup/`）：
+  `TEXINPUTS=".:./oup:" BSTINPUTS=".:./oup:" latexmk -pdf -interaction=nonstopmode main_oup.tex`（10 页）。
+- 两版正文共享 `paper/sections.tex`；改正文只需一处。
 
 ---
 
@@ -215,11 +219,19 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
 | 9 | 论文初稿（自包含草稿） | `paper/main.tex`（14 页） | ✅ 完成 |
 | 10 | 去 AI 化润色 | git `a183f0e`, `97c4bc1` | ✅ 完成 |
 | 11 | 自主评审循环 R1–R3 | `review-stage/` | ✅ 完成（stop） |
-| 12 | 投稿格式转换（OUP `bioinfo.cls`） | — | ⬜ 未完成 |
+| 12 | 投稿格式转换（OUP 官方模板） | `paper/main_oup.tex`（10 页） | ✅ 完成 |
 | 13 | BioRxiv 预印本占位 | `PAPER_PLAN.md` | ⬜ 未完成 |
 
-> 无需等待的下一步：将自包含草稿换成 OUP `bioinfo.cls`（单栏正文 + 结构化摘要 + 双栏），
-> 并据 `PAPER_PLAN.md` 规划预印本。
+> 说明：用户所述 `bioinfo.cls` 为旧版；OUP 现行官方投稿类为 CTAN 的
+> `oup-authoring-template.cls`（v1.5）。Bioinformatics 的官方 class 声明为
+> `\documentclass[numsec,webpdf,modern,large]` + author-date 引用制（见 OUP
+> `OUP_LaTeX_supported_jnls.xlsx` 第 366 行）。
+>
+> 已完成：`paper/main.tex`（review 版草稿）与 `paper/main_oup.tex`（OUP 投稿版）
+> **共享正文** `paper/sections.tex`，两版均编译通过（14 页 / 10 页）。正文改动只需
+> 维护一处，杜绝「修复不传播」。
+>
+> 下一步：据 `PAPER_PLAN.md` 规划 BioRxiv 预印本。
 
 ---
 
@@ -249,6 +261,9 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
 | 2026-11-13 | T. Zhu | ▼ | `model_stability.json` 由 `results/analysis/` 移出至 `archive/` | 孤儿产物且与 `af3_vs_pdb_summary.json` 冲突 | `results/analysis/archive/` |
 | 2026-11-13 | T. Zhu | ■ | `audit_confounds.py` 按 dbAccession 过滤 SEQADV | CDK1 的 partner chain（cyclin B1）被误计为突变 | `pair_confound_audit.json` |
 | 2026-11-13 | T. Zhu | ■ | `make_tables.py` 增 Table 1 编号约定脚注后重跑 | UniProt vs PDB MODRES 编号易混淆 | `Table1_benchmark.*` |
+| 2026-11-13 | T. Zhu | ▲ | 新建 `paper/main_oup.tex`（OUP 官方模板投稿版，10 页）与 `paper/sections.tex`（两版共享正文） | 规则 13/任务 (b)：OUP 投稿格式转换；DRY 重构杜绝「修复不传播」 | `paper/main_oup.tex`, `paper/sections.tex`, `paper/oup/` |
+| 2026-11-13 | T. Zhu | ■ | `paper/main.tex` 正文改为 `\input{sections}`（与 OUP 版共享） | 同上 | `paper/main.tex`（14 页） |
+| 2026-11-13 | T. Zhu | ■ | `make_tables.py` 表缩放 `\textwidth`→`\linewidth` 并重跑三表 | OUP 双栏下 `table` 浮动体宽度为 `\columnwidth`，`\textwidth` 致宽表溢出约一栏宽 | `results/tables/*.tex` |
 
 ---
 

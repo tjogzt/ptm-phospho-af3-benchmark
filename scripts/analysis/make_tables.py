@@ -78,13 +78,21 @@ def write_csv(path, header, rows):
 
 
 def write_tex(path, caption, label, header, rows, colspec, resize=False):
-    """生成可直接 \\input 的 booktabs 表。resize=True 时按 \\textwidth 等比缩放以适配页宽。"""
+    """生成可直接 \\input 的 booktabs 表。resize=True 时按 \\linewidth 等比缩放以适配栏宽。
+
+    说明：用 \\linewidth（而非 \\textwidth），使同一份表片段在单栏（article）
+    与双栏（OUP）排版下都缩放到当前浮动体宽度。双栏下 table 浮动体的宽度是
+    \\columnwidth，若缩放到 \\textwidth 会溢出约一栏宽。
+    Note: scale to \\linewidth (not \\textwidth) so the same fragment fits the
+    current float width in both one-column (article) and two-column (OUP)
+    layouts; in two columns a `table` float is \\columnwidth wide.
+    """
     lines = [
         "\\begin{table}[htbp]",
         "\\centering",
     ]
     if resize:
-        lines.append("\\resizebox{\\textwidth}{!}{%")
+        lines.append("\\resizebox{\\linewidth}{!}{%")
     lines += [
         f"\\begin{{tabular}}{{{colspec}}}",
         "\\toprule",

@@ -1,0 +1,198 @@
+% =====================================================================
+%  main_oup.tex — OUP 投稿版 / OUP submission build
+%  Target journal: Bioinformatics (Oxford University Press)
+%  Class: oup-authoring-template (v1.5)
+%  期刊官方 class 选项 / Journal's documented class options:
+%     [numsec,webpdf,modern,large] + namedate（author--date 引用制）
+%  正文由 \input{sections} 从共享文件 `sections.tex` 引入，与 review 版
+%  main.tex 同源，因此正文修改只需一处维护。
+%  Body is \input from the shared `sections.tex`, identical to main.tex.
+%
+%  编译 / Build（cls 与 bst 位于 paper/oup/）:
+%    TEXINPUTS=".:./oup:" BSTINPUTS=".:./oup:" \
+%        latexmk -pdf -interaction=nonstopmode main_oup.tex
+% =====================================================================
+\documentclass[numsec,webpdf,modern,large,namedate]{oup-authoring-template}
+
+\graphicspath{{../results/figures/}}
+
+% 模板要求的占位宏（OUP 示例在导言区定义；未用 society logo）
+% Placeholder macro required by the template (empty society logo).
+\newcommand{\societylogo}{}
+
+% ---------------------------------------------------------------------
+% 表规则兼容 / Table-rule compatibility
+%  共享表片段（results/tables/*.tex，由 make_tables.py 生成）使用
+%  booktabs 的 \bottomrule；OUP class 原生定义 \toprule/\midrule/\botrule
+%  且不加载 booktabs。把 \bottomrule 映射到 class 的 \botrule，可保持
+%  两版（main.tex 与 main_oup.tex）共用同一份表格源文件。
+%  The shared table fragments use booktabs' \bottomrule; the OUP class
+%  defines \toprule/\midrule/\botrule instead and does not load booktabs.
+%  Alias \bottomrule to the class's \botrule so both builds share one
+%  table source and remain numerically identical.
+% ---------------------------------------------------------------------
+\providecommand{\bottomrule}{\botrule}
+
+\begin{document}
+
+\journaltitle{Bioinformatics}
+\DOI{DOI added during production}
+\copyrightyear{2026}
+\pubyear{2026}
+\vol{XX}
+\issue{x}
+\access{Published: date added during production}
+\appnotes{Original Paper}
+\firstpage{1}
+
+\title[Data purity can dominate apparent AF3 phosphorylation benchmarks]{Data
+purity, not model capability, can dominate apparent AlphaFold3 performance on
+phosphorylation benchmarks}
+
+\author[1,2]{Qingqing Mo\ORCID{0009-0000-2946-2362}}
+\author[1,2]{Pingbo Chen\ORCID{0009-0009-2520-1697}}
+\author[1,2]{Cheng Xu\ORCID{0009-0009-8304-5290}}
+\author[1,2]{Ya Wang\ORCID{0000-0002-8295-0784}}
+\author[1,2]{Ting Hu\ORCID{0000-0002-9693-4697}}
+\author[1,2]{Qian Sun\ORCID{0000-0002-9313-8986}}
+\author[1,2,$\ast$]{Tao Zhu\ORCID{0009-0001-0779-2245}}
+
+\address[1]{\orgdiv{Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology}, \orgname{Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology}, \orgaddress{\street{Wuhan}, \country{China}}}
+\address[2]{\orgdiv{Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis}, \orgname{Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology}, \orgaddress{\street{Wuhan}, \country{China}}}
+
+\corresp[$\ast$]{Corresponding author. \href{mailto:zhutao@tjh.tjmu.edu.cn}{zhutao@tjh.tjmu.edu.cn}}
+
+\abstract{%
+\textbf{Motivation:} AlphaFold3 (AF3) accepts explicit post-translational
+modifications, which is widely taken to imply that it can model the
+conformational consequences of phosphorylation. Testing that implication
+requires a pair of experimental structures that are genuinely comparable,
+yet we could not find a published phosphorylation benchmark that audits
+this, so complex-composition effects can be mistaken for phosphorylation
+effects.\\[3pt]
+\textbf{Results:} We assembled a phosphorylation structure benchmark and
+subjected every pair to a five-criterion biological purity gate
+(P1--P5). Of 24 screened candidates, 6 were dropped for lacking a verified
+phospho-residue, leaving 18 curated entries: 16 are two-state pairs and 15
+have AF3 models for both states, of which 9 pass all five criteria. On
+these 15 pairs the correlation between AF3-predicted and experimentally
+observed mean C$\alpha$ displacement (one value per protein) is not
+significant ($r=+0.11$, 95\% CI $[-0.34,+0.57]$, $n=15$), while the
+predicted displacement is nearly constant ($0.52\pm0.36$\,\AA) against an
+experimental span of $0.25$--$2.51$\,\AA. Both AF3 internal confidence
+signals fare no better: the association between site pLDDT and predictive
+agreement ($r=+0.48$) and that between $\Delta$PAE and predictive agreement
+($r=+0.60$) are each carried by a single leverage point and collapse when
+it is removed ($r=+0.21$ and $r=+0.14$). Restricting to purely paired
+structures changes the headline statistic: pairing purity, not model
+capability, can govern the apparent result ($r=+0.22$ for the 9 pure pairs
+versus $r=-0.24$ for the 6 that fail the composition check; both intervals
+include zero and a permutation test on their difference gives $p=0.40$). A
+second, sequence-only ESMFold line, run with a phosphomimetic substitution,
+fails to track the cohort-level response in the same way ($r=-0.36$),
+although like AF3 it retains per-protein magnitude correlation.\\[3pt]
+\textbf{Availability and Implementation:} Benchmark data, analysis code
+and frozen intermediate results are available at
+\url{https://github.com/tjogzt/ptm-phospho-af3-benchmark} (archived at
+Zenodo: \url{https://doi.org/10.5281/zenodo.24087962}); implemented in
+Python~3.12.\\[3pt]
+\textbf{Contact:} \href{mailto:zhutao@tjh.tjmu.edu.cn}{zhutao@tjh.tjmu.edu.cn}\\[3pt]
+\textbf{Supplementary information:} Supplementary figures and tables are
+available at \textit{Bioinformatics} online.}
+
+\keywords{AlphaFold3, phosphorylation, conformational change, benchmark,
+data purity, prediction confidence}
+
+\maketitle
+
+% =====================================================================
+% Body — shared with the reviewer draft (main.tex).
+% 正文由共享文件引入，禁止在此重复正文。
+% ---------------------------------------------------------------------
+\input{sections}
+
+% =====================================================================
+% References — author--date (Bioinformatics house style)
+% ---------------------------------------------------------------------
+\bibliographystyle{oup-abbrvnat}
+\bibliography{refs}
+
+% =====================================================================
+% Figures — 与 main.tex 使用同一批冻结图件
+% ---------------------------------------------------------------------
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig1_purity_funnel.pdf}
+\caption{\textbf{Pairing purity shapes the benchmark and the conclusion.}
+(a) Funnel from the screened candidate pool through the two-state and
+AF3-availability filters to the pairs passing the P1--P5 purity gate.
+(b) The same frozen per-protein results stratified by pairing purity,
+showing the median amplitude ratio, median direction cosine and magnitude
+correlation for pure ($n=9$), impure ($n=6$) and all ($n=15$) pairs.
+Purity here means chain-composition matching (P5), not ligand matching: the
+nine pure pairs are not identical apart from the phosphate, and two of them
+carry engineered substitutions (AURKA T287D, one residue from the site;
+PAK1 K299R, present in both states); a further pair outside the pure
+stratum (IKBKB) uses an S177E/S181E phosphomimetic non-phospho reference.
+See Sec.~\ref{sec:purity} and the confound audit shipped with the data.}
+\label{fig:funnel}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig2_af3_vs_pdb.pdf}
+\caption{\textbf{Predicted versus experimental phosphorylation-induced
+displacement.} (a) Per-protein mean experimental displacement against the
+predicted displacement for AF3 (circles) and ESMFold with a phosphomimetic
+phospho state (triangles); the dashed line is $1{:}1$. Open markers denote
+purely paired structures. (b) Per-protein direction cosine and magnitude
+correlation for AF3 (bars) and ESMFold (diamonds). Neither predictor's
+displacement tracks the experimental one.}
+\label{fig:fig2}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{FigS1_noise_floor.pdf}
+\caption{\textbf{Same-state noise floor.} Experimental same-state
+dispersion (crystallographically independent copies) and predictor
+same-state dispersion (across AF3 models) compared with the
+phosphorylation-induced experimental displacement.}
+\label{fig:noise}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig4_plddt_vs_amplitude.pdf}
+\caption{\textbf{Site pLDDT and agreement.} (a) Site-region pLDDT against
+amplitude ratio for the 15 pairs (labelled), with a least-squares fit; the
+apparent association is carried by IRF3 and collapses when it is removed
+(Sec.~\ref{sec:res-confidence}). (b) Site-region versus global pLDDT,
+showing that phosphosite regions tend to be lower-confidence than the rest
+of the chain.}
+\label{fig:plddt}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig5_pae_leverage.pdf}
+\caption{\textbf{$\Delta$PAE association is a single-point effect.}
+$\Delta$PAE (site$\rightarrow$rest) against amplitude ratio, all pairs
+(left) and after removing IRF3 (right).}
+\label{fig:pae}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{Fig3_residue_spectrum.pdf}
+\caption{\textbf{Residue-level response saturates.} Median
+predicted/experimental displacement ratio as a function of experimental
+displacement magnitude, over all 5{,}148 common residues across the 15
+cohort proteins; the decline is monotone across the six bins. The analysis
+uses the first AF3 model of each state (model 0), not a multi-model average.
+A distance decomposition of the same residues shows no trend
+(Sec.~\ref{sec:res-explore}).}
+\label{fig:spectrum}
+\end{figure*}
+
+\end{document}
