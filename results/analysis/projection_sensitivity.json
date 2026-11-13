@@ -1,0 +1,25 @@
+{
+  "description": "同一批已生成 AF3 模型在两种叠合/投影约定下的队列级结果；用于证明结论不依赖于叠合约定（W1）。",
+  "protocols": {
+    "indep": {
+      "n_proteins": 15,
+      "pearson_r": 0.1132,
+      "pearson_CI95": [
+        -0.3433,
+        0.5744
+      ],
+      "mean_pred": 0.521,
+      "sd_pred": 0.359
+    },
+    "direct": {
+      "n_proteins": 15,
+      "pearson_r": 0.1214,
+      "pearson_CI95": [
+        -0.3317,
+        0.5756
+      ],
+      "mean_pred": 0.525,
+      "sd_pred": 0.363
+    }
+  }
+}

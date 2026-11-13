@@ -7,10 +7,11 @@ compare_esmfold_vs_pdb.py — B7：ESMFold 预测位移 vs PDB 实验位移
 放在同一框架下比较，回答："AF3 的无响应是否为模型特异现象？"
 
 方法 / Method（与 AF3 线一致）：
-  1. 以 PDB unphos 为共同参考框架
-  2. PDB phos → 叠合到 PDB unphos → Δ_exp
-  3. ESMFold unphos → 叠合到 PDB unphos；ESMFold phos 用**同一变换**→ Δ_pred_esm
-     （两态各自独立叠合到参考框架，避免整体刚体位移混入）
+  1. 以 PDB unphos 为共同参考框架 Q
+  2. PDB phos → 叠合到 Q → Δ_exp
+  3. ESMFold 两态**各自独立**叠合到 Q（每次预测各有任意坐标系）：
+     Δ_pred_esm = (ESMFold_phos fit→Q) − (ESMFold_unphos fit→Q)
+     独立叠合消除整体刚体位移；仅用单一变换会把两态坐标系差异误当作磷酸化位移。
   4. 共同残基上：幅度 Pearson r、方向余弦、top-20 重合度、位点窗统计
 
 ESMFold 每态仅 1 个确定性结构（无 seed×model），故不做跨模型聚合。

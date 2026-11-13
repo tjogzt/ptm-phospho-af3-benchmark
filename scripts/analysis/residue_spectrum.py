@@ -34,7 +34,10 @@ plt.rcParams.update({"font.family":"DejaVu Sans","font.size":7,"axes.labelsize":
 
 SHORT2KEY = {"CDK2":"CDK2","ERK2":"ERK2","AURKA":"Aurora_A","IRF3":"IRF3","p38":"P38alpha",
              "CDK7":"CDK7","Src":"c-Src_kinase","AMPK":"AMPK_alpha2",
-             "PYGM":"Glycogen_Phosphorylase","CDK1":"CDK1"}
+             "PYGM":"Glycogen_Phosphorylase","CDK1":"CDK1",
+             # R2 修复：补齐主队列其余 5 个蛋白，此前遗漏导致本分析仅覆盖 15 个中的 10 个
+             # (10/15) while the manuscript claimed "all" residues.
+             "GSK3B":"GSK3B","PAK1":"PAK1","AKT1":"AKT1","TBK1":"TBK1","IKBb":"IKBKB"}
 
 
 def main():
@@ -60,6 +63,13 @@ def main():
                      "exp": float(r["disp_exp"]), "pred": float(r["disp_pred"])})
 
     print(f"有效残基 {len(recs)} 个（{len({x['short'] for x in recs})} 蛋白）")
+    # R2：显式报告覆盖率，避免再次出现「声称 all、实际只覆盖部分蛋白」的错误。
+    # Report coverage explicitly so a silent scope gap cannot recur.
+    n_prot = len({x["short"] for x in recs})
+    n_rows_prot = len({r["short"] for r in rows})
+    print(f"覆盖检查 / coverage: {n_prot} proteins analysed "
+          f"({n_rows_prot} present in per-residue CSV, {len(rows)} residues total)")
+    assert n_prot == n_rows_prot, "SHORT2KEY 覆盖不全：per-residue CSV 中有蛋白未被映射"
 
     # ---------- Q1: 按距位点距离分箱 ----------
     bins = [(0,5),(5,10),(10,20),(20,40),(40,80),(80,10**6)]
@@ -141,7 +151,9 @@ def main():
     fig.savefig(FIG/"Fig3_residue_spectrum.png", bbox_inches="tight", dpi=300)
     plt.close(fig)
 
-    summary = {"n_residues": len(recs), "by_distance": q1, "by_amplitude": q2,
+    summary = {"n_residues": len(recs), "n_proteins": len({x["short"] for x in recs}),
+               "model_convention": "first AF3 model per state (model 0), not a multi-model average",
+               "by_distance": q1, "by_amplitude": q2,
                "overall": {
                    "median_exp": round(float(np.median([x["exp"] for x in recs])),3),
                    "median_pred": round(float(np.median([x["pred"] for x in recs])),3),

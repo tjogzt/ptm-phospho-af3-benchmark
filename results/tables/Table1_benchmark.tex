@@ -1,31 +1,31 @@
 \begin{table}[htbp]
 \centering
 \resizebox{\textwidth}{!}{%
-\begin{tabular}{lllll lcc ccccc cc}
+\begin{tabular}{lllll lcc ccccc ccl}
 \toprule
-Protein & UniProt & Effect & PTM & Site(s) & Unphos PDB & Phos PDB & P1 & P2 & P3 & P4 & P5 & Verdict & Pure & In cohort \\
+Protein & UniProt & Effect & PTM & Site(s) & Unphos PDB & Phos PDB & P1 & P2 & P3 & P4 & P5 & Verdict & Pure & In cohort & Note \\
 \midrule
-CDK2 & P24941 & local & pT & Thr160 (pT) & 2C5N & 1H1R & Y & Y & Y & Y & Y & PASS & Y & Y \\
-MAPK1 & P28482 & local & pT/pY & Thr185/Tyr187 (pT/pY) & 1ERK & 2ERK & Y & Y & Y & Y & Y & PASS & Y & Y \\
-AURKA & O14965 & local & pT & Thr288 (pT) & 4J8M & 5DNR & Y & Y & Y & Y & Y & PASS & Y & Y \\
-IRF3 & Q14653 & allost. & pS & Ser386/Ser402 (pS) & 1QWT & 3A77 & Y & Y & Y & Y & N & WARN & N & Y \\
-MAPK14 & Q16539 & local & pT/pY & Thr180/Tyr182 (pT/pY) & 1WFC & 3PY3 & Y & Y & Y & Y & Y & PASS & Y & Y \\
-CDK7 & P50613 & local & pT & Thr170 (pT) & 8P79 & 8PYR & Y & Y & Y & Y & N & WARN & N & Y \\
-SRC & P12931 & allost. & pY & Tyr419 (pY) & 7NG7 & 9NS0 & Y & Y & Y & Y & Y & PASS & Y & Y \\
-PRKAA2 & P54646 & allost. & pT & Thr172 (pT) & 2H6D & 6B1U & Y & Y & N & Y & N & FAIL & N & Y \\
-PRKACA & P17612 & allost. & pT & Thr198 (pT) & -- & 6QJ7 & Y & Y & Y & N & N & PASS & N & N \\
-POLR2A & P24928 & disorder & pS & Ser1614/Ser1621 (pS) & -- & 4JXT & Y & Y & N & N & N & PASS & N & N \\
-PYGM & P00489 & disorder & pS & Ser15 (pS) & 2GJ4 & 1LWO & Y & Y & Y & Y & Y & PASS & Y & Y \\
-CDK1 & P06493 & local & pT & Thr161 (pT) & 4YC3 & 9SKQ & Y & Y & Y & Y & N & WARN & N & Y \\
-MAPK3 & P27361 & local & pT/pY & Thr202/Tyr204 (pT/pY) & 4QTB & 2ZOQ & Y & Y & Y & Y & Y & PASS & N & N \\
-GSK3B & P49841 & local & pY & Tyr216 (pY) & 1J1B & 6Y9S & Y & Y & Y & Y & Y & PASS & Y & Y \\
-PAK1 & Q13153 & local & pT & Thr423 (pT) & 1YHW & 3FXZ & Y & Y & Y & Y & Y & PASS & Y & Y \\
-AKT1 & P31749 & local & pT & Thr308 (pT) & 3O96 & 4GV1 & Y & Y & Y & Y & Y & PASS & Y & Y \\
-TBK1 & Q9UHD2 & local & pS & Ser172 (pS) & 4IM0 & 4EUU & Y & Y & N & Y & N & FAIL & N & Y \\
-IKBKB & O14920 & local & pS & Ser177/Ser181 (pS) & 4E3C & 4KIK & Y & Y & Y & Y & N & WARN & N & Y \\
+CDK2 & P24941 & local & pT & Thr160 (pT) & 2C5N & 1H1R & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+MAPK1 & P28482 & local & pT/pY & Thr185/Tyr187 (pT/pY) & 1ERK & 2ERK & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+AURKA & O14965 & local & pT & Thr288 (pT) & 4J8M & 5DNR & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+IRF3 & Q14653 & allost. & pS & Ser386/Ser402 (pS) & 1QWT & 3A77 & Y & Y & Y & Y & N & WARN & N & Y &  \\
+MAPK14 & Q16539 & local & pT/pY & Thr180/Tyr182 (pT/pY) & 1WFC & 3PY3 & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+CDK7 & P50613 & local & pT & Thr170 (pT) & 8P79 & 8PYR & Y & Y & Y & Y & N & WARN & N & Y &  \\
+SRC & P12931 & allost. & pY & Tyr419 (pY) & 7NG7 & 9NS0 & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+PRKAA2 & P54646 & allost. & pT & Thr172 (pT) & 2H6D & 6B1U & Y & Y & N & Y & N & FAIL & N & Y &  \\
+PRKACA & P17612 & allost. & pT & Thr198 (pT) & -- & 6QJ7 & n/a & n/a & n/a & n/a & n/a & n/a & n/a & N & single state \\
+POLR2A & P24928 & disorder & pS & Ser1614/Ser1621 (pS) & -- & 4JXT & n/a & n/a & n/a & n/a & n/a & n/a & n/a & N & single state \\
+PYGM & P00489 & disorder & pS & Ser15 (pS) & 2GJ4 & 1LWO & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+CDK1 & P06493 & local & pT & Thr161 (pT) & 4YC3 & 9SKQ & Y & Y & Y & Y & N & WARN & N & Y &  \\
+MAPK3 & P27361 & local & pT/pY & Thr202/Tyr204 (pT/pY) & 4QTB & 2ZOQ & Y & Y & Y & Y & Y & PASS & Y & N & AF3 models missing \\
+GSK3B & P49841 & local & pY & Tyr216 (pY) & 1J1B & 6Y9S & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+PAK1 & Q13153 & local & pT & Thr423 (pT) & 1YHW & 3FXZ & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+AKT1 & P31749 & local & pT & Thr308 (pT) & 3O96 & 4GV1 & Y & Y & Y & Y & Y & PASS & Y & Y &  \\
+TBK1 & Q9UHD2 & local & pS & Ser172 (pS) & 4IM0 & 4EUU & Y & Y & N & Y & N & FAIL & N & Y &  \\
+IKBKB & O14920 & local & pS & Ser177/Ser181 (pS) & 4E3C & 4KIK & Y & Y & Y & Y & N & WARN & N & Y &  \\
 \bottomrule
 \end{tabular}
 }
-\caption{Benchmark cohort and pairing-purity gate (P1--P5). P1 identity, P2 real phospho-residue (MODRES), P3 coverage $\geq$0.5 in both states, P4 $\geq$20-residue overlap covering the target site, P5 identical chain composition.}
+\caption{Benchmark cohort and pairing-purity gate (P1--P5). P1 identity, P2 real phospho-residue (MODRES), P3 coverage $\geq$0.5 in both states, P4 $\geq$20-residue overlap covering the target site, P5 identical chain composition. ``n/a'' marks single-state entries that have no unphosphorylated counterpart, so the gate does not apply. The Pure column reports whether P1--P5 all pass; In cohort additionally requires the models to be available. Note gives the reason an entry lies outside the primary cohort. Site numbers follow UniProt (canonical) numbering; the MODRES records of the corresponding PDB entries use PDB numbering, which can be offset (e.g.\ 6QJ7 MODRES TPO\,197 is UniProt Thr198, and 4JXT MODRES SEP\,1621/1628 are UniProt Ser1614/Ser1621).}
 \label{tab:benchmark}
 \end{table}

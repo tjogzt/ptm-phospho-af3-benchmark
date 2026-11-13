@@ -1,6 +1,6 @@
 # 基准 Manifest（冻结版）
 
-冻结时间：2026-11-08T23:07:50+08:00　来源：`data/benchmark_dataset.py` (sha256 `947f20a070d0ecd7`)、`audit/pair_audit.json`
+冻结时间：2026-11-12T05:44:30+08:00　来源：`data/benchmark_dataset.py` (sha256 `947f20a070d0ecd7`)、`audit/pair_audit.json`
 
 > **本文件为基准唯一权威记录。** 论文 Table 1 与全部下游分析必须引用此 manifest；
 > 历史文档（CONFOUNDING_ANALYSIS / PURE_PAIR_REPORT / EXPANSION_REPORT）中的 n=2/6/10/11 
@@ -14,8 +14,8 @@
 | 成对 paired | 16 |
 | 单结构 single | 2 |
 | 主分析队列 primary（paired + AF3 齐全） | 15 |
-| 纯净队列 pure（P1–P5 全过） | 9 |
-| 判定 PASS / WARN / FAIL | 12 / 4 / 2 |
+| 纯净队列 pure（成对 + P1–P5 全过 + AF3 齐全） | 9 |
+| 成对且 P1–P5 全过 / WARN / FAIL | 10 / 4 / 2 |
 | 已移除 removed | 6 |
 
 ## 判据 / Criteria

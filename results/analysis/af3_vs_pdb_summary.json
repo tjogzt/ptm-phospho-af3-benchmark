@@ -16,6 +16,7 @@
       "mean_cosine": -0.397,
       "mean_disp_exp": 2.05,
       "mean_disp_pred": 0.805,
+      "mean_disp_pred_direct": 0.805,
       "n_common": 262,
       "n_dir_eval": 185,
       "pearson_magnitude": 0.731,
@@ -26,7 +27,10 @@
       "site_mean_disp_pred": 1.625,
       "site_window_n": 7,
       "top20_overlap": 11,
-      "sd_mean_disp_pred": 0.6
+      "sd_mean_disp_pred": 0.6,
+      "model_disp_min": 0.12,
+      "model_disp_max": 1.74,
+      "model_disp_cv": 0.745
     },
     {
       "protein": "AMPK_alpha2",
@@ -44,6 +48,7 @@
       "mean_cosine": 0.024,
       "mean_disp_exp": 2.22,
       "mean_disp_pred": 0.196,
+      "mean_disp_pred_direct": 0.193,
       "n_common": 255,
       "n_dir_eval": 145,
       "pearson_magnitude": 0.096,
@@ -54,7 +59,10 @@
       "site_mean_disp_pred": 0.187,
       "site_window_n": 8,
       "top20_overlap": 3,
-      "sd_mean_disp_pred": 0.067
+      "sd_mean_disp_pred": 0.067,
+      "model_disp_min": 0.11,
+      "model_disp_max": 0.37,
+      "model_disp_cv": 0.343
     },
     {
       "protein": "Aurora_A",
@@ -72,6 +80,7 @@
       "mean_cosine": 0.34,
       "mean_disp_exp": 2.44,
       "mean_disp_pred": 0.293,
+      "mean_disp_pred_direct": 0.306,
       "n_common": 263,
       "n_dir_eval": 183,
       "pearson_magnitude": 0.854,
@@ -82,7 +91,10 @@
       "site_mean_disp_pred": 1.302,
       "site_window_n": 20,
       "top20_overlap": 12,
-      "sd_mean_disp_pred": 0.032
+      "sd_mean_disp_pred": 0.032,
+      "model_disp_min": 0.23,
+      "model_disp_max": 0.34,
+      "model_disp_cv": 0.109
     },
     {
       "protein": "CDK1",
@@ -100,6 +112,7 @@
       "mean_cosine": 0.433,
       "mean_disp_exp": 1.44,
       "mean_disp_pred": 0.711,
+      "mean_disp_pred_direct": 0.723,
       "n_common": 283,
       "n_dir_eval": 128,
       "pearson_magnitude": 0.621,
@@ -110,7 +123,10 @@
       "site_mean_disp_pred": 3.358,
       "site_window_n": 18,
       "top20_overlap": 11,
-      "sd_mean_disp_pred": 0.664
+      "sd_mean_disp_pred": 0.664,
+      "model_disp_min": 0.15,
+      "model_disp_max": 1.84,
+      "model_disp_cv": 0.933
     },
     {
       "protein": "CDK2",
@@ -128,6 +144,7 @@
       "mean_cosine": 0.259,
       "mean_disp_exp": 0.78,
       "mean_disp_pred": 0.439,
+      "mean_disp_pred_direct": 0.437,
       "n_common": 296,
       "n_dir_eval": 48,
       "pearson_magnitude": 0.367,
@@ -138,7 +155,10 @@
       "site_mean_disp_pred": 0.97,
       "site_window_n": 21,
       "top20_overlap": 8,
-      "sd_mean_disp_pred": 0.442
+      "sd_mean_disp_pred": 0.442,
+      "model_disp_min": 0.22,
+      "model_disp_max": 2.02,
+      "model_disp_cv": 1.006
     },
     {
       "protein": "CDK7",
@@ -156,6 +176,7 @@
       "mean_cosine": 0.222,
       "mean_disp_exp": 0.53,
       "mean_disp_pred": 0.178,
+      "mean_disp_pred_direct": 0.178,
       "n_common": 259,
       "n_dir_eval": 15,
       "pearson_magnitude": 0.434,
@@ -166,7 +187,10 @@
       "site_mean_disp_pred": 0.382,
       "site_window_n": 21,
       "top20_overlap": 7,
-      "sd_mean_disp_pred": 0.051
+      "sd_mean_disp_pred": 0.051,
+      "model_disp_min": 0.12,
+      "model_disp_max": 0.28,
+      "model_disp_cv": 0.287
     },
     {
       "protein": "ERK2",
@@ -184,6 +208,7 @@
       "mean_cosine": 0.658,
       "mean_disp_exp": 1.64,
       "mean_disp_pred": 1.063,
+      "mean_disp_pred_direct": 1.073,
       "n_common": 352,
       "n_dir_eval": 160,
       "pearson_magnitude": 0.607,
@@ -194,7 +219,10 @@
       "site_mean_disp_pred": 4.315,
       "site_window_n": 23,
       "top20_overlap": 11,
-      "sd_mean_disp_pred": 0.096
+      "sd_mean_disp_pred": 0.096,
+      "model_disp_min": 0.88,
+      "model_disp_max": 1.26,
+      "model_disp_cv": 0.091
     },
     {
       "protein": "GSK3B",
@@ -212,6 +240,7 @@
       "mean_cosine": 0.172,
       "mean_disp_exp": 0.63,
       "mean_disp_pred": 0.153,
+      "mean_disp_pred_direct": 0.153,
       "n_common": 344,
       "n_dir_eval": 51,
       "pearson_magnitude": 0.446,
@@ -222,7 +251,10 @@
       "site_mean_disp_pred": 0.122,
       "site_window_n": 21,
       "top20_overlap": 7,
-      "sd_mean_disp_pred": 0.035
+      "sd_mean_disp_pred": 0.035,
+      "model_disp_min": 0.09,
+      "model_disp_max": 0.21,
+      "model_disp_cv": 0.228
     },
     {
       "protein": "Glycogen_Phosphorylase",
@@ -240,6 +272,7 @@
       "mean_cosine": -0.078,
       "mean_disp_exp": 0.94,
       "mean_disp_pred": 0.432,
+      "mean_disp_pred_direct": 0.432,
       "n_common": 803,
       "n_dir_eval": 103,
       "pearson_magnitude": 0.341,
@@ -250,7 +283,10 @@
       "site_mean_disp_pred": 5.689,
       "site_window_n": 13,
       "top20_overlap": 5,
-      "sd_mean_disp_pred": 0.305
+      "sd_mean_disp_pred": 0.305,
+      "model_disp_min": 0.18,
+      "model_disp_max": 0.97,
+      "model_disp_cv": 0.705
     },
     {
       "protein": "IKBKB",
@@ -268,6 +304,7 @@
       "mean_cosine": 0.171,
       "mean_disp_exp": 1.96,
       "mean_disp_pred": 0.529,
+      "mean_disp_pred_direct": 0.529,
       "n_common": 617,
       "n_dir_eval": 432,
       "pearson_magnitude": 0.38,
@@ -278,7 +315,10 @@
       "site_mean_disp_pred": 1.267,
       "site_window_n": 20,
       "top20_overlap": 5,
-      "sd_mean_disp_pred": 0.182
+      "sd_mean_disp_pred": 0.182,
+      "model_disp_min": 0.31,
+      "model_disp_max": 0.93,
+      "model_disp_cv": 0.344
     },
     {
       "protein": "IRF3",
@@ -296,6 +336,7 @@
       "mean_cosine": 0.058,
       "mean_disp_exp": 0.33,
       "mean_disp_pred": 0.731,
+      "mean_disp_pred_direct": 0.723,
       "n_common": 232,
       "n_dir_eval": 10,
       "pearson_magnitude": 0.38,
@@ -306,7 +347,10 @@
       "site_mean_disp_pred": 0.454,
       "site_window_n": 37,
       "top20_overlap": 10,
-      "sd_mean_disp_pred": 0.404
+      "sd_mean_disp_pred": 0.404,
+      "model_disp_min": 0.22,
+      "model_disp_max": 1.63,
+      "model_disp_cv": 0.553
     },
     {
       "protein": "P38alpha",
@@ -324,6 +368,7 @@
       "mean_cosine": 0.703,
       "mean_disp_exp": 1.57,
       "mean_disp_pred": 1.394,
+      "mean_disp_pred_direct": 1.412,
       "n_common": 338,
       "n_dir_eval": 153,
       "pearson_magnitude": 0.958,
@@ -334,7 +379,10 @@
       "site_mean_disp_pred": 8.799,
       "site_window_n": 18,
       "top20_overlap": 11,
-      "sd_mean_disp_pred": 0.148
+      "sd_mean_disp_pred": 0.148,
+      "model_disp_min": 1.15,
+      "model_disp_max": 1.65,
+      "model_disp_cv": 0.106
     },
     {
       "protein": "PAK1",
@@ -350,6 +398,7 @@
       "max_disp_pred": 1.409,
       "mean_disp_exp": 0.25,
       "mean_disp_pred": 0.238,
+      "mean_disp_pred_direct": 0.239,
       "n_common": 291,
       "n_dir_eval": 3,
       "pearson_magnitude": 0.264,
@@ -360,7 +409,10 @@
       "site_mean_disp_pred": 0.291,
       "site_window_n": 21,
       "top20_overlap": 4,
-      "sd_mean_disp_pred": 0.079
+      "sd_mean_disp_pred": 0.079,
+      "model_disp_min": 0.13,
+      "model_disp_max": 0.4,
+      "model_disp_cv": 0.332
     },
     {
       "protein": "TBK1",
@@ -378,6 +430,7 @@
       "mean_cosine": 0.563,
       "mean_disp_exp": 1.5,
       "mean_disp_pred": 0.403,
+      "mean_disp_pred_direct": 0.403,
       "n_common": 279,
       "n_dir_eval": 150,
       "pearson_magnitude": 0.395,
@@ -388,7 +441,10 @@
       "site_mean_disp_pred": 0.381,
       "site_window_n": 7,
       "top20_overlap": 13,
-      "sd_mean_disp_pred": 0.097
+      "sd_mean_disp_pred": 0.097,
+      "model_disp_min": 0.23,
+      "model_disp_max": 0.53,
+      "model_disp_cv": 0.24
     },
     {
       "protein": "c-Src_kinase",
@@ -406,6 +462,7 @@
       "mean_cosine": -0.068,
       "mean_disp_exp": 2.51,
       "mean_disp_pred": 0.253,
+      "mean_disp_pred_direct": 0.262,
       "n_common": 274,
       "n_dir_eval": 200,
       "pearson_magnitude": 0.027,
@@ -416,7 +473,10 @@
       "site_mean_disp_pred": 0.227,
       "site_window_n": 18,
       "top20_overlap": 2,
-      "sd_mean_disp_pred": 0.046
+      "sd_mean_disp_pred": 0.046,
+      "model_disp_min": 0.18,
+      "model_disp_max": 0.37,
+      "model_disp_cv": 0.181
     }
   ],
   "cohort_stats": {
@@ -500,6 +560,37 @@
     "max_leverage": {
       "removed": "Src",
       "r_without": 0.2202
+    },
+    "excl_p3_failures": {
+      "removed": [
+        "AMPK_alpha2",
+        "TBK1"
+      ],
+      "n_proteins": 13,
+      "pearson_r": 0.2134,
+      "pearson_CI95": [
+        -0.2812,
+        0.7382
+      ]
+    },
+    "purity_strata": {
+      "pure": {
+        "n_proteins": 9,
+        "pearson_r": 0.2213,
+        "pearson_CI95": [
+          -0.3895,
+          0.9109
+        ]
+      },
+      "impure": {
+        "n_proteins": 6,
+        "pearson_r": -0.2385,
+        "pearson_CI95": [
+          -1.0,
+          0.8369
+        ]
+      },
+      "difference_permutation_p": 0.4007
     }
   },
   "model_mode": "all"

@@ -5,19 +5,33 @@ compare_af3_vs_pdb.py — P1：AF3 预测位移 vs PDB 实验位移
 核心问题：AF3 引入磷酸化后预测出的构象变化，是否与晶体学观察到的变化一致？
 
 方法（统一坐标系下比较位移向量）：
-  1. 以 PDB unphos 为参考框架
-  2. 将 PDB phos 叠合到 PDB unphos（共同 Cα，Kabsch）→ Δ_exp = PDB_phos_aligned − PDB_unphos
-  3. 将 AF3 unphos 叠合到 PDB unphos，同一变换作用于 AF3 phos
-     → Δ_pred = AF3_phos_transformed − AF3_unphos_transformed
+  1. 以 PDB unphos 为参考框架 Q
+  2. 将 PDB phos 叠合到 Q（共同 Cα，Kabsch）→ Δ_exp = PDB_phos_aligned − Q
+  3. AF3 两态**各自独立**叠合到同一参考框架 Q（每次预测都有各自的任意坐标系，
+     故 unphos、phos 分别 fit→Q）：
+     Δ_pred = (AF3_phos fit→Q) − (AF3_unphos fit→Q)
+     独立叠合消除整体刚体位移；若只把 unphos 的变换套用到 phos，两态预测的
+     坐标系差异会被误当作磷酸化位移（曾导致 25–39 Å 假信号）。
   4. 在共同残基上比较 Δ_pred 与 Δ_exp：
        - 位移幅度的 Pearson 相关
        - 位移方向的余弦相似度（逐残基，取位移 > 1 Å 者）
        - top-N 位移残基的重合度
 
+投影约定敏感性 / Projection sensitivity（W1）：
+  `indep`  = 正文默认协议（两态各自独立叠合到参考框架，见步骤 3）
+  `direct` = 两个 AF3 态先互相叠合（AF3 phos → AF3 unphos）再取差，
+             度量模型自身的构象变化，不参照实验坐标。
+  注：AF3 的两态是两个**独立预测**，各自处于任意坐标系；因此任何直接做
+  (P_phos − P_unphos) 的"共享变换"约定在物理上无定义（差值混入了整体
+  刚体位移，实测会给出 ~28 Å 的伪信号），故不纳入。可行的约定只有上述两种。
+  两者下队列级预测位移与 r 一并写入 projection_sensitivity.json，
+  用于证明「近常量预测位移」这一结论不依赖于叠合约定。
+
 输出：
   results/figures/Fig2_af3_vs_pdb_displacement.pdf/.png
   results/analysis/af3_vs_pdb_per_residue.csv
   results/analysis/af3_vs_pdb_summary.json
+  results/analysis/projection_sensitivity.json
 
 用法：python scripts/analysis/compare_af3_vs_pdb.py [--model K]
   默认聚合每蛋白全部 seed×model（通常 15 个）；--model K 仅用第 K 号 model。
@@ -222,11 +236,18 @@ def compare(protein, model_idx=None):
             mag_exp = np.linalg.norm(d_exp, axis=1)
             mag_pred = np.linalg.norm(d_pred, axis=1)
 
+            # 投影约定敏感性（W1）：直接约定 = 两个 AF3 态先互相叠合再取差
+            # （度量模型自身构象变化，不参照实验坐标；幅值与坐标系无关）。
+            R_d, t_d = kabsch(P_ap, P_au)
+            d_pred_direct = (P_ap @ R_d + t_d) - P_au
+            mag_pred_direct = np.linalg.norm(d_pred_direct, axis=1)
+
         res = {
             "n_common": len(common),
             "rmsd_af3unphos_vs_pdb": round(rmsd(af3_unphos_al, Q), 2),
             "mean_disp_exp": round(float(mag_exp.mean()), 2),
             "mean_disp_pred": round(float(mag_pred.mean()), 2),
+            "mean_disp_pred_direct": round(float(mag_pred_direct.mean()), 2),
             "max_disp_exp": round(float(mag_exp.max()), 2),
             "max_disp_pred": round(float(mag_pred.max()), 2),
         }
@@ -287,9 +308,16 @@ def compare(protein, model_idx=None):
         mv = float(np.mean(vals))
         agg[key] = int(round(mv)) if key in INT_KEYS else round(mv, 3)
     # 模型间离散（用于 Fig2 误差棒；种子/模型不是生物学重复）
+    # 同时报告模型内不稳定度（W10.iv）：同一蛋白 15 个模型的预测位移
+    # min/max/CV，用于说明"近常量预测位移"在各蛋白内的稳健程度。
     dvals = [m["mean_disp_pred"] for m in per_model if m.get("mean_disp_pred") is not None]
     if len(dvals) > 1:
+        dmean = float(np.mean(dvals))
         agg["sd_mean_disp_pred"] = round(float(np.std(dvals, ddof=1)), 3)
+        agg["model_disp_min"] = round(float(np.min(dvals)), 3)
+        agg["model_disp_max"] = round(float(np.max(dvals)), 3)
+        agg["model_disp_cv"] = (round(float(np.std(dvals, ddof=1) / dmean), 3)
+                                if dmean > 1e-9 else None)
     return agg, first_per_res
 
 
@@ -367,7 +395,109 @@ def cohort_stats(results):
     if loo:
         worst = max(loo, key=lambda kv: abs(kv[1] - r))
         out["max_leverage"] = {"removed": worst[0], "r_without": round(worst[1], 4)}
+
+    # P3 覆盖失败对敏感性（W3）：剔除两个 P3 失败对（AMPK_alpha2、TBK1）
+    # 这两个配对未通过 P3 覆盖门（<0.5），但仍被计入主队列，故给出剔除后的稳健性。
+    # Sensitivity excluding the two P3-coverage failures (AMPK_alpha2, TBK1),
+    # which were admitted to the primary cohort despite failing the P3 gate.
+    EXCL = {"AMPK_alpha2", "TBK1"}
+    sub2 = [r for r in sub if r.get("protein") not in EXCL]
+    if len(sub2) >= 4:
+        e2 = np.array([r["mean_disp_exp"] for r in sub2], float)
+        p2 = np.array([r["mean_disp_pred"] for r in sub2], float)
+        if np.std(e2) > 1e-12 and np.std(p2) > 1e-12:
+            r2 = float(np.corrcoef(e2, p2)[0, 1])
+            lo2, hi2 = bootstrap_ci(e2, p2)
+            out["excl_p3_failures"] = {
+                "removed": sorted(EXCL), "n_proteins": len(sub2),
+                "pearson_r": round(r2, 4),
+                "pearson_CI95": [None if lo2 is None else round(lo2, 4),
+                                 None if hi2 is None else round(hi2, 4)],
+            }
+
+    # 纯度分层不确定性（R5）：pure / impure 两层各自的 r 与 bootstrap 95% CI，
+    # 并用置换检验给出两层差异的 p 值（层标签随机重排 20k 次）。
+    # Purity-stratified uncertainty (R5): each stratum's r with a bootstrap 95% CI,
+    # plus a permutation p-value for the difference (20k label reshuffles).
+    strata = {}
+    for name, want in (("pure", True), ("impure", False)):
+        s2 = [r for r in sub if bool(r.get("pure_pair")) == want]
+        if len(s2) < 4:
+            continue
+        e2 = np.array([r["mean_disp_exp"] for r in s2], float)
+        p2 = np.array([r["mean_disp_pred"] for r in s2], float)
+        if np.std(e2) < 1e-12 or np.std(p2) < 1e-12:
+            continue
+        l2, h2 = bootstrap_ci(e2, p2)
+        strata[name] = {
+            "n_proteins": len(s2),
+            "pearson_r": round(float(np.corrcoef(e2, p2)[0, 1]), 4),
+            "pearson_CI95": [None if l2 is None else round(l2, 4),
+                             None if h2 is None else round(h2, 4)],
+        }
+    if set(strata) == {"pure", "impure"}:
+        flag = np.array([bool(r.get("pure_pair")) for r in sub])
+        obs = abs(strata["pure"]["pearson_r"] - strata["impure"]["pearson_r"])
+        rng = np.random.default_rng(7)
+        hits = 0
+        for _ in range(20000):
+            perm = rng.permutation(flag)
+            a = perm if perm.dtype == bool else perm.astype(bool)
+            ea, pa = exp[~a], pred[~a]
+            eb, pb = exp[a], pred[a]
+            if min(len(ea), len(eb)) < 4:
+                continue
+            if min(np.std(ea), np.std(pa), np.std(eb), np.std(pb)) < 1e-12:
+                continue
+            d = abs(np.corrcoef(ea, pa)[0, 1] - np.corrcoef(eb, pb)[0, 1])
+            if d >= obs:
+                hits += 1
+        strata["difference_permutation_p"] = round(hits / 20000, 4)
+    if strata:
+        out["purity_strata"] = strata
     return out
+
+
+def projection_sensitivity(results):
+    """两种投影约定下的队列级统计（W1 敏感性分析）。
+
+    Cohort-level statistics under two projection conventions:
+      indep  — both AF3 states independently superposed onto the PDB reference
+               (the protocol the manuscript reports);
+      direct — the two AF3 states superposed onto each other (the model's own
+               internal phospho-induced change, no experimental reference).
+    A "shared-rigid-transform" third convention is not defined here because the
+    two AF3 states are independent predictions in unrelated coordinate frames.
+    All use shipped models only; no new predictions.
+    """
+    def _one(predkey):
+        sub = [r for r in results
+               if not r.get("same_structure")
+               and r.get("mean_disp_exp") is not None
+               and r.get(predkey) is not None]
+        if len(sub) < 4:
+            return {"n_proteins": len(sub), "note": "insufficient proteins"}
+        exp = np.array([r["mean_disp_exp"] for r in sub], float)
+        pred = np.array([r[predkey] for r in sub], float)
+        r = float(np.corrcoef(exp, pred)[0, 1])
+        lo, hi = bootstrap_ci(exp, pred)
+        return {
+            "n_proteins": len(sub),
+            "pearson_r": round(r, 4),
+            "pearson_CI95": [None if lo is None else round(lo, 4),
+                             None if hi is None else round(hi, 4)],
+            "mean_pred": round(float(pred.mean()), 3),
+            "sd_pred": round(float(pred.std(ddof=1)), 3),
+        }
+
+    return {
+        "description": ("同一批已生成 AF3 模型在两种叠合/投影约定下的队列级结果；"
+                        "用于证明结论不依赖于叠合约定（W1）。"),
+        "protocols": {
+            "indep": _one("mean_disp_pred"),
+            "direct": _one("mean_disp_pred_direct"),
+        },
+    }
 
 
 def main():
@@ -430,6 +560,15 @@ def main():
                     "cohort_stats": stats,
                     "model_mode": "all" if args.model is None else f"model_{args.model}"},
                    indent=2, ensure_ascii=False))
+    proj = projection_sensitivity(results)
+    (OUT/"projection_sensitivity.json").write_text(
+        json.dumps(proj, indent=2, ensure_ascii=False))
+    print("\n  投影约定敏感性（W1）:")
+    for name, s in proj["protocols"].items():
+        if "pearson_r" in s:
+            print(f"    {name:<7} n={s['n_proteins']}  mean_pred={s['mean_pred']:.3f} Å  "
+                  f"r={s['pearson_r']:+.4f}  CI={s['pearson_CI95']}")
+    print(f"[OK] {OUT}/projection_sensitivity.json")
     if all_per:
         import csv
         with open(OUT/"af3_vs_pdb_per_residue.csv", "w", newline="") as f:

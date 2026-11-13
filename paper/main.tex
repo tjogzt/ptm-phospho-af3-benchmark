@@ -30,7 +30,7 @@
 % [VERIFY] 标记：所有需人工核对/补全之处
 \newcommand{\verify}[1]{\textcolor{red}{[VERIFY: #1]}}
 
-\title{\textbf{Data purity, not model capability, dominates apparent
+\title{\textbf{Data purity, not model capability, can dominate apparent
 AlphaFold3 performance on phosphorylation benchmarks}}
 
 % ---------------------------------------------------------------------
@@ -67,19 +67,21 @@ Tao Zhu\textsuperscript{1,2,*}\\[4pt]
 \noindent
 \textbf{Motivation:} AlphaFold3 (AF3) accepts explicit post-translational
 modifications, which is widely taken to imply that it can model the
-conformational consequences of phosphorylation. Existing benchmarks,
-however, rarely audit whether the ``phosphorylated'' and
-``unphosphorylated'' experimental structures that they pair are genuinely
-comparable, so complex-composition effects can be mistaken for
-phosphorylation effects.
+conformational consequences of phosphorylation. Testing that implication
+requires a pair of experimental structures that are genuinely comparable,
+yet we could not find a published phosphorylation benchmark that audits
+this, so complex-composition effects can be mistaken for phosphorylation
+effects.
 
 \noindent
 \textbf{Results:} We assembled a phosphorylation structure benchmark and
 subjected every pair to a five-criterion biological purity gate
-(P1--P5). Of 18 curated entries, 16 are two-state pairs and 15 have AF3
-models for both states; only 9 pass the full gate. On these 15 pairs the
-correlation between AF3-predicted and experimentally observed per-residue
-C$\alpha$ displacements is not significant ($r=+0.11$, 95\% CI
+(P1--P5). Of 24 screened candidates, 6 were dropped for lacking a verified
+phospho-residue, leaving 18 curated entries: 16 are two-state pairs and 15
+have AF3 models for both states, of which 9 pass all five criteria. On
+these 15 pairs the correlation between AF3-predicted and experimentally
+observed mean C$\alpha$ displacement (one value per protein) is not
+significant ($r=+0.11$, 95\% CI
 $[-0.34,+0.57]$, $n=15$), while the predicted displacement is nearly
 constant ($0.52\pm0.36$\,\AA) against an experimental span of
 $0.25$--$2.51$\,\AA. Both AF3 internal confidence signals fare no better:
@@ -88,9 +90,13 @@ the association between site pLDDT and predictive agreement
 ($r=+0.60$) are each carried by a single leverage point and collapse when
 it is removed ($r=+0.21$ and $r=+0.14$). Restricting to purely paired
 structures changes the headline statistic: pairing purity, not model
-capability, governs the apparent result. A second,
-sequence-only ESMFold line, run with a phosphomimetic substitution, is
-equally uninformative ($r=-0.36$).
+capability, can govern the apparent result ($r=+0.22$ for the 9
+pure pairs versus $r=-0.24$ for the 6 that fail the
+composition check; both intervals include zero and a permutation test on
+their difference gives $p=0.40$). A second,
+sequence-only ESMFold line, run with a phosphomimetic substitution, fails
+to track the cohort-level response in the same way ($r=-0.36$), although
+like AF3 it retains per-protein magnitude correlation.
 
 \noindent
 \textbf{Availability and Implementation:} Benchmark data, analysis code
@@ -132,7 +138,7 @@ phosphothreonine (TPO) and phosphotyrosine (PTR)
 natural to read a difference between an unmodified and a modified AF3
 prediction as the model's view of the phosphorylation-induced structural
 change. Several studies have begun to use AF3 in exactly this
-``mechanistic'' mode \citep{nam2025alphafold3}, and AF3's per-residue
+``mechanistic'' mode \citep{nam2026alphafold3,ramasamy2026phosphoaf3}, and AF3's per-residue
 confidence (pLDDT) and predicted aligned error (PAE) are frequently quoted
 as reassurance that the predicted change is trustworthy
 \citep{carugo2023plddt,akdel2022structural}.
@@ -145,7 +151,8 @@ are usually crystallised as different constructs: different oligomeric
 states, different bound ligands, different domain boundaries, sometimes
 different partners. Any of these covariates induces large
 conformational differences that have nothing to do with the phosphate,
-yet such pairs are routinely treated as ``phosphorylation pairs''. Second,
+yet we could not find a published phosphorylation-pairing benchmark that
+audits whether the paired structures are genuinely comparable. Second,
 the metrics used to summarise agreement (typically a mean displacement
 magnitude or an amplitude ratio) are dominated by a handful of
 disordered, highly mobile residues, so that a large apparent
@@ -189,8 +196,11 @@ explicit list of residues and ligands, so a phospho form can be specified
 directly \citep{abramson2024alphafold3}. This capability is orthogonal to accuracy on
 modification-induced change, yet the two are often conflated. Prior
 evaluations of AF3 on modified or non-protein components
-\citep{nam2025alphafold3} focus on local geometry around the modified
-residue rather than on global conformational responses.
+\citep{nam2026alphafold3} focus on local geometry around the modified
+residue rather than on global conformational responses, and an assessment
+of the relation between phosphorylation, AF3 models and conformational
+variability \citep{ramasamy2026phosphoaf3} concludes that it remains
+unclear whether the models capture PTM-driven conformational change.
 
 \noindent\textbf{Structural-change benchmarks.} Comparing two states of a
 protein is a mature problem: one superposes a common core (e.g.\ Kabsch
@@ -238,8 +248,10 @@ entry at high sequence identity.
 
 \noindent\textbf{P2 (genuine modification).} The phospho structure contains
 at least one modified residue (SEP, TPO or PTR) recorded in the PDB MODRES
-records; a structure that merely lacks the phosphate but is otherwise wild
-type qualifies as the non-phospho state.
+records. P2 constrains only the presence of the modification; it does not
+require the non-phospho state to be wild type, and engineered substitutions
+carried by either state are recorded as caveats
+(Sec.~\ref{sec:purity}) rather than treated as disqualifying.
 
 \noindent\textbf{P3 (two-state coverage).} Each state covers at least 50\%
 of the UniProt sequence.
@@ -250,11 +262,53 @@ least 20 common residues and the shared region includes the target site.
 \noindent\textbf{P5 (composition consistency).} The two states have the
 same chain composition, so that differences in oligomeric state or in
 bound partners cannot be mistaken for a phosphorylation effect.
-A pair that fails any of P1--P4 is excluded; a pair that fails only P5 is
-retained but flagged (\emph{impure}), because P5 violations are the most
-common and easily overlooked source of confounding. In the primary cohort, 9
-pairs pass all five criteria (the \emph{pure} cohort) and 6 do not
-(4 flagged on P5, 2 excluded on P3/P5).
+A pair that fails P1 (identity) or P2 (a genuine, MODRES-recorded
+phospho-residue) is discarded outright. P3, P4 and P5 are recorded as
+quality flags: the primary cohort comprises every pair that passes P1--P2
+and for which models exist in both states (15 pairs,
+Table~\ref{tab:benchmark}), and each cohort-level result is also reported
+after removing the pairs that fail P3 (Supplementary Table~S1) or P5
+(Sec.~\ref{sec:res-purity}, Fig.~\ref{fig:funnel}b). Within
+the primary cohort, 9 pairs pass all five criteria (the \emph{pure} cohort)
+and 6 carry at least one flag: all six fail P5, and two of these
+(AMPK$\alpha$2, TBK1) also fail P3. A further pair passes the five criteria
+but has no model and therefore lies outside the cohort altogether.
+P5 violations are the most common and the most easily
+overlooked source of confounding, which is why the flag is displayed rather
+than silently acted upon: the phospho and non-phospho entries differ in
+chain count or partners, exactly the covariate that a naive amplitude
+comparison would attribute to phosphorylation.
+
+\noindent\textbf{What ``pure'' does and does not mean.} P5 asks only that
+the two states share the same chain composition. It is deliberately blind
+to bound ligands, engineered substitutions and additional modification
+sites, so ``pure'' must be read as \emph{chain-composition-matched}, not as
+``identical apart from the phosphate''. Auditing the nine pure pairs
+(\texttt{audit\_confounds.py};
+\texttt{pair\_confound\_audit.json} in the archived repository) shows how
+much heterogeneity remains: seven of the nine differ in bound ligands
+between the two states, and only two of the sixteen paired entries
+(ERK2, p38$\alpha$) are composition-matched in the stricter sense of
+sharing the same ligands and carrying no substitutions. Two of the nine
+pure pairs do carry engineered substitutions: the AURKA non-phospho state
+carries T287D, one residue from the phosphosite T288, and PAK1 carries
+K299R in both states. Outside the pure stratum, the IKBKB non-phospho
+reference (4E3C, an entry that fails P5) is an S177E/S181E phosphomimetic
+double mutant at exactly the two sites under study. Three phospho states
+additionally carry experimental phosphorylation
+sites that AF3 was not asked to model (CDK7 pS164; IKBKB pS257; and
+AMPK$\alpha$2 pS108, which lies on the $\beta$ subunit rather than on the
+target chain), and AF3 was run on the apo full-length sequence against
+ligand-bearing crystals. These caveats do not rescue the negative
+result, and they do not act in one direction: the phosphomimetic and
+engineered substitutions sit in the non-phospho references and therefore
+\emph{remove} part of the difference the model would have to reproduce,
+whereas any residual covariate mismatch adds variance that biases a
+correlation toward zero and could manufacture a negative result. The check
+that answers this is the pure stratum itself, on which the negative result
+holds with the same sign and a wider interval ($r=+0.22$, $n=9$, spanning
+zero; Sec.~\ref{sec:res-purity}); these caveats therefore bound what
+``pure'' means rather than weakening the conclusion.
 
 \subsection{Prediction protocols}
 \label{sec:predict}
@@ -262,9 +316,13 @@ pairs pass all five criteria (the \emph{pure} cohort) and 6 do not
 \noindent\textbf{AlphaFold3.} For each protein we submitted the full-length
 UniProt sequence with the approved site(s) specified as modified residues
 using the corresponding CCD codes, and collected 15 models per state (five
-diffusion samples across three random seeds). Analysis aggregates all
-models unless otherwise stated; the seed axis is treated as sampling
-repetition, not biological replication.
+diffusion samples across three random seeds). The displacement and
+amplitude statistics aggregate all 15 models; the single-model exceptions
+are stated where they arise --- the pLDDT, geometric-decomposition and
+residue-spectrum analyses use the first diffusion sample of the first seed,
+and the $\Delta$PAE analysis uses model~0 across seeds
+(Secs.~\ref{sec:res-confidence} and~\ref{sec:res-explore}). The seed axis is
+treated as sampling repetition, not biological replication.
 
 \noindent\textbf{ESMFold (comparison line).} As an independent,
 sequence-only predictor we folded the same full-length sequences with
@@ -281,10 +339,17 @@ experimental structure defines the reference frame; the phospho
 experimental structure is superposed onto it over common C$\alpha$ atoms
 by the Kabsch algorithm \citep{kabsch1976solution}, giving the experimental
 displacement field $\Delta_{\mathrm{exp}}$. Predicted fields are obtained
-by superposing each predictor's non-phospho model onto the same reference
-and applying that transform to its phospho model, giving
-$\Delta_{\mathrm{pred}}$ without ever superposing predicted onto
-experimental coordinates. From these fields we compute:
+by superposing each predicted state onto the common experimental
+non-phospho reference frame with the Kabsch algorithm, independently for
+the two states, so that each state's arbitrary internal frame is removed
+while both remain expressed in one common frame, giving
+$\Delta_{\mathrm{pred}}$.
+Because the two predicted states are independent samples of unrelated
+conformers, only two rigid-body conventions are physically defined ---
+independent superposition onto the experimental references (used
+throughout) and direct superposition of the two predicted states onto each
+other; both yield the same cohort-level result (Supplementary
+Table~S1). From these fields we compute:
 (i) the per-residue displacement magnitude;
 (ii) the amplitude ratio, $|\Delta_{\mathrm{pred}}|/|\Delta_{\mathrm{exp}}|$;
 (iii) the direction cosine between $\Delta_{\mathrm{pred}}$ and
@@ -331,23 +396,31 @@ unmodelled termini do not inflate it.
 
 \input{../results/tables/Table1_benchmark.tex}
 
-Of 18 curated entries, 16 are two-state pairs and 15 have AF3 models for
-both states (Fig.~\ref{fig:funnel}a). Applying P1--P5 leaves 9 pure pairs;
-the remaining 6 are either compositionally inconsistent (P5; IKBKB, IRF3,
-CDK7, CDK1) or fail coverage/overlap (P3/P5; AMPK$\alpha$2, TBK1). The
-dominant failure mode is P5: the phospho and non-phospho entries differ in
-chain count or partners, exactly the covariate that a naive amplitude
-comparison would attribute to phosphorylation.
+Of 24 screened candidates, 6 were dropped for lacking a
+MODRES-recorded phospho-residue, leaving 18 curated entries. Of these, 16
+are two-state pairs and 15 have AF3 models for both states
+(Fig.~\ref{fig:funnel}a). Applying P1--P5 leaves 9 pure pairs; the remaining
+6 all fail P5, because the phospho and non-phospho entries differ in chain
+count or partners --- exactly the covariate that a naive amplitude
+comparison would attribute to phosphorylation --- and two of these
+(AMPK$\alpha$2, TBK1) additionally fail the P3 coverage criterion.
 
 This is not a cosmetic filter. Stratifying the same frozen per-protein
 results by purity changes the apparent behaviour of the model
 (Fig.~\ref{fig:funnel}b): the median amplitude ratio is $0.46$ for pure
 pairs but $0.30$ for impure pairs, and the magnitude correlation is
-$r=+0.22$ ($n=9$) for pure pairs but $r=-0.24$ ($n=6$) for impure ones.
-Any headline computed on the uncleaned cohort is therefore a mixture of
-model behaviour and pairing confounding. We report all subsequent
-statistics on the full 15-pair cohort while flagging the pure subset, and
-we avoid any claim whose sign depends on the mixture.
+$r=+0.22$ ($n=9$, 95\% CI $[-0.39,+0.91]$) for pure pairs but $r=-0.24$
+($n=6$, 95\% CI $[-1.00,+0.84]$) for impure ones. Both stratum estimates
+are individually indistinguishable from zero at this sample size, and a
+permutation test on their difference is not significant ($p=0.40$;
+Supplementary Table~S1); the stratification is therefore evidence that the
+pooled mixture is unstable, not a demonstrated contrast between two
+populations. Any headline computed on the uncleaned cohort is a
+mixture of model behaviour and pairing confounding. We report all
+subsequent statistics on the full 15-pair cohort while flagging the pure
+subset, and we avoid any claim whose sign depends on the mixture; removing
+the two P3-failing pairs leaves the cohort correlation essentially
+unchanged ($r=+0.21$, $n=13$; Supplementary Table~S1).
 
 \subsection{No evidence that AF3 tracks the phosphorylation-induced
 displacement}
@@ -365,7 +438,12 @@ displacement is also close to constant: $0.52\pm0.36$\,\AA\ across all
 proteins, against an experimental span of $0.25$--$2.51$\,\AA\
 (median $1.50$\,\AA). The model's output moves by roughly the same small
 amount regardless of whether the true response is negligible (PAK1,
-$0.25$\,\AA) or large (Src, $2.51$\,\AA).
+$0.25$\,\AA) or large (Src, $2.51$\,\AA). ``Near-constant'' describes this
+cohort-mean behaviour rather than a reproducible per-protein value: within a
+single protein the AF3 samples of one state are themselves unstable (median
+within-protein coefficient of variation of the mean displacement $0.33$;
+8 of 15 proteins exceed $0.3$), and for CDK2 the per-sample mean ranges from
+$0.22$ to $2.02$\,\AA.
 
 Leave-one-out analysis shows the coefficient is not driven by a single
 outlier in the sense of an extreme $r$; the largest change is the removal
@@ -376,7 +454,7 @@ $r=+0.85$), but several show none (Src, $r=+0.03$) even though their
 experimental displacements are among the largest. Aggregated over the
 cohort, this heterogeneity averages out to noise.
 
-\subsection{A second, sequence-only predictor is equally uninformative}
+\subsection{A second, sequence-only predictor fails in the same way}
 \label{sec:res-esm}
 
 The non-response could in principle be specific to AF3's structure module,
@@ -393,11 +471,15 @@ moves the predicted structure by less than $0.1$\,\AA, i.e.\ essentially
 not at all, so the near-constant prediction is not unique to AF3.
 Leave-one-out again exposes the small cohort: removing the lowest-
 displacement protein (PAK1) moves the correlation to $r=-0.47$, while no
-single removal produces a significant positive association. ESMFold's
-per-protein direction cosines are also centred near zero and its
-per-residue magnitude correlations are uninformative (Table~\ref{tab:metrics},
-Fig.~\ref{fig:fig2}b). The failure to track the phosphorylation response
-is thus shared across two predictors, two input modalities (MSA-based and
+single removal produces a significant positive association. ESMFold, like
+AF3, does retain local shape agreement --- its mean per-protein magnitude
+correlation is $+0.50$, essentially the same as AF3's $+0.46$, and its mean
+direction cosine is $+0.19$ against AF3's $+0.22$
+(Table~\ref{tab:metrics}, Fig.~\ref{fig:fig2}b) --- while under-predicting
+amplitude about an order of magnitude more severely (median predicted to
+experimental ratio $0.04$, against $0.39$ for AF3). The shared failure is
+thus amplitude and cohort-level tracking rather than local shape, and it
+appears across two predictors, two input modalities (MSA-based and
 sequence-only) and two ways of representing the phosphate, which argues
 that it is a property of the benchmark question rather than of one model.
 
@@ -405,15 +487,29 @@ that it is a property of the benchmark question rather than of one model.
 \label{sec:res-noise}
 
 The negative result is only meaningful if the experimental signal exceeds
-noise. It does. The same-state experimental floor has a median of
+noise. At cohort level it does, and per protein the statement must be
+narrower. The same-state experimental floor has a median of
 $0.335$\,\AA\ and a maximum of $1.309$\,\AA\ across the seven proteins
-with crystallographically independent copies, whereas the
+with crystallographically independent copies (the other eight pairs have a
+single experimental structure each, so no experimental floor can be
+estimated for them), whereas the
 phosphorylation-induced experimental displacement has a median of
 $1.50$\,\AA\ and a span of $0.25$--$2.51$\,\AA\ (Fig.~\ref{fig:noise}).
-The experimentally observed change therefore exceeds the upper bound of
-same-state noise, so the absence of predicted tracking is not an artefact
-of noisy references. The predictor's own same-state floor (median
-$0.389$\,\AA) is of the same order as its putative phospho signal
+Each of those seven proteins exceeds its own floor --- marginally for IRF3
+($0.33$ vs $0.29$\,\AA) and GSK3B ($0.63$ vs $0.50$\,\AA) --- but the
+largest floor ($1.309$\,\AA, IKBKB) exceeds several cohort signals (CDK7
+$0.53$, GSK3B $0.63$, CDK2 $0.78$, PYGM $0.94$\,\AA) and is not usable as a
+cohort-wide threshold. PAK1, which has no replicate structure, has the
+smallest experimental displacement in the cohort ($0.25$\,\AA), below the
+median floor, and cannot be checked against its own noise level at all. The
+claim the data support is therefore per protein rather than cohort-wide:
+wherever a floor is measurable the phospho signal exceeds it, so the
+absence of predicted tracking is not an artefact of a reference noisier
+than the effect. The predictor's own same-state floor (median
+$0.389$\,\AA, maximum $3.03$\,\AA\ for AKT1, about four times that protein's
+own predicted displacement of $0.81$\,\AA, and available for all 15 pairs
+because each has 15 models) is of
+the same order as its putative phospho signal
 ($0.52$\,\AA); AF3's between-state displacement is therefore close to its
 own sampling variability.
 
@@ -452,20 +548,27 @@ to disagree in both magnitude and confidence in the same direction.
 We therefore asked whether AF3 under-responds most where the true motion
 is largest. Across the 15 pairs the amplitude ratio
 is inversely related to the overall deformation magnitude
-($r=-0.60$, $p=0.017$ against the full-structure RMSD; $r=-0.62$,
-$p=0.014$ against mean displacement) and to the block-wise deformation
-($r=-0.60$, $p=0.018$); the relation with the hinge index is weaker and
-not significant ($r=-0.40$, $p=0.14$). A residue-level view agrees: binning
-all 3{,}355 common residues by experimental displacement, the median
-predicted/experimental ratio falls monotonically from $0.54$ in the
-smallest-displacement bin to $0.05$ in the largest, i.e.\ AF3's response
-saturates while the true response grows (Fig.~\ref{fig:spectrum}).
-Consistent with a hinge explanation, large-motion residues cluster about
-the modified site; residues far from the site ($>80$ residues away)
-show the weakest and least correlated response. Because these
+($r=-0.54$, $p=0.040$ against the full-structure RMSD; $r=-0.58$,
+$p=0.023$ against mean displacement) and to the block-wise deformation
+($r=-0.53$, $p=0.041$); the relation with the hinge index is weaker and
+not significant ($r=-0.38$, $p=0.16$). A residue-level view agrees in
+sign: binning all 5{,}148 common residues across the 15 proteins by
+experimental displacement, the median predicted/experimental ratio falls
+steeply from $0.50$ in the smallest-displacement bin to $0.07$ in the
+largest, monotonically across the six bins ($0.50$, $0.31$, $0.27$,
+$0.22$, $0.17$, $0.07$); AF3's response
+saturates while the true response grows (Fig.~\ref{fig:spectrum}). This
+analysis uses the first AF3 model of each state rather than a multi-model
+average. A distance decomposition is
+weaker still --- the
+bin ratios vary non-monotonically ($0.15$--$0.31$) with no trend, and the
+lowest ratio occurs in the immediate $0$--$5$-residue window where the
+experimental displacement is largest, not at long range --- so we do
+\emph{not} support a hinge-geometry explanation. Because these
 stratifications are exploratory and uncorrected for multiplicity, we
 present them as hypotheses, not conclusions; in particular, the hinge
-comparison is not significant and we do not claim that hinge motion is
+comparison and any distance dependence are not significant and we do not
+claim that hinge motion is
 harder to predict.
 
 % =====================================================================
@@ -512,8 +615,10 @@ PTM-induced change is correct; test that association explicitly and check
 its leverage.
 
 \noindent\textbf{Limitations.} The cohort is modest ($n=15$, 9 pure) and
-kinase-dominated, so the effect-type strata are under-powered and we
-report them only descriptively. ESMFold is included as a second,
+kinase-dominated: by curated effect type it comprises 11 local
+rearrangements, 3 allosteric effects and 1 disorder-to-order transition, so
+the non-local strata hold too few proteins to support separate statistics
+and we do not report them as such. ESMFold is included as a second,
 sequence-only line; because it cannot represent CCD modified residues its
 phospho state is phosphomimetic, so that line is qualitative, yet it
 agrees with AF3 in showing no tracking ($r=-0.36$).
@@ -531,8 +636,8 @@ experimental one, its predicted displacement is near-constant, and its
 internal confidence signals fail to identify where it is right once
 single-point leverage is removed. The broader lesson is methodological: on
 paired structural-change benchmarks, pairing purity and same-state noise
-calibration, not model capability, determine the apparent result, and both
-are cheap to enforce.
+calibration, not model capability, can dominate the apparent result, and
+both are cheap to enforce.
 
 % =====================================================================
 \section*{Availability and implementation}
@@ -566,11 +671,17 @@ None declared.
 \centering
 \includegraphics[width=\textwidth]{Fig1_purity_funnel.pdf}
 \caption{\textbf{Pairing purity shapes the benchmark and the conclusion.}
-(a) Funnel from the curated candidate pool through the two-state and
+(a) Funnel from the screened candidate pool through the two-state and
 AF3-availability filters to the pairs passing the P1--P5 purity gate.
 (b) The same frozen per-protein results stratified by pairing purity,
 showing the median amplitude ratio, median direction cosine and magnitude
-correlation for pure ($n=9$), impure ($n=6$) and all ($n=15$) pairs.}
+correlation for pure ($n=9$), impure ($n=6$) and all ($n=15$) pairs.
+Purity here means chain-composition matching (P5), not ligand matching: the
+nine pure pairs are not identical apart from the phosphate, and two of them
+carry engineered substitutions (AURKA T287D, one residue from the site;
+PAK1 K299R, present in both states); a further pair outside the pure
+stratum (IKBKB) uses an S177E/S181E phosphomimetic non-phospho reference.
+See Sec.~\ref{sec:purity} and the confound audit shipped with the data.}
 \label{fig:funnel}
 \end{figure*}
 
@@ -600,9 +711,12 @@ phosphorylation-induced experimental displacement.}
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{Fig4_plddt_vs_amplitude.pdf}
-\caption{\textbf{Site pLDDT does not predict agreement.} Site pLDDT against
-amplitude ratio; the association is carried by IRF3 and weakens sharply
-when it is removed.}
+\caption{\textbf{Site pLDDT and agreement.} (a) Site-region pLDDT against
+amplitude ratio for the 15 pairs (labelled), with a least-squares fit; the
+apparent association is carried by IRF3 and collapses when it is removed
+(Sec.~\ref{sec:res-confidence}). (b) Site-region versus global pLDDT,
+showing that phosphosite regions tend to be lower-confidence than the rest
+of the chain.}
 \label{fig:plddt}
 \end{figure*}
 
@@ -620,8 +734,11 @@ $\Delta$PAE (site$\rightarrow$rest) against amplitude ratio, all pairs
 \includegraphics[width=\textwidth]{Fig3_residue_spectrum.pdf}
 \caption{\textbf{Residue-level response saturates.} Median
 predicted/experimental displacement ratio as a function of experimental
-displacement magnitude, showing monotone decline as the true response
-grows.}
+displacement magnitude, over all 5{,}148 common residues across the 15
+cohort proteins; the decline is monotone across the six bins. The analysis
+uses the first AF3 model of each state (model 0), not a multi-model average.
+A distance decomposition of the same residues shows no trend
+(Sec.~\ref{sec:res-explore}).}
 \label{fig:spectrum}
 \end{figure*}
 

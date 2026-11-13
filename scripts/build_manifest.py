@@ -176,7 +176,11 @@ def main():
         "single": len(single),
         "af3_paired_available": len(primary),
         "primary_cohort": len(primary),
-        "pure_pass": sum(1 for p in proteins if p["verdict"] == "PASS"),
+        # 判据口径（W9）：区分「成对且 P1–P5 全过」（含无 AF3 模型的蛋白）
+        # 与「纯净队列 pure」（= 前者 且 AF3 模型齐全）。旧键名 pure_pass 会
+        # 把单结构行的 verdict 一并计入，导致与正文 "9 pure" 口径冲突，故替换。
+        "gate_pass_paired": sum(1 for p in proteins
+                                if p["paired"] and p["verdict"] == "PASS"),
         "pure_cohort": len(pure),
         "warn": sum(1 for p in proteins if p["verdict"] == "WARN"),
         "fail": len(fail),
@@ -209,7 +213,7 @@ def main():
     print("=" * 92)
     print(f"  基准总数 {counts['benchmark_total']} | 成对 {counts['paired']} | 单结构 {counts['single']} "
           f"| 已移除 {counts['removed']}")
-    print(f"  PASS {counts['pure_pass']} | WARN {counts['warn']} | FAIL {counts['fail']}")
+    print(f"  成对且 P1–P5 全过 {counts['gate_pass_paired']} | WARN {counts['warn']} | FAIL {counts['fail']}")
     print(f"  主分析队列 (paired + AF3 齐全) n={counts['primary_cohort']}")
     print(f"  纯净队列 (P1–P5 全过)          n={counts['pure_cohort']}")
     print("-" * 92)
@@ -241,8 +245,8 @@ def _write_md(m):
         f"| 成对 paired | {c['paired']} |",
         f"| 单结构 single | {c['single']} |",
         f"| 主分析队列 primary（paired + AF3 齐全） | {c['primary_cohort']} |",
-        f"| 纯净队列 pure（P1–P5 全过） | {c['pure_cohort']} |",
-        f"| 判定 PASS / WARN / FAIL | {c['pure_pass']} / {c['warn']} / {c['fail']} |",
+        f"| 纯净队列 pure（成对 + P1–P5 全过 + AF3 齐全） | {c['pure_cohort']} |",
+        f"| 成对且 P1–P5 全过 / WARN / FAIL | {c['gate_pass_paired']} / {c['warn']} / {c['fail']} |",
         f"| 已移除 removed | {c['removed']} |", "",
         "## 判据 / Criteria", "",
         f"- P3 覆盖度阈值 = {m['criteria']['min_coverage']}",

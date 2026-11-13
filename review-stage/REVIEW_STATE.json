@@ -1,0 +1,15 @@
+{
+  "run_id": "run_20261112_882bced5",
+  "status": "completed",
+  "round": 3,
+  "threadId": null,
+  "reviewer_backend": "llm-chat",
+  "round_backend": "llm-chat",
+  "last_score": 7.5,
+  "last_verdict": "almost",
+  "requires_external_acquittal": false,
+  "pending_experiments": [],
+  "target_artifact": "paper/main.tex",
+  "updated_at": "2026-11-13T18:00:00+0800",
+  "note": "Round 1 = 5.0/10 (not ready) remediated (W1-W10). Round 2 = 6.5/10 (not ready) remediated (R1-R7). Round 3 = 7.5/10, verdict 'almost' (reviewer: GLM-5.3/zhipu vs executor deepseek-v4-pro = cross-family independent). Stop gate (review_gate.py) returned decision=stop (score>=6 AND verdict in {ready,almost}); loop terminated at Round 3 of MAX_ROUNDS=4. Post-stop residual items W1-W7 (IKBKB/PAK1 mis-transcription, backwards 'conservative' justification, strong verbs, section title, uncited claims, model_stability.json orphan, P2 cross-ref / model-0 exceptions) were fixed text-only and repo hygiene; main.pdf rebuilt (14 pages, no undefined refs / overfull)."
+}

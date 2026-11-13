@@ -84,7 +84,7 @@ fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.2, 3.0),
 # ================= Panel a：纯度漏斗 =================
 # 阶段与计数全部来自冻结 manifest
 stages = [
-    ("Curated candidate pool",
+    ("Screened candidate pool",
      cnt["benchmark_total"] + cnt["removed"]),
     ("Two-state pairs (unphos + phos)", cnt["paired"]),
     ("AF3 models for both states", cnt["primary_cohort"]),

@@ -1,0 +1,728 @@
+{
+  "summary": {
+    "n_pairs_audited": 16,
+    "n_pure_p5": 9,
+    "n_pure_with_ligand_difference": 7,
+    "n_pure_with_point_mutation": 2,
+    "n_pairs_with_extra_phos": 2,
+    "n_pairs_with_extra_phos_other_chains": 1,
+    "n_composition_matched": 2,
+    "note": "'pure' (P5) 仅表示链组成一致；配体/点突变/额外磷酸位点是额外的、P5 未覆盖的共变量。AF3 在 apo 全长序列上运行，故这些实验侧差异在预测侧不可见。extra_phos_sites 已将 MODRES 位点由 PDB 编号映射到 UniProt 编号，并限定于与目标蛋白同源的链（R3）。composition_matched 为更严格的标记。"
+  },
+  "per_protein": [
+    {
+      "key": "CDK2",
+      "gene": "CDK2",
+      "uniprot": "P24941",
+      "unphos_pdb": "2C5N",
+      "phos_pdb": "1H1R",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "CK8"
+      ],
+      "ligands_phos": [
+        "6CP"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "CK8"
+      ],
+      "ligands_only_phos": [
+        "6CP"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 0.997,
+        "C": 0.997
+      },
+      "phos_modres_sites_pdb": [
+        "160"
+      ],
+      "phos_modres_sites_uniprot": [
+        160
+      ],
+      "af3_modelled_sites": [
+        160
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "ERK2",
+      "gene": "MAPK1",
+      "uniprot": "P28482",
+      "unphos_pdb": "1ERK",
+      "phos_pdb": "2ERK",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [],
+      "ligand_differs": false,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 0.997
+      },
+      "phos_modres_sites_pdb": [
+        "183",
+        "185"
+      ],
+      "phos_modres_sites_uniprot": [
+        185,
+        187
+      ],
+      "af3_modelled_sites": [
+        185,
+        187
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": true,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": true
+    },
+    {
+      "key": "Aurora_A",
+      "gene": "AURKA",
+      "uniprot": "O14965",
+      "unphos_pdb": "4J8M",
+      "phos_pdb": "5DNR",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "CJ5"
+      ],
+      "ligands_phos": [
+        "ATP"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "CJ5"
+      ],
+      "ligands_only_phos": [
+        "ATP"
+      ],
+      "mutation_unphos": [
+        "M ASP A  287  UNP  O14965    THR   287 ENGINEERED MUTATION"
+      ],
+      "mutation_phos": [],
+      "has_mutation": true,
+      "same_protein_chains": {
+        "A": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "288"
+      ],
+      "phos_modres_sites_uniprot": [
+        288
+      ],
+      "af3_modelled_sites": [
+        288
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "IRF3",
+      "gene": "IRF3",
+      "uniprot": "Q14653",
+      "unphos_pdb": "1QWT",
+      "phos_pdb": "3A77",
+      "phos_chain": "A",
+      "pure_pair": false,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [],
+      "ligand_differs": false,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0,
+        "B": 1.0,
+        "C": 1.0,
+        "D": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "386",
+        "402"
+      ],
+      "phos_modres_sites_uniprot": [
+        386,
+        402
+      ],
+      "af3_modelled_sites": [
+        386,
+        402
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": true,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "P38alpha",
+      "gene": "MAPK14",
+      "uniprot": "Q16539",
+      "unphos_pdb": "1WFC",
+      "phos_pdb": "3PY3",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [],
+      "ligand_differs": false,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 0.986
+      },
+      "phos_modres_sites_pdb": [
+        "180",
+        "182"
+      ],
+      "phos_modres_sites_uniprot": [
+        180,
+        182
+      ],
+      "af3_modelled_sites": [
+        180,
+        182
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": true,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": true
+    },
+    {
+      "key": "CDK7",
+      "gene": "CDK7",
+      "uniprot": "P50613",
+      "unphos_pdb": "8P79",
+      "phos_pdb": "8PYR",
+      "phos_chain": "A",
+      "pure_pair": false,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "ACE"
+      ],
+      "ligands_phos": [],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "ACE"
+      ],
+      "ligands_only_phos": [],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0,
+        "E": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "164",
+        "170"
+      ],
+      "phos_modres_sites_uniprot": [
+        164,
+        170
+      ],
+      "af3_modelled_sites": [
+        170
+      ],
+      "extra_phos_sites": [
+        164
+      ],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": true,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "c-Src_kinase",
+      "gene": "SRC",
+      "uniprot": "P12931",
+      "unphos_pdb": "7NG7",
+      "phos_pdb": "9NS0",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "UCW"
+      ],
+      "ligands_phos": [],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "UCW"
+      ],
+      "ligands_only_phos": [],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "419"
+      ],
+      "phos_modres_sites_uniprot": [
+        419
+      ],
+      "af3_modelled_sites": [
+        419
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "AMPK_alpha2",
+      "gene": "PRKAA2",
+      "uniprot": "P54646",
+      "unphos_pdb": "2H6D",
+      "phos_pdb": "6B1U",
+      "phos_chain": "A",
+      "pure_pair": false,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [
+        "AMP",
+        "CG7",
+        "STU"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [
+        "AMP",
+        "CG7",
+        "STU"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 0.998,
+        "C": 0.998
+      },
+      "phos_modres_sites_pdb": [
+        "172"
+      ],
+      "phos_modres_sites_uniprot": [
+        172
+      ],
+      "af3_modelled_sites": [
+        172
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {
+        "B": [
+          "108"
+        ],
+        "D": [
+          "108"
+        ]
+      },
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "Glycogen_Phosphorylase",
+      "gene": "PYGM",
+      "uniprot": "P00489",
+      "unphos_pdb": "2GJ4",
+      "phos_pdb": "1LWO",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "2TH",
+        "PLR"
+      ],
+      "ligands_phos": [
+        "CHI",
+        "GLC",
+        "PLP"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "2TH",
+        "PLR"
+      ],
+      "ligands_only_phos": [
+        "CHI",
+        "GLC",
+        "PLP"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "14"
+      ],
+      "phos_modres_sites_uniprot": [
+        15
+      ],
+      "af3_modelled_sites": [
+        15
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "CDK1",
+      "gene": "CDK1",
+      "uniprot": "P06493",
+      "unphos_pdb": "4YC3",
+      "phos_pdb": "9SKQ",
+      "phos_chain": "A",
+      "pure_pair": false,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [
+        "ACE",
+        "ANP"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [
+        "ACE",
+        "ANP"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "161"
+      ],
+      "phos_modres_sites_uniprot": [
+        161
+      ],
+      "af3_modelled_sites": [
+        161
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "ERK1",
+      "gene": "MAPK3",
+      "uniprot": "P27361",
+      "unphos_pdb": "4QTB",
+      "phos_pdb": "2ZOQ",
+      "phos_chain": "A",
+      "pure_pair": false,
+      "in_primary_cohort": false,
+      "ligands_unphos": [
+        "38Z"
+      ],
+      "ligands_phos": [
+        "5ID"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "38Z"
+      ],
+      "ligands_only_phos": [
+        "5ID"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "204"
+      ],
+      "phos_modres_sites_uniprot": [
+        204
+      ],
+      "af3_modelled_sites": [
+        202,
+        204
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "GSK3B",
+      "gene": "GSK3B",
+      "uniprot": "P49841",
+      "unphos_pdb": "1J1B",
+      "phos_pdb": "6Y9S",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "ANP"
+      ],
+      "ligands_phos": [
+        "OHK"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "ANP"
+      ],
+      "ligands_only_phos": [
+        "OHK"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 1.0,
+        "B": 1.0
+      },
+      "phos_modres_sites_pdb": [
+        "216"
+      ],
+      "phos_modres_sites_uniprot": [
+        216
+      ],
+      "af3_modelled_sites": [
+        216
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "PAK1",
+      "gene": "PAK1",
+      "uniprot": "Q13153",
+      "unphos_pdb": "1YHW",
+      "phos_pdb": "3FXZ",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [
+        "FLL"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [
+        "FLL"
+      ],
+      "mutation_unphos": [
+        "W ARG A  299  UNP  Q13153    LYS   299 ENGINEERED MUTATION"
+      ],
+      "mutation_phos": [
+        "Z ARG A  299  UNP  Q13153    LYS   299 ENGINEERED MUTATION"
+      ],
+      "has_mutation": true,
+      "same_protein_chains": {
+        "A": 0.997
+      },
+      "phos_modres_sites_pdb": [
+        "423"
+      ],
+      "phos_modres_sites_uniprot": [
+        423
+      ],
+      "af3_modelled_sites": [
+        423
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "AKT1",
+      "gene": "AKT1",
+      "uniprot": "P31749",
+      "unphos_pdb": "3O96",
+      "phos_pdb": "4GV1",
+      "phos_chain": "A",
+      "pure_pair": true,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "IQO"
+      ],
+      "ligands_phos": [
+        "0XZ"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "IQO"
+      ],
+      "ligands_only_phos": [
+        "0XZ"
+      ],
+      "mutation_unphos": [],
+      "mutation_phos": [],
+      "has_mutation": false,
+      "same_protein_chains": {
+        "A": 0.997
+      },
+      "phos_modres_sites_pdb": [
+        "308"
+      ],
+      "phos_modres_sites_uniprot": [
+        308
+      ],
+      "af3_modelled_sites": [
+        308
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "TBK1",
+      "gene": "TBK1",
+      "uniprot": "Q9UHD2",
+      "unphos_pdb": "4IM0",
+      "phos_pdb": "4EUU",
+      "phos_chain": "A",
+      "pure_pair": false,
+      "in_primary_cohort": true,
+      "ligands_unphos": [
+        "1FV"
+      ],
+      "ligands_phos": [
+        "BX7"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [
+        "1FV"
+      ],
+      "ligands_only_phos": [
+        "BX7"
+      ],
+      "mutation_unphos": [
+        "0 ASN A  135  UNP  Q9UHD2    ASP   135 ENGINEERED MUTATION"
+      ],
+      "mutation_phos": [
+        "U ASN A  135  UNP  Q9UHD2    ASP   135 ENGINEERED MUTATION",
+        "U ASN B  135  UNP  Q9UHD2    ASP   135 ENGINEERED MUTATION"
+      ],
+      "has_mutation": true,
+      "same_protein_chains": {
+        "A": 0.99,
+        "B": 0.99
+      },
+      "phos_modres_sites_pdb": [
+        "172"
+      ],
+      "phos_modres_sites_uniprot": [
+        172
+      ],
+      "af3_modelled_sites": [
+        172
+      ],
+      "extra_phos_sites": [],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": false,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    },
+    {
+      "key": "IKBKB",
+      "gene": "IKBKB",
+      "uniprot": "O14920",
+      "unphos_pdb": "4E3C",
+      "phos_pdb": "4KIK",
+      "phos_chain": "B",
+      "pure_pair": false,
+      "in_primary_cohort": true,
+      "ligands_unphos": [],
+      "ligands_phos": [
+        "KSA"
+      ],
+      "ligand_differs": true,
+      "ligands_only_unphos": [],
+      "ligands_only_phos": [
+        "KSA"
+      ],
+      "mutation_unphos": [
+        "C GLU A  177  UNP  O14920    SER   177 ENGINEERED MUTATION",
+        "C GLU A  181  UNP  O14920    SER   181 ENGINEERED MUTATION",
+        "C GLU B  177  UNP  O14920    SER   177 ENGINEERED MUTATION",
+        "C GLU B  181  UNP  O14920    SER   181 ENGINEERED MUTATION",
+        "C GLU C  177  UNP  O14920    SER   177 ENGINEERED MUTATION",
+        "C GLU C  181  UNP  O14920    SER   181 ENGINEERED MUTATION",
+        "C GLU D  177  UNP  O14920    SER   177 ENGINEERED MUTATION",
+        "C GLU D  181  UNP  O14920    SER   181 ENGINEERED MUTATION",
+        "C GLU E  177  UNP  O14920    SER   177 ENGINEERED MUTATION",
+        "C GLU E  181  UNP  O14920    SER   181 ENGINEERED MUTATION",
+        "C GLU F  177  UNP  O14920    SER   177 ENGINEERED MUTATION",
+        "C GLU F  181  UNP  O14920    SER   181 ENGINEERED MUTATION"
+      ],
+      "mutation_phos": [],
+      "has_mutation": true,
+      "same_protein_chains": {
+        "A": 1.0,
+        "B": 0.998
+      },
+      "phos_modres_sites_pdb": [
+        "177",
+        "181",
+        "257"
+      ],
+      "phos_modres_sites_uniprot": [
+        177,
+        181,
+        257
+      ],
+      "af3_modelled_sites": [
+        177,
+        181
+      ],
+      "extra_phos_sites": [
+        257
+      ],
+      "extra_phos_sites_other_chains": {},
+      "dual_or_multi_phospho": true,
+      "af3_input": "apo full-length UniProt; no ligands modelled",
+      "composition_matched": false
+    }
+  ]
+}

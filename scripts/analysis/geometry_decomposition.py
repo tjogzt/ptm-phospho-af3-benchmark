@@ -47,8 +47,11 @@ from benchmark_dataset import BENCHMARK_PROTEINS
 from struct_utils import load_ca                 # B2/B3：共享 Cα 提取 + 链选择
 
 PDBDIR = _ROOT / "data" / "pdb"
+CIF = _ROOT / "results" / "af3" / "models" / "v2"   # W7：与 compare 同源的 AF3 序列
 OUT = _ROOT / "results" / "analysis"
 FIG = _ROOT / "results" / "figures"
+
+GENE = {k: v["gene"].lower() for k, v in BENCHMARK_PROTEINS.items()}
 
 SITE_WIN = 10        # 位点窗 ±10 残基（B2：与 compare / pae / explain 统一）
 N_BLOCKS = 3         # 分块叠合的块数
@@ -83,6 +86,26 @@ def ca_chain(path, requested):
     coords, seq, resids, meta = load_ca(path, chain=requested)
     CHAIN_LOG.append({"file": Path(path).name, "requested": requested, **meta})
     return coords, seq, resids
+
+
+def af3_base_seqs(gene):
+    """读 AF3 两态序列（取 seed1_model_0；同蛋白各模型序列一致）。
+
+    W7：以 AF3 全长（UniProt）序列为对齐基准，使 geometry 与
+    compare_af3_vs_pdb 使用**同一 common-residue 集**，消除两管线对同一
+    experimental 位移的数值矛盾（此前 geometry 直接把两条 PDB 序列对齐，
+    会把 30–40 Å 的错配残基计入，例如 CDK7/AKT1）。
+    Returns the AF3 unphos/phos sequences for full-length anchoring.
+    """
+    seqs = []
+    for state in ("unphos", "phos"):
+        d = CIF / gene / state
+        fs = (sorted(d.glob("fold_*_seed1_model_0.cif"))
+              or sorted(d.glob("fold_*_seed*_model_*.cif")))
+        if not fs:
+            return None, None
+        seqs.append(load_ca(fs[0], chain=None)[1])
+    return seqs[0], seqs[1]
 
 
 def kabsch(P, Q):
@@ -142,14 +165,29 @@ def decompose(key, info):
     C_ph, s_ph, id_ph = ca_chain(PDBDIR / f"{ph_id.upper()}.pdb", ch_ph)
     if len(C_up) < 60 or len(C_ph) < 60:
         return None
-    m = align_pairs(s_up, s_ph)
-    if len(m) < 60:
-        return None
-    ia = np.array([x[0] for x in m])
-    ib = np.array([x[1] for x in m])
+
+    # W7：以 AF3 全长序列为对齐基准，与 compare_af3_vs_pdb 使用同一
+    # common-residue 集（base=A F3 unphos 序列；三方对齐的交集）。
+    base_u, base_p = af3_base_seqs(GENE.get(key, info["gene"].lower()))
+    if base_u:
+        m_up = dict(align_pairs(base_u, s_up))
+        m_ph = dict(align_pairs(base_u, s_ph))
+        m_aph = dict(align_pairs(base_u, base_p)) if base_p else {}
+        common = sorted(set(m_up) & set(m_ph) & (set(m_aph) if m_aph else set(m_up)))
+        if len(common) < 60:
+            return None
+        ia = np.array([m_up[i] for i in common])
+        ib = np.array([m_ph[i] for i in common])
+        resids = [id_up[i] for i in ia]
+    else:                                   # 回退：无 AF3 序列时用两 PDB 直接对齐
+        m = align_pairs(s_up, s_ph)
+        if len(m) < 60:
+            return None
+        ia = np.array([x[0] for x in m])
+        ib = np.array([x[1] for x in m])
+        resids = [id_up[i] for i in ia]
     P = C_up[ia]
     Q = C_ph[ib]
-    resids = [id_up[i] for i in ia]
 
     # 整体叠合
     r_full = rmsd_after_fit(Q, P)

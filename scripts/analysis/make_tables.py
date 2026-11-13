@@ -54,6 +54,21 @@ def _phos_label(ptype):
     return "/".join(PHOS_MAP.get(p, p) for p in str(ptype).split("_"))
 
 
+def _short_reason(p):
+    """给未进入主队列的蛋白一句简短原因（Table 1 Note 列，W9）。"""
+    r = p.get("exclusion_reason") or ""
+    if r.startswith("single_state"):
+        return "single state"
+    if r.startswith("af3_missing"):
+        return "AF3 models missing"
+    c = p.get("criteria", {})
+    if c.get("P3_coverage") is False:
+        return "P3 coverage fail"
+    if c.get("P5_composition") is False:
+        return "P5 composition differs"
+    return "excluded"
+
+
 def write_csv(path, header, rows):
     with open(path, "w", newline="") as fh:
         w = csv.writer(fh)
@@ -107,7 +122,9 @@ def main():
     # ---------------- Table 1：基准与纯度门禁 ----------------
     t1_h = ["Protein", "UniProt", "Effect", "PTM", "Site(s)",
             "Unphos PDB", "Phos PDB", "P1", "P2", "P3", "P4", "P5",
-            "Verdict", "Pure", "In cohort"]
+            "Verdict", "Pure", "In cohort", "Note"]
+    _GK = ("P1_identity", "P2_real_phos", "P3_coverage", "P4_overlap",
+           "P5_composition")
     t1_rows = []
     for p in mf["proteins"]:
         c = p["criteria"]
@@ -115,6 +132,17 @@ def main():
         sites = "/".join(p.get("sites_label") or []) if p.get("sites_label") else "--"
         # 位点后附磷酸化类型，如 "Thr160 (pT)"
         sites_txt = f"{sites} ({_phos_label(p['phos_type'])})" if sites != "--" else "--"
+        paired = bool(p.get("paired"))
+        if not paired:
+            # 单结构条目（无未磷酸化配对）：P1–P5 与判定均不适用（W9）
+            gate_cells = ["n/a"] * 5
+            verdict_txt, pure_txt = "n/a", "n/a"
+        else:
+            gate_cells = [yn(c.get(k)) for k in _GK]
+            verdict_txt = p["verdict"]
+            # Pure 列 = 五条门禁是否全过（不含 AF3 可得性），与纯队列 pure_pair 区分（W9）
+            pure_txt = "Y" if all(c.get(k) for k in _GK) else "N"
+        note = "" if p["in_primary_cohort"] else _short_reason(p)
         t1_rows.append([
             p["gene"], p["uniprot"],
             EFFECT_SHORT.get(p["effect_type"], p["effect_type"]),
@@ -122,20 +150,27 @@ def main():
             sites_txt,
             p.get("unphos_pdb") or "--",
             p.get("phos_pdb") or "--",
-            yn(c.get("P1_identity")), yn(c.get("P2_real_phos")),
-            yn(c.get("P3_coverage")), yn(c.get("P4_overlap")),
-            yn(c.get("P5_composition")),
-            p["verdict"], "Y" if p["pure_pair"] else "N",
+            *gate_cells,
+            verdict_txt, pure_txt,
             "Y" if p["in_primary_cohort"] else "N",
+            note,
         ])
     write_csv(TAB / "Table1_benchmark.csv", t1_h, t1_rows)
     write_tex(TAB / "Table1_benchmark.tex",
               "Benchmark cohort and pairing-purity gate (P1--P5). "
               "P1 identity, P2 real phospho-residue (MODRES), "
               "P3 coverage $\\geq$0.5 in both states, P4 $\\geq$20-residue "
-              "overlap covering the target site, P5 identical chain composition.",
+              "overlap covering the target site, P5 identical chain composition. "
+              "``n/a'' marks single-state entries that have no unphosphorylated "
+              "counterpart, so the gate does not apply. The Pure column reports "
+              "whether P1--P5 all pass; In cohort additionally requires the models "
+              "to be available. Note gives the reason an entry lies outside the "
+              "primary cohort. Site numbers follow UniProt (canonical) numbering; "
+              "the MODRES records of the corresponding PDB entries use PDB numbering, "
+              "which can be offset (e.g.\\ 6QJ7 MODRES TPO\\,197 is UniProt Thr198, "
+              "and 4JXT MODRES SEP\\,1621/1628 are UniProt Ser1614/Ser1621).",
               "tab:benchmark", t1_h, t1_rows,
-              "lllll lcc ccccc cc", resize=True)
+              "lllll lcc ccccc ccl", resize=True)
 
     # ---------------- Table 2：逐蛋白指标 ----------------
     has_esm = (ANA / "esmfold_vs_pdb_summary.json").exists()
@@ -218,6 +253,37 @@ def main():
             ["ESMFold $r$ without max-leverage point",
              f"{ecs['max_leverage']['r_without']:+.4f}"],
         ]
+
+    # 稳健性：剔除两个 P3 失败对（W3）
+    ex = cs.get("excl_p3_failures")
+    if ex:
+        s1_rows += [
+            [f"AF3 $r$ excl. P3-failing pairs ($n={ex['n_proteins']}$)",
+             f"{ex['pearson_r']:+.4f}"],
+        ]
+    # 稳健性：叠合约定（W1）—— direct 约定
+    proj_p = ANA / "projection_sensitivity.json"
+    if proj_p.exists():
+        d = json.loads(proj_p.read_text()).get("protocols", {}).get("direct", {})
+        if d.get("pearson_r") is not None:
+            s1_rows += [
+                ["AF3 $r$ under direct superposition", f"{d['pearson_r']:+.4f}"],
+                ["AF3 mean predicted disp, direct (\\AA)", f"{d['mean_pred']:.3f}"],
+            ]
+    # 纯度分层不确定性（R5）：pure / impure 两层 r 与 CI，以及差异置换检验 p
+    ps = cs.get("purity_strata")
+    if ps and "pure" in ps and "impure" in ps:
+        for nm, lab in (("pure", "pure"), ("impure", "impure")):
+            st = ps[nm]
+            ci = st["pearson_CI95"]
+            s1_rows += [
+                [f"AF3 $r$, {lab} stratum ($n={st['n_proteins']}$)",
+                 f"{st['pearson_r']:+.4f} "
+                 f"[{ci[0]:+.4f}, {ci[1]:+.4f}]"],
+            ]
+        if ps.get("difference_permutation_p") is not None:
+            s1_rows += [["pure-vs-impure difference, permutation $p$",
+                         f"{ps['difference_permutation_p']:.4f}"]]
     write_csv(TAB / "TableS1_stats.csv",
               ["Quantity", "Value"],
               [[a, b] for a, b in s1_rows])
