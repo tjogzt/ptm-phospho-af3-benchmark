@@ -160,7 +160,7 @@
 - [x] 补全 `main.tex` 的 `\verify{}` 占位：**全部完成**——作者列表（7 人）、单位（1+2 双标注，全部作者）、通讯邮箱（朱涛 zhutao@tjh.tjmu.edu.cn）、ORCID、资助（NSFC 82403759/82403616）、OS/硬件（macOS/Apple Silicon MPS/transformers）、仓库 URL（https://github.com/tjogzt/ptm-phospho-af3-benchmark）、MIT 许可、**Zenodo DOI（10.5281/zenodo.24087962）**；`main.tex` 中已无 `\verify{}` 残留
 - [x] ESMFold 结果并入 Fig 2、Table 2（含 ESM 列）、TableS1 后复编（`main.pdf` 13 页）
 - [x] `/citation-audit` 核验引文（8/8 条经 Crossref REST API 逐条核验：DOI、期刊、卷/期/页、年份全部与 `refs.bib` 一致；正文 14 处引用上下文均被原文献支持）
-- [ ] 投稿前：BioRxiv 预印本占位
+- [x] 投稿前：BioRxiv 预印本 — 新建 `paper/preprint.tex` → `paper/preprint.pdf`（15 页，单文件自包含），与 review 版/OUP 版共享正文 `sections.tex` 与图件 `figures.tex`；无期刊品牌 + 「未经同行评审」声明 + **CC BY 4.0** + 补充表 S1 并入同一 PDF；bioRxiv 表单元数据见 `project.md` §9（subject category: Bioinformatics）
 
 ---
 

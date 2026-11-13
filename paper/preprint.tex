@@ -1,0 +1,150 @@
+% =====================================================================
+%  PTM benchmark — bioRxiv preprint build
+%  bioRxiv 预印本版 / bioRxiv preprint build
+%
+%  与投稿版（main_oup.tex）和 review 版（main.tex）共用正文组件
+%  `sections.tex` 与图件 `figures.tex`；本文件只提供「预印本外观」：
+%  无期刊品牌，加「未经同行评审」声明与 CC BY 4.0 许可，并把补充表
+%  （Table S1）并入同一 PDF，使预印本单文件自包含。
+%  Shares the body (sections.tex) and figure floats (figures.tex) with the
+%  other two builds; this file only supplies the preprint skin: no journal
+%  branding, a "not certified by peer review" notice, the CC BY 4.0 licence,
+%  and the supplementary table folded into the same PDF so the file is
+%  self-contained for the bioRxiv upload.
+%
+%  所有数值取自 results/ 下的**冻结产物**（manifest_frozen.json、
+%  af3_vs_pdb_summary.json、geometry_metrics.json、performance_explained.json、
+%  pae_metrics.json、noise_floor.json、residue_spectrum.json、tables/*）。
+% =====================================================================
+\documentclass[11pt]{article}
+
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath,amssymb}
+\usepackage[authoryear,round]{natbib}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=blue,urlcolor=blue}
+
+\graphicspath{{../results/figures/}}
+
+\title{\textbf{Data purity, not model capability, can dominate apparent
+AlphaFold3 performance on phosphorylation benchmarks}}
+
+\author{%
+\parbox{0.92\textwidth}{\centering
+Qingqing Mo\textsuperscript{1,2},
+Pingbo Chen\textsuperscript{1,2},
+Cheng Xu\textsuperscript{1,2},
+Ya Wang\textsuperscript{1,2},
+Ting Hu\textsuperscript{1,2},
+Qian Sun\textsuperscript{1,2},
+Tao Zhu\textsuperscript{1,2,*}\\[4pt]
+\small \textsuperscript{1}Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China\\
+\small \textsuperscript{2}Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China\\[4pt]
+\small \textsuperscript{*}Corresponding author. E-mail: zhutao@tjh.tjmu.edu.cn. ORCID: 0009-0001-0779-2245}%
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% ---------------------------------------------------------------------
+% 预印本声明 / Preprint notice
+% （须置于 \maketitle 之后：article 类的 \@maketitle 以 \newpage 开头）
+% ---------------------------------------------------------------------
+\noindent\rule{\linewidth}{0.4pt}\par
+{\small\noindent\textbf{Preprint.} This document is a preprint and has not been
+certified by peer review. It is posted on bioRxiv under the Creative Commons
+Attribution 4.0 International licence (CC~BY~4.0,
+\url{https://creativecommons.org/licenses/by/4.0/}).}\par
+\noindent\rule{\linewidth}{0.4pt}
+\vspace{1em}
+
+% ---------------------------------------------------------------------
+\begin{abstract}
+\noindent
+\textbf{Motivation:} AlphaFold3 (AF3) accepts explicit post-translational
+modifications, which is widely taken to imply that it can model the
+conformational consequences of phosphorylation. Testing that implication
+requires a pair of experimental structures that are genuinely comparable,
+yet we could not find a published phosphorylation benchmark that audits
+this, so complex-composition effects can be mistaken for phosphorylation
+effects.
+
+\noindent
+\textbf{Results:} We assembled a phosphorylation structure benchmark and
+subjected every pair to a five-criterion biological purity gate
+(P1--P5). Of 24 screened candidates, 6 were dropped for lacking a verified
+phospho-residue, leaving 18 curated entries: 16 are two-state pairs and 15
+have AF3 models for both states, of which 9 pass all five criteria. On
+these 15 pairs the correlation between AF3-predicted and experimentally
+observed mean C$\alpha$ displacement (one value per protein) is not
+significant ($r=+0.11$, 95\% CI
+$[-0.34,+0.57]$, $n=15$), while the predicted displacement is nearly
+constant ($0.52\pm0.36$\,\AA) against an experimental span of
+$0.25$--$2.51$\,\AA. Both AF3 internal confidence signals fare no better:
+the association between site pLDDT and predictive agreement
+($r=+0.48$) and that between $\Delta$PAE and predictive agreement
+($r=+0.60$) are each carried by a single leverage point and collapse when
+it is removed ($r=+0.21$ and $r=+0.14$). Restricting to purely paired
+structures changes the headline statistic: pairing purity, not model
+capability, can govern the apparent result ($r=+0.22$ for the 9
+pure pairs versus $r=-0.24$ for the 6 that fail the
+composition check; both intervals include zero and a permutation test on
+their difference gives $p=0.40$). A second,
+sequence-only ESMFold line, run with a phosphomimetic substitution, fails
+to track the cohort-level response in the same way ($r=-0.36$), although
+like AF3 it retains per-protein magnitude correlation.
+
+\noindent
+\textbf{Availability and Implementation:} Benchmark data, analysis code
+and frozen intermediate results are available at
+\url{https://github.com/tjogzt/ptm-phospho-af3-benchmark}
+(archived at Zenodo: \url{https://doi.org/10.5281/zenodo.24087962});
+implemented in Python~3.12.
+
+\noindent
+\textbf{Contact:} zhutao@tjh.tjmu.edu.cn
+
+\noindent
+\textbf{Supplementary information:} Supplementary figures and tables are
+included within this preprint.
+\end{abstract}
+
+\noindent\textbf{Keywords:} AlphaFold3, phosphorylation,
+conformational change, benchmark, data purity, prediction confidence
+
+% =====================================================================
+% Body — 与投稿版共用（共享文件 sections.tex）
+% ---------------------------------------------------------------------
+\input{sections}
+
+% =====================================================================
+% References — Bioinformatics house style (author--date)
+% ---------------------------------------------------------------------
+\bibliographystyle{abbrvnat}
+\bibliography{refs}
+
+% =====================================================================
+% Figures — 共享文件 figures.tex（三版共用；改图注只需一处）
+% ---------------------------------------------------------------------
+\input{figures}
+
+% =====================================================================
+% Supplementary material — 并入同一 PDF，使预印本单文件自包含
+% ---------------------------------------------------------------------
+\clearpage
+\section*{Supplementary material}
+% 补充表编号改为 S1，与正文中的「Supplementary Table~S1」引用一致
+% Number the supplementary table as S1 so the caption matches the in-text
+% pointer ("Supplementary Table~S1"); the body already consumed Table 1--2.
+\setcounter{table}{0}
+\renewcommand{\thetable}{S\arabic{table}}
+\input{../results/tables/TableS1_stats.tex}
+
+\end{document}

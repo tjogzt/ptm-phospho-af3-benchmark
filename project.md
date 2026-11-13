@@ -26,6 +26,7 @@
 | [6. 版本控制规范](#6-版本控制规范) | ▲▼■⚠ 标记 / Git / 变更说明 |
 | [7. 更新维护要求](#7-更新维护要求) | 24h 更新 / 变更说明栏 / 索引 |
 | [8. 质量保障措施](#8-质量保障措施) | 周核查 / 会审 / 数据-代码关联 |
+| [9. BioRxiv 预印本投稿信息](#9-biorxiv-预印本投稿信息) | 表单字段 / 许可 CC BY 4.0 / 人工确认 |
 
 ---
 
@@ -107,8 +108,9 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
   `make_tables.py` → `results/tables/`；
 - review 版草稿：`latexmk -pdf -halt-on-error main.tex`（TinyTeX，14 页）；
 - OUP 投稿版（cls/bst 在 `paper/oup/`）：
-  `TEXINPUTS=".:./oup:" BSTINPUTS=".:./oup:" latexmk -pdf -interaction=nonstopmode main_oup.tex`（10 页）。
-- 两版正文共享 `paper/sections.tex`；改正文只需一处。
+  `TEXINPUTS=".:./oup:" BSTINPUTS=".:./oup:" latexmk -pdf -interaction=nonstopmode main_oup.tex`（10 页）；
+- bioRxiv 预印本版：`latexmk -pdf -interaction=nonstopmode preprint.tex`（15 页，单文件自包含）。
+- 三版正文共享 `paper/sections.tex`、图件共享 `paper/figures.tex`；改正文/图注只需一处。
 
 ---
 
@@ -220,7 +222,7 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
 | 10 | 去 AI 化润色 | git `a183f0e`, `97c4bc1` | ✅ 完成 |
 | 11 | 自主评审循环 R1–R3 | `review-stage/` | ✅ 完成（stop） |
 | 12 | 投稿格式转换（OUP 官方模板） | `paper/main_oup.tex`（10 页） | ✅ 完成 |
-| 13 | BioRxiv 预印本占位 | `PAPER_PLAN.md` | ⬜ 未完成 |
+| 13 | BioRxiv 预印本 | `paper/preprint.tex` / `paper/preprint.pdf`（15 页） | ✅ 完成 |
 
 > 说明：用户所述 `bioinfo.cls` 为旧版；OUP 现行官方投稿类为 CTAN 的
 > `oup-authoring-template.cls`（v1.5）。Bioinformatics 的官方 class 声明为
@@ -264,6 +266,9 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
 | 2026-11-13 | T. Zhu | ▲ | 新建 `paper/main_oup.tex`（OUP 官方模板投稿版，10 页）与 `paper/sections.tex`（两版共享正文） | 规则 13/任务 (b)：OUP 投稿格式转换；DRY 重构杜绝「修复不传播」 | `paper/main_oup.tex`, `paper/sections.tex`, `paper/oup/` |
 | 2026-11-13 | T. Zhu | ■ | `paper/main.tex` 正文改为 `\input{sections}`（与 OUP 版共享） | 同上 | `paper/main.tex`（14 页） |
 | 2026-11-13 | T. Zhu | ■ | `make_tables.py` 表缩放 `\textwidth`→`\linewidth` 并重跑三表 | OUP 双栏下 `table` 浮动体宽度为 `\columnwidth`，`\textwidth` 致宽表溢出约一栏宽 | `results/tables/*.tex` |
+| 2026-11-13 | T. Zhu | ▲ | 新建 `paper/preprint.tex`（bioRxiv 预印本版，15 页）：无期刊品牌 + 「未经同行评审」声明 + CC BY 4.0 + 补充表 S1 并入同一 PDF | 规则 13/任务 (c)：准备 bioRxiv 预印本，单文件自包含便于上传 | `paper/preprint.tex` / `paper/preprint.pdf` |
+| 2026-11-13 | T. Zhu | ▲ | 抽出共享图件 `paper/figures.tex`，三版（main / main_oup / preprint）共用 | DRY：避免三版图注漂移；`main.pdf`/`main_oup.pdf` 重编后字节不变（零回归） | `paper/figures.tex`, `paper/main.tex`, `paper/main_oup.tex` |
+| 2026-11-13 | T. Zhu | ▲ | 新增 §9「BioRxiv 预印本投稿信息」（表单字段 + 许可 + 人工确认清单） | 记录首次预印本投稿所需元数据 | `project.md` §9 |
 
 ---
 
@@ -285,3 +290,39 @@ P1/P2 失败者**直接剔除**；P3/P4/P5 记为质量 flag，主队列 = 通�
 4. **fail-closed 评审**：`auto-review-loop` 的每轮判定与停止门均留痕（`review-stage/`），
    评审不可用时不静默通过（见 `review-stage/REVIEW_UNAVAILABLE.md` 历史记录）。
 5. **可复现性**：分析对冻结 manifest 确定性；随机种子固定；报告与图表可由 §2 命令一键重跑。
+
+---
+
+## 9. BioRxiv 预印本投稿信息
+
+> 上传文件：**`paper/preprint.pdf`**（15 页，单文件自包含：正文 + 图 1–6 + 补充表 S1；
+> 首页顶部含「Preprint — not certified by peer review」与 CC BY 4.0 声明）。
+> 下列字段可直接粘贴到 bioRxiv 网页表单。
+
+| 表单字段 | 值 |
+|---|---|
+| Title | Data purity, not model capability, can dominate apparent AlphaFold3 performance on phosphorylation benchmarks |
+| Article type | New preprint（首次投稿） |
+| Subject category | **Bioinformatics** |
+| License | **CC BY 4.0**（Creative Commons Attribution 4.0 International，<https://creativecommons.org/licenses/by/4.0/>） |
+| Authors（顺序） | Qingqing Mo; Pingbo Chen; Cheng Xu; Ya Wang; Ting Hu; Qian Sun; Tao Zhu |
+| Corresponding author | Tao Zhu — zhutao@tjh.tjmu.edu.cn — ORCID 0009-0001-0779-2245 |
+| Affiliation 1 | Department of Obstetrics and Gynecology, National Clinical Research Center for Obstetrics and Gynecology, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China |
+| Affiliation 2 | Key Laboratory of Cancer Invasion and Metastasis (Ministry of Education), Hubei Key Laboratory of Tumor Invasion and Metastasis, Tongji Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, China |
+| Keywords | AlphaFold3, phosphorylation, conformational change, benchmark, data purity, prediction confidence |
+| Abstract | 见 `paper/preprint.pdf` 第 1 页；结构化：Motivation / Results / Availability and Implementation / Contact / Supplementary information |
+| Data and code availability | <https://github.com/tjogzt/ptm-phospho-af3-benchmark>；Zenodo DOI 10.5281/zenodo.24087962；MIT |
+| Funding | NSFC 82403759 (C. Xu)、82403616 (Y. Wang) |
+| Conflict of interest | None declared |
+| Manuscript file | `paper/preprint.pdf` |
+| Supplementary files | 无独立文件（Table S1 已并入同一 PDF；Fig S1 见正文图件） |
+
+**提交前需人工确认（bioRxiv 硬性要求）**：
+
+1. 全体作者同意投稿且知晓预印本发布（bioRxiv 要求提交者代为确认）；
+2. 文章未在别处发表；如已投期刊，需在表单如实声明（本稿目标期刊：*Bioinformatics*）；
+3. 指定 submitting author（本稿拟为通讯作者 Tao Zhu）；
+4. 许可协议在表单中选定 **CC BY 4.0**（本记录已按此准备）。
+
+> ⚠ 上述「作者同意 / 未重复发表 / submitting author」三项属**人工确认**，无法由脚本代劳；
+> 在完成这三项前，**不得**点击 bioRxiv 的最终提交。
